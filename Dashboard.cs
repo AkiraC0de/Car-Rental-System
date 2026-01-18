@@ -15,6 +15,7 @@ namespace VehicleManagementSystem {
         private IconButton currentActiveButton;
         private Guna2GradientPanel leftBorderButton;
         private Form ActiveForm;
+        private Label labelComponent;
 
         public static class Theme {
             public static readonly Color Primary = Color.FromArgb(71, 108, 255);
@@ -72,6 +73,23 @@ namespace VehicleManagementSystem {
             childForm.Show();   
         }
 
+        public void AddHeaderLabel(string label) {
+            labelComponent = new Label();
+
+            labelComponent.Tag = label;
+            labelComponent.Size = new System.Drawing.Size(207, 200);
+            labelComponent.ForeColor = Theme.Primary;
+            labelComponent.BackColor = System.Drawing.Color.Transparent;
+            labelComponent.Font = new Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelComponent.Location = new Point(pageLabel.Location.X + pageLabel.Width, pageLabel.Location.Y);
+            labelComponent.Text = " > " + label;
+
+            panelHeader.Controls.Add(labelComponent);
+
+            labelComponent.Visible = true;
+            labelComponent.BringToFront();
+        }
+
         private void ActivateButton(object senderBtn, string PageTitle) {
             if (senderBtn != null) {
                 DeactiveButton();
@@ -90,9 +108,15 @@ namespace VehicleManagementSystem {
 
         private void DeactiveButton() {
             if (currentActiveButton != null) {
+                RemoveHeaderLabel();
                 currentActiveButton.IconSize = 50;
                 currentActiveButton.ForeColor = Theme.SecondaryText;
                 currentActiveButton.IconColor = Theme.SecondaryText;
+            }
+        }
+        private void RemoveHeaderLabel() {
+            if (labelComponent != null) {
+                panelHeader.Controls.Remove(labelComponent);
             }
         }
 
@@ -122,6 +146,7 @@ namespace VehicleManagementSystem {
 
         private void maintenanceMangementBtn_Click(object sender, EventArgs e) {
             ActivateButton(sender, FormPageTitles.MaintenanceManagement);
+            AddHeaderLabel("TES");
             OpenForm(new MaintenanceManagement());
         }
     }

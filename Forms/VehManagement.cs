@@ -13,5 +13,9 @@ namespace VehicleManagementSystem.Resources {
         public VehManagement() {
             InitializeComponent();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e) {
+
+        }
     }
 }
