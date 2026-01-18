@@ -1,7 +1,7 @@
 ﻿using FontAwesome.Sharp;
 
 namespace VehicleManagementSystem {
-    partial class Dashboard {
+    partial class MainForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
