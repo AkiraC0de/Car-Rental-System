@@ -33,7 +33,7 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.pageLabel = new System.Windows.Forms.Label();
+            this.labelPage = new System.Windows.Forms.Label();
             this.maximizeBtn = new FontAwesome.Sharp.IconButton();
             this.minimizeBtn = new FontAwesome.Sharp.IconButton();
             this.closeBtn = new FontAwesome.Sharp.IconButton();
@@ -195,7 +195,7 @@ namespace VehicleManagementSystem {
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.pageLabel);
+            this.panelHeader.Controls.Add(this.labelPage);
             this.panelHeader.Controls.Add(this.maximizeBtn);
             this.panelHeader.Controls.Add(this.minimizeBtn);
             this.panelHeader.Controls.Add(this.closeBtn);
@@ -207,17 +207,17 @@ namespace VehicleManagementSystem {
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
-            // pageLabel
+            // labelPage
             // 
-            this.pageLabel.AutoSize = true;
-            this.pageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.pageLabel.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.pageLabel.Location = new System.Drawing.Point(25, 27);
-            this.pageLabel.Name = "pageLabel";
-            this.pageLabel.Size = new System.Drawing.Size(207, 24);
-            this.pageLabel.TabIndex = 5;
-            this.pageLabel.Text = "Vehicle Management";
+            this.labelPage.AutoSize = true;
+            this.labelPage.BackColor = System.Drawing.Color.Transparent;
+            this.labelPage.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.labelPage.Location = new System.Drawing.Point(25, 27);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(207, 24);
+            this.labelPage.TabIndex = 5;
+            this.labelPage.Text = "Vehicle Management";
             // 
             // maximizeBtn
             // 
@@ -286,7 +286,7 @@ namespace VehicleManagementSystem {
             this.panelDesktop.Size = new System.Drawing.Size(1266, 729);
             this.panelDesktop.TabIndex = 2;
             // 
-            // Dashboard
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,7 +298,7 @@ namespace VehicleManagementSystem {
             this.Controls.Add(this.panelMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Dashboard";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
@@ -321,6 +321,6 @@ namespace VehicleManagementSystem {
         private FontAwesome.Sharp.IconButton maximizeBtn;
         private FontAwesome.Sharp.IconButton minimizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel panelDesktop;
-        private System.Windows.Forms.Label pageLabel;
+        private System.Windows.Forms.Label labelPage;
     }
 }

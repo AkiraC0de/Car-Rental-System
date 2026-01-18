@@ -14,40 +14,31 @@ namespace VehicleManagementSystem {
 
         // Fields
         public static MainForm Instance { get; private set; }
-        private WindowControls WindowActions;
-        private IconButton currentActiveButton;
-        private Guna2GradientPanel leftBorderButton;
         private Form ActiveForm;
         private Label labelComponent;
 
+        private WindowControls WindowActions;
+        private MenuRenderer MenuHandler;
+
         private void InitializeWindow() {
-            ActivateButton(vehManagementBtn, UIConfig.Titles.VehManagement);
+            //ActivateButton(vehManagementBtn, UIConfig.Titles.VehManagement);
+
+            // Helpers
             WindowActions = new WindowControls(this);
-            OpenForm(new VehManagement());
-            WindowActions.ToggleMaximize(maximizeBtn);
+            MenuHandler = new MenuRenderer(panelMenu);
+
+            LoadDefaultView();
         }
 
-        private void InitializedButtonLeftBorder() {
-            leftBorderButton = new Guna2GradientPanel();
-            leftBorderButton.Size = new Size(10, 85);
-
-            leftBorderButton.BorderRadius = 10;
-            leftBorderButton.CustomizableEdges.TopLeft = false;
-            leftBorderButton.CustomizableEdges.BottomLeft = false;
-            leftBorderButton.FillColor = UIConfig.Theme.Primary;
-            leftBorderButton.FillColor2 = UIConfig.Theme.Primary;
-            leftBorderButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            leftBorderButton.TabIndex = 0;
-
-            leftBorderButton.BackColor = Color.Transparent;
-
-            panelMenu.Controls.Add(leftBorderButton);
+        private void LoadDefaultView() {
+            WindowActions.ToggleMaximize(maximizeBtn);
+            OpenForm(new VehManagement());
+            MenuHandler.ActivateButton(vehManagementBtn);
         }
 
         public MainForm() {
             Instance = this;
             InitializeComponent();
-            InitializedButtonLeftBorder();
             InitializeWindow();
         }
 
@@ -74,7 +65,7 @@ namespace VehicleManagementSystem {
             labelComponent.ForeColor = UIConfig.Theme.Primary;
             labelComponent.BackColor = System.Drawing.Color.Transparent;
             labelComponent.Font = new Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelComponent.Location = new Point(pageLabel.Location.X + pageLabel.Width, pageLabel.Location.Y);
+            labelComponent.Location = new Point(labelPage.Location.X + labelPage.Width, labelPage.Location.Y);
             labelComponent.Text = " > " + label;
 
             panelHeader.Controls.Add(labelComponent);
@@ -83,62 +74,28 @@ namespace VehicleManagementSystem {
             labelComponent.BringToFront();
         }
 
-        private void ActivateButton(object senderBtn, string PageTitle) {
-            if (senderBtn != null) {
-                DeactiveButton();
-
-                pageLabel.Text = PageTitle;
-                currentActiveButton = senderBtn as IconButton;
-                currentActiveButton.IconSize = 60;
-                currentActiveButton.ForeColor = UIConfig.Theme.Primary;
-                currentActiveButton.IconColor = UIConfig.Theme.Primary;
-
-                leftBorderButton.Location = new Point(0, currentActiveButton.Location.Y);
-                leftBorderButton.Visible = true;
-                leftBorderButton.BringToFront();
-            }
-        }
-
-        private void DeactiveButton() {
-            if (currentActiveButton != null) {
-                RemoveHeaderLabel();
-                currentActiveButton.IconSize = 50;
-                currentActiveButton.ForeColor = UIConfig.Theme.SecondaryText;
-                currentActiveButton.IconColor = UIConfig.Theme.SecondaryText;
-            }
-        }
         private void RemoveHeaderLabel() {
             if (labelComponent != null) {
                 panelHeader.Controls.Remove(labelComponent);
             }
         }
 
-        private void CloseButton_Click(object sender, EventArgs e) {
-            WindowActions.Close();
-        }
+        // Windows Actions
+        private void CloseButton_Click(object sender, EventArgs e) => WindowActions.Close();
+        private async void maximizeBtn_Click(object sender, EventArgs e) => await WindowActions.ToggleMaximize(maximizeBtn);
+        private void minimizeBtn_Click(object sender, EventArgs e) => WindowActions.Minimize();
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e) => WindowActions.Drag(e);
 
-        // Maximize the Form
-        private async void maximizeBtn_Click(object sender, EventArgs e) {
-            await WindowActions.ToggleMaximize(maximizeBtn);
-        }
-
-        // Minimize Form
-        private void minimizeBtn_Click(object sender, EventArgs e) {
-            WindowActions.Minimize();
-        }
-
-        // Activate the Drag Ability for Header
-        private void panelHeader_MouseDown(object sender, MouseEventArgs e) {
-            WindowActions.Drag(e);
-        }
-
+        // Navigation Functions
         private void vehManagementBtn_Click(object sender, EventArgs e) {
-            ActivateButton(sender, UIConfig.Titles.VehManagement);
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = UIConfig.Titles.VehManagement;
             OpenForm(new VehManagement());
         }
 
         private void maintenanceMangementBtn_Click(object sender, EventArgs e) {
-            ActivateButton(sender, UIConfig.Titles.MaintenanceManagement);
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = UIConfig.Titles.MaintenanceManagement;
             OpenForm(new MaintenanceManagement());
         }
     }
