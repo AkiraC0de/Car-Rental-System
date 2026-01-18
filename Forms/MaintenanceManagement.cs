@@ -13,5 +13,13 @@ namespace VehicleManagementSystem.Forms {
         public MaintenanceManagement() {
             InitializeComponent();
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void MaintenanceManagement_Load(object sender, EventArgs e) {
+
+        }
     }
 }

@@ -6,13 +6,14 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using VehicleManagementSystem.Resources;
 using VehicleManagementSystem.Forms;
+using Guna.UI2.WinForms;
 
 namespace VehicleManagementSystem {
     public partial class Dashboard : Form {
         // Fields
         private WindowControls WindowActions;
         private IconButton currentActiveButton;
-        private Panel leftBorderButton;
+        private Guna2GradientPanel leftBorderButton;
         private Form ActiveForm;
 
         public static class Theme {
@@ -30,12 +31,23 @@ namespace VehicleManagementSystem {
             ActivateButton(vehManagementBtn, FormPageTitles.VehManagement);
             WindowActions = new WindowControls(this);
             OpenForm(new VehManagement());
+            WindowActions.ToggleMaximize(maximizeBtn);
         }
 
         private void InitializedButtonLeftBorder() {
-            leftBorderButton = new Panel();
+            leftBorderButton = new Guna2GradientPanel();
             leftBorderButton.Size = new Size(10, 85);
-            leftBorderButton.BackColor = Theme.Primary;
+
+            leftBorderButton.BorderRadius = 10;
+            leftBorderButton.CustomizableEdges.TopLeft = false;
+            leftBorderButton.CustomizableEdges.BottomLeft = false;
+            leftBorderButton.FillColor = Theme.Primary;
+            leftBorderButton.FillColor2 = Theme.Primary;
+            leftBorderButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            leftBorderButton.TabIndex = 0;
+
+            leftBorderButton.BackColor = Color.Transparent;
+
             panelMenu.Controls.Add(leftBorderButton);
         }
 
@@ -72,7 +84,6 @@ namespace VehicleManagementSystem {
 
                 leftBorderButton.Location = new Point(0, currentActiveButton.Location.Y);
                 leftBorderButton.Visible = true;
-                leftBorderButton.BackColor = Theme.Primary;
                 leftBorderButton.BringToFront();
             }
         }

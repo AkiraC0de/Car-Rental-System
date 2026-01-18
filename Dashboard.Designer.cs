@@ -72,7 +72,7 @@ namespace VehicleManagementSystem {
             this.reportAndAnalyticsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.reportAndAnalyticsBtn.IconSize = 50;
             this.reportAndAnalyticsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportAndAnalyticsBtn.Location = new System.Drawing.Point(0, 508);
+            this.reportAndAnalyticsBtn.Location = new System.Drawing.Point(0, 472);
             this.reportAndAnalyticsBtn.Name = "reportAndAnalyticsBtn";
             this.reportAndAnalyticsBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.reportAndAnalyticsBtn.Size = new System.Drawing.Size(354, 85);
@@ -97,7 +97,7 @@ namespace VehicleManagementSystem {
             this.docuManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.docuManagementBtn.IconSize = 50;
             this.docuManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.docuManagementBtn.Location = new System.Drawing.Point(0, 423);
+            this.docuManagementBtn.Location = new System.Drawing.Point(0, 387);
             this.docuManagementBtn.Name = "docuManagementBtn";
             this.docuManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.docuManagementBtn.Size = new System.Drawing.Size(354, 85);
@@ -122,7 +122,7 @@ namespace VehicleManagementSystem {
             this.damageAndInspecBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.damageAndInspecBtn.IconSize = 50;
             this.damageAndInspecBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 335);
+            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 299);
             this.damageAndInspecBtn.Name = "damageAndInspecBtn";
             this.damageAndInspecBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.damageAndInspecBtn.Size = new System.Drawing.Size(354, 88);
@@ -147,7 +147,7 @@ namespace VehicleManagementSystem {
             this.maintenanceMangementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.maintenanceMangementBtn.IconSize = 50;
             this.maintenanceMangementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 247);
+            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 211);
             this.maintenanceMangementBtn.Name = "maintenanceMangementBtn";
             this.maintenanceMangementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.maintenanceMangementBtn.Size = new System.Drawing.Size(354, 88);
@@ -173,7 +173,7 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.vehManagementBtn.IconSize = 50;
             this.vehManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vehManagementBtn.Location = new System.Drawing.Point(0, 159);
+            this.vehManagementBtn.Location = new System.Drawing.Point(0, 123);
             this.vehManagementBtn.Name = "vehManagementBtn";
             this.vehManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.vehManagementBtn.Size = new System.Drawing.Size(354, 88);
@@ -189,7 +189,7 @@ namespace VehicleManagementSystem {
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(354, 159);
+            this.panelLogo.Size = new System.Drawing.Size(354, 123);
             this.panelLogo.TabIndex = 0;
             // 
             // panelHeader
@@ -224,7 +224,7 @@ namespace VehicleManagementSystem {
             this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizeBtn.BackColor = System.Drawing.Color.White;
             this.maximizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.maximizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
+            this.maximizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.maximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeBtn.ForeColor = System.Drawing.Color.White;
             this.maximizeBtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
@@ -243,7 +243,7 @@ namespace VehicleManagementSystem {
             this.minimizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeBtn.BackColor = System.Drawing.Color.White;
             this.minimizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.minimizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
+            this.minimizeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.IconChar = FontAwesome.Sharp.IconChar.Minus;
@@ -262,7 +262,7 @@ namespace VehicleManagementSystem {
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.BackColor = System.Drawing.Color.White;
             this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.closeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
+            this.closeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.IconChar = FontAwesome.Sharp.IconChar.Remove;

@@ -24,11 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BorderRadius = 25;
+            this.guna2GradientPanel1.Controls.Add(this.guna2Panel1);
             this.guna2GradientPanel1.CustomizableEdges.BottomLeft = false;
             this.guna2GradientPanel1.CustomizableEdges.BottomRight = false;
             this.guna2GradientPanel1.CustomizableEdges.TopRight = false;
@@ -41,6 +44,18 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1274, 683);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderRadius = 5;
+            this.guna2Panel1.BorderThickness = 10;
+            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(220, 145);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(177, 128);
+            this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
             // MaintenanceManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -50,6 +65,8 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Name = "MaintenanceManagement";
             this.Text = "MaintenanceManagement";
+            this.Load += new System.EventHandler(this.MaintenanceManagement_Load);
+            this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -57,5 +74,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
