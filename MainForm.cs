@@ -43,12 +43,12 @@ namespace VehicleManagementSystem {
             labelComponent = new Label();
 
             labelComponent.Tag = label;
-            labelComponent.Size = new System.Drawing.Size(207, 200);
+            labelComponent.AutoSize = true;
             labelComponent.ForeColor = AppConfig.Theme.Primary;
             labelComponent.BackColor = System.Drawing.Color.Transparent;
             labelComponent.Font = new Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelComponent.Location = new Point(labelPage.Location.X + labelPage.Width, labelPage.Location.Y);
-            labelComponent.Text = " > " + label;
+            labelComponent.Location = new Point(labelPage.Right, labelPage.Location.Y);
+            labelComponent.Text = "> " + label;
 
             panelHeader.Controls.Add(labelComponent);
 

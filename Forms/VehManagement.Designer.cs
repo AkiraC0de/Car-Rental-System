@@ -1,4 +1,6 @@
-﻿namespace VehicleManagementSystem.Forms {
+﻿using VehicleManagementSystem.Classes;
+
+namespace VehicleManagementSystem.Forms {
     partial class VehManagement {
         /// <summary>
         /// Required designer variable.
@@ -68,9 +70,9 @@
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(29, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 21);
+            this.label1.Size = new System.Drawing.Size(265, 21);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Easily manage all your cars.";
+            this.label1.Text = "Easily manage all your vehicles.";
             // 
             // pageLabel
             // 
@@ -80,9 +82,9 @@
             this.pageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.pageLabel.Location = new System.Drawing.Point(25, 25);
             this.pageLabel.Name = "pageLabel";
-            this.pageLabel.Size = new System.Drawing.Size(171, 43);
+            this.pageLabel.Size = new System.Drawing.Size(231, 43);
             this.pageLabel.TabIndex = 6;
-            this.pageLabel.Text = "Cars List";
+            this.pageLabel.Text = "Vehicles List";
             // 
             // addNewVehBtn
             // 
@@ -92,7 +94,7 @@
             this.addNewVehBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addNewVehBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.addNewVehBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addNewVehBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(108)))), ((int)(((byte)(255)))));
+            this.addNewVehBtn.FillColor = AppConfig.Theme.Primary;
             this.addNewVehBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewVehBtn.ForeColor = System.Drawing.Color.White;
             this.addNewVehBtn.Image = global::VehicleManagementSystem.Properties.Resources.add_circle_icon;

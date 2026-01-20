@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\pen-icon.png" />
     <None Include="Resources\add-circle-icon.png" />
     <None Include="Resources\search-icon.png" />
     <None Include="Resources\magnifying-glass.png" />
