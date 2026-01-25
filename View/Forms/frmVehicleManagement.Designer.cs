@@ -1,7 +1,7 @@
 ﻿using VehicleManagementSystem.Classes;
 
 namespace VehicleManagementSystem.Forms {
-    partial class VehManagement {
+    partial class frmVehicleManagement {
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace VehicleManagementSystem.Forms {
-    public partial class MaintenanceManagement : Form {
-        public MaintenanceManagement() {
+    public partial class frmMaintenanceManagement : Form {
+        public frmMaintenanceManagement() {
             InitializeComponent();
         }
 

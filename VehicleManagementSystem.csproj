@@ -94,44 +94,45 @@
     <Compile Include="Classes\UIRenderer.cs" />
     <Compile Include="Classes\NavigationHelper.cs" />
     <Compile Include="Classes\AppConfig.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddNewVeh.cs">
+    <Compile Include="View\Forms\frmAddNewVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddNewVeh.Designer.cs">
-      <DependentUpon>AddNewVeh.cs</DependentUpon>
+    <Compile Include="View\Forms\frmAddNewVehicle.Designer.cs">
+      <DependentUpon>frmAddNewVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MaintenanceManagement.cs">
+    <Compile Include="View\Forms\frmMaintenanceManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MaintenanceManagement.Designer.cs">
-      <DependentUpon>MaintenanceManagement.cs</DependentUpon>
+    <Compile Include="View\Forms\frmMaintenanceManagement.Designer.cs">
+      <DependentUpon>frmMaintenanceManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\VehManagement.cs">
+    <Compile Include="View\Forms\frmVehicleManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\VehManagement.Designer.cs">
-      <DependentUpon>VehManagement.cs</DependentUpon>
+    <Compile Include="View\Forms\frmVehicleManagement.Designer.cs">
+      <DependentUpon>frmVehicleManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\WindowControls.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
+    <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddNewVeh.resx">
-      <DependentUpon>AddNewVeh.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\frmAddNewVehicle.resx">
+      <DependentUpon>frmAddNewVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MaintenanceManagement.resx">
-      <DependentUpon>MaintenanceManagement.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\frmMaintenanceManagement.resx">
+      <DependentUpon>frmMaintenanceManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VehManagement.resx">
-      <DependentUpon>VehManagement.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\frmVehicleManagement.resx">
+      <DependentUpon>frmVehicleManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,5 +170,6 @@
     <None Include="Resources\search-icon.png" />
     <None Include="Resources\magnifying-glass.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

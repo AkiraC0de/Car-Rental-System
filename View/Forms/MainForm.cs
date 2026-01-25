@@ -23,7 +23,7 @@ namespace VehicleManagementSystem {
 
         private void LoadDefaultView() {
             //WindowActions.ToggleMaximize(maximizeBtn);
-            NavigationHelper.OpenForm(new VehManagement());
+            NavigationHelper.OpenForm(new frmVehicleManagement());
             MenuHandler.ActivateButton(vehManagementBtn);
         }
 
@@ -74,14 +74,14 @@ namespace VehicleManagementSystem {
             RemoveHeaderLabel();
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.VehManagement;
-            NavigationHelper.OpenForm(new VehManagement());
+            NavigationHelper.OpenForm(new frmVehicleManagement());
         }
 
         private void maintenanceMangementBtn_Click(object sender, EventArgs e) {
             RemoveHeaderLabel();
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.MaintenanceManagement;
-            NavigationHelper.OpenForm(new MaintenanceManagement());
+            NavigationHelper.OpenForm(new frmMaintenanceManagement());
         }
 
         // Make the scroll more responsive

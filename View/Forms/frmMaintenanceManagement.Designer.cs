@@ -1,5 +1,5 @@
 ﻿namespace VehicleManagementSystem.Forms {
-    partial class MaintenanceManagement {
+    partial class frmMaintenanceManagement {
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -3,13 +3,13 @@ using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 
 namespace VehicleManagementSystem.Forms {
-    public partial class VehManagement : Form {
-        public VehManagement() {
+    public partial class frmVehicleManagement : Form {
+        public frmVehicleManagement() {
             InitializeComponent();
         }
 
         private void addNewVehBtn_Click(object sender, EventArgs e) {
-            NavigationHelper.OpenForm(new AddNewVeh());
+            NavigationHelper.OpenForm(new frmAddNewVehicle());
             MainForm.Instance.AddHeaderLabel(AppConfig.SubTitles.AddNewVehicle);
         }
     }
