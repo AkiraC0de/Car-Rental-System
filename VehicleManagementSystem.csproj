@@ -237,6 +237,7 @@
     <Compile Include="Classes\AppConfig.cs" />
     <Compile Include="Classes\Validators.cs" />
     <Compile Include="Classes\WindowControls.cs" />
+    <Compile Include="Data\Enums\AddNewVehicleInputEnums.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
     <Compile Include="Data\Enums\VehicleEnums.cs" />
     <Compile Include="Models\Vehicle.cs" />

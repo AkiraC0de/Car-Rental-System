@@ -7,10 +7,14 @@ using VehicleManagementSystem.Presentor;
 using VehicleManagementSystem.View.Interfaces;
 using VehicleManagementSystem.Services.Implementations;
 using VehicleManagementSystem.Data;
+using VehicleManagementSystem.Data.Enums;
+using System.Collections.Generic;
+using Guna.UI2.WinForms;
 
 namespace VehicleManagementSystem.Forms {
     public partial class frmAddNewVehicle : Form, IAddNewVehicleView {
         addNewVehiclePresenter _presenter;
+        Dictionary<AddNewVehicleInputEnums, Guna2TextBox> _inputFieldMap;
 
 
         // Basic Vehicle Information
@@ -37,13 +41,14 @@ namespace VehicleManagementSystem.Forms {
         public void ShowError(string message) {
             MessageBox.Show(message, "Error");
         }
+        
 
-        public void SetError(string inputName, string message) {
-            switch (inputName) {
-                case "inputColor":
-                    inputColor.ForeColor = Color.Red;
-                    break;
+        public void SetFieldError(AddNewVehicleInputEnums field, string message) {
+            if (_inputFieldMap.TryGetValue(field, out Guna2TextBox inputField)) { 
+                inputField.BorderColor = Color.Red; ;
             }
+
+         
         }
 
         private Bitmap inputVehicleImage;
@@ -53,6 +58,13 @@ namespace VehicleManagementSystem.Forms {
 
             _presenter = new addNewVehiclePresenter(this, new VehicleServices());
 
+            // Initialized dictionary for error handling
+            _inputFieldMap = new Dictionary<AddNewVehicleInputEnums, Guna2TextBox> {
+                {AddNewVehicleInputEnums.VehicleIdentificationNumber, inputVehicleIdentificationNumber },
+                {AddNewVehicleInputEnums.VehiclePlateNum, inputPlateNum }
+            };
+
+            // Initialized Combobox options
             inputCategory.DataSource = Enum.GetValues(typeof(VehicleEnums.Category));
             inputFuelType.DataSource = Enum.GetValues(typeof (VehicleEnums.FuelType));
             inputTransmissionType.DataSource = Enum.GetValues(typeof(VehicleEnums.TransmissionType));

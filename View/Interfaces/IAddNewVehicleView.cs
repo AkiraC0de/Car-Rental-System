@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using VehicleManagementSystem.Data.Enums;
 
 namespace VehicleManagementSystem.View.Interfaces {
     public interface IAddNewVehicleView {
@@ -27,6 +24,6 @@ namespace VehicleManagementSystem.View.Interfaces {
         string VehicleSeatCapacity { get; }
 
         void ShowError(string message);
-
+        void SetFieldError(AddNewVehicleInputEnums field, string message);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using VehicleManagementSystem.Classes;
 
 namespace VehicleManagementSystem.Forms {
@@ -59,30 +60,30 @@ namespace VehicleManagementSystem.Forms {
             this.panelBasicInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.tableBasicInfo = new System.Windows.Forms.TableLayoutPanel();
             this.panelBasicInfoLeft = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.inputModel = new Guna.UI2.WinForms.Guna2TextBox();
-            this.inputManufacturer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.inputVehicleIdentificationNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.inputPlateNum = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panelBasicInfoRight = new System.Windows.Forms.Panel();
+            this.closeImageBtn = new FontAwesome.Sharp.IconButton();
             this.addImageBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.inputColor = new Guna.UI2.WinForms.Guna2TextBox();
-            this.inputYearModel = new Guna.UI2.WinForms.Guna2TextBox();
-            this.inputCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.vehiclePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelBasicInfoRight = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.inputVehicleIdentificationNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.inputModel = new Guna.UI2.WinForms.Guna2TextBox();
+            this.inputPlateNum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.inputManufacturer = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.inputCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.inputColor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.inputYearModel = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelBasicInfoHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.vehiclePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.closeImageBtn = new FontAwesome.Sharp.IconButton();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -96,10 +97,10 @@ namespace VehicleManagementSystem.Forms {
             this.panelBasicInformation.SuspendLayout();
             this.tableBasicInfo.SuspendLayout();
             this.panelBasicInfoLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).BeginInit();
             this.panelBasicInfoRight.SuspendLayout();
             this.panelBasicInfoHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBg
@@ -471,10 +472,10 @@ namespace VehicleManagementSystem.Forms {
             this.inputPurchaseDate.BorderThickness = 6;
             this.inputPurchaseDate.Checked = true;
             this.inputPurchaseDate.FillColor = System.Drawing.Color.White;
-            this.inputPurchaseDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.inputPurchaseDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.inputPurchaseDate.Location = new System.Drawing.Point(36, 121);
-            this.inputPurchaseDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.inputPurchaseDate.MaxDate = DateTime.Today;
             this.inputPurchaseDate.MinDate = new System.DateTime(1925, 1, 1, 0, 0, 0, 0);
             this.inputPurchaseDate.Name = "inputPurchaseDate";
             this.inputPurchaseDate.Size = new System.Drawing.Size(482, 55);
@@ -654,174 +655,27 @@ namespace VehicleManagementSystem.Forms {
             this.panelBasicInfoLeft.Size = new System.Drawing.Size(570, 502);
             this.panelBasicInfoLeft.TabIndex = 0;
             // 
-            // label21
+            // closeImageBtn
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label21.Location = new System.Drawing.Point(285, 268);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 26);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "Model";
-            // 
-            // inputModel
-            // 
-            this.inputModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputModel.BorderRadius = 10;
-            this.inputModel.BorderThickness = 2;
-            this.inputModel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inputModel.DefaultText = "";
-            this.inputModel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.inputModel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.inputModel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputModel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputModel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputModel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputModel.Location = new System.Drawing.Point(290, 299);
-            this.inputModel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.inputModel.Name = "inputModel";
-            this.inputModel.PlaceholderText = "";
-            this.inputModel.SelectedText = "";
-            this.inputModel.Size = new System.Drawing.Size(250, 55);
-            this.inputModel.TabIndex = 25;
-            // 
-            // inputManufacturer
-            // 
-            this.inputManufacturer.BorderRadius = 10;
-            this.inputManufacturer.BorderThickness = 2;
-            this.inputManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inputManufacturer.DefaultText = "";
-            this.inputManufacturer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.inputManufacturer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.inputManufacturer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputManufacturer.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputManufacturer.Location = new System.Drawing.Point(17, 299);
-            this.inputManufacturer.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.inputManufacturer.Name = "inputManufacturer";
-            this.inputManufacturer.PlaceholderText = "";
-            this.inputManufacturer.SelectedText = "";
-            this.inputManufacturer.Size = new System.Drawing.Size(250, 55);
-            this.inputManufacturer.TabIndex = 24;
-            // 
-            // inputVehicleIdentificationNumber
-            // 
-            this.inputVehicleIdentificationNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputVehicleIdentificationNumber.BorderRadius = 10;
-            this.inputVehicleIdentificationNumber.BorderThickness = 2;
-            this.inputVehicleIdentificationNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inputVehicleIdentificationNumber.DefaultText = "";
-            this.inputVehicleIdentificationNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.inputVehicleIdentificationNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.inputVehicleIdentificationNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputVehicleIdentificationNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputVehicleIdentificationNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputVehicleIdentificationNumber.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputVehicleIdentificationNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputVehicleIdentificationNumber.Location = new System.Drawing.Point(17, 51);
-            this.inputVehicleIdentificationNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.inputVehicleIdentificationNumber.Name = "inputVehicleIdentificationNumber";
-            this.inputVehicleIdentificationNumber.PlaceholderText = "";
-            this.inputVehicleIdentificationNumber.SelectedText = "";
-            this.inputVehicleIdentificationNumber.Size = new System.Drawing.Size(523, 55);
-            this.inputVehicleIdentificationNumber.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label6.Location = new System.Drawing.Point(12, 268);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 26);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Manufacturer";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label5.Location = new System.Drawing.Point(14, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(227, 26);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "License Plate Number";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label4.Location = new System.Drawing.Point(12, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(352, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Vehicle Identification Number (VIN)";
-            // 
-            // inputPlateNum
-            // 
-            this.inputPlateNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputPlateNum.BorderRadius = 10;
-            this.inputPlateNum.BorderThickness = 2;
-            this.inputPlateNum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inputPlateNum.DefaultText = "";
-            this.inputPlateNum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.inputPlateNum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.inputPlateNum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputPlateNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.inputPlateNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputPlateNum.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputPlateNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputPlateNum.Location = new System.Drawing.Point(17, 174);
-            this.inputPlateNum.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.inputPlateNum.Name = "inputPlateNum";
-            this.inputPlateNum.PlaceholderText = "";
-            this.inputPlateNum.SelectedText = "";
-            this.inputPlateNum.Size = new System.Drawing.Size(250, 55);
-            this.inputPlateNum.TabIndex = 10;
-            // 
-            // panelBasicInfoRight
-            // 
-            this.panelBasicInfoRight.Controls.Add(this.label21);
-            this.panelBasicInfoRight.Controls.Add(this.inputVehicleIdentificationNumber);
-            this.panelBasicInfoRight.Controls.Add(this.inputModel);
-            this.panelBasicInfoRight.Controls.Add(this.inputPlateNum);
-            this.panelBasicInfoRight.Controls.Add(this.inputManufacturer);
-            this.panelBasicInfoRight.Controls.Add(this.label11);
-            this.panelBasicInfoRight.Controls.Add(this.inputCategory);
-            this.panelBasicInfoRight.Controls.Add(this.label4);
-            this.panelBasicInfoRight.Controls.Add(this.inputColor);
-            this.panelBasicInfoRight.Controls.Add(this.label5);
-            this.panelBasicInfoRight.Controls.Add(this.label10);
-            this.panelBasicInfoRight.Controls.Add(this.label9);
-            this.panelBasicInfoRight.Controls.Add(this.label6);
-            this.panelBasicInfoRight.Controls.Add(this.inputYearModel);
-            this.panelBasicInfoRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBasicInfoRight.Location = new System.Drawing.Point(579, 3);
-            this.panelBasicInfoRight.Name = "panelBasicInfoRight";
-            this.panelBasicInfoRight.Size = new System.Drawing.Size(571, 502);
-            this.panelBasicInfoRight.TabIndex = 1;
+            this.closeImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeImageBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.closeImageBtn.FlatAppearance.BorderColor = System.Drawing.Color.RosyBrown;
+            this.closeImageBtn.FlatAppearance.BorderSize = 2;
+            this.closeImageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeImageBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.closeImageBtn.IconColor = System.Drawing.Color.RosyBrown;
+            this.closeImageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.closeImageBtn.IconSize = 28;
+            this.closeImageBtn.Location = new System.Drawing.Point(493, 60);
+            this.closeImageBtn.Name = "closeImageBtn";
+            this.closeImageBtn.Size = new System.Drawing.Size(42, 38);
+            this.closeImageBtn.TabIndex = 102;
+            this.closeImageBtn.UseVisualStyleBackColor = false;
+            this.closeImageBtn.Visible = false;
+            this.closeImageBtn.Click += new System.EventHandler(this.closeImageBtn_Click);
             // 
             // addImageBtn
             // 
@@ -859,6 +713,198 @@ namespace VehicleManagementSystem.Forms {
             this.label7.TabIndex = 27;
             this.label7.Text = "Vehicles Image";
             // 
+            // vehiclePictureBox
+            // 
+            this.vehiclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.vehiclePictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.vehiclePictureBox.BorderRadius = 10;
+            this.vehiclePictureBox.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.vehiclePictureBox.ImageRotate = 0F;
+            this.vehiclePictureBox.Location = new System.Drawing.Point(22, 51);
+            this.vehiclePictureBox.Name = "vehiclePictureBox";
+            this.vehiclePictureBox.Size = new System.Drawing.Size(523, 416);
+            this.vehiclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vehiclePictureBox.TabIndex = 101;
+            this.vehiclePictureBox.TabStop = false;
+            // 
+            // panelBasicInfoRight
+            // 
+            this.panelBasicInfoRight.Controls.Add(this.label21);
+            this.panelBasicInfoRight.Controls.Add(this.inputVehicleIdentificationNumber);
+            this.panelBasicInfoRight.Controls.Add(this.inputModel);
+            this.panelBasicInfoRight.Controls.Add(this.inputPlateNum);
+            this.panelBasicInfoRight.Controls.Add(this.inputManufacturer);
+            this.panelBasicInfoRight.Controls.Add(this.label11);
+            this.panelBasicInfoRight.Controls.Add(this.inputCategory);
+            this.panelBasicInfoRight.Controls.Add(this.label4);
+            this.panelBasicInfoRight.Controls.Add(this.inputColor);
+            this.panelBasicInfoRight.Controls.Add(this.label5);
+            this.panelBasicInfoRight.Controls.Add(this.label10);
+            this.panelBasicInfoRight.Controls.Add(this.label9);
+            this.panelBasicInfoRight.Controls.Add(this.label6);
+            this.panelBasicInfoRight.Controls.Add(this.inputYearModel);
+            this.panelBasicInfoRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBasicInfoRight.Location = new System.Drawing.Point(579, 3);
+            this.panelBasicInfoRight.Name = "panelBasicInfoRight";
+            this.panelBasicInfoRight.Size = new System.Drawing.Size(571, 502);
+            this.panelBasicInfoRight.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label21.Location = new System.Drawing.Point(285, 268);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(71, 26);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Model";
+            // 
+            // inputVehicleIdentificationNumber
+            // 
+            this.inputVehicleIdentificationNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputVehicleIdentificationNumber.BorderRadius = 10;
+            this.inputVehicleIdentificationNumber.BorderThickness = 2;
+            this.inputVehicleIdentificationNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputVehicleIdentificationNumber.DefaultText = "";
+            this.inputVehicleIdentificationNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inputVehicleIdentificationNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inputVehicleIdentificationNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputVehicleIdentificationNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputVehicleIdentificationNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputVehicleIdentificationNumber.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputVehicleIdentificationNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputVehicleIdentificationNumber.Location = new System.Drawing.Point(17, 51);
+            this.inputVehicleIdentificationNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputVehicleIdentificationNumber.Name = "inputVehicleIdentificationNumber";
+            this.inputVehicleIdentificationNumber.PlaceholderText = "";
+            this.inputVehicleIdentificationNumber.SelectedText = "";
+            this.inputVehicleIdentificationNumber.Size = new System.Drawing.Size(523, 55);
+            this.inputVehicleIdentificationNumber.TabIndex = 1;
+            // 
+            // inputModel
+            // 
+            this.inputModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputModel.BorderRadius = 10;
+            this.inputModel.BorderThickness = 2;
+            this.inputModel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputModel.DefaultText = "";
+            this.inputModel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inputModel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inputModel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputModel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputModel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputModel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputModel.Location = new System.Drawing.Point(290, 299);
+            this.inputModel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputModel.Name = "inputModel";
+            this.inputModel.PlaceholderText = "";
+            this.inputModel.SelectedText = "";
+            this.inputModel.Size = new System.Drawing.Size(250, 55);
+            this.inputModel.TabIndex = 25;
+            // 
+            // inputPlateNum
+            // 
+            this.inputPlateNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputPlateNum.BorderRadius = 10;
+            this.inputPlateNum.BorderThickness = 2;
+            this.inputPlateNum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputPlateNum.DefaultText = "";
+            this.inputPlateNum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inputPlateNum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inputPlateNum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputPlateNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputPlateNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputPlateNum.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputPlateNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputPlateNum.Location = new System.Drawing.Point(17, 174);
+            this.inputPlateNum.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputPlateNum.Name = "inputPlateNum";
+            this.inputPlateNum.PlaceholderText = "";
+            this.inputPlateNum.SelectedText = "";
+            this.inputPlateNum.Size = new System.Drawing.Size(250, 55);
+            this.inputPlateNum.TabIndex = 10;
+            // 
+            // inputManufacturer
+            // 
+            this.inputManufacturer.BorderRadius = 10;
+            this.inputManufacturer.BorderThickness = 2;
+            this.inputManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputManufacturer.DefaultText = "";
+            this.inputManufacturer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inputManufacturer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inputManufacturer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputManufacturer.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputManufacturer.Location = new System.Drawing.Point(17, 299);
+            this.inputManufacturer.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputManufacturer.Name = "inputManufacturer";
+            this.inputManufacturer.PlaceholderText = "";
+            this.inputManufacturer.SelectedText = "";
+            this.inputManufacturer.Size = new System.Drawing.Size(250, 55);
+            this.inputManufacturer.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label11.Location = new System.Drawing.Point(285, 381);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 26);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Color";
+            // 
+            // inputCategory
+            // 
+            this.inputCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputCategory.BackColor = System.Drawing.Color.Transparent;
+            this.inputCategory.BorderRadius = 10;
+            this.inputCategory.BorderThickness = 2;
+            this.inputCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.inputCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.inputCategory.IntegralHeight = false;
+            this.inputCategory.ItemHeight = 50;
+            this.inputCategory.Location = new System.Drawing.Point(290, 171);
+            this.inputCategory.Margin = new System.Windows.Forms.Padding(10);
+            this.inputCategory.Name = "inputCategory";
+            this.inputCategory.Size = new System.Drawing.Size(244, 56);
+            this.inputCategory.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(352, 26);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Vehicle Identification Number (VIN)";
+            // 
             // inputColor
             // 
             this.inputColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -882,6 +928,64 @@ namespace VehicleManagementSystem.Forms {
             this.inputColor.Size = new System.Drawing.Size(250, 55);
             this.inputColor.TabIndex = 24;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label5.Location = new System.Drawing.Point(14, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(227, 26);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "License Plate Number";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label10.Location = new System.Drawing.Point(285, 144);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 26);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Category";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label9.Location = new System.Drawing.Point(12, 382);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 26);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Year Model";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label6.Location = new System.Drawing.Point(12, 268);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 26);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Manufacturer";
+            // 
             // inputYearModel
             // 
             this.inputYearModel.BorderRadius = 10;
@@ -902,72 +1006,6 @@ namespace VehicleManagementSystem.Forms {
             this.inputYearModel.SelectedText = "";
             this.inputYearModel.Size = new System.Drawing.Size(250, 55);
             this.inputYearModel.TabIndex = 23;
-            // 
-            // inputCategory
-            // 
-            this.inputCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCategory.BackColor = System.Drawing.Color.Transparent;
-            this.inputCategory.BorderRadius = 10;
-            this.inputCategory.BorderThickness = 2;
-            this.inputCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.inputCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.inputCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.inputCategory.IntegralHeight = false;
-            this.inputCategory.ItemHeight = 50;
-            this.inputCategory.Location = new System.Drawing.Point(290, 171);
-            this.inputCategory.Margin = new System.Windows.Forms.Padding(10);
-            this.inputCategory.Name = "inputCategory";
-            this.inputCategory.Size = new System.Drawing.Size(244, 56);
-            this.inputCategory.TabIndex = 22;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label9.Location = new System.Drawing.Point(12, 382);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 26);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Year Model";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label10.Location = new System.Drawing.Point(285, 144);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 26);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Category";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label11.Location = new System.Drawing.Point(285, 381);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 26);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Color";
             // 
             // panelBasicInfoHeader
             // 
@@ -1036,43 +1074,6 @@ namespace VehicleManagementSystem.Forms {
             this.label8.TabIndex = 7;
             this.label8.Text = "Bring in a New Vehicle";
             // 
-            // vehiclePictureBox
-            // 
-            this.vehiclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vehiclePictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.vehiclePictureBox.BorderRadius = 10;
-            this.vehiclePictureBox.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.vehiclePictureBox.ImageRotate = 0F;
-            this.vehiclePictureBox.Location = new System.Drawing.Point(22, 51);
-            this.vehiclePictureBox.Name = "vehiclePictureBox";
-            this.vehiclePictureBox.Size = new System.Drawing.Size(523, 416);
-            this.vehiclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vehiclePictureBox.TabIndex = 101;
-            this.vehiclePictureBox.TabStop = false;
-            // 
-            // closeImageBtn
-            // 
-            this.closeImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeImageBtn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.closeImageBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.closeImageBtn.FlatAppearance.BorderColor = System.Drawing.Color.RosyBrown;
-            this.closeImageBtn.FlatAppearance.BorderSize = 2;
-            this.closeImageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.closeImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeImageBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.closeImageBtn.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.closeImageBtn.IconColor = System.Drawing.Color.RosyBrown;
-            this.closeImageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.closeImageBtn.IconSize = 28;
-            this.closeImageBtn.Location = new System.Drawing.Point(493, 60);
-            this.closeImageBtn.Name = "closeImageBtn";
-            this.closeImageBtn.Size = new System.Drawing.Size(42, 38);
-            this.closeImageBtn.TabIndex = 102;
-            this.closeImageBtn.UseVisualStyleBackColor = false;
-            this.closeImageBtn.Visible = false;
-            this.closeImageBtn.Click += new System.EventHandler(this.closeImageBtn_Click);
-            // 
             // frmAddNewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1102,12 +1103,12 @@ namespace VehicleManagementSystem.Forms {
             this.tableBasicInfo.ResumeLayout(false);
             this.panelBasicInfoLeft.ResumeLayout(false);
             this.panelBasicInfoLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).EndInit();
             this.panelBasicInfoRight.ResumeLayout(false);
             this.panelBasicInfoRight.PerformLayout();
             this.panelBasicInfoHeader.ResumeLayout(false);
             this.panelBasicInfoHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

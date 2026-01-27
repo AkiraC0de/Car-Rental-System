@@ -1,34 +1,31 @@
 ﻿using VehicleManagementSystem.Services.Implementations;
 using VehicleManagementSystem.View.Interfaces;
+using VehicleManagementSystem.Data.Enums;
 
 namespace VehicleManagementSystem.Presentor {
     public class addNewVehiclePresenter {
         IAddNewVehicleView _view;
         VehicleServices _vehicleServices;
 
-        public addNewVehiclePresenter(IAddNewVehicleView view, VehicleServices vehicleServices) { 
+        public addNewVehiclePresenter(IAddNewVehicleView view, VehicleServices vehicleServices) {
             _view = view;
             _vehicleServices = vehicleServices;
         }
 
-        //private string ValidateInputs(IAddNewVehicleView _inputs) {
-        //    string[] ErrorMessage;
-        //    if (string.IsNullOrWhiteSpace(_view.VehicleIdentificationNumber)) {
-        //        _view.ShowError("VIN is required.");
-                
-        //    }
-
-        //    return ErrorMessage;
-        //}
 
         public void SaveVehicle() {
-            
+            ValidateInputs(_view);
+        }
 
-            if (string.IsNullOrWhiteSpace(_view.VehiclePlateNum)) {
-                _view.ShowError("Plate Number is required.");
-                return;
+        private void ValidateInputs(IAddNewVehicleView inputs) {
+            if (string.IsNullOrWhiteSpace(inputs.VehicleIdentificationNumber)) {
+                _view.SetFieldError(AddNewVehicleInputEnums.VehicleIdentificationNumber, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(inputs.VehiclePlateNum)) {
+                _view.SetFieldError(AddNewVehicleInputEnums.VehiclePlateNum, "");
             }
         }
 
-    }
+    } 
 }

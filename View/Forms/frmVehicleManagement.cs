@@ -12,5 +12,17 @@ namespace VehicleManagementSystem.Forms {
             NavigationHelper.OpenForm(new frmAddNewVehicle());
             frmMain.Instance.AddHeaderLabel(AppConfig.SubTitles.AddNewVehicle);
         }
+
+        // Automatically add Double Buffering to the whole form
+        // Boilerplate From Stackoverflow
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+ 
     }
 }
