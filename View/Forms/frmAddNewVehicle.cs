@@ -13,9 +13,18 @@ using Guna.UI2.WinForms;
 
 namespace VehicleManagementSystem.Forms {
     public partial class frmAddNewVehicle : Form, IAddNewVehicleView {
-        addNewVehiclePresenter _presenter;
-        Dictionary<AddNewVehicleInputEnums, Guna2TextBox> _inputFieldMap;
+        private class InputFieldUI {
+            public Guna2TextBox _TextBox;
+            public Label _label;
 
+            public InputFieldUI(Label label, Guna2TextBox textBox) {
+                _label = label;
+                _TextBox = textBox;
+            }
+        }
+
+        addNewVehiclePresenter _presenter;
+        Dictionary<AddNewVehicleInputEnums, InputFieldUI> _inputFieldMap;
 
         // Basic Vehicle Information
         public string VehicleIdentificationNumber => inputVehicleIdentificationNumber.Text;
@@ -41,17 +50,15 @@ namespace VehicleManagementSystem.Forms {
         public void ShowError(string message) {
             MessageBox.Show(message, "Error");
         }
-        
 
         public void SetFieldError(AddNewVehicleInputEnums field, string message) {
-            if (_inputFieldMap.TryGetValue(field, out Guna2TextBox inputField)) { 
-                inputField.BorderColor = Color.Red; ;
+            if (_inputFieldMap.TryGetValue(field, out InputFieldUI inputField)) { 
+                inputField._TextBox.BorderColor = Color.Red; 
+                inputField._label.ForeColor = Color.Red;
             }
-
-         
         }
 
-        private Bitmap inputVehicleImage;
+        
 
         public frmAddNewVehicle() {
             InitializeComponent();
@@ -59,9 +66,11 @@ namespace VehicleManagementSystem.Forms {
             _presenter = new addNewVehiclePresenter(this, new VehicleServices());
 
             // Initialized dictionary for error handling
-            _inputFieldMap = new Dictionary<AddNewVehicleInputEnums, Guna2TextBox> {
-                {AddNewVehicleInputEnums.VehicleIdentificationNumber, inputVehicleIdentificationNumber },
-                {AddNewVehicleInputEnums.VehiclePlateNum, inputPlateNum }
+            _inputFieldMap = new Dictionary<AddNewVehicleInputEnums, InputFieldUI> {
+                { AddNewVehicleInputEnums.VehicleIdentificationNumber, 
+                  new InputFieldUI(labelVehicleIdentificationNumber, inputVehicleIdentificationNumber) 
+                },
+
             };
 
             // Initialized Combobox options
