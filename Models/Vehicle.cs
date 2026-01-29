@@ -11,7 +11,7 @@ namespace VehicleManagementSystem.Models {
         // Basic Info
         public string Manufacturer { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public int YearModel { get; set; }
         public string Color { get; set; }
 
         // Classification
