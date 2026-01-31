@@ -9,13 +9,7 @@ namespace VehicleManagementSystem.Classes {
     public static class Helpers {
 
         static public string SaveImageToAppData(string sourceImagePath, string subFolder) {
-            string baseImagePath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                AppConfig.ApplicationDataFolderName,
-                "Images"
-            );
-
-            string targetPath = Path.Combine(baseImagePath, subFolder);
+            string targetPath = Path.Combine(AppConfig.AppData.RootPath, AppConfig.AppData.ImagesPath, subFolder);
 
             Directory.CreateDirectory(targetPath);
 
@@ -24,7 +18,7 @@ namespace VehicleManagementSystem.Classes {
 
             File.Copy(sourceImagePath, destinationPath, true);
 
-            return destinationPath;
+            return Path.Combine(AppConfig.AppData.ImagesPath, subFolder, fileName);
         }
 
     }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Configuration;
 using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -34,10 +36,13 @@ namespace VehicleManagementSystem.Classes {
             }
         }
 
-        public static string ApplicationDataFolderName = "CarRental-VehicleManagement";
 
-        public static class ApplicationImagesFolder {
-            public const string Vehicles = "Vehicles";
+        public static class AppData {
+            public const string ImagesPath = "Images";
+            public const string VehicleImagePath = "Vehicles";
+            public static string RootPath =>
+               ConfigurationManager.AppSettings["AppDataRootPath"];
+            
         }
     }
 }

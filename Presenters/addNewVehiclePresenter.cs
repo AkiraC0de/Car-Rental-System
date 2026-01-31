@@ -20,6 +20,8 @@ namespace VehicleManagementSystem.Presentor {
             if (!IsAllInputsValid(_view)) 
                 return;
 
+            // ADD VALIDATION FOR IMAGE PATH
+
             Vehicle newVehicle = new Vehicle {
                 // Identifiers
                 VIN = _view.VehicleIdentificationNumber,
@@ -44,7 +46,7 @@ namespace VehicleManagementSystem.Presentor {
                 Transmission = _view.VehicleTransmissionType,
                 SeatingCapacity = int.Parse(_view.VehicleSeatCapacity),
 
-                ImagePath = GetFinalVehicleImagePath(_view.VehicleImagePath, _view.VehicleIdentificationNumber),
+                ImagePath = GetFinalVehicleImagePath(_view.VehicleImagePath, _view.VehiclePlateNum),
 
                 IsActive = true,
                 CreatedDate = DateTime.Now,
@@ -52,17 +54,16 @@ namespace VehicleManagementSystem.Presentor {
             };
             
             try {
-                //_vehicleServices.AddVehicle(newVehicle);
+                _vehicleServices.AddVehicle(newVehicle);
                 _view.ShowError(newVehicle.ImagePath);
                 _view.ShowError("ADDED");
             } catch (Exception ex) {
                 _view.ShowError(ex.Message);
             }
-            
         }
 
-        private string GetFinalVehicleImagePath(string imagePath, string vehicleVIN) {
-            string subFolderImagePath = Path.Combine(AppConfig.ApplicationImagesFolder.Vehicles, vehicleVIN);
+        private string GetFinalVehicleImagePath(string imagePath, string plateNum) {
+            string subFolderImagePath = Path.Combine(AppConfig.AppData.VehicleImagePath, plateNum);
             return Helpers.SaveImageToAppData(imagePath, subFolderImagePath);
         }
 
