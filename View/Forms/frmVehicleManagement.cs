@@ -12,6 +12,9 @@ namespace VehicleManagementSystem.Forms {
     public partial class frmVehicleManagement : Form, IVehicleManagementView {
 
         private vehicleManagementPresenter _presenter;
+        private Timer _searchTimer;
+
+        public string SearchQuery => searchBox.Text;
 
         public frmVehicleManagement() {
             InitializeComponent();
@@ -59,7 +62,20 @@ namespace VehicleManagementSystem.Forms {
         }
 
         private void frmVehicleManagement_Load(object sender, EventArgs e) {
-            _presenter.LoadVehicles();
+            _presenter.LoadAllVehicles();
+            _searchTimer = new Timer();
+            _searchTimer.Interval = 350; // 0.35 seconds
+            _searchTimer.Tick += SearchTimer_Tick;
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e) {
+            _searchTimer.Stop();   
+            _searchTimer.Start(); 
+        }
+
+        private void SearchTimer_Tick(object sender, EventArgs e) {
+            _searchTimer.Stop(); // IMPORTANT: run only once
+            _presenter.LoadSearchedVehicle();
         }
 
         private void addNewVehBtn_Click(object sender, EventArgs e) {
@@ -76,7 +92,5 @@ namespace VehicleManagementSystem.Forms {
                 return cp;
             }
         }
-
-        
     }
 }

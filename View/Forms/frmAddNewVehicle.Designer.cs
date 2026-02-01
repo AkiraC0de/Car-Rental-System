@@ -538,7 +538,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputPurchaseDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.inputPurchaseDate.Location = new System.Drawing.Point(36, 121);
-            this.inputPurchaseDate.MaxDate = new System.DateTime(2026, 1, 27, 0, 0, 0, 0);
+            this.inputPurchaseDate.MaxDate = DateTime.Now;
             this.inputPurchaseDate.MinDate = new System.DateTime(1925, 1, 1, 0, 0, 0, 0);
             this.inputPurchaseDate.Name = "inputPurchaseDate";
             this.inputPurchaseDate.Size = new System.Drawing.Size(482, 55);

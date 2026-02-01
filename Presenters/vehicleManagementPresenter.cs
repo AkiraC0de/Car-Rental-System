@@ -14,9 +14,23 @@ namespace VehicleManagementSystem.Presenters {
             _vehicleServices = vehicleServices;
         }
 
-        public void LoadVehicles() {
+        public void LoadAllVehicles() {
             try {
                 var vehicles = _vehicleServices.GetAllVehicles();
+                _view.DisplayVehicles(vehicles);
+            } catch (Exception ex) {
+                _view.ShowError(ex.Message);
+            }
+        }
+
+        public void LoadSearchedVehicle() {
+            if (string.IsNullOrWhiteSpace(_view.SearchQuery)) {
+                LoadAllVehicles();
+                return;
+            }
+
+            try {
+                var vehicles = _vehicleServices.GetSearchedVehicle(_view.SearchQuery);
                 _view.DisplayVehicles(vehicles);
             } catch (Exception ex) {
                 _view.ShowError(ex.Message);
