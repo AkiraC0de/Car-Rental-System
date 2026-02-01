@@ -36,7 +36,7 @@ namespace VehicleManagementSystem.Services.Implementations {
                             PurchaseDate = reader.GetDateTime("PurchaseDate"),
                             PurchasePrice = reader.GetDecimal("PurchasePrice"),
 
-                            CurrentOdometerReading = reader.GetInt32("CurrentOdometerReading"),
+                            CurrentOdometerReading = reader.GetDecimal("CurrentOdometerReading"),
                             CurrentStatus = reader.GetString("CurrentStatus"),
                             DailyRate = reader.GetDecimal("DailyRate"),
 

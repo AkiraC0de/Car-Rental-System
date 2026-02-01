@@ -21,7 +21,7 @@ namespace VehicleManagementSystem.Models {
         // Purchase 
         public DateTime PurchaseDate { get; set; }
         public decimal? PurchasePrice { get; set; }
-        public int CurrentOdometerReading { get; set; }
+        public decimal CurrentOdometerReading { get; set; }
         public string CurrentStatus { get; set; }      
         public decimal DailyRate { get; set; }
 

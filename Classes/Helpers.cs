@@ -10,7 +10,11 @@ namespace VehicleManagementSystem.Classes {
     public static class Helpers {
 
         static public string SaveImageToAppData(string sourceImagePath, string subFolder) {
-            string targetPath = Path.Combine(AppConfig.AppData.RootPath, AppConfig.AppData.ImagesPath, subFolder);
+            string targetPath = Path.Combine(
+                AppConfig.AppData.RootPath, 
+                AppConfig.AppData.ImagesPath, 
+                subFolder
+            );
 
             Directory.CreateDirectory(targetPath);
 

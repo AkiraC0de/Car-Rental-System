@@ -38,7 +38,7 @@ namespace VehicleManagementSystem.Forms {
                 }
 
                 var card = new VehicleCardControl();
-                //card.Bind(vehicle);
+                card.Bind(vehicle);
                 card.Dock = DockStyle.Fill;
                 card.Margin = new Padding(10);
 

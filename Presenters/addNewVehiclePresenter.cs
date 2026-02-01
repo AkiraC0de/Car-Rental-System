@@ -17,18 +17,6 @@ namespace VehicleManagementSystem.Presentor {
             _vehicleServices = vehicleServices;
         }
 
-        private void LoadVehicles() {
-            //flowLayoutPanelVehicles.Controls.Clear();
-
-            var vehicles = _vehicleServices.GetAllVehicles();
-
-            //foreach (var vehicle in vehicles) {
-            //    var card = new VehicleCardControl();
-            //    card.Bind(vehicle);
-            //    flowLayoutPanelVehicles.Controls.Add(card);
-            //}
-        }
-
         public void SaveVehicle() {
             if (!IsAllInputsValid(_view)) 
                 return;
@@ -50,7 +38,7 @@ namespace VehicleManagementSystem.Presentor {
                 PurchasePrice = decimal.Parse(_view.VehiclePurchasePrice),
 
                 // Usage & Status
-                CurrentOdometerReading = int.Parse(_view.VehicleCurrentOdometer),
+                CurrentOdometerReading = decimal.Parse(_view.VehicleCurrentOdometer),
                 CurrentStatus = "Available",
                 DailyRate = decimal.Parse(_view.VehicleDailyRate),
                 FuelType = _view.VehicleFuelType.Trim(),
@@ -66,7 +54,6 @@ namespace VehicleManagementSystem.Presentor {
             
             try {
                 _vehicleServices.AddVehicle(newVehicle);
-                _view.ShowError(newVehicle.ImagePath);
                 _view.ShowError("ADDED");
             } catch (Exception ex) {
                 _view.ShowError(ex.Message);
