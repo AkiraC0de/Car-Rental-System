@@ -1,10 +1,11 @@
 ﻿using System;
-using VehicleManagementSystem.Data.Enums;
-using VehicleManagementSystem.Services.Implementations;
-using VehicleManagementSystem.View.Interfaces;
-using VehicleManagementSystem.Models;
-using VehicleManagementSystem.Classes;
 using System.IO;
+using VehicleManagementSystem.Classes;
+using VehicleManagementSystem.Data.Enums;
+using VehicleManagementSystem.Models;
+using VehicleManagementSystem.Services.Implementations;
+using VehicleManagementSystem.Services.Interfaces;
+using VehicleManagementSystem.View.Interfaces;
 
 namespace VehicleManagementSystem.Presentor {
     public class addNewVehiclePresenter {
@@ -14,6 +15,18 @@ namespace VehicleManagementSystem.Presentor {
         public addNewVehiclePresenter(IAddNewVehicleView view, VehicleServices vehicleServices) {
             _view = view;
             _vehicleServices = vehicleServices;
+        }
+
+        private void LoadVehicles() {
+            //flowLayoutPanelVehicles.Controls.Clear();
+
+            var vehicles = _vehicleServices.GetAllVehicles();
+
+            //foreach (var vehicle in vehicles) {
+            //    var card = new VehicleCardControl();
+            //    card.Bind(vehicle);
+            //    flowLayoutPanelVehicles.Controls.Add(card);
+            //}
         }
 
         public void SaveVehicle() {

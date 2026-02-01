@@ -238,6 +238,7 @@
     <Compile Include="Data\Enums\AddNewVehicleInputEnums.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
     <Compile Include="Data\Enums\VehicleEnums.cs" />
+    <Compile Include="Dto\VehicleDto.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
     <Compile Include="Services\Implementations\VehicleServices.cs" />
