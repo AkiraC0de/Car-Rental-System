@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using VehicleManagementSystem.Forms;
 using VehicleManagementSystem.Classes;
 using Guna.UI2.WinForms;
+using PL_VehicleRental.Forms;
 
 namespace VehicleManagementSystem {
 
@@ -81,7 +82,7 @@ namespace VehicleManagementSystem {
             RemoveHeaderLabel();
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.UserManagement;
-            NavigationHelper.OpenForm(new frmVehicleManagement());
+            NavigationHelper.OpenForm(new UserManagementForm());
         }
 
         private void maintenanceMangementBtn_Click(object sender, EventArgs e) {
