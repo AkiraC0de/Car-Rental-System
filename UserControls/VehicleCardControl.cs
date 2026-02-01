@@ -24,7 +24,36 @@ namespace VehicleManagementSystem.UserControls {
             labelMainHeader.Text = vehicle.LicensePlate;
             labelSubHader.Text = GetCardSubHeader(vehicle);
             labelDailyRate.Text = GetFormattedDialyRate(vehicle.DailyRate);
-            labelCurrentOdometer.Text = vehicle.CurrentOdometerReading.ToString();
+            labelCurrentOdometer.Text = vehicle.CurrentOdometerReading.ToString() + " Km";
+            pictureBoxTransmission.Image = GetTransmissionIcon(vehicle.Transmission);
+
+            labelStatus.Text = vehicle.CurrentStatus;
+            labelStatus.ForeColor = GetStatusColor(vehicle.CurrentStatus);
+        }
+
+        private Color GetStatusColor(string status) {
+            switch (status.ToLower()) {
+                case "rented":
+                case "reserved":
+                    return Color.DeepSkyBlue;
+                    break;
+                case "inmaintenance":
+                    return Color.Orange;
+                    break;
+                case "outofservice":
+                    return Color.Red;
+                    break;
+                default:
+                    return Color.Green;
+                    break;
+            }
+        }
+
+        private Image GetTransmissionIcon(string transmissionType) {
+            if(transmissionType.ToLower() == "automatic")
+                return global::VehicleManagementSystem.Properties.Resources.auto_transmission_icon;
+
+            return global::VehicleManagementSystem.Properties.Resources.manual_transmission_icon;
         }
 
         private string GetCardSubHeader(VehicleDto vehicle) {

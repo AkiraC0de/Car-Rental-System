@@ -349,6 +349,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\auto-transmission-icon.png" />
+    <None Include="Resources\manual-transmission-icon.png" />
     <None Include="Resources\engine-icon.png" />
     <None Include="Resources\default-car-model.png" />
     <None Include="Resources\account-circle.png" />

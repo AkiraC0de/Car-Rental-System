@@ -83,6 +83,16 @@ namespace VehicleManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap auto_transmission_icon {
+            get {
+                object obj = ResourceManager.GetObject("auto-transmission-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_icon {
             get {
                 object obj = ResourceManager.GetObject("cancel-icon", resourceCulture);
@@ -136,6 +146,16 @@ namespace VehicleManagementSystem.Properties {
         internal static System.Drawing.Bitmap magnifying_glass {
             get {
                 object obj = ResourceManager.GetObject("magnifying-glass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manual_transmission_icon {
+            get {
+                object obj = ResourceManager.GetObject("manual-transmission-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
