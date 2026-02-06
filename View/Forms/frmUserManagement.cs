@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using Guna.UI2.WinForms;
+using VehicleManagementSystem.Classes;
+using MySqlConnector;
+using VehicleManagementSystem.Data;
 
 namespace PL_VehicleRental.Forms
 {
     public partial class UserManagementForm : Form
     {
-        //string connString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public UserManagementForm()
         {
             InitializeComponent();
@@ -33,145 +35,47 @@ namespace PL_VehicleRental.Forms
 
         private void UserManagementForm_Load(object sender, EventArgs e)
         {
+
+            DataGridViewStyle.ApplyStandard(dgvRolesPermission);
+
             LoadUsers();
-            LoadUsersData();
             SetupActionsButtons();
             CenterGridHeaders();
-            //addBtn.BackColor = UITheme.PrimaryColor;
-            statCard.Dock = DockStyle.Top;
-            statCard.Height = 120;
-            this.DoubleBuffered = true;
 
-            //DataGridViewStyle.ApplyStandard(dgvRolesPermission);
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            fullNameTxt.Clear();
-            userNameTextBox.Clear();
-            addressTextBox.Clear();
-            roleCmb.StartIndex = 0;
-            statusCmb.StartIndex = 0;
-        }
-
-        private void LoadUsersData()
-        {
-            //string query = @"
-            //                 SELECT
-            //                    COUNT(*) AS Total,
-            //                    SUM(CASE WHEN status ='Active' THEN 1 ELSE 0 END) AS Active,
-            //                    SUM(CASE WHEN status ='Inactive' THEN 1 ELSE 0 END) AS Inactive
-            //                 FROM users";
-
-            //using (MySqlConnection conn = new MySqlConnection(connString))
-            //{
-            //    conn.Open();
-            //    MySqlCommand cmd = new MySqlCommand(query, conn);
-            //    using (MySqlDataReader reader = cmd.ExecuteReader())
-            //    {
-            //        if (reader.Read())
-            //        {
-            //            lblTotalUsers.Text = reader["Total"].ToString();
-            //            lblActiveUsers.Text = reader["Active"].ToString();
-            //            lblInactiveUsers.Text = reader["Inactive"].ToString();
-            //        }
-            //    }
-            //}
+            
         }
 
         private void LoadUsers()
         {
-            //DataTable dt = new DataTable();
+            DataTable dt = new DataTable();
 
-            //using (MySqlConnection conn = new MySqlConnection(connString))
-            //{
-            //    conn.Open();
+            using (MySqlConnection conn = MySQLConnectionContext.Create())
+            {
+                conn.Open();
 
-            //    string query = @"SELECT id AS ID, 
-            //                            userName AS Username, 
-            //                            fullName AS FullName,
-            //                            address AS Address,
-            //                            role As Role, 
-            //                            status AS Status
-            //                    FROM users";
-            //    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-            //    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
-            //    {
-            //        da.Fill(dt);
-            //    }
-            //}
-            //dgvRolesPermission.DataSource = dt;
+                string query = @"SELECT id AS ID, 
+                                        userName AS Username, 
+                                        fullName AS FullName,
+                                        address AS Address,
+                                        role As Role, 
+                                        status AS Status
+                                FROM users";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+            dgvRolesPermission.DataSource = dt;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            //string sql = "INSERT INTO users (userName, fullName, address, role, status) VALUES (@userName, @fullName, @address, @role, @status)";
-
-            //using (MySqlConnection conn = new MySqlConnection(connString))
-            //{
-            //    try
-            //    {
-            //        conn.Open();
-
-            //        string checkQuery = @"
-            //                            SELECT COUNT(*) 
-            //                            FROM users 
-            //                            WHERE userName = @userName 
-            //                            OR (fullName = @fullName AND userName = @userName)";
-
-            //        MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
-            //        checkCmd.Parameters.AddWithValue("@userName", userNameTextBox.Text.Trim());
-            //        checkCmd.Parameters.AddWithValue("@fullName", fullNameTxt.Text.Trim());
-
-            //        int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-            //        if (exists > 0)
-            //        {
-            //            MessageBox.Show(
-            //                "Username or full name already exists.",
-            //                "Duplicate Entry",
-            //                MessageBoxButtons.OK,
-            //                MessageBoxIcon.Warning
-            //            );
-            //            return;
-            //        }
-
-            //        if (string.IsNullOrEmpty(fullNameTxt.Text) || string.IsNullOrEmpty(userNameTextBox.Text) || string.IsNullOrEmpty(addressTextBox.Text))
-            //        {
-            //            MessageBox.Show("All fields are required.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            return;
-            //        }
-
-            //        MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //        cmd.Parameters.AddWithValue("@userName", userNameTextBox.Text);
-            //        cmd.Parameters.AddWithValue("@fullName", fullNameTxt.Text);
-            //        cmd.Parameters.AddWithValue("@address", addressTextBox.Text);
-            //        cmd.Parameters.AddWithValue("@role", roleCmb.Text);
-            //        cmd.Parameters.AddWithValue("@status", statusCmb.Text);
-
-            //        int result = cmd.ExecuteNonQuery();
-
-            //        if (result > 0)
-            //        {
-            //            MessageBox.Show("User Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            LoadUsers();
-            //            LoadUsersData();
-            //            userNameTextBox.Clear();
-            //            fullNameTxt.Clear();
-            //            addressTextBox.Clear();
-            //            roleCmb.StartIndex = 0;
-            //            statusCmb.StartIndex = 0;
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Failed to add user.");
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error:", ex.Message);
-            //    }
-            //}
+            
         }
 
         private void dgvRolesPermission_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -203,7 +107,7 @@ namespace PL_VehicleRental.Forms
 
         private void CenterGridHeaders()
         {
-            dgvRolesPermission.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRolesPermission.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             dgvRolesPermission.EnableHeadersVisualStyles = false;
         }
@@ -246,7 +150,6 @@ namespace PL_VehicleRental.Forms
         }
 
 
-        // for edit, delete button on datagrid
         private void dgvRolesPermission_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -258,7 +161,6 @@ namespace PL_VehicleRental.Forms
                 int buttonWidth = (e.CellBounds.Width - 3 * padding) / 2;
                 int buttonHeight = e.CellBounds.Height - 2 * padding;
 
-                // editIcon, deleteIcon as button
                 Rectangle editButton = new Rectangle(e.CellBounds.Left + padding, e.CellBounds.Top + padding, buttonWidth, buttonHeight);
                 Rectangle deleteButton = new Rectangle(e.CellBounds.Left + buttonWidth + 2 * padding, e.CellBounds.Top + padding, buttonWidth, buttonHeight);
 
@@ -271,16 +173,15 @@ namespace PL_VehicleRental.Forms
                 using (SolidBrush deleteBrush = new SolidBrush(deleteColor))
                     e.Graphics.FillRectangle(deleteBrush, deleteButton);
 
-                // icons
-                //Image editIcon = Properties.Resources.editIcon;
-                //int ex = editButton.Left + (editButton.Width - editIcon.Width) / 2;
-                //int ey = editButton.Top + (editButton.Height - editIcon.Height) / 2;
-                //e.Graphics.DrawImage(editIcon, new Rectangle(ex, ey, editIcon.Width, editIcon.Height));
+               Image editIcon = VehicleManagementSystem.Properties.Resources.square_pen;
+                int ex = editButton.Left + (editButton.Width - editIcon.Width) / 2;
+                int ey = editButton.Top + (editButton.Height - editIcon.Height) / 2;
+                e.Graphics.DrawImage(editIcon, new Rectangle(ex, ey, editIcon.Width, editIcon.Height));
 
-                //Image deleteIcon = Properties.Resources.deleteIcon;
-                //int dx = deleteButton.Left + (deleteButton.Width - deleteIcon.Width) / 2;
-                //int dy = deleteButton.Top + (deleteButton.Height - deleteIcon.Height) / 2;
-                //e.Graphics.DrawImage(deleteIcon, new Rectangle(dx, dy, deleteIcon.Width, deleteIcon.Height));
+                Image deleteIcon = VehicleManagementSystem.Properties.Resources.trash;
+                int dx = deleteButton.Left + (deleteButton.Width - deleteIcon.Width) / 2;
+                int dy = deleteButton.Top + (deleteButton.Height - deleteIcon.Height) / 2;
+                e.Graphics.DrawImage(deleteIcon, new Rectangle(dx, dy, deleteIcon.Width, deleteIcon.Height));
 
                 e.Handled = true;
             }
@@ -391,6 +292,41 @@ namespace PL_VehicleRental.Forms
         private void dgvRolesPermission_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnUserForm_Click(object sender, EventArgs e)
+        {
+            frmAddUser form = new frmAddUser();
+
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog();
+        }
+
+        private void headerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUserForm_Click_1(object sender, EventArgs e)
+        {
+            frmAddUser form = new frmAddUser();
+
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog();
+        }
+
+
+        // Double buffer
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
     }
 }
