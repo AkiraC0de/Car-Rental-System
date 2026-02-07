@@ -1,5 +1,6 @@
 ﻿
 using System.Windows.Forms;
+using VehicleManagementSystem.Forms;
 
 namespace VehicleManagementSystem.Classes {
     public static class NavigationHelper {
@@ -21,4 +22,5 @@ namespace VehicleManagementSystem.Classes {
             childForm.Show();
         }
     }
+
 }

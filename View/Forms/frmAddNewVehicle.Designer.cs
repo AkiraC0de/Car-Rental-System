@@ -263,7 +263,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             // panelCarRental
             // 
-            this.panelCarRental.BorderRadius = 15;
+            this.panelCarRental.BorderRadius = 12;
             this.panelCarRental.Controls.Add(this.errorLabelSeatCapacity);
             this.panelCarRental.Controls.Add(this.errorLabelDailyRate);
             this.panelCarRental.Controls.Add(this.inputTransmissionType);
@@ -323,7 +323,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputTransmissionType.IntegralHeight = false;
             this.inputTransmissionType.ItemHeight = 50;
             this.inputTransmissionType.Location = new System.Drawing.Point(292, 241);
-            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10);
             this.inputTransmissionType.Name = "inputTransmissionType";
             this.inputTransmissionType.Size = new System.Drawing.Size(231, 56);
             this.inputTransmissionType.TabIndex = 14;
@@ -342,7 +342,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputFuelType.IntegralHeight = false;
             this.inputFuelType.ItemHeight = 50;
             this.inputFuelType.Location = new System.Drawing.Point(40, 241);
-            this.inputFuelType.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputFuelType.Margin = new System.Windows.Forms.Padding(10);
             this.inputFuelType.Name = "inputFuelType";
             this.inputFuelType.Size = new System.Drawing.Size(227, 56);
             this.inputFuelType.TabIndex = 13;
@@ -448,7 +448,7 @@ namespace VehicleManagementSystem.Forms {
             // panelRentalDetailsHeader
             // 
             this.panelRentalDetailsHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelRentalDetailsHeader.BorderRadius = 15;
+            this.panelRentalDetailsHeader.BorderRadius = 12;
             this.panelRentalDetailsHeader.Controls.Add(this.guna2CirclePictureBox4);
             this.panelRentalDetailsHeader.Controls.Add(this.label1);
             this.panelRentalDetailsHeader.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -492,7 +492,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             // panelPurchaseDetails
             // 
-            this.panelPurchaseDetails.BorderRadius = 15;
+            this.panelPurchaseDetails.BorderRadius = 12;
             this.panelPurchaseDetails.Controls.Add(this.errorLabelCurrentOdometer);
             this.panelPurchaseDetails.Controls.Add(this.errorLabelPurchasePrice);
             this.panelPurchaseDetails.Controls.Add(this.inputPurchaseDate);
@@ -646,7 +646,7 @@ namespace VehicleManagementSystem.Forms {
             // panelPurchaseDetailsHeader
             // 
             this.panelPurchaseDetailsHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelPurchaseDetailsHeader.BorderRadius = 15;
+            this.panelPurchaseDetailsHeader.BorderRadius = 12;
             this.panelPurchaseDetailsHeader.Controls.Add(this.guna2CirclePictureBox2);
             this.panelPurchaseDetailsHeader.Controls.Add(this.label12);
             this.panelPurchaseDetailsHeader.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -692,7 +692,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             this.panelBasicInformation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelBasicInformation.BackColor = System.Drawing.Color.Transparent;
-            this.panelBasicInformation.BorderRadius = 15;
+            this.panelBasicInformation.BorderRadius = 12;
             this.panelBasicInformation.Controls.Add(this.tableBasicInfo);
             this.panelBasicInformation.Controls.Add(this.panelBasicInfoHeader);
             this.panelBasicInformation.FillColor = System.Drawing.Color.White;
@@ -1060,7 +1060,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputCategory.IntegralHeight = false;
             this.inputCategory.ItemHeight = 50;
             this.inputCategory.Location = new System.Drawing.Point(290, 171);
-            this.inputCategory.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputCategory.Margin = new System.Windows.Forms.Padding(10);
             this.inputCategory.Name = "inputCategory";
             this.inputCategory.Size = new System.Drawing.Size(243, 56);
             this.inputCategory.TabIndex = 3;
@@ -1184,7 +1184,7 @@ namespace VehicleManagementSystem.Forms {
             // panelBasicInfoHeader
             // 
             this.panelBasicInfoHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelBasicInfoHeader.BorderRadius = 15;
+            this.panelBasicInfoHeader.BorderRadius = 12;
             this.panelBasicInfoHeader.Controls.Add(this.guna2CirclePictureBox1);
             this.panelBasicInfoHeader.Controls.Add(this.label2);
             this.panelBasicInfoHeader.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

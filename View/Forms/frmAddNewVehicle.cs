@@ -147,7 +147,8 @@ namespace VehicleManagementSystem.Forms {
             DialogResult cancelConfirmation = MessageBox.Show(
                 "Are you sure you want to cancel adding new vehicle? This action cannot be undone.", 
                 "Cancelation Confirmation", 
-                MessageBoxButtons.YesNo
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
             );
 
             if (cancelConfirmation == DialogResult.Yes) {
