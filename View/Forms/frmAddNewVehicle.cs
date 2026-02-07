@@ -26,6 +26,7 @@ namespace VehicleManagementSystem.Forms {
         private addNewVehiclePresenter _presenter;
         private Dictionary<AddNewVehicleInputEnums, InputFieldUI> _inputFieldMap;
         private string _tempSelectedImagePath;
+        private bool _userInputted = false;
 
         // Basic Vehicle Information
         public string VehicleIdentificationNumber => inputVehicleIdentificationNumber.Text;
@@ -123,6 +124,7 @@ namespace VehicleManagementSystem.Forms {
 
             foreach (var field in _inputFieldMap.Values) {
                 field._TextBox.Enter += (s, e) => ClearFieldError(field);
+                field._TextBox.TextChanged += (s, e) => _userInputted = true;
             }
         }
 
@@ -137,6 +139,11 @@ namespace VehicleManagementSystem.Forms {
         }
 
         private void cancelBtn_Click(object sender, EventArgs e) {
+            if (!_userInputted) {
+                NavigationHelper.OpenForm(new frmVehicleManagement());
+                return;
+            }
+
             DialogResult cancelConfirmation = MessageBox.Show(
                 "Are you sure you want to cancel adding new vehicle? This action cannot be undone.", 
                 "Cancelation Confirmation", 
@@ -144,7 +151,6 @@ namespace VehicleManagementSystem.Forms {
             );
 
             if (cancelConfirmation == DialogResult.Yes) {
-                frmMain.Instance.RemoveHeaderLabel();
                 NavigationHelper.OpenForm(new frmVehicleManagement());
             }
         }
@@ -175,6 +181,7 @@ namespace VehicleManagementSystem.Forms {
                         vehiclePictureBox.Image.Dispose();
                     }
 
+                    _userInputted = true;
                     clearImageInputError();
 
                     string fullPath = openFileDialog.FileName;
