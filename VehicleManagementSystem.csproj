@@ -250,6 +250,12 @@
     </Compile>
     <Compile Include="Services\Implementations\VehicleServices.cs" />
     <Compile Include="Services\Interfaces\IVehicleService.cs" />
+    <Compile Include="UserControls\VehicleDetailsOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\VehicleDetailsOverview.Designer.cs">
+      <DependentUpon>VehicleDetailsOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,9 @@
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
+    <EmbeddedResource Include="UserControls\VehicleDetailsOverview.resx">
+      <DependentUpon>VehicleDetailsOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>

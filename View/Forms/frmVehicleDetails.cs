@@ -1,78 +1,84 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
-using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Forms;
+using VehicleManagementSystem.UserControls;
 
 namespace VehicleManagementSystem.View.Forms {
     public partial class frmVehicleDetails : Form {
-        VehicleDto _vehicle;
-        bool _isOnEdittingMOde = false;
+        private VehicleDto _vehicle;
+        private Guna2Button ActiveButton;
+        private UserControl ActiveUserControl;
+        private Guna2Panel LowerPanel;
 
         public frmVehicleDetails(VehicleDto vehicle) {
             _vehicle = vehicle;
 
             InitializeComponent();
             LoadUI();
+
+            ActiveButton = overviewBtn;
+            OpenSubPanel(new VehicleDetailsOverview(_vehicle));
         }
 
-        private void LoadComboBoxInformation() {
-            inputFuelType.DataSource = Enum.GetValues(typeof(VehicleEnums.FuelType));
-            var fuelTypeMap = new Dictionary<string, VehicleEnums.FuelType>{
-                { "Gasoline", VehicleEnums.FuelType.Gasoline },
-                { "Diesel", VehicleEnums.FuelType.Diesel },
-                { "Electric", VehicleEnums.FuelType.Electric }
-            };
+        private void OpenSubPanel(UserControl control) { 
+            ActiveUserControl = control;
 
-            if (fuelTypeMap.TryGetValue(_vehicle.FuelType, out var fuelType)) {
-                inputFuelType.SelectedItem = fuelType;
-            }
+            panelSubMain.Controls.Clear();
+            panelSubMain.SuspendLayout();
 
-            inputFuelType.Enabled = false;
+            panelSubMain.Height = ActiveUserControl.Height;
+            panelSubMain.Controls.Clear();
+            ActiveUserControl.Dock = DockStyle.Fill;
 
-            inputTransmissionType.DataSource = Enum.GetValues(typeof(VehicleEnums.TransmissionType));
-            var transmissionTypeMap = new Dictionary<string, VehicleEnums.TransmissionType>{
-                { "Manual", VehicleEnums.TransmissionType.Manual},
-                { "Automatic", VehicleEnums.TransmissionType.Automatic },
-                { "SemiAutomatic", VehicleEnums.TransmissionType.SemiAutomatic }
-            };
-
-            if (transmissionTypeMap.TryGetValue(_vehicle.FuelType, out var transmissionType)) {
-                inputTransmissionType.SelectedItem = transmissionType;
-            }
-
-            inputTransmissionType.Enabled = false;
+            panelSubMain.AutoScroll = true;
+            panelSubMain.Controls.Add(ActiveUserControl);
+            
+            panelSubMain.ResumeLayout(true);
+            RenderActiveButtonLowerPanel();
         }
 
-        private void LoadVehicleInformation() {
-            inputOdomter.Text = _vehicle.CurrentOdometerReading.ToString() + " km";
+        private void maintenanceBtn_Click(object sender, System.EventArgs e) {
+            ActiveButton = maintenanceBtn;
+            OpenSubPanel(new VehicleCardControl());
+        }
 
-            inputCategory.Text = _vehicle.Category;
-            inputColor.Text = _vehicle.Color;
-            inputManufacturer.Text = _vehicle.Manufacturer;
-            inputModel.Text = _vehicle.Model;
-            inputPlateNum.Text = _vehicle.LicensePlate;
-            inputPurchasePrice.Text = "₱" +  _vehicle.PurchasePrice.ToString();
-            inputSeatingCap.Text = _vehicle.SeatingCapacity.ToString();
-            inputVehicleIdentification.Text = _vehicle.VIN;
-            inputYearModel.Text = _vehicle.YearModel.ToString();
+        private void overviewBtn_Click(object sender, System.EventArgs e) {
+            ActiveButton = overviewBtn;
+            OpenSubPanel(new VehicleDetailsOverview(_vehicle));
+        }
 
-            inputPurchaseDate.Value = _vehicle.PurchaseDate;
-            inputPurchaseDate.Enabled = false;
+        private void documentsBtn_Click(object sender, System.EventArgs e) {
+
+        }
+
+        private void RenderActiveButtonLowerPanel() {
+            panelNav.Controls.Remove(LowerPanel);
+
+            LowerPanel = new Guna2Panel() {
+                BackColor = Color.Transparent,
+                Width = ActiveButton.Width,
+                Height = 10,
+                FillColor = AppConfig.Theme.Primary,
+                Location = new Point(ActiveButton.Location.X, 76 - 10),
+                BorderRadius = 10,
+            };
+
+            LowerPanel.CustomizableEdges.BottomRight = false;
+            LowerPanel.CustomizableEdges.BottomLeft = false;
+            panelNav.Controls.Add(LowerPanel);
+            LowerPanel.Visible = true;
+            LowerPanel.BringToFront();
         }
 
         private void LoadUI() {
             labelSubHeader.Text = GetVehicleSubHeader(_vehicle);
-            pictureVehicle.Image = Helpers.GetVehicleImage(_vehicle.ImagePath);
             labelStatus.FillColor = Helpers.GetStatusColor(_vehicle.CurrentStatus);
             labelStatus.Text = _vehicle.CurrentStatus.ToString();
             labelStatus.Location = new Point(labelSubHeader.Right + 5, labelSubHeader.Location.Y);
-
-            LoadVehicleInformation();
-            LoadComboBoxInformation();
         }
 
         private string GetVehicleSubHeader(VehicleDto vehicle) {
@@ -93,44 +99,6 @@ namespace VehicleManagementSystem.View.Forms {
             NavigationHelper.OpenForm(new frmVehicleManagement());
         }
 
-        private void ToggleUIVisibility() {
-            labelEdittingModeNotice.Visible = !labelEdittingModeNotice.Visible;
-            editBtn.Visible = !editBtn.Visible;
-            saveBtn.Visible = !saveBtn.Visible;
-            cancelBtn.Visible = !cancelBtn.Visible;
-        }
-
-        private void ToggleInputsEnable() {
-            inputOdomter.ReadOnly = !inputOdomter.ReadOnly;
-            inputFuelType.Enabled = !inputFuelType.Enabled;
-            inputTransmissionType.Enabled = !inputTransmissionType.Enabled;
-
-            inputVehicleIdentification.ReadOnly = !inputVehicleIdentification.ReadOnly;
-            inputPlateNum.ReadOnly = !inputPlateNum.ReadOnly;
-            inputManufacturer.ReadOnly = !inputManufacturer.ReadOnly;
-            inputModel.ReadOnly = !inputModel.ReadOnly;
-            inputYearModel.ReadOnly = !inputYearModel.ReadOnly;
         
-            inputColor.ReadOnly = !inputColor.ReadOnly;
-            inputSeatingCap.ReadOnly = !inputSeatingCap.ReadOnly;
-            inputPurchasePrice.ReadOnly = !inputPurchasePrice.ReadOnly;
-
-            inputPurchaseDate.Enabled = !inputPurchaseDate.Enabled;
-        }
-
-        private void editBtn_Click(object sender, EventArgs e) {
-            _isOnEdittingMOde = true;
-            ToggleUIVisibility();
-            ToggleInputsEnable();
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e) {
-            _isOnEdittingMOde = false;
-            ToggleUIVisibility();
-            ToggleInputsEnable();
-
-            LoadComboBoxInformation();
-            LoadVehicleInformation();
-        }
     }
 }
