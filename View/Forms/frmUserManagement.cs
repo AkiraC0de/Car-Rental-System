@@ -14,6 +14,7 @@ using VehicleManagementSystem.Classes;
 using MySqlConnector;
 using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.View.Forms;
 
 namespace PL_VehicleRental.Forms
 {
@@ -177,6 +178,15 @@ namespace PL_VehicleRental.Forms
                         form.StartPosition = FormStartPosition.CenterParent;
                         form.ShowDialog();
                     }
+                    break;
+
+                case ActionButton.Edit:
+                    using (var form = new frmEditUser())
+                        form.ShowDialog();
+                    break;
+
+                case ActionButton.Delete:
+                    MessageBox.Show("Are you sure you want to delete this user?", "Delete User" ,MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     break;
             }
         }

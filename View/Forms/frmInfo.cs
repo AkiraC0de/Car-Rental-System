@@ -40,8 +40,14 @@ namespace PL_VehicleRental.Forms
         private void ToggleLoading(bool isLoading)
         {
             progressBar.Visible = isLoading;
+            progressBar.Style = ProgressBarStyle.Marquee;
+            progressBar.Enabled = true;
 
-            this.Enabled = !isLoading;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl != progressBar)
+                    ctrl.Enabled = !isLoading;
+            }
         }
 
         private async Task LoadUserInfoAsync()
@@ -150,11 +156,6 @@ namespace PL_VehicleRental.Forms
             SetUserStatus(lblStatus, _userStatus);
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void label_Click(object sender, EventArgs e)
         {
 
@@ -171,6 +172,31 @@ namespace PL_VehicleRental.Forms
         }
 
         private void lblStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        private void progressBar_ValueChanged(object sender, EventArgs e)
         {
 
         }

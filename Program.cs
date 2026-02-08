@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using VehicleManagementSystem.View.Forms;
 
 namespace VehicleManagementSystem {
     internal static class Program {
