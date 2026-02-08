@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.IO.Packaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VehicleManagementSystem.Classes {
     public static class Helpers {
@@ -16,7 +12,7 @@ namespace VehicleManagementSystem.Classes {
                 case "reserved":
                     return Color.DeepSkyBlue;
                 case "inmaintenance":
-                    return Color.Orange;
+                    return Color.DarkOrange;
                 case "outofservice":
                     return Color.Red;
                 default:

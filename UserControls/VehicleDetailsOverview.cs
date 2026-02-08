@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.View.Forms;
 
 namespace VehicleManagementSystem.UserControls {
     public partial class VehicleDetailsOverview : UserControl {
@@ -48,6 +49,7 @@ namespace VehicleManagementSystem.UserControls {
             inputOdomter.Text = _vehicle.CurrentOdometerReading.ToString() + " km";
 
             inputCategory.Text = _vehicle.Category;
+            labelStatus.Text = _vehicle.CurrentStatus;
             inputColor.Text = _vehicle.Color;
             inputManufacturer.Text = _vehicle.Manufacturer;
             inputModel.Text = _vehicle.Model;
@@ -93,8 +95,6 @@ namespace VehicleManagementSystem.UserControls {
             editBtn.Visible = !editBtn.Visible;
             saveBtn.Visible = !saveBtn.Visible;
             cancelBtn.Visible = !cancelBtn.Visible;
-            
-            
         }
 
         private void ToggleInputsEnable() {
@@ -133,6 +133,10 @@ namespace VehicleManagementSystem.UserControls {
 
         private void saveBtn_Click(object sender, EventArgs e) {
 
+        }
+
+        private void viewMaintenanceBtn_Click(object sender, EventArgs e) {
+         //   frmVehicleDetails.Instance.OpenSubPanel(new VehicleDetailsDocuments(_vehicle));
         }
     }
 }

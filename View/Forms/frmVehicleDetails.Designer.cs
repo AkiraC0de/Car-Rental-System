@@ -28,20 +28,17 @@ namespace VehicleManagementSystem.View.Forms {
         private void InitializeComponent() {
             this.panelBg = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.hr = new Guna.UI2.WinForms.Guna2Panel();
             this.panelNav = new Guna.UI2.WinForms.Guna2Panel();
             this.overviewBtn = new Guna.UI2.WinForms.Guna2Button();
             this.maintenanceBtn = new Guna.UI2.WinForms.Guna2Button();
             this.documentsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panelSubMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelStatus = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.backBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.labelSubHeader = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
             this.mySqlCommand2 = new MySqlConnector.MySqlCommand();
-            this.hr = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelNav.SuspendLayout();
@@ -73,9 +70,6 @@ namespace VehicleManagementSystem.View.Forms {
             this.panelMain.Controls.Add(this.hr);
             this.panelMain.Controls.Add(this.panelNav);
             this.panelMain.Controls.Add(this.panelSubMain);
-            this.panelMain.Controls.Add(this.labelStatus);
-            this.panelMain.Controls.Add(this.label20);
-            this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.backBtn);
             this.panelMain.Controls.Add(this.labelSubHeader);
             this.panelMain.CustomizableEdges.BottomLeft = false;
@@ -89,6 +83,16 @@ namespace VehicleManagementSystem.View.Forms {
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1249, 685);
             this.panelMain.TabIndex = 1;
+            // 
+            // hr
+            // 
+            this.hr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hr.BackColor = System.Drawing.Color.Transparent;
+            this.hr.Location = new System.Drawing.Point(16, 104);
+            this.hr.Name = "hr";
+            this.hr.Size = new System.Drawing.Size(1203, 5);
+            this.hr.TabIndex = 35;
             // 
             // panelNav
             // 
@@ -118,7 +122,7 @@ namespace VehicleManagementSystem.View.Forms {
             this.overviewBtn.Name = "overviewBtn";
             this.overviewBtn.Size = new System.Drawing.Size(179, 76);
             this.overviewBtn.TabIndex = 3;
-            this.overviewBtn.Text = "OVERVIEW";
+            this.overviewBtn.Text = "Overview";
             this.overviewBtn.Click += new System.EventHandler(this.overviewBtn_Click);
             // 
             // maintenanceBtn
@@ -161,64 +165,11 @@ namespace VehicleManagementSystem.View.Forms {
             // 
             this.panelSubMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSubMain.Location = new System.Drawing.Point(14, 119);
+            this.panelSubMain.Location = new System.Drawing.Point(14, 106);
             this.panelSubMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubMain.Name = "panelSubMain";
-            this.panelSubMain.Size = new System.Drawing.Size(1205, 653);
+            this.panelSubMain.Size = new System.Drawing.Size(1205, 666);
             this.panelSubMain.TabIndex = 33;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.BackColor = System.Drawing.Color.Transparent;
-            this.labelStatus.BorderRadius = 20;
-            this.labelStatus.BorderThickness = 0;
-            this.labelStatus.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelStatus.DefaultText = "inMaintenance";
-            this.labelStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.labelStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.labelStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.labelStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.labelStatus.FillColor = System.Drawing.Color.Thistle;
-            this.labelStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelStatus.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.ForeColor = System.Drawing.Color.White;
-            this.labelStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelStatus.Location = new System.Drawing.Point(254, 20);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.labelStatus.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.labelStatus.PlaceholderText = "";
-            this.labelStatus.ReadOnly = true;
-            this.labelStatus.SelectedText = "";
-            this.labelStatus.Size = new System.Drawing.Size(135, 44);
-            this.labelStatus.TabIndex = 21;
-            this.labelStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.labelStatus.WordWrap = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(338, 68);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(121, 21);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "Jan. 21, 2026";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(76, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(267, 21);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Last vehicle analysis / check up:";
             // 
             // backBtn
             // 
@@ -247,7 +198,8 @@ namespace VehicleManagementSystem.View.Forms {
             this.labelSubHeader.AutoSize = true;
             this.labelSubHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelSubHeader.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubHeader.Location = new System.Drawing.Point(74, 28);
+            this.labelSubHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelSubHeader.Location = new System.Drawing.Point(85, 44);
             this.labelSubHeader.Name = "labelSubHeader";
             this.labelSubHeader.Size = new System.Drawing.Size(119, 37);
             this.labelSubHeader.TabIndex = 0;
@@ -280,16 +232,6 @@ namespace VehicleManagementSystem.View.Forms {
             this.mySqlCommand2.Transaction = null;
             this.mySqlCommand2.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
-            // hr
-            // 
-            this.hr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hr.BackColor = System.Drawing.Color.Transparent;
-            this.hr.Location = new System.Drawing.Point(16, 104);
-            this.hr.Name = "hr";
-            this.hr.Size = new System.Drawing.Size(1203, 5);
-            this.hr.TabIndex = 35;
-            // 
             // frmVehicleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -316,9 +258,6 @@ namespace VehicleManagementSystem.View.Forms {
         private Guna.UI2.WinForms.Guna2Button maintenanceBtn;
         private Guna.UI2.WinForms.Guna2Button documentsBtn;
         private Guna.UI2.WinForms.Guna2Button overviewBtn;
-        private Guna.UI2.WinForms.Guna2TextBox labelStatus;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2CircleButton backBtn;
         private System.Windows.Forms.Label labelSubHeader;
         private Guna.UI2.WinForms.Guna2Panel panelSubMain;

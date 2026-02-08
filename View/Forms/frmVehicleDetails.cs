@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Management.Instrumentation;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using VehicleManagementSystem.Classes;
@@ -10,12 +11,14 @@ using VehicleManagementSystem.UserControls;
 
 namespace VehicleManagementSystem.View.Forms {
     public partial class frmVehicleDetails : Form {
+        public static frmVehicleDetails Instance;
         private VehicleDto _vehicle;
         private Guna2Button ActiveButton;
         private UserControl ActiveUserControl;
         private Guna2Panel LowerPanel;
 
         public frmVehicleDetails(VehicleDto vehicle) {
+            Instance = this;
             _vehicle = vehicle;
 
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace VehicleManagementSystem.View.Forms {
             OpenSubPanel(new VehicleDetailsOverview(_vehicle));
         }
 
-        private void OpenSubPanel(UserControl control) { 
+        public void OpenSubPanel(UserControl control) { 
             ActiveUserControl = control;
 
             panelSubMain.Controls.Clear();
@@ -89,9 +92,9 @@ namespace VehicleManagementSystem.View.Forms {
         private void LoadUI() {
             hr.FillColor = AppConfig.Theme.Primary;
             labelSubHeader.Text = GetVehicleSubHeader(_vehicle);
-            labelStatus.FillColor = Helpers.GetStatusColor(_vehicle.CurrentStatus);
-            labelStatus.Text = _vehicle.CurrentStatus.ToString();
-            labelStatus.Location = new Point(labelSubHeader.Right + 5, labelStatus.Location.Y);
+            //labelStatus.FillColor = Helpers.GetStatusColor(_vehicle.CurrentStatus);
+            //labelStatus.Text = _vehicle.CurrentStatus.ToString();
+            //labelStatus.Location = new Point(labelSubHeader.Right + 5, labelStatus.Location.Y);
         }
 
         private string GetVehicleSubHeader(VehicleDto vehicle) {

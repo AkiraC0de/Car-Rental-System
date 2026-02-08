@@ -27,7 +27,7 @@
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.tableBottom = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.viewMaintenanceBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.label32 = new System.Windows.Forms.Label();
@@ -48,8 +48,8 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.labelEdittingModeNotice = new System.Windows.Forms.Label();
+            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableMiddle = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -92,34 +92,34 @@
             this.tableTop = new System.Windows.Forms.TableLayoutPanel();
             this.panelTopLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.iconTireBackRight = new FontAwesome.Sharp.IconPictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelTireBackRight = new System.Windows.Forms.Label();
-            this.iconTireBackLeft = new FontAwesome.Sharp.IconPictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelTireBackLeft = new System.Windows.Forms.Label();
-            this.iconTireFrontRight = new FontAwesome.Sharp.IconPictureBox();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.labelStatus = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.labelTireFrontRight = new System.Windows.Forms.Label();
-            this.iconTireFrontLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.labelLastInspect = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelTireFrontLeft = new System.Windows.Forms.Label();
-            this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panelTopRight = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.inputFuelType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.inputTransmissionType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.inputOdomter = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.inputTransmissionType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelTopRight = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.progressTillChangeOil = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -139,18 +139,20 @@
             this.tableTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireBackRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireBackLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireFrontRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireFrontLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).BeginInit();
-            this.panelTopRight.SuspendLayout();
+            this.guna2GradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            this.guna2GradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            this.guna2GradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2GradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).BeginInit();
+            this.panelTopRight.SuspendLayout();
+            this.guna2CircleProgressBar2.SuspendLayout();
+            this.guna2CircleProgressBar1.SuspendLayout();
             this.progressTillChangeOil.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,8 +160,8 @@
             // 
             this.panelMain.Controls.Add(this.tableBottom);
             this.panelMain.Controls.Add(this.cancelBtn);
-            this.panelMain.Controls.Add(this.saveBtn);
             this.panelMain.Controls.Add(this.labelEdittingModeNotice);
+            this.panelMain.Controls.Add(this.saveBtn);
             this.panelMain.Controls.Add(this.editBtn);
             this.panelMain.Controls.Add(this.tableMiddle);
             this.panelMain.Controls.Add(this.panel1);
@@ -186,7 +188,7 @@
             this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.20564F));
             this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.79436F));
             this.tableBottom.Controls.Add(this.guna2Panel5, 1, 0);
-            this.tableBottom.Location = new System.Drawing.Point(3, 1068);
+            this.tableBottom.Location = new System.Drawing.Point(3, 1088);
             this.tableBottom.Name = "tableBottom";
             this.tableBottom.RowCount = 1;
             this.tableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -196,7 +198,7 @@
             // guna2Panel5
             // 
             this.guna2Panel5.BorderRadius = 12;
-            this.guna2Panel5.Controls.Add(this.guna2Button1);
+            this.guna2Panel5.Controls.Add(this.viewMaintenanceBtn);
             this.guna2Panel5.Controls.Add(this.tableLayoutPanel1);
             this.guna2Panel5.Controls.Add(this.guna2Panel6);
             this.guna2Panel5.Controls.Add(this.label34);
@@ -208,24 +210,25 @@
             this.guna2Panel5.Size = new System.Drawing.Size(701, 303);
             this.guna2Panel5.TabIndex = 2;
             // 
-            // guna2Button1
+            // viewMaintenanceBtn
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.Location = new System.Drawing.Point(458, 238);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(205, 46);
-            this.guna2Button1.TabIndex = 41;
-            this.guna2Button1.Text = "View services...";
+            this.viewMaintenanceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewMaintenanceBtn.BorderColor = System.Drawing.Color.DarkGray;
+            this.viewMaintenanceBtn.BorderRadius = 8;
+            this.viewMaintenanceBtn.BorderThickness = 2;
+            this.viewMaintenanceBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.viewMaintenanceBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.viewMaintenanceBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.viewMaintenanceBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.viewMaintenanceBtn.FillColor = System.Drawing.Color.Transparent;
+            this.viewMaintenanceBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewMaintenanceBtn.ForeColor = System.Drawing.Color.DarkGray;
+            this.viewMaintenanceBtn.Location = new System.Drawing.Point(445, 238);
+            this.viewMaintenanceBtn.Name = "viewMaintenanceBtn";
+            this.viewMaintenanceBtn.Size = new System.Drawing.Size(218, 46);
+            this.viewMaintenanceBtn.TabIndex = 41;
+            this.viewMaintenanceBtn.Text = "View maintenance...";
+            this.viewMaintenanceBtn.Click += new System.EventHandler(this.viewMaintenanceBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -448,9 +451,9 @@
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.label34.Location = new System.Drawing.Point(33, 21);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(227, 29);
+            this.label34.Size = new System.Drawing.Size(289, 29);
             this.label34.TabIndex = 17;
-            this.label34.Text = "Service Reminders";
+            this.label34.Text = "Maintenance Reminders";
             // 
             // cancelBtn
             // 
@@ -463,17 +466,31 @@
             this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.cancelBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.cancelBtn.ForeColor = System.Drawing.Color.DarkGray;
             this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancelBtn.Location = new System.Drawing.Point(894, 20);
+            this.cancelBtn.Location = new System.Drawing.Point(879, 19);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(118, 44);
+            this.cancelBtn.Size = new System.Drawing.Size(118, 60);
             this.cancelBtn.TabIndex = 29;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.Visible = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // labelEdittingModeNotice
+            // 
+            this.labelEdittingModeNotice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelEdittingModeNotice.AutoSize = true;
+            this.labelEdittingModeNotice.BackColor = System.Drawing.Color.Transparent;
+            this.labelEdittingModeNotice.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEdittingModeNotice.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelEdittingModeNotice.Location = new System.Drawing.Point(339, 19);
+            this.labelEdittingModeNotice.Name = "labelEdittingModeNotice";
+            this.labelEdittingModeNotice.Size = new System.Drawing.Size(437, 48);
+            this.labelEdittingModeNotice.TabIndex = 28;
+            this.labelEdittingModeNotice.Text = "YOU ARE IN EDITTING MODE";
+            this.labelEdittingModeNotice.Visible = false;
             // 
             // saveBtn
             // 
@@ -485,32 +502,18 @@
             this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.saveBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.saveBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
             this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(1019, 22);
+            this.saveBtn.Location = new System.Drawing.Point(1022, 19);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(230, 44);
+            this.saveBtn.Size = new System.Drawing.Size(230, 60);
             this.saveBtn.TabIndex = 27;
             this.saveBtn.Text = "Save Details";
             this.saveBtn.Visible = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // labelEdittingModeNotice
-            // 
-            this.labelEdittingModeNotice.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelEdittingModeNotice.AutoSize = true;
-            this.labelEdittingModeNotice.BackColor = System.Drawing.Color.Transparent;
-            this.labelEdittingModeNotice.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEdittingModeNotice.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelEdittingModeNotice.Location = new System.Drawing.Point(330, 45);
-            this.labelEdittingModeNotice.Name = "labelEdittingModeNotice";
-            this.labelEdittingModeNotice.Size = new System.Drawing.Size(437, 48);
-            this.labelEdittingModeNotice.TabIndex = 28;
-            this.labelEdittingModeNotice.Text = "YOU ARE IN EDITTING MODE";
-            this.labelEdittingModeNotice.Visible = false;
             // 
             // editBtn
             // 
@@ -521,13 +524,13 @@
             this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.editBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.editBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = global::VehicleManagementSystem.Properties.Resources.pen_icon;
             this.editBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.editBtn.Location = new System.Drawing.Point(1070, 19);
+            this.editBtn.Location = new System.Drawing.Point(1046, 19);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(179, 44);
+            this.editBtn.Size = new System.Drawing.Size(206, 60);
             this.editBtn.TabIndex = 26;
             this.editBtn.Text = "Edit Details";
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
@@ -543,7 +546,7 @@
             this.tableMiddle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.82481F));
             this.tableMiddle.Controls.Add(this.guna2Panel3, 1, 0);
             this.tableMiddle.Controls.Add(this.guna2Panel2, 0, 0);
-            this.tableMiddle.Location = new System.Drawing.Point(3, 672);
+            this.tableMiddle.Location = new System.Drawing.Point(3, 692);
             this.tableMiddle.Name = "tableMiddle";
             this.tableMiddle.RowCount = 1;
             this.tableMiddle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1150,12 +1153,12 @@
             this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
             this.tableTop.Controls.Add(this.panelTopLeft, 0, 0);
             this.tableTop.Controls.Add(this.panelTopRight, 1, 0);
-            this.tableTop.Location = new System.Drawing.Point(3, 68);
+            this.tableTop.Location = new System.Drawing.Point(3, 95);
             this.tableTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableTop.Name = "tableTop";
             this.tableTop.RowCount = 1;
             this.tableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableTop.Size = new System.Drawing.Size(1246, 583);
+            this.tableTop.Size = new System.Drawing.Size(1236, 583);
             this.tableTop.TabIndex = 22;
             // 
             // panelTopLeft
@@ -1170,248 +1173,152 @@
             this.panelTopLeft.Location = new System.Drawing.Point(0, 0);
             this.panelTopLeft.Margin = new System.Windows.Forms.Padding(0);
             this.panelTopLeft.Name = "panelTopLeft";
-            this.panelTopLeft.Size = new System.Drawing.Size(1028, 583);
+            this.panelTopLeft.Size = new System.Drawing.Size(1018, 583);
             this.panelTopLeft.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.iconTireBackRight);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.labelTireBackRight);
-            this.panel2.Controls.Add(this.iconTireBackLeft);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.labelTireBackLeft);
-            this.panel2.Controls.Add(this.iconTireFrontRight);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.labelTireFrontRight);
-            this.panel2.Controls.Add(this.iconTireFrontLeft);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.labelTireFrontLeft);
-            this.panel2.Location = new System.Drawing.Point(135, 398);
+            this.panel2.Controls.Add(this.guna2GradientPanel5);
+            this.panel2.Controls.Add(this.guna2GradientPanel4);
+            this.panel2.Controls.Add(this.guna2GradientPanel3);
+            this.panel2.Controls.Add(this.guna2GradientPanel1);
+            this.panel2.Controls.Add(this.guna2GradientPanel2);
+            this.panel2.Location = new System.Drawing.Point(-4, 398);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(772, 181);
+            this.panel2.Size = new System.Drawing.Size(1020, 181);
             this.panel2.TabIndex = 6;
             // 
-            // label13
+            // guna2GradientPanel5
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DarkGray;
-            this.label13.Location = new System.Drawing.Point(51, 115);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(671, 28);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "|___________|______________|_____________|__________|";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2GradientPanel5.BorderRadius = 12;
+            this.guna2GradientPanel5.Controls.Add(this.labelStatus);
+            this.guna2GradientPanel5.Controls.Add(this.guna2PictureBox5);
+            this.guna2GradientPanel5.Controls.Add(this.label4);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(13, 33);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(192, 113);
+            this.guna2GradientPanel5.TabIndex = 41;
             // 
-            // label12
+            // labelStatus
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(335, 55);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 56);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Tire \r\nPressure";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStatus.BorderThickness = 0;
+            this.labelStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelStatus.DefaultText = "Available";
+            this.labelStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.labelStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.labelStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.labelStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.labelStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            this.labelStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.labelStatus.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.labelStatus.Location = new System.Drawing.Point(0, 61);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.PlaceholderText = "";
+            this.labelStatus.ReadOnly = true;
+            this.labelStatus.SelectedText = "";
+            this.labelStatus.Size = new System.Drawing.Size(189, 30);
+            this.labelStatus.TabIndex = 39;
+            this.labelStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // iconTireBackRight
+            // guna2PictureBox5
             // 
-            this.iconTireBackRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconTireBackRight.BackColor = System.Drawing.Color.Transparent;
-            this.iconTireBackRight.ForeColor = System.Drawing.Color.DarkGray;
-            this.iconTireBackRight.IconChar = FontAwesome.Sharp.IconChar.Circle;
-            this.iconTireBackRight.IconColor = System.Drawing.Color.DarkGray;
-            this.iconTireBackRight.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTireBackRight.IconSize = 54;
-            this.iconTireBackRight.Location = new System.Drawing.Point(636, 20);
-            this.iconTireBackRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconTireBackRight.Name = "iconTireBackRight";
-            this.iconTireBackRight.Size = new System.Drawing.Size(54, 61);
-            this.iconTireBackRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconTireBackRight.TabIndex = 12;
-            this.iconTireBackRight.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(644, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 35);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "23 psi";
-            // 
-            // labelTireBackRight
-            // 
-            this.labelTireBackRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTireBackRight.AutoSize = true;
-            this.labelTireBackRight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTireBackRight.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelTireBackRight.Location = new System.Drawing.Point(686, 31);
-            this.labelTireBackRight.Name = "labelTireBackRight";
-            this.labelTireBackRight.Size = new System.Drawing.Size(57, 29);
-            this.labelTireBackRight.TabIndex = 13;
-            this.labelTireBackRight.Text = "Left";
-            // 
-            // iconTireBackLeft
-            // 
-            this.iconTireBackLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconTireBackLeft.BackColor = System.Drawing.Color.Transparent;
-            this.iconTireBackLeft.ForeColor = System.Drawing.Color.Red;
-            this.iconTireBackLeft.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
-            this.iconTireBackLeft.IconColor = System.Drawing.Color.Red;
-            this.iconTireBackLeft.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTireBackLeft.IconSize = 54;
-            this.iconTireBackLeft.Location = new System.Drawing.Point(501, 20);
-            this.iconTireBackLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconTireBackLeft.Name = "iconTireBackLeft";
-            this.iconTireBackLeft.Size = new System.Drawing.Size(54, 61);
-            this.iconTireBackLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconTireBackLeft.TabIndex = 9;
-            this.iconTireBackLeft.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(508, 78);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 35);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "16 psi";
-            // 
-            // labelTireBackLeft
-            // 
-            this.labelTireBackLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTireBackLeft.AutoSize = true;
-            this.labelTireBackLeft.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTireBackLeft.ForeColor = System.Drawing.Color.Red;
-            this.labelTireBackLeft.Location = new System.Drawing.Point(551, 31);
-            this.labelTireBackLeft.Name = "labelTireBackLeft";
-            this.labelTireBackLeft.Size = new System.Drawing.Size(57, 29);
-            this.labelTireBackLeft.TabIndex = 10;
-            this.labelTireBackLeft.Text = "Left";
-            // 
-            // iconTireFrontRight
-            // 
-            this.iconTireFrontRight.BackColor = System.Drawing.Color.Transparent;
-            this.iconTireFrontRight.ForeColor = System.Drawing.Color.DarkGray;
-            this.iconTireFrontRight.IconChar = FontAwesome.Sharp.IconChar.Circle;
-            this.iconTireFrontRight.IconColor = System.Drawing.Color.DarkGray;
-            this.iconTireFrontRight.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTireFrontRight.IconSize = 54;
-            this.iconTireFrontRight.Location = new System.Drawing.Point(155, 20);
-            this.iconTireFrontRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconTireFrontRight.Name = "iconTireFrontRight";
-            this.iconTireFrontRight.Size = new System.Drawing.Size(54, 61);
-            this.iconTireFrontRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconTireFrontRight.TabIndex = 6;
-            this.iconTireFrontRight.TabStop = false;
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = global::VehicleManagementSystem.Properties.Resources.loading;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 19;
+            this.guna2PictureBox5.TabStop = false;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(163, 78);
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGray;
+            this.label4.Location = new System.Drawing.Point(5, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 35);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "24 psi";
+            this.label4.Size = new System.Drawing.Size(185, 29);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Status";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTireFrontRight
+            // guna2GradientPanel4
             // 
-            this.labelTireFrontRight.AutoSize = true;
-            this.labelTireFrontRight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTireFrontRight.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelTireFrontRight.Location = new System.Drawing.Point(206, 31);
-            this.labelTireFrontRight.Name = "labelTireFrontRight";
-            this.labelTireFrontRight.Size = new System.Drawing.Size(75, 29);
-            this.labelTireFrontRight.TabIndex = 7;
-            this.labelTireFrontRight.Text = "Right";
+            this.guna2GradientPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2GradientPanel4.BorderRadius = 12;
+            this.guna2GradientPanel4.Controls.Add(this.labelLastInspect);
+            this.guna2GradientPanel4.Controls.Add(this.guna2PictureBox4);
+            this.guna2GradientPanel4.Controls.Add(this.label2);
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(211, 30);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(192, 113);
+            this.guna2GradientPanel4.TabIndex = 40;
             // 
-            // iconTireFrontLeft
+            // labelLastInspect
             // 
-            this.iconTireFrontLeft.BackColor = System.Drawing.Color.Transparent;
-            this.iconTireFrontLeft.ForeColor = System.Drawing.Color.DarkGray;
-            this.iconTireFrontLeft.IconChar = FontAwesome.Sharp.IconChar.Circle;
-            this.iconTireFrontLeft.IconColor = System.Drawing.Color.DarkGray;
-            this.iconTireFrontLeft.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTireFrontLeft.IconSize = 54;
-            this.iconTireFrontLeft.Location = new System.Drawing.Point(20, 20);
-            this.iconTireFrontLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconTireFrontLeft.Name = "iconTireFrontLeft";
-            this.iconTireFrontLeft.Size = new System.Drawing.Size(54, 61);
-            this.iconTireFrontLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconTireFrontLeft.TabIndex = 3;
-            this.iconTireFrontLeft.TabStop = false;
+            this.labelLastInspect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelLastInspect.BorderThickness = 0;
+            this.labelLastInspect.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelLastInspect.DefaultText = "Jan. 26, 2026";
+            this.labelLastInspect.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.labelLastInspect.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.labelLastInspect.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.labelLastInspect.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.labelLastInspect.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            this.labelLastInspect.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.labelLastInspect.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastInspect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelLastInspect.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.labelLastInspect.Location = new System.Drawing.Point(0, 61);
+            this.labelLastInspect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelLastInspect.Name = "labelLastInspect";
+            this.labelLastInspect.PlaceholderText = "";
+            this.labelLastInspect.ReadOnly = true;
+            this.labelLastInspect.SelectedText = "";
+            this.labelLastInspect.Size = new System.Drawing.Size(189, 30);
+            this.labelLastInspect.TabIndex = 39;
+            this.labelLastInspect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = global::VehicleManagementSystem.Properties.Resources.inspection;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 19;
+            this.guna2PictureBox4.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(28, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 35);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "24 psi";
-            // 
-            // labelTireFrontLeft
-            // 
-            this.labelTireFrontLeft.AutoSize = true;
-            this.labelTireFrontLeft.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTireFrontLeft.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelTireFrontLeft.Location = new System.Drawing.Point(71, 31);
-            this.labelTireFrontLeft.Name = "labelTireFrontLeft";
-            this.labelTireFrontLeft.Size = new System.Drawing.Size(57, 29);
-            this.labelTireFrontLeft.TabIndex = 4;
-            this.labelTireFrontLeft.Text = "Left";
-            // 
-            // pictureVehicle
-            // 
-            this.pictureVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureVehicle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureVehicle.FillColor = System.Drawing.Color.Transparent;
-            this.pictureVehicle.Image = ((System.Drawing.Image)(resources.GetObject("pictureVehicle.Image")));
-            this.pictureVehicle.ImageRotate = 0F;
-            this.pictureVehicle.Location = new System.Drawing.Point(94, 39);
-            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureVehicle.Name = "pictureVehicle";
-            this.pictureVehicle.Size = new System.Drawing.Size(858, 364);
-            this.pictureVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureVehicle.TabIndex = 2;
-            this.pictureVehicle.TabStop = false;
-            // 
-            // panelTopRight
-            // 
-            this.panelTopRight.BorderRadius = 15;
-            this.panelTopRight.Controls.Add(this.guna2GradientPanel3);
-            this.panelTopRight.Controls.Add(this.guna2GradientPanel2);
-            this.panelTopRight.Controls.Add(this.guna2GradientPanel1);
-            this.panelTopRight.Controls.Add(this.progressTillChangeOil);
-            this.panelTopRight.CustomizableEdges.BottomLeft = false;
-            this.panelTopRight.CustomizableEdges.TopLeft = false;
-            this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTopRight.FillColor = System.Drawing.Color.Transparent;
-            this.panelTopRight.Location = new System.Drawing.Point(1028, 0);
-            this.panelTopRight.Margin = new System.Windows.Forms.Padding(0);
-            this.panelTopRight.Name = "panelTopRight";
-            this.panelTopRight.Size = new System.Drawing.Size(218, 583);
-            this.panelTopRight.TabIndex = 1;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(5, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(185, 29);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Last Inspection";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2GradientPanel3
             // 
@@ -1423,7 +1330,7 @@
             this.guna2GradientPanel3.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(15, 264);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(814, 30);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(192, 113);
             this.guna2GradientPanel3.TabIndex = 4;
@@ -1476,69 +1383,6 @@
             this.label9.Text = "Fuel Type";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2GradientPanel2
-            // 
-            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2GradientPanel2.BorderRadius = 12;
-            this.guna2GradientPanel2.Controls.Add(this.inputTransmissionType);
-            this.guna2GradientPanel2.Controls.Add(this.guna2PictureBox2);
-            this.guna2GradientPanel2.Controls.Add(this.label1);
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(15, 136);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(192, 113);
-            this.guna2GradientPanel2.TabIndex = 3;
-            // 
-            // inputTransmissionType
-            // 
-            this.inputTransmissionType.BackColor = System.Drawing.Color.Transparent;
-            this.inputTransmissionType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            this.inputTransmissionType.BorderRadius = 10;
-            this.inputTransmissionType.BorderThickness = 2;
-            this.inputTransmissionType.DisabledState.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTransmissionType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.inputTransmissionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.inputTransmissionType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            this.inputTransmissionType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputTransmissionType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputTransmissionType.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTransmissionType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.inputTransmissionType.IntegralHeight = false;
-            this.inputTransmissionType.ItemHeight = 30;
-            this.inputTransmissionType.Location = new System.Drawing.Point(3, 56);
-            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10);
-            this.inputTransmissionType.Name = "inputTransmissionType";
-            this.inputTransmissionType.Size = new System.Drawing.Size(187, 36);
-            this.inputTransmissionType.TabIndex = 21;
-            this.inputTransmissionType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::VehicleManagementSystem.Properties.Resources.gear_box;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 58);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 19;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(5, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 29);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Transmission";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -1549,7 +1393,7 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(15, 12);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(409, 30);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(192, 113);
             this.guna2GradientPanel1.TabIndex = 2;
@@ -1604,6 +1448,195 @@
             this.label7.Text = "Odometer";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2GradientPanel2.BorderRadius = 12;
+            this.guna2GradientPanel2.Controls.Add(this.inputTransmissionType);
+            this.guna2GradientPanel2.Controls.Add(this.guna2PictureBox2);
+            this.guna2GradientPanel2.Controls.Add(this.label1);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(611, 30);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(192, 113);
+            this.guna2GradientPanel2.TabIndex = 3;
+            // 
+            // inputTransmissionType
+            // 
+            this.inputTransmissionType.BackColor = System.Drawing.Color.Transparent;
+            this.inputTransmissionType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            this.inputTransmissionType.BorderRadius = 10;
+            this.inputTransmissionType.BorderThickness = 2;
+            this.inputTransmissionType.DisabledState.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTransmissionType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.inputTransmissionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputTransmissionType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            this.inputTransmissionType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputTransmissionType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputTransmissionType.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTransmissionType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.inputTransmissionType.IntegralHeight = false;
+            this.inputTransmissionType.ItemHeight = 30;
+            this.inputTransmissionType.Location = new System.Drawing.Point(3, 56);
+            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10);
+            this.inputTransmissionType.Name = "inputTransmissionType";
+            this.inputTransmissionType.Size = new System.Drawing.Size(187, 36);
+            this.inputTransmissionType.TabIndex = 21;
+            this.inputTransmissionType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::VehicleManagementSystem.Properties.Resources.gear_box;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 19;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(5, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 29);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Transmission";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureVehicle
+            // 
+            this.pictureVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureVehicle.BackColor = System.Drawing.Color.Transparent;
+            this.pictureVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureVehicle.FillColor = System.Drawing.Color.Transparent;
+            this.pictureVehicle.Image = ((System.Drawing.Image)(resources.GetObject("pictureVehicle.Image")));
+            this.pictureVehicle.ImageRotate = 0F;
+            this.pictureVehicle.Location = new System.Drawing.Point(94, 39);
+            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureVehicle.Name = "pictureVehicle";
+            this.pictureVehicle.Size = new System.Drawing.Size(848, 364);
+            this.pictureVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureVehicle.TabIndex = 2;
+            this.pictureVehicle.TabStop = false;
+            // 
+            // panelTopRight
+            // 
+            this.panelTopRight.BorderRadius = 15;
+            this.panelTopRight.Controls.Add(this.guna2CircleProgressBar2);
+            this.panelTopRight.Controls.Add(this.guna2CircleProgressBar1);
+            this.panelTopRight.Controls.Add(this.progressTillChangeOil);
+            this.panelTopRight.CustomizableEdges.BottomLeft = false;
+            this.panelTopRight.CustomizableEdges.TopLeft = false;
+            this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTopRight.FillColor = System.Drawing.Color.Transparent;
+            this.panelTopRight.Location = new System.Drawing.Point(1018, 0);
+            this.panelTopRight.Margin = new System.Windows.Forms.Padding(0);
+            this.panelTopRight.Name = "panelTopRight";
+            this.panelTopRight.Size = new System.Drawing.Size(218, 583);
+            this.panelTopRight.TabIndex = 1;
+            // 
+            // guna2CircleProgressBar2
+            // 
+            this.guna2CircleProgressBar2.Controls.Add(this.label12);
+            this.guna2CircleProgressBar2.Controls.Add(this.label13);
+            this.guna2CircleProgressBar2.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleProgressBar2.FillThickness = 6;
+            this.guna2CircleProgressBar2.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleProgressBar2.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2CircleProgressBar2.Location = new System.Drawing.Point(25, 398);
+            this.guna2CircleProgressBar2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CircleProgressBar2.Minimum = 0;
+            this.guna2CircleProgressBar2.Name = "guna2CircleProgressBar2";
+            this.guna2CircleProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.guna2CircleProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2CircleProgressBar2.ProgressThickness = 10;
+            this.guna2CircleProgressBar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar2.Size = new System.Drawing.Size(168, 168);
+            this.guna2CircleProgressBar2.TabIndex = 3;
+            this.guna2CircleProgressBar2.Text = "guna2CircleProgressBar2";
+            this.guna2CircleProgressBar2.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
+            this.guna2CircleProgressBar2.Value = 40;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(14, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(132, 29);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "237 days";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(22, 85);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 42);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Until Registration";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.Controls.Add(this.label6);
+            this.guna2CircleProgressBar1.Controls.Add(this.label8);
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleProgressBar1.FillThickness = 6;
+            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(25, 207);
+            this.guna2CircleProgressBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CircleProgressBar1.Minimum = 0;
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.Red;
+            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2CircleProgressBar1.ProgressThickness = 10;
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(168, 168);
+            this.guna2CircleProgressBar1.TabIndex = 2;
+            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar2";
+            this.guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
+            this.guna2CircleProgressBar1.Value = 90;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(14, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 29);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "249 km";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(22, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 42);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Until TIre Rotation";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // progressTillChangeOil
             // 
             this.progressTillChangeOil.Controls.Add(this.label10);
@@ -1612,7 +1645,7 @@
             this.progressTillChangeOil.FillThickness = 6;
             this.progressTillChangeOil.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progressTillChangeOil.ForeColor = System.Drawing.Color.DimGray;
-            this.progressTillChangeOil.Location = new System.Drawing.Point(24, 398);
+            this.progressTillChangeOil.Location = new System.Drawing.Point(24, 18);
             this.progressTillChangeOil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.progressTillChangeOil.Minimum = 0;
             this.progressTillChangeOil.Name = "progressTillChangeOil";
@@ -1624,7 +1657,7 @@
             this.progressTillChangeOil.TabIndex = 1;
             this.progressTillChangeOil.Text = "guna2CircleProgressBar2";
             this.progressTillChangeOil.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
-            this.progressTillChangeOil.Value = 90;
+            this.progressTillChangeOil.Value = 50;
             // 
             // label10
             // 
@@ -1635,13 +1668,12 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(132, 29);
             this.label10.TabIndex = 17;
-            this.label10.Text = "249 km";
+            this.label10.Text = "2249 km";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(22, 85);
@@ -1684,21 +1716,21 @@
             this.tableTop.ResumeLayout(false);
             this.panelTopLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireBackRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireBackLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireFrontRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTireFrontLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).EndInit();
-            this.panelTopRight.ResumeLayout(false);
+            this.guna2GradientPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            this.guna2GradientPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2GradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            this.guna2GradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).EndInit();
+            this.panelTopRight.ResumeLayout(false);
+            this.guna2CircleProgressBar2.ResumeLayout(false);
+            this.guna2CircleProgressBar1.ResumeLayout(false);
             this.progressTillChangeOil.ResumeLayout(false);
-            this.progressTillChangeOil.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1708,7 +1740,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel panelMain;
         private System.Windows.Forms.TableLayoutPanel tableBottom;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button viewMaintenanceBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private System.Windows.Forms.Label label32;
@@ -1773,20 +1805,6 @@
         private System.Windows.Forms.TableLayoutPanel tableTop;
         private Guna.UI2.WinForms.Guna2Panel panelTopLeft;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private FontAwesome.Sharp.IconPictureBox iconTireBackRight;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labelTireBackRight;
-        private FontAwesome.Sharp.IconPictureBox iconTireBackLeft;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelTireBackLeft;
-        private FontAwesome.Sharp.IconPictureBox iconTireFrontRight;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labelTireFrontRight;
-        private FontAwesome.Sharp.IconPictureBox iconTireFrontLeft;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelTireFrontLeft;
         private Guna.UI2.WinForms.Guna2PictureBox pictureVehicle;
         private Guna.UI2.WinForms.Guna2Panel panelTopRight;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
@@ -1804,5 +1822,19 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar progressTillChangeOil;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
+        private Guna.UI2.WinForms.Guna2TextBox labelStatus;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2TextBox labelLastInspect;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }

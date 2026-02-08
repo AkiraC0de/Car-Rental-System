@@ -28,7 +28,7 @@ namespace VehicleManagementSystem.UserControls {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBg = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelPicture = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelStatus = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -91,34 +91,13 @@ namespace VehicleManagementSystem.UserControls {
             // labelStatus
             // 
             this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.labelStatus.BorderRadius = 15;
-            this.labelStatus.BorderThickness = 0;
-            this.labelStatus.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelStatus.CustomizableEdges.BottomLeft = false;
-            this.labelStatus.CustomizableEdges.TopLeft = false;
-            this.labelStatus.DefaultText = "inMaintenance";
-            this.labelStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.labelStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.labelStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.labelStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.labelStatus.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.labelStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelStatus.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.labelStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelStatus.Location = new System.Drawing.Point(244, 5);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(208, 185);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Padding = new System.Windows.Forms.Padding(4);
-            this.labelStatus.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.labelStatus.PlaceholderText = "";
-            this.labelStatus.ReadOnly = true;
-            this.labelStatus.SelectedText = "";
-            this.labelStatus.Size = new System.Drawing.Size(137, 38);
+            this.labelStatus.Size = new System.Drawing.Size(170, 29);
             this.labelStatus.TabIndex = 1;
-            this.labelStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.labelStatus.WordWrap = false;
+            this.labelStatus.Text = "label1";
+            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // pictureVehicle
             // 
@@ -136,10 +115,10 @@ namespace VehicleManagementSystem.UserControls {
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.labelMainHeader);
             this.guna2Panel2.Controls.Add(this.guna2GradientPanel1);
             this.guna2Panel2.Controls.Add(this.labelDailyRate);
             this.guna2Panel2.Controls.Add(this.labelSubHader);
-            this.guna2Panel2.Controls.Add(this.labelMainHeader);
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(20);
             this.guna2Panel2.CustomizableEdges.BottomLeft = false;
             this.guna2Panel2.CustomizableEdges.BottomRight = false;
@@ -255,7 +234,7 @@ namespace VehicleManagementSystem.UserControls {
             this.labelMainHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelMainHeader.Location = new System.Drawing.Point(16, 11);
             this.labelMainHeader.Name = "labelMainHeader";
-            this.labelMainHeader.Size = new System.Drawing.Size(345, 40);
+            this.labelMainHeader.Size = new System.Drawing.Size(188, 40);
             this.labelMainHeader.TabIndex = 0;
             this.labelMainHeader.Text = "DDS-8080";
             this.labelMainHeader.Click += new System.EventHandler(this.Card_Click);
@@ -297,6 +276,6 @@ namespace VehicleManagementSystem.UserControls {
         private System.Windows.Forms.Label labelCurrentOdometer;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxTransmission;
-        private Guna.UI2.WinForms.Guna2TextBox labelStatus;
+        private System.Windows.Forms.Label labelStatus;
     }
 }

@@ -423,6 +423,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\loading.png" />
+    <None Include="Resources\inspection.png" />
     <None Include="Resources\lockIcon.png" />
     <None Include="Resources\userIcon.png" />
     <None Include="Resources\infoIcon.png" />
