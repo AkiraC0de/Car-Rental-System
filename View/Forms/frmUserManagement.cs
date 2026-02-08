@@ -13,11 +13,19 @@ using Guna.UI2.WinForms;
 using VehicleManagementSystem.Classes;
 using MySqlConnector;
 using VehicleManagementSystem.Data;
+using VehicleManagementSystem.Dto;
 
 namespace PL_VehicleRental.Forms
 {
     public partial class UserManagementForm : Form
     {
+
+        enum ActionButton
+        {
+            Info,
+            Edit,
+            Delete,
+        }
         public UserManagementForm()
         {
             InitializeComponent();
@@ -37,19 +45,20 @@ namespace PL_VehicleRental.Forms
         {
 
             DataGridViewStyle.ApplyStandard(dgvRolesPermission);
+            RefreshUserData();
 
-            LoadUsers();
+        }
+
+        public void RefreshUserData()
+        {
+            DataTable users = LoadUsers();
+            dgvRolesPermission.DataSource = users;
             SetupActionsButtons();
             CenterGridHeaders();
 
         }
 
-        private void clearBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void LoadUsers()
+        private DataTable LoadUsers()
         {
             DataTable dt = new DataTable();
 
@@ -70,12 +79,35 @@ namespace PL_VehicleRental.Forms
                     da.Fill(dt);
                 }
             }
-            dgvRolesPermission.DataSource = dt;
+            return dt;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private ActionButton? GetActionButton(DataGridView dgv, int row, int col)
+        {
+            var cell = dgv.GetCellDisplayRectangle(col, row, false);
+
+            int padding = 5;
+            int buttonCount = 3;
+            int totalPadding = padding * (buttonCount + 1);
+            int buttonWidth = (cell.Width - totalPadding) / buttonCount;
+
+            Point click = dgv.PointToClient(Cursor.Position);
+            int x = click.X - cell.Left;
+
+            int infoStart = padding;
+            int editStart = infoStart + buttonWidth + padding;
+            int deleteStart = editStart + buttonWidth + padding;
+
+            if (x >= infoStart && x < infoStart + buttonWidth) return ActionButton.Info;
+            if (x >= editStart && x < editStart + buttonWidth) return ActionButton.Edit;
+            if (x >= deleteStart && x < deleteStart + buttonWidth) return ActionButton.Delete;
+
+            return null;
         }
 
         private void dgvRolesPermission_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -129,23 +161,23 @@ namespace PL_VehicleRental.Forms
         private void dgvRolesPermission_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (dgvRolesPermission.Columns[e.ColumnIndex].Name == "Actions")
+            if (dgvRolesPermission.Columns[e.ColumnIndex].Name != "Actions") return;
+
+            var action = GetActionButton(dgvRolesPermission, e.RowIndex, e.ColumnIndex);
+            if (action == null) return;
+
+            int userId = Convert.ToInt32(dgvRolesPermission.Rows[e.RowIndex].Cells["id"].Value);
+
+            switch (action)
             {
-                var cell = dgvRolesPermission.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-                int padding = 5;
-                int buttonWidth = (cell.Width - 3 * padding) / 2;
-
-                Point clickPoint = dgvRolesPermission.PointToClient(Cursor.Position);
-                int relativeX = clickPoint.X - cell.Left;
-
-                if (relativeX <= buttonWidth)
-                {
-                    MessageBox.Show($"Edit clicked for row {e.RowIndex}");
-                }
-                else
-                {
-                    MessageBox.Show($"Delete clicked for row {e.RowIndex}");
-                }
+                case ActionButton.Info:
+                    using (var form = new frmInfo(userId))
+                    {
+                        form.FormBorderStyle = FormBorderStyle.None;
+                        form.StartPosition = FormStartPosition.CenterParent;
+                        form.ShowDialog();
+                    }
+                    break;
             }
         }
 
@@ -153,39 +185,62 @@ namespace PL_VehicleRental.Forms
         private void dgvRolesPermission_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0) return;
+
             if (dgvRolesPermission.Columns[e.ColumnIndex].Name == "Actions")
             {
                 e.PaintBackground(e.ClipBounds, true);
 
                 int padding = 5;
-                int buttonWidth = (e.CellBounds.Width - 3 * padding) / 2;
-                int buttonHeight = e.CellBounds.Height - 2 * padding;
+                int buttonCount = 3;
 
-                Rectangle editButton = new Rectangle(e.CellBounds.Left + padding, e.CellBounds.Top + padding, buttonWidth, buttonHeight);
-                Rectangle deleteButton = new Rectangle(e.CellBounds.Left + buttonWidth + 2 * padding, e.CellBounds.Top + padding, buttonWidth, buttonHeight);
+                int totalPadding = padding * (buttonCount + 1);
+                int buttonWidth = (e.CellBounds.Width - totalPadding) / buttonCount;
+                int buttonHeight = e.CellBounds.Height - (padding * 2);
 
-                Color editColor = Color.FromArgb(94, 148, 255);
-                Color deleteColor = Color.FromArgb(255, 77, 79);
+                Rectangle infoButton = new Rectangle(
+                    e.CellBounds.Left + padding,
+                    e.CellBounds.Top + padding,
+                    buttonWidth,
+                    buttonHeight
+                );
 
-                using (SolidBrush editBrush = new SolidBrush(editColor))
+                Rectangle editButton = new Rectangle(
+                    infoButton.Right + padding,
+                    e.CellBounds.Top + padding,
+                    buttonWidth,
+                    buttonHeight
+                );
+
+                Rectangle deleteButton = new Rectangle(
+                    editButton.Right + padding,
+                    e.CellBounds.Top + padding,
+                    buttonWidth,
+                    buttonHeight
+                );
+
+                using (SolidBrush infoBrush = new SolidBrush(Color.FromArgb(250, 250, 250)))
+                    e.Graphics.FillRectangle(infoBrush, infoButton);
+
+                using (SolidBrush editBrush = new SolidBrush(Color.FromArgb(94, 148, 255)))
                     e.Graphics.FillRectangle(editBrush, editButton);
 
-                using (SolidBrush deleteBrush = new SolidBrush(deleteColor))
+                using (SolidBrush deleteBrush = new SolidBrush(Color.FromArgb(255, 77, 79)))
                     e.Graphics.FillRectangle(deleteBrush, deleteButton);
 
-               Image editIcon = VehicleManagementSystem.Properties.Resources.square_pen;
-                int ex = editButton.Left + (editButton.Width - editIcon.Width) / 2;
-                int ey = editButton.Top + (editButton.Height - editIcon.Height) / 2;
-                e.Graphics.DrawImage(editIcon, new Rectangle(ex, ey, editIcon.Width, editIcon.Height));
-
-                Image deleteIcon = VehicleManagementSystem.Properties.Resources.trash;
-                int dx = deleteButton.Left + (deleteButton.Width - deleteIcon.Width) / 2;
-                int dy = deleteButton.Top + (deleteButton.Height - deleteIcon.Height) / 2;
-                e.Graphics.DrawImage(deleteIcon, new Rectangle(dx, dy, deleteIcon.Width, deleteIcon.Height));
+                DrawCenteredIcon(e.Graphics, VehicleManagementSystem.Properties.Resources.infoIcon, infoButton);
+                DrawCenteredIcon(e.Graphics, VehicleManagementSystem.Properties.Resources.editIcon, editButton);
+                DrawCenteredIcon(e.Graphics, VehicleManagementSystem.Properties.Resources.deleteIcon, deleteButton);
 
                 e.Handled = true;
             }
         }
+        private void DrawCenteredIcon(Graphics g, Image icon, Rectangle button)
+        {
+            int x = button.Left + (button.Width - icon.Width) / 2;
+            int y = button.Top + (button.Height - icon.Height) / 2;
+            g.DrawImage(icon, x, y, icon.Width, icon.Height);
+        }
+
 
 
 
@@ -308,13 +363,22 @@ namespace PL_VehicleRental.Forms
 
         }
 
-        private void btnUserForm_Click_1(object sender, EventArgs e)
+        private void OpenAddUserForm()
         {
             frmAddUser form = new frmAddUser();
 
+            form.UserAdded += (sender, e) =>
+            {
+                this.RefreshUserData();
+            };
             form.FormBorderStyle = FormBorderStyle.None;
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog();
+        }
+
+        private void btnUserForm_Click_1(object sender, EventArgs e)
+        {
+            OpenAddUserForm();
         }
 
 

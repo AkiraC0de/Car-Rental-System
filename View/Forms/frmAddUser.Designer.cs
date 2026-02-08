@@ -49,10 +49,13 @@
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.userNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.userImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.imageLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.personalInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -68,7 +71,7 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(478, 631);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(478, 737);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2CustomGradientPanel2
@@ -78,7 +81,7 @@
             this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(10, 10);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(458, 611);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(458, 717);
             this.guna2CustomGradientPanel2.TabIndex = 32;
             // 
             // guna2CustomGradientPanel1
@@ -96,9 +99,9 @@
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 341);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 448);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(458, 270);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(458, 269);
             this.guna2CustomGradientPanel1.TabIndex = 31;
             // 
             // guna2Separator2
@@ -191,12 +194,13 @@
             this.roleCmb.ForeColor = System.Drawing.Color.Black;
             this.roleCmb.ItemHeight = 30;
             this.roleCmb.Items.AddRange(new object[] {
+            "Superadmin",
             "Admin",
             "Staff",
             "Mechanic"});
             this.roleCmb.Location = new System.Drawing.Point(27, 99);
             this.roleCmb.Name = "roleCmb";
-            this.roleCmb.Size = new System.Drawing.Size(143, 36);
+            this.roleCmb.Size = new System.Drawing.Size(164, 36);
             this.roleCmb.StartIndex = 0;
             this.roleCmb.TabIndex = 23;
             // 
@@ -227,15 +231,18 @@
             this.statusCmb.ItemHeight = 30;
             this.statusCmb.Items.AddRange(new object[] {
             "Active",
-            "Inactive"});
+            "Inactive",
+            "Suspended"});
             this.statusCmb.Location = new System.Drawing.Point(215, 99);
             this.statusCmb.Name = "statusCmb";
-            this.statusCmb.Size = new System.Drawing.Size(116, 36);
+            this.statusCmb.Size = new System.Drawing.Size(166, 36);
             this.statusCmb.StartIndex = 0;
             this.statusCmb.TabIndex = 24;
             // 
             // personalInfoPanel
             // 
+            this.personalInfoPanel.Controls.Add(this.imageLabel);
+            this.personalInfoPanel.Controls.Add(this.userImage);
             this.personalInfoPanel.Controls.Add(this.exitBtn);
             this.personalInfoPanel.Controls.Add(this.guna2Separator1);
             this.personalInfoPanel.Controls.Add(this.headerLabel);
@@ -252,7 +259,7 @@
             this.personalInfoPanel.FillColor4 = System.Drawing.Color.Transparent;
             this.personalInfoPanel.Location = new System.Drawing.Point(0, 0);
             this.personalInfoPanel.Name = "personalInfoPanel";
-            this.personalInfoPanel.Size = new System.Drawing.Size(458, 341);
+            this.personalInfoPanel.Size = new System.Drawing.Size(458, 448);
             this.personalInfoPanel.TabIndex = 30;
             // 
             // exitBtn
@@ -310,7 +317,7 @@
             this.fullNameTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.fullNameTxt.ForeColor = System.Drawing.Color.Black;
             this.fullNameTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fullNameTxt.Location = new System.Drawing.Point(26, 204);
+            this.fullNameTxt.Location = new System.Drawing.Point(26, 303);
             this.fullNameTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fullNameTxt.Name = "fullNameTxt";
             this.fullNameTxt.PlaceholderText = "";
@@ -334,7 +341,7 @@
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addressTextBox.ForeColor = System.Drawing.Color.Black;
             this.addressTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addressTextBox.Location = new System.Drawing.Point(27, 286);
+            this.addressTextBox.Location = new System.Drawing.Point(27, 385);
             this.addressTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.PlaceholderText = "";
@@ -349,7 +356,7 @@
             this.addressLabel.AutoSize = true;
             this.addressLabel.BackColor = System.Drawing.Color.Transparent;
             this.addressLabel.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic);
-            this.addressLabel.Location = new System.Drawing.Point(22, 259);
+            this.addressLabel.Location = new System.Drawing.Point(22, 358);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(87, 23);
             this.addressLabel.TabIndex = 29;
@@ -362,7 +369,7 @@
             this.fullNameLabel.AutoSize = true;
             this.fullNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.fullNameLabel.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic);
-            this.fullNameLabel.Location = new System.Drawing.Point(23, 177);
+            this.fullNameLabel.Location = new System.Drawing.Point(23, 276);
             this.fullNameLabel.Name = "fullNameLabel";
             this.fullNameLabel.Size = new System.Drawing.Size(106, 23);
             this.fullNameLabel.TabIndex = 28;
@@ -385,7 +392,7 @@
             this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.userNameTextBox.ForeColor = System.Drawing.Color.Black;
             this.userNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userNameTextBox.Location = new System.Drawing.Point(27, 131);
+            this.userNameTextBox.Location = new System.Drawing.Point(27, 230);
             this.userNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.PlaceholderText = "";
@@ -400,18 +407,41 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic);
-            this.label3.Location = new System.Drawing.Point(23, 104);
+            this.label3.Location = new System.Drawing.Point(23, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 23);
             this.label3.TabIndex = 33;
             this.label3.Text = "Username:";
+            // 
+            // userImage
+            // 
+            this.userImage.FillColor = System.Drawing.Color.Gray;
+            this.userImage.ImageRotate = 0F;
+            this.userImage.Location = new System.Drawing.Point(161, 87);
+            this.userImage.Name = "userImage";
+            this.userImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.userImage.Size = new System.Drawing.Size(122, 113);
+            this.userImage.TabIndex = 34;
+            this.userImage.TabStop = false;
+            // 
+            // imageLabel
+            // 
+            this.imageLabel.AutoSize = true;
+            this.imageLabel.BackColor = System.Drawing.Color.Gray;
+            this.imageLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imageLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.imageLabel.Location = new System.Drawing.Point(192, 132);
+            this.imageLabel.Name = "imageLabel";
+            this.imageLabel.Size = new System.Drawing.Size(58, 23);
+            this.imageLabel.TabIndex = 35;
+            this.imageLabel.Text = "Image";
             // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(478, 631);
+            this.ClientSize = new System.Drawing.Size(478, 737);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Name = "frmAddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -422,6 +452,7 @@
             this.guna2CustomGradientPanel1.PerformLayout();
             this.personalInfoPanel.ResumeLayout(false);
             this.personalInfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +480,7 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox userImage;
+        private System.Windows.Forms.Label imageLabel;
     }
 }

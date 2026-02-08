@@ -15,6 +15,7 @@ namespace PL_VehicleRental.Forms
 {
     public partial class frmAddUser : Form
     {
+        public event EventHandler UserAdded;
         public frmAddUser()
         {
             InitializeComponent();
@@ -76,6 +77,9 @@ namespace PL_VehicleRental.Forms
                         addressTextBox.Clear();
                         roleCmb.StartIndex = 0;
                         statusCmb.StartIndex = 0;
+
+                        OnUserAdded();
+                        this.Close();
                     }
                     else
                     {
@@ -116,6 +120,11 @@ namespace PL_VehicleRental.Forms
         private void addBtn_Click_1(object sender, EventArgs e)
         {
             AddUsers();
+        }
+
+        protected virtual void OnUserAdded()
+        {
+            UserAdded?.Invoke(this, EventArgs.Empty);
         }
 
         // Double buffer

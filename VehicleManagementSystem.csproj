@@ -239,6 +239,7 @@
     <Compile Include="Data\Enums\AddNewVehicleInputEnums.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
     <Compile Include="Data\Enums\VehicleEnums.cs" />
+    <Compile Include="Dto\UserInfoDto.cs" />
     <Compile Include="Dto\VehicleDto.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
@@ -279,6 +280,12 @@
     </Compile>
     <Compile Include="View\Forms\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\frmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\frmSystemLogs.cs">
       <SubType>Form</SubType>
@@ -346,6 +353,9 @@
     <EmbeddedResource Include="View\Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmSystemLogs.resx">
       <DependentUpon>frmSystemLogs.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\infoIcon.png" />
     <None Include="Resources\gas-station.png" />
     <None Include="Resources\gear-box.png" />
     <None Include="Resources\car-engine.png" />

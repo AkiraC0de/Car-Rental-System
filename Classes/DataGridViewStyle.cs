@@ -17,6 +17,7 @@ namespace VehicleManagementSystem.Classes
             dgv.AutoGenerateColumns = true;
             dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToResizeRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
             dgv.Dock = DockStyle.Fill;
@@ -57,18 +58,26 @@ namespace VehicleManagementSystem.Classes
                     if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
                     {
                         e.CellStyle.BackColor = Color.FromArgb(223, 240, 216);
-                        e.CellStyle.ForeColor = Color.FromArgb(60, 118, 61);  
+                        e.CellStyle.ForeColor = Color.FromArgb(60, 118, 61);
                         e.CellStyle.Font = new Font(dgv.Font, FontStyle.Bold);
                         e.CellStyle.SelectionBackColor = Color.FromArgb(200, 220, 200);
                         e.CellStyle.SelectionForeColor = Color.FromArgb(60, 118, 61);
                     }
-                    else
+                    else if (status.Equals("Inactive", StringComparison.OrdinalIgnoreCase))
                     {
                         e.CellStyle.BackColor = Color.FromArgb(255, 243, 205);
-                        e.CellStyle.ForeColor = Color.FromArgb(133, 100, 4);
+                        e.CellStyle.ForeColor = Color.FromArgb(133, 100, 4); 
                         e.CellStyle.Font = new Font(dgv.Font, FontStyle.Bold);
                         e.CellStyle.SelectionBackColor = Color.FromArgb(255, 230, 180);
                         e.CellStyle.SelectionForeColor = Color.FromArgb(133, 100, 4);
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = Color.FromArgb(255, 0, 0);
+                        e.CellStyle.ForeColor = Color.FromArgb(255, 160, 122);
+                        e.CellStyle.Font = new Font(dgv.Font, FontStyle.Bold);
+                        e.CellStyle.SelectionBackColor = Color.FromArgb(139, 0, 0);
+                        e.CellStyle.SelectionForeColor = Color.FromArgb(255, 160, 122);
                     }
 
                     e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
