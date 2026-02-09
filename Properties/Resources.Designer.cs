@@ -93,6 +93,16 @@ namespace VehicleManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar {
+            get {
+                object obj = ResourceManager.GetObject("calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_icon {
             get {
                 object obj = ResourceManager.GetObject("cancel-icon", resourceCulture);
@@ -126,6 +136,36 @@ namespace VehicleManagementSystem.Properties {
         internal static System.Drawing.Bitmap chevron_backward_icon {
             get {
                 object obj = ResourceManager.GetObject("chevron-backward-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clock_time {
+            get {
+                object obj = ResourceManager.GetObject("clock-time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coming_soon {
+            get {
+                object obj = ResourceManager.GetObject("coming-soon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coming_soon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("coming-soon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +286,16 @@ namespace VehicleManagementSystem.Properties {
         internal static System.Drawing.Bitmap manual_transmission_icon {
             get {
                 object obj = ResourceManager.GetObject("manual-transmission-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap overdue {
+            get {
+                object obj = ResourceManager.GetObject("overdue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

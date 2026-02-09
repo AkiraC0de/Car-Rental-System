@@ -47,6 +47,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputDailyRate = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelDailyRate = new System.Windows.Forms.Label();
             this.panelRentalDetailsHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelPurchaseDetails = new Guna.UI2.WinForms.Guna2Panel();
             this.errorLabelCurrentOdometer = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@ namespace VehicleManagementSystem.Forms {
             this.labelPurchasePrice = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelPurchaseDetailsHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panelBasicInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.tableBasicInfo = new System.Windows.Forms.TableLayoutPanel();
@@ -89,12 +91,10 @@ namespace VehicleManagementSystem.Forms {
             this.labelManufacturer = new System.Windows.Forms.Label();
             this.inputYearModel = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelBasicInfoHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -322,7 +322,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputTransmissionType.IntegralHeight = false;
             this.inputTransmissionType.ItemHeight = 50;
             this.inputTransmissionType.Location = new System.Drawing.Point(292, 241);
-            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10);
             this.inputTransmissionType.Name = "inputTransmissionType";
             this.inputTransmissionType.Size = new System.Drawing.Size(231, 56);
             this.inputTransmissionType.TabIndex = 14;
@@ -341,7 +341,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputFuelType.IntegralHeight = false;
             this.inputFuelType.ItemHeight = 50;
             this.inputFuelType.Location = new System.Drawing.Point(40, 241);
-            this.inputFuelType.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputFuelType.Margin = new System.Windows.Forms.Padding(10);
             this.inputFuelType.Name = "inputFuelType";
             this.inputFuelType.Size = new System.Drawing.Size(227, 56);
             this.inputFuelType.TabIndex = 13;
@@ -460,6 +460,17 @@ namespace VehicleManagementSystem.Forms {
             this.panelRentalDetailsHeader.Name = "panelRentalDetailsHeader";
             this.panelRentalDetailsHeader.Size = new System.Drawing.Size(557, 74);
             this.panelRentalDetailsHeader.TabIndex = 1;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel2.BorderRadius = 5;
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(43, 59);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(481, 5);
+            this.guna2Panel2.TabIndex = 41;
             // 
             // label1
             // 
@@ -642,6 +653,17 @@ namespace VehicleManagementSystem.Forms {
             this.panelPurchaseDetailsHeader.Name = "panelPurchaseDetailsHeader";
             this.panelPurchaseDetailsHeader.Size = new System.Drawing.Size(556, 74);
             this.panelPurchaseDetailsHeader.TabIndex = 1;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel1.BorderRadius = 5;
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(37, 59);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(481, 5);
+            this.guna2Panel1.TabIndex = 40;
             // 
             // label12
             // 
@@ -1027,7 +1049,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputCategory.IntegralHeight = false;
             this.inputCategory.ItemHeight = 50;
             this.inputCategory.Location = new System.Drawing.Point(290, 171);
-            this.inputCategory.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.inputCategory.Margin = new System.Windows.Forms.Padding(10);
             this.inputCategory.Name = "inputCategory";
             this.inputCategory.Size = new System.Drawing.Size(257, 56);
             this.inputCategory.TabIndex = 3;
@@ -1165,6 +1187,17 @@ namespace VehicleManagementSystem.Forms {
             this.panelBasicInfoHeader.Size = new System.Drawing.Size(1153, 74);
             this.panelBasicInfoHeader.TabIndex = 0;
             // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel6.BorderRadius = 5;
+            this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.guna2Panel6.Location = new System.Drawing.Point(25, 59);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(1100, 5);
+            this.guna2Panel6.TabIndex = 39;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1200,39 +1233,6 @@ namespace VehicleManagementSystem.Forms {
             this.label8.Size = new System.Drawing.Size(398, 43);
             this.label8.TabIndex = 7;
             this.label8.Text = "Bring in a New Vehicle";
-            // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel6.BorderRadius = 5;
-            this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel6.Location = new System.Drawing.Point(25, 59);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(1100, 5);
-            this.guna2Panel6.TabIndex = 39;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.BorderRadius = 5;
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(37, 59);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(481, 5);
-            this.guna2Panel1.TabIndex = 40;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel2.BorderRadius = 5;
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(43, 59);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(481, 5);
-            this.guna2Panel2.TabIndex = 41;
             // 
             // frmAddNewVehicle
             // 

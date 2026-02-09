@@ -41,6 +41,13 @@ namespace VehicleManagementSystem.UserControls {
             LoadComboBoxInformation();
         }
 
+        private void saveBtn_Click(object sender, EventArgs e) {
+            // Require Validation
+
+            ToggleUIVisibility();
+            ToggleInputsEnable();
+        }
+
         private void LoadVehicleImage() {
             pictureVehicle.Image = Helpers.GetVehicleImage(_vehicle.ImagePath);
         }
@@ -131,9 +138,7 @@ namespace VehicleManagementSystem.UserControls {
             }
         }
 
-        private void saveBtn_Click(object sender, EventArgs e) {
-
-        }
+        
 
         private void viewMaintenanceBtn_Click(object sender, EventArgs e) {
          //   frmVehicleDetails.Instance.OpenSubPanel(new VehicleDetailsDocuments(_vehicle));

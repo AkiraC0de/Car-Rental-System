@@ -49,8 +49,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.labelEdittingModeNotice = new System.Windows.Forms.Label();
-            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableMiddle = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableVehicleInformation = new System.Windows.Forms.TableLayoutPanel();
@@ -86,7 +84,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableTop = new System.Windows.Forms.TableLayoutPanel();
@@ -94,25 +91,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.labelStatus = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.labelLastInspect = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.inputFuelType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.inputOdomter = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.inputTransmissionType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelTopRight = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label12 = new System.Windows.Forms.Label();
@@ -123,6 +114,15 @@
             this.progressTillChangeOil = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panelMain.SuspendLayout();
             this.tableBottom.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -135,25 +135,25 @@
             this.guna2Panel3.SuspendLayout();
             this.tableVehicleInformation.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.tableTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2GradientPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).BeginInit();
             this.panelTopRight.SuspendLayout();
             this.guna2CircleProgressBar2.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
             this.progressTillChangeOil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -188,7 +188,7 @@
             this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.20564F));
             this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.79436F));
             this.tableBottom.Controls.Add(this.guna2Panel5, 1, 0);
-            this.tableBottom.Location = new System.Drawing.Point(3, 1088);
+            this.tableBottom.Location = new System.Drawing.Point(6, 1077);
             this.tableBottom.Name = "tableBottom";
             this.tableBottom.RowCount = 1;
             this.tableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -222,7 +222,7 @@
             this.viewMaintenanceBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.viewMaintenanceBtn.FillColor = System.Drawing.Color.Transparent;
             this.viewMaintenanceBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewMaintenanceBtn.ForeColor = System.Drawing.Color.DarkGray;
+            this.viewMaintenanceBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.viewMaintenanceBtn.Location = new System.Drawing.Point(445, 238);
             this.viewMaintenanceBtn.Name = "viewMaintenanceBtn";
             this.viewMaintenanceBtn.Size = new System.Drawing.Size(218, 46);
@@ -491,49 +491,6 @@
             this.labelEdittingModeNotice.TabIndex = 28;
             this.labelEdittingModeNotice.Text = "YOU ARE IN EDITTING MODE";
             this.labelEdittingModeNotice.Visible = false;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.BorderRadius = 10;
-            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.saveBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.saveBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
-            this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(1022, 19);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(230, 60);
-            this.saveBtn.TabIndex = 27;
-            this.saveBtn.Text = "Save Details";
-            this.saveBtn.Visible = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // editBtn
-            // 
-            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editBtn.BorderRadius = 10;
-            this.editBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.editBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.editBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.editBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Image = global::VehicleManagementSystem.Properties.Resources.pen_icon;
-            this.editBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.editBtn.Location = new System.Drawing.Point(1046, 19);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(206, 60);
-            this.editBtn.TabIndex = 26;
-            this.editBtn.Text = "Edit Details";
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // tableMiddle
             // 
@@ -1025,7 +982,7 @@
             this.viewRenterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.viewRenterBtn.FillColor = System.Drawing.Color.Transparent;
             this.viewRenterBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewRenterBtn.ForeColor = System.Drawing.Color.DarkGray;
+            this.viewRenterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.viewRenterBtn.Location = new System.Drawing.Point(224, 290);
             this.viewRenterBtn.Name = "viewRenterBtn";
             this.viewRenterBtn.Size = new System.Drawing.Size(163, 46);
@@ -1108,21 +1065,6 @@
             this.label17.Size = new System.Drawing.Size(202, 24);
             this.label17.TabIndex = 19;
             this.label17.Text = "FIrstname Lastname";
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.IndianRed;
-            this.guna2CirclePictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.account_circle;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(37, 90);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(98, 99);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 18;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // label14
             // 
@@ -1230,18 +1172,6 @@
             this.labelStatus.TabIndex = 39;
             this.labelStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.Image = global::VehicleManagementSystem.Properties.Resources.loading;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(70, 58);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 19;
-            this.guna2PictureBox5.TabStop = false;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1295,18 +1225,6 @@
             this.labelLastInspect.TabIndex = 39;
             this.labelLastInspect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Image = global::VehicleManagementSystem.Properties.Resources.inspection;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(70, 58);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 19;
-            this.guna2PictureBox4.TabStop = false;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1334,18 +1252,6 @@
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(192, 113);
             this.guna2GradientPanel3.TabIndex = 4;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::VehicleManagementSystem.Properties.Resources.gas_station;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(70, 50);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 19;
-            this.guna2PictureBox3.TabStop = false;
             // 
             // inputFuelType
             // 
@@ -1423,18 +1329,6 @@
             this.inputOdomter.TabIndex = 39;
             this.inputOdomter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.car_engine;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(70, 58);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 19;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1486,18 +1380,6 @@
             this.inputTransmissionType.TabIndex = 21;
             this.inputTransmissionType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::VehicleManagementSystem.Properties.Resources.gear_box;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(58, 3);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 58);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 19;
-            this.guna2PictureBox2.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1510,24 +1392,6 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Transmission";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureVehicle
-            // 
-            this.pictureVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureVehicle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureVehicle.FillColor = System.Drawing.Color.Transparent;
-            this.pictureVehicle.Image = ((System.Drawing.Image)(resources.GetObject("pictureVehicle.Image")));
-            this.pictureVehicle.ImageRotate = 0F;
-            this.pictureVehicle.Location = new System.Drawing.Point(94, 39);
-            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureVehicle.Name = "pictureVehicle";
-            this.pictureVehicle.Size = new System.Drawing.Size(848, 364);
-            this.pictureVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureVehicle.TabIndex = 2;
-            this.pictureVehicle.TabStop = false;
             // 
             // panelTopRight
             // 
@@ -1683,6 +1547,142 @@
             this.label5.Text = "Until change \r\noil";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // saveBtn
+            // 
+            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveBtn.BorderRadius = 10;
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.saveBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.saveBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
+            this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.saveBtn.Location = new System.Drawing.Point(1022, 19);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(230, 60);
+            this.saveBtn.TabIndex = 27;
+            this.saveBtn.Text = "Save Details";
+            this.saveBtn.Visible = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.IndianRed;
+            this.guna2CirclePictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.account_circle;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(37, 90);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(98, 99);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 18;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = global::VehicleManagementSystem.Properties.Resources.loading;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 19;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = global::VehicleManagementSystem.Properties.Resources.inspection;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 19;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::VehicleManagementSystem.Properties.Resources.gas_station;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(70, 50);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 19;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.car_engine;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 19;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::VehicleManagementSystem.Properties.Resources.gear_box;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(58, 3);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 58);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 19;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // pictureVehicle
+            // 
+            this.pictureVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureVehicle.BackColor = System.Drawing.Color.Transparent;
+            this.pictureVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureVehicle.FillColor = System.Drawing.Color.Transparent;
+            this.pictureVehicle.Image = ((System.Drawing.Image)(resources.GetObject("pictureVehicle.Image")));
+            this.pictureVehicle.ImageRotate = 0F;
+            this.pictureVehicle.Location = new System.Drawing.Point(94, 39);
+            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureVehicle.Name = "pictureVehicle";
+            this.pictureVehicle.Size = new System.Drawing.Size(848, 364);
+            this.pictureVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureVehicle.TabIndex = 2;
+            this.pictureVehicle.TabStop = false;
+            // 
+            // editBtn
+            // 
+            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editBtn.BorderRadius = 10;
+            this.editBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.editBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.editBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.editBtn.ForeColor = System.Drawing.Color.White;
+            this.editBtn.Image = global::VehicleManagementSystem.Properties.Resources.pen_icon;
+            this.editBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.editBtn.Location = new System.Drawing.Point(1046, 19);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(206, 60);
+            this.editBtn.TabIndex = 26;
+            this.editBtn.Text = "Edit Details";
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
             // VehicleDetailsOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1712,25 +1712,25 @@
             this.tableVehicleInformation.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.tableTop.ResumeLayout(false);
             this.panelTopLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.guna2GradientPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.guna2GradientPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2GradientPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).EndInit();
             this.panelTopRight.ResumeLayout(false);
             this.guna2CircleProgressBar2.ResumeLayout(false);
             this.guna2CircleProgressBar1.ResumeLayout(false);
             this.progressTillChangeOil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1763,7 +1763,6 @@
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
         private System.Windows.Forms.Label labelEdittingModeNotice;
         private Guna.UI2.WinForms.Guna2Button saveBtn;
-        private Guna.UI2.WinForms.Guna2Button editBtn;
         private System.Windows.Forms.TableLayoutPanel tableMiddle;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.TableLayoutPanel tableVehicleInformation;
@@ -1817,7 +1816,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2TextBox inputOdomter;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2CircleProgressBar progressTillChangeOil;
         private System.Windows.Forms.Label label10;
@@ -1836,5 +1834,7 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button editBtn;
     }
 }

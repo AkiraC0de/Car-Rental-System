@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.UserControls;
+using VehicleManagementSystem.View.Modals;
 
 namespace VehicleManagementSystem.UserControls {
     public partial class VehicleDetailsDocuments : UserControl {
@@ -39,6 +40,11 @@ namespace VehicleManagementSystem.UserControls {
 
         private void searchBox_TextChanged(object sender, EventArgs e) {
 
+        }
+
+        private void addNewVehBtn_Click(object sender, EventArgs e) {
+            var addVehicleForm = new AddNewVehicleDocumentModal(_vehicle.LicensePlate);
+            addVehicleForm.ShowDialog();
         }
     }
 }

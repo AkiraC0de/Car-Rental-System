@@ -48,7 +48,7 @@ namespace VehicleManagementSystem.View.Forms {
         private void maintenanceBtn_Click(object sender, System.EventArgs e) {
             RemoveActiveButtonStyle();
             ActiveButton = maintenanceBtn;
-            OpenSubPanel(new VehicleCardControl());
+            OpenSubPanel(new VehicleDetailsMaintenance(_vehicle));
         }
 
         private void overviewBtn_Click(object sender, System.EventArgs e) {

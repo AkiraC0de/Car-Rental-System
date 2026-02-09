@@ -241,6 +241,7 @@
     <Compile Include="Data\Enums\VehicleEnums.cs" />
     <Compile Include="Dto\UserInfoDto.cs" />
     <Compile Include="Dto\VehicleDto.cs" />
+    <Compile Include="Dto\VehicleMaintenanceScheduleDto.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
     <Compile Include="Presenters\vehicleManagementPresenter.cs" />
@@ -251,11 +252,23 @@
     </Compile>
     <Compile Include="Services\Implementations\VehicleServices.cs" />
     <Compile Include="Services\Interfaces\IVehicleService.cs" />
+    <Compile Include="UserControls\MaintenanceCardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaintenanceCardControl.Designer.cs">
+      <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\VehicleDetailsDocuments.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\VehicleDetailsDocuments.Designer.cs">
       <DependentUpon>VehicleDetailsDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VehicleDetailsMaintenance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\VehicleDetailsMaintenance.Designer.cs">
+      <DependentUpon>VehicleDetailsMaintenance.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\VehicleDetailsOverview.cs">
       <SubType>UserControl</SubType>
@@ -350,8 +363,20 @@
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
+    <Compile Include="View\Modals\AddNewVehicleDocumentModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Modals\AddNewVehicleDocumentModal.Designer.cs">
+      <DependentUpon>AddNewVehicleDocumentModal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\MaintenanceCardControl.resx">
+      <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VehicleDetailsDocuments.resx">
       <DependentUpon>VehicleDetailsDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VehicleDetailsMaintenance.resx">
+      <DependentUpon>VehicleDetailsMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VehicleDetailsOverview.resx">
       <DependentUpon>VehicleDetailsOverview.cs</DependentUpon>
@@ -404,6 +429,9 @@
     <EmbeddedResource Include="View\Forms\frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Modals\AddNewVehicleDocumentModal.resx">
+      <DependentUpon>AddNewVehicleDocumentModal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -423,6 +451,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\clock-time.png" />
+    <None Include="Resources\coming-soon %281%29.png" />
+    <None Include="Resources\calendar.png" />
     <None Include="Resources\loading.png" />
     <None Include="Resources\inspection.png" />
     <None Include="Resources\lockIcon.png" />
