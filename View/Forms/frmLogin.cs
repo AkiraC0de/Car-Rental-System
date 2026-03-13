@@ -91,7 +91,7 @@ namespace PL_VehicleRental.Forms
 
             var mainForm = new frmMain();
             mainForm.Show();
-            this.Hide();
+            this.Dispose();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
