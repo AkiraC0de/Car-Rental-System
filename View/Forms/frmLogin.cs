@@ -28,6 +28,7 @@ namespace PL_VehicleRental.Forms
         {
             passwordTxt.UseSystemPasswordChar = true;
         }
+
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             var username = usernameTxt.Text.Trim();

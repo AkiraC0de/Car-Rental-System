@@ -51,8 +51,9 @@ namespace VehicleManagementSystem.Forms {
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1274, 683);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1132, 546);
             this.guna2GradientPanel1.TabIndex = 1;
             // 
             // panelMain
@@ -70,9 +71,10 @@ namespace VehicleManagementSystem.Forms {
             this.panelMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(232)))));
             this.panelMain.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panelMain.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.panelMain.Location = new System.Drawing.Point(22, 3);
+            this.panelMain.Location = new System.Drawing.Point(20, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1252, 683);
+            this.panelMain.Size = new System.Drawing.Size(1113, 546);
             this.panelMain.TabIndex = 3;
             // 
             // tableLayoutVehicles
@@ -87,13 +89,14 @@ namespace VehicleManagementSystem.Forms {
             this.tableLayoutVehicles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutVehicles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutVehicles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutVehicles.Location = new System.Drawing.Point(16, 128);
+            this.tableLayoutVehicles.Location = new System.Drawing.Point(14, 102);
+            this.tableLayoutVehicles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutVehicles.Name = "tableLayoutVehicles";
             this.tableLayoutVehicles.RowCount = 3;
-            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutVehicles.Size = new System.Drawing.Size(1204, 1200);
+            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 320F));
+            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 320F));
+            this.tableLayoutVehicles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 320F));
+            this.tableLayoutVehicles.Size = new System.Drawing.Size(1040, 960);
             this.tableLayoutVehicles.TabIndex = 2;
             // 
             // guna2Panel2
@@ -105,8 +108,9 @@ namespace VehicleManagementSystem.Forms {
             this.guna2Panel2.Controls.Add(this.addNewVehBtn);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1226, 111);
+            this.guna2Panel2.Size = new System.Drawing.Size(1087, 89);
             this.guna2Panel2.TabIndex = 1;
             // 
             // searchBox
@@ -128,12 +132,12 @@ namespace VehicleManagementSystem.Forms {
             this.searchBox.IconRight = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
             this.searchBox.IconRightOffset = new System.Drawing.Point(10, 0);
             this.searchBox.IconRightSize = new System.Drawing.Size(25, 25);
-            this.searchBox.Location = new System.Drawing.Point(610, 21);
+            this.searchBox.Location = new System.Drawing.Point(539, 17);
             this.searchBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchBox.Name = "searchBox";
             this.searchBox.PlaceholderText = "";
             this.searchBox.SelectedText = "";
-            this.searchBox.Size = new System.Drawing.Size(398, 60);
+            this.searchBox.Size = new System.Drawing.Size(354, 48);
             this.searchBox.TabIndex = 8;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -143,7 +147,7 @@ namespace VehicleManagementSystem.Forms {
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(18, 64);
+            this.label2.Location = new System.Drawing.Point(16, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(265, 21);
             this.label2.TabIndex = 7;
@@ -155,7 +159,7 @@ namespace VehicleManagementSystem.Forms {
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label3.Location = new System.Drawing.Point(14, 21);
+            this.label3.Location = new System.Drawing.Point(12, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 43);
             this.label3.TabIndex = 6;
@@ -174,9 +178,10 @@ namespace VehicleManagementSystem.Forms {
             this.addNewVehBtn.ForeColor = System.Drawing.Color.White;
             this.addNewVehBtn.Image = global::VehicleManagementSystem.Properties.Resources.add_circle_icon;
             this.addNewVehBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.addNewVehBtn.Location = new System.Drawing.Point(1036, 21);
+            this.addNewVehBtn.Location = new System.Drawing.Point(918, 17);
+            this.addNewVehBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addNewVehBtn.Name = "addNewVehBtn";
-            this.addNewVehBtn.Size = new System.Drawing.Size(190, 60);
+            this.addNewVehBtn.Size = new System.Drawing.Size(169, 48);
             this.addNewVehBtn.TabIndex = 0;
             this.addNewVehBtn.Text = "Add Vehicle";
             this.addNewVehBtn.Click += new System.EventHandler(this.addNewVehBtn_Click);
@@ -185,18 +190,19 @@ namespace VehicleManagementSystem.Forms {
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 1328);
+            this.panel1.Location = new System.Drawing.Point(0, 1062);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1226, 52);
+            this.panel1.Size = new System.Drawing.Size(1087, 42);
             this.panel1.TabIndex = 3;
             // 
             // frmVehicleManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1274, 683);
+            this.ClientSize = new System.Drawing.Size(1132, 546);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmVehicleManagement";
             this.Text = "VehManagement";
             this.Load += new System.EventHandler(this.frmVehicleManagement_Load);

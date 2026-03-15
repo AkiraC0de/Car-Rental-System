@@ -106,9 +106,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.label14.Location = new System.Drawing.Point(79, 19);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 29);
+            this.label14.Size = new System.Drawing.Size(218, 29);
             this.label14.TabIndex = 40;
-            this.label14.Text = "Current Millage";
+            this.label14.Text = "Current Odometer";
             // 
             // guna2CircleProgressBar1
             // 

@@ -67,7 +67,7 @@ namespace VehicleManagementSystem {
         }
 
         // Windows Actions
-        private void CloseButton_Click(object sender, EventArgs e) => WindowActions.Close();
+        private void CloseButton_Click(object sender, EventArgs e) => Application.Exit();
         private async void maximizeBtn_Click(object sender, EventArgs e) => await WindowActions.ToggleMaximize(maximizeBtn);
         private void minimizeBtn_Click(object sender, EventArgs e) => WindowActions.Minimize();
         private void panelHeader_MouseDown(object sender, MouseEventArgs e) => WindowActions.Drag(e);
