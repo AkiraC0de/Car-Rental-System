@@ -28,7 +28,6 @@ namespace VehicleManagementSystem.UserControls {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBg = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelPicture = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.pictureVehicle = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelMainHeader = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@ namespace VehicleManagementSystem.UserControls {
             this.labelCurrentOdometer = new System.Windows.Forms.Label();
             this.labelDailyRate = new System.Windows.Forms.Label();
             this.labelSubHader = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.panelBg.SuspendLayout();
             this.panelPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureVehicle)).BeginInit();
@@ -87,17 +87,6 @@ namespace VehicleManagementSystem.UserControls {
             this.panelPicture.Name = "panelPicture";
             this.panelPicture.Size = new System.Drawing.Size(381, 225);
             this.panelPicture.TabIndex = 3;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(262, 185);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(116, 29);
-            this.labelStatus.TabIndex = 1;
-            this.labelStatus.Text = "label1";
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // pictureVehicle
             // 
@@ -238,6 +227,17 @@ namespace VehicleManagementSystem.UserControls {
             this.labelSubHader.TabIndex = 1;
             this.labelSubHader.Text = "Toyota - Vios 2020";
             this.labelSubHader.Click += new System.EventHandler(this.Card_Click);
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(262, 185);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(116, 29);
+            this.labelStatus.TabIndex = 1;
+            this.labelStatus.Text = "label1";
+            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // VehicleCardControl
             // 

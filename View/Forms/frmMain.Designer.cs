@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using VehicleManagementSystem.Classes;
 
 namespace VehicleManagementSystem {
     partial class frmMain {
@@ -33,20 +34,21 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn = new FontAwesome.Sharp.IconButton();
             this.dashboardBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.labelUserName = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelMenuLine = new Guna.UI2.WinForms.Guna2Panel();
             this.panelUserDetails = new System.Windows.Forms.Panel();
-            this.labelUserRole = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.labelUserName = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.labelPage = new System.Windows.Forms.Label();
             this.maximizeBtn = new FontAwesome.Sharp.IconButton();
             this.minimizeBtn = new FontAwesome.Sharp.IconButton();
             this.closeBtn = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            this.panelUserDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panelHeader.SuspendLayout();
-            this.panelUserDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -63,7 +65,7 @@ namespace VehicleManagementSystem {
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(317, 618);
+            this.panelMenu.Size = new System.Drawing.Size(317, 706);
             this.panelMenu.TabIndex = 0;
             // 
             // activityLogsBtn
@@ -81,7 +83,7 @@ namespace VehicleManagementSystem {
             this.activityLogsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.activityLogsBtn.IconSize = 50;
             this.activityLogsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.activityLogsBtn.Location = new System.Drawing.Point(0, 523);
+            this.activityLogsBtn.Location = new System.Drawing.Point(0, 592);
             this.activityLogsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.activityLogsBtn.Name = "activityLogsBtn";
             this.activityLogsBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -108,7 +110,7 @@ namespace VehicleManagementSystem {
             this.userManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.userManagementBtn.IconSize = 50;
             this.userManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.userManagementBtn.Location = new System.Drawing.Point(0, 443);
+            this.userManagementBtn.Location = new System.Drawing.Point(0, 512);
             this.userManagementBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userManagementBtn.Name = "userManagementBtn";
             this.userManagementBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -135,7 +137,7 @@ namespace VehicleManagementSystem {
             this.damageAndInspecBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.damageAndInspecBtn.IconSize = 50;
             this.damageAndInspecBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 361);
+            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 430);
             this.damageAndInspecBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.damageAndInspecBtn.Name = "damageAndInspecBtn";
             this.damageAndInspecBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -161,7 +163,7 @@ namespace VehicleManagementSystem {
             this.maintenanceMangementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.maintenanceMangementBtn.IconSize = 50;
             this.maintenanceMangementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 279);
+            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 348);
             this.maintenanceMangementBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maintenanceMangementBtn.Name = "maintenanceMangementBtn";
             this.maintenanceMangementBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -188,7 +190,7 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.vehManagementBtn.IconSize = 50;
             this.vehManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vehManagementBtn.Location = new System.Drawing.Point(0, 197);
+            this.vehManagementBtn.Location = new System.Drawing.Point(0, 266);
             this.vehManagementBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vehManagementBtn.Name = "vehManagementBtn";
             this.vehManagementBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -215,7 +217,7 @@ namespace VehicleManagementSystem {
             this.dashboardBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dashboardBtn.IconSize = 50;
             this.dashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashboardBtn.Location = new System.Drawing.Point(0, 117);
+            this.dashboardBtn.Location = new System.Drawing.Point(0, 186);
             this.dashboardBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboardBtn.Name = "dashboardBtn";
             this.dashboardBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -229,47 +231,69 @@ namespace VehicleManagementSystem {
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.panelMenuLine);
+            this.panelLogo.Controls.Add(this.panelUserDetails);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(317, 117);
+            this.panelLogo.Size = new System.Drawing.Size(317, 186);
             this.panelLogo.TabIndex = 0;
             // 
-            // labelUserName
+            // panelMenuLine
             // 
-            this.labelUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.ForeColor = System.Drawing.Color.DimGray;
-            this.labelUserName.Location = new System.Drawing.Point(64, 10);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(168, 19);
-            this.labelUserName.TabIndex = 12;
-            this.labelUserName.Text = "Firstname Lastname";
+            this.panelMenuLine.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panelMenuLine.AutoSize = true;
+            this.panelMenuLine.BorderRadius = 4;
+            this.panelMenuLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.panelMenuLine.Location = new System.Drawing.Point(12, 159);
+            this.panelMenuLine.MaximumSize = new System.Drawing.Size(326, 5);
+            this.panelMenuLine.Name = "panelMenuLine";
+            this.panelMenuLine.Size = new System.Drawing.Size(287, 5);
+            this.panelMenuLine.TabIndex = 0;
+            // 
+            // panelUserDetails
+            // 
+            this.panelUserDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelUserDetails.Controls.Add(this.guna2CirclePictureBox1);
+            this.panelUserDetails.Controls.Add(this.labelUserName);
+            this.panelUserDetails.Location = new System.Drawing.Point(6, 78);
+            this.panelUserDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelUserDetails.Name = "panelUserDetails";
+            this.panelUserDetails.Size = new System.Drawing.Size(308, 76);
+            this.panelUserDetails.TabIndex = 13;
             // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.IndianRed;
             this.guna2CirclePictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.account_circle;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(15, 8);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(6, 12);
             this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(44, 35);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(67, 58);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 11;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.BackColor = System.Drawing.Color.Transparent;
+            this.labelUserName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.ForeColor = System.Drawing.Color.DimGray;
+            this.labelUserName.Location = new System.Drawing.Point(79, 30);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(202, 24);
+            this.labelUserName.TabIndex = 12;
+            this.labelUserName.Text = "Firstname Lastname";
+            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.panelUserDetails);
             this.panelHeader.Controls.Add(this.labelPage);
             this.panelHeader.Controls.Add(this.maximizeBtn);
             this.panelHeader.Controls.Add(this.minimizeBtn);
@@ -279,44 +303,19 @@ namespace VehicleManagementSystem {
             this.panelHeader.Location = new System.Drawing.Point(317, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(963, 64);
+            this.panelHeader.Size = new System.Drawing.Size(1095, 73);
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
-            // 
-            // panelUserDetails
-            // 
-            this.panelUserDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelUserDetails.Controls.Add(this.labelUserRole);
-            this.panelUserDetails.Controls.Add(this.guna2CirclePictureBox1);
-            this.panelUserDetails.Controls.Add(this.labelUserName);
-            this.panelUserDetails.Location = new System.Drawing.Point(526, 2);
-            this.panelUserDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelUserDetails.Name = "panelUserDetails";
-            this.panelUserDetails.Size = new System.Drawing.Size(268, 50);
-            this.panelUserDetails.TabIndex = 13;
-            // 
-            // labelUserRole
-            // 
-            this.labelUserRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelUserRole.AutoSize = true;
-            this.labelUserRole.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserRole.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserRole.ForeColor = System.Drawing.Color.Gray;
-            this.labelUserRole.Location = new System.Drawing.Point(64, 30);
-            this.labelUserRole.Name = "labelUserRole";
-            this.labelUserRole.Size = new System.Drawing.Size(46, 16);
-            this.labelUserRole.TabIndex = 13;
-            this.labelUserRole.Text = "Admin";
             // 
             // labelPage
             // 
             this.labelPage.AutoSize = true;
             this.labelPage.BackColor = System.Drawing.Color.Transparent;
-            this.labelPage.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPage.Font = new System.Drawing.Font("Arial", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.labelPage.Location = new System.Drawing.Point(19, 20);
+            this.labelPage.Location = new System.Drawing.Point(19, 18);
             this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(168, 19);
+            this.labelPage.Size = new System.Drawing.Size(226, 25);
             this.labelPage.TabIndex = 5;
             this.labelPage.Text = "Vehicle Management";
             // 
@@ -332,10 +331,10 @@ namespace VehicleManagementSystem {
             this.maximizeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.maximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.maximizeBtn.IconSize = 25;
-            this.maximizeBtn.Location = new System.Drawing.Point(850, 12);
+            this.maximizeBtn.Location = new System.Drawing.Point(973, 12);
             this.maximizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maximizeBtn.Name = "maximizeBtn";
-            this.maximizeBtn.Size = new System.Drawing.Size(47, 32);
+            this.maximizeBtn.Size = new System.Drawing.Size(49, 40);
             this.maximizeBtn.TabIndex = 10;
             this.maximizeBtn.UseVisualStyleBackColor = false;
             this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
@@ -352,10 +351,10 @@ namespace VehicleManagementSystem {
             this.minimizeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.minimizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.minimizeBtn.IconSize = 28;
-            this.minimizeBtn.Location = new System.Drawing.Point(798, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(921, 12);
             this.minimizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(47, 32);
+            this.minimizeBtn.Size = new System.Drawing.Size(49, 40);
             this.minimizeBtn.TabIndex = 9;
             this.minimizeBtn.TabStop = false;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -373,10 +372,10 @@ namespace VehicleManagementSystem {
             this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.closeBtn.IconSize = 28;
-            this.closeBtn.Location = new System.Drawing.Point(902, 12);
+            this.closeBtn.Location = new System.Drawing.Point(1025, 12);
             this.closeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(47, 32);
+            this.closeBtn.Size = new System.Drawing.Size(49, 40);
             this.closeBtn.TabIndex = 10;
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.CloseButton_Click);
@@ -390,17 +389,17 @@ namespace VehicleManagementSystem {
             this.panelDesktop.CustomizableEdges.TopRight = false;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.FillColor = System.Drawing.Color.White;
-            this.panelDesktop.Location = new System.Drawing.Point(317, 64);
+            this.panelDesktop.Location = new System.Drawing.Point(317, 73);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(963, 554);
+            this.panelDesktop.Size = new System.Drawing.Size(1095, 633);
             this.panelDesktop.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1280, 618);
+            this.ClientSize = new System.Drawing.Size(1412, 706);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHeader);
@@ -410,11 +409,13 @@ namespace VehicleManagementSystem {
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelLogo.PerformLayout();
+            this.panelUserDetails.ResumeLayout(false);
+            this.panelUserDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            this.panelUserDetails.ResumeLayout(false);
-            this.panelUserDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -438,6 +439,6 @@ namespace VehicleManagementSystem {
         private IconButton userManagementBtn;
         private IconButton dashboardBtn;
         private System.Windows.Forms.Panel panelUserDetails;
-        private System.Windows.Forms.Label labelUserRole;
+        private Guna.UI2.WinForms.Guna2Panel panelMenuLine;
     }
 }

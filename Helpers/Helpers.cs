@@ -9,7 +9,6 @@ namespace VehicleManagementSystem.Classes {
         public static Color GetStatusColor(string status) {
             switch (status.ToLower()) {
                 case "rented":
-                case "reserved":
                     return Color.DeepSkyBlue;
                 case "inmaintenance":
                     return Color.DarkOrange;
