@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.Models;
 using VehicleManagementSystem.Presenters;
 using VehicleManagementSystem.Services.Implementations;
 using VehicleManagementSystem.UserControls;
@@ -16,8 +19,28 @@ namespace VehicleManagementSystem.Forms {
 
         public string SearchQuery => searchBox.Text;
 
+        private void InitializeColoredStatus() {
+            Color labelAvailableColor = VehicleManagementSystem.Classes.Helpers.GetStatusColor("Available");
+            Color labelInMaintenanceColor = VehicleManagementSystem.Classes.Helpers.GetStatusColor("InMaintenance");
+            Color labelOutOfServiceColor = VehicleManagementSystem.Classes.Helpers.GetStatusColor("OutOfService");
+            Color labelRentedColor = VehicleManagementSystem.Classes.Helpers.GetStatusColor("Rented");
+
+            //labelAvailableIcon.FillColor = labelAvailableColor;
+            //labelAvailableText.ForeColor = labelAvailableColor;
+
+            //labelRentedIcon.FillColor = labelRentedColor;
+            //labelRentedText.ForeColor = labelRentedColor;
+
+            //labelOutOfServiceIcon.FillColor = labelOutOfServiceColor;
+            //labelOutOfServiceText.ForeColor = labelOutOfServiceColor;
+
+            //labelInMaintenanceIcon.FillColor = labelInMaintenanceColor;
+            //labelInMaintenanceText.ForeColor = labelInMaintenanceColor;
+        }
+
         public frmVehicleManagement() {
             InitializeComponent();
+            //InitializeColoredStatus();
             _presenter = new vehicleManagementPresenter(this, new VehicleServices());
         }
 
@@ -30,7 +53,7 @@ namespace VehicleManagementSystem.Forms {
 
             int col = 0;
             int row = 0;
-            int maxCols = 4;
+            int maxCols = 3;
 
             foreach (var vehicle in vehicles) {
                 if (col == 0) {
