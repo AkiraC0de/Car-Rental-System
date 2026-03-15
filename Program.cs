@@ -13,7 +13,11 @@ namespace VehicleManagementSystem {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+
+            var loginForm = new frmLogin();
+            loginForm.Show();
+
+            Application.Run();
         }
     }
 }
