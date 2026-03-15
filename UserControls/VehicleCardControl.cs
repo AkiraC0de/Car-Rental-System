@@ -25,8 +25,7 @@ namespace VehicleManagementSystem.UserControls {
             labelCurrentOdometer.Text = vehicle.CurrentOdometerReading + " Km";
             pictureBoxTransmission.Image = GetTransmissionIcon(vehicle.Transmission);
 
-            labelStatus.Text = vehicle.CurrentStatus;
-            labelStatus.ForeColor = VehicleManagementSystem.Classes.Helpers.GetStatusColor(vehicle.CurrentStatus);
+            panelStatusColor.FillColor= VehicleManagementSystem.Classes.Helpers.GetStatusColor(vehicle.CurrentStatus);
 
         }
 
