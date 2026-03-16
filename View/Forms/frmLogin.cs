@@ -1,4 +1,5 @@
 ﻿using PL_VehicleRental.DAL.Repositories;
+using PL_VehicleRental.Services;
 using PL_VehicleRental.Services.Security;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,14 @@ namespace PL_VehicleRental.Forms
             try
             {
                 var user = await _repository.ValidateLoginAsync(username, password);
+                await AuditService.LogAsync(new AuditLog
+                {
+                    UserId = user.Id,
+                    ActionType = "LOGIN",
+                    Description = "User logged in",
+                    TableAffected = "users",
+                    RecordId = user.Id
+                });
 
                 if (user == null)
                 {

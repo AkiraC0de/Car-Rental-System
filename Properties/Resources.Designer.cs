@@ -83,6 +83,16 @@ namespace VehicleManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_dropdown {
+            get {
+                object obj = ResourceManager.GetObject("arrow-dropdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap auto_transmission_icon {
             get {
                 object obj = ResourceManager.GetObject("auto-transmission-icon", resourceCulture);

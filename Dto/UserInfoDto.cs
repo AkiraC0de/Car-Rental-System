@@ -29,10 +29,20 @@ namespace VehicleManagementSystem.Dto
     public class CurrentUser
     {
         public int Id { get; set; }
-
         public string FullName { get; set; }
         public string UserName { get; set; }
         public UserRole Role { get; set; }
         public string UserImagePath { get; set; }
+    }
+
+    public class AuditLog
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string ActionType { get; set; }
+        public string Description { get; set; }
+        public string TableAffected { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public int RecordId { get; set; }
     }
 }

@@ -259,6 +259,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\AuditService.cs" />
     <Compile Include="Services\Implementations\VehicleServices.cs" />
     <Compile Include="Services\Interfaces\IVehicleService.cs" />
     <Compile Include="Services\Security\AuthorizationService.cs" />
@@ -504,6 +505,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\arrow_drop_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\searchIcon.png" />
     <None Include="Resources\personIcon.png" />
     <None Include="Resources\closeIcon.png" />

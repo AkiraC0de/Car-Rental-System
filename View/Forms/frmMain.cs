@@ -1,14 +1,16 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using VehicleManagementSystem.Forms;
-using VehicleManagementSystem.Classes;
-using PL_VehicleRental.Forms;
+﻿using ActivityLogs;
 using Dshboard;
-using ActivityLogs;
+using PL_VehicleRental.Forms;
+using PL_VehicleRental.Services;
 using PL_VehicleRental.Services.Security;
-using VehicleManagementSystem.Dto;
+using System;
+using System.Drawing;
 using System.IO;
+using System.Web.Configuration;
+using System.Windows.Forms;
+using VehicleManagementSystem.Classes;
+using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.Forms;
 
 namespace VehicleManagementSystem {
 
@@ -107,6 +109,40 @@ namespace VehicleManagementSystem {
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.MaintenanceManagement;
             NavigationHelper.OpenForm(new frmMaintenanceManagement());
+        }
+
+        private void ShowUserMenu(Control control)
+        {
+            userMenuStrip.Show(control, new Point(0, control.Height));
+        }
+        private void menuBtn_Click(object sender, EventArgs e)
+        {
+            ShowUserMenu(panelUserDetails);
+        }
+
+        private async void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+                        "Are you sure you want to logout?",
+                        "Logout",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+
+                await AuditService.LogAsync(new AuditLog
+                {
+                    UserId = Session.User.Id,
+                    ActionType = "LOGOUT",
+                    Description = "User logged out",
+                    TableAffected = "users",
+                    RecordId = Session.User.Id
+                });
+
+                Session.User = null;
+                this.Close();
+            }
         }
 
         private void LoadUserImage()

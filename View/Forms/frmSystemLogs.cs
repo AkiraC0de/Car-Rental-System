@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL_VehicleRental.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,24 @@ namespace ActivityLogs
             InitializeComponent();
         }
 
+        private void DataGridStyle()
+        {
+            dgvLogs.AutoGenerateColumns = true;
+            dgvLogs.ReadOnly = true;
+            dgvLogs.AllowUserToAddRows = false;
+            dgvLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+        }
+
+        private async Task LoadLogs()
+        {
+            var service = new AuditService();
+            var logs = await service.GetAuditLogsAsync();
+
+            dgvLogs.DataSource = logs;
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
         }
@@ -30,8 +49,9 @@ namespace ActivityLogs
         {
         }
 
-        private void LogsForm_Load(object sender, EventArgs e)
+        private async void LogsForm_Load(object sender, EventArgs e)
         {
+           await LoadLogs();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -47,6 +67,21 @@ namespace ActivityLogs
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LogsForm_Shown(object sender, EventArgs e)
+        {
+            DataGridStyle();
         }
     }
 }

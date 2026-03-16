@@ -1,4 +1,5 @@
 ﻿using PL_VehicleRental.Forms;
+using PL_VehicleRental.Services.Security;
 using System;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -16,22 +17,23 @@ namespace VehicleManagementSystem {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmMain mainForm = new frmMain();
+            //frmMain mainForm = new frmMain();
 
-            var context = new ApplicationContext(mainForm);
+            //var context = new ApplicationContext(mainForm);
 
-            //Application.Run(context);
 
-            using (frmLogin login = new frmLogin())
+            while(true)
             {
-                if (login.ShowDialog() == DialogResult.OK)
+                using (frmLogin login = new frmLogin())
                 {
-                    mainForm.Show();
-                    Application.Run(context);
+                    if (login.ShowDialog() != DialogResult.OK) break;
                 }
-                else
+
+                using (frmMain mainForm = new frmMain())
                 {
-                    Application.Exit();
+                    Application.Run(mainForm);
+
+                    if (Session.User != null) break;
                 }
             }
         }
