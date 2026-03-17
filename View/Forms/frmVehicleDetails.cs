@@ -94,9 +94,6 @@ namespace VehicleManagementSystem.View.Forms {
         private void LoadUI() {
             hr.FillColor = AppConfig.Theme.Primary;
             labelSubHeader.Text = GetVehicleSubHeader(_vehicle);
-            //labelStatus.FillColor = Helpers.GetStatusColor(_vehicle.CurrentStatus);
-            //labelStatus.Text = _vehicle.CurrentStatus.ToString();
-            //labelStatus.Location = new Point(labelSubHeader.Right + 5, labelStatus.Location.Y);
         }
 
         private string GetVehicleSubHeader(VehicleDto vehicle) {
