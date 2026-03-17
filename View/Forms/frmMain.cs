@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Web.Configuration;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
@@ -29,6 +30,7 @@ namespace VehicleManagementSystem {
             //WindowActions.ToggleMaximize(maximizeBtn);
             NavigationHelper.OpenForm(new frmVehicleManagement());
             MenuHandler.ActivateButton(vehManagementBtn);
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         public frmMain() {
@@ -182,8 +184,19 @@ namespace VehicleManagementSystem {
             }
         }
 
-        // Make the scroll more responsive
-        // Boiler plate from stacks overflow
+        //protected override CreateParams CreateParams {
+        //    get {
+        //        CreateParams cp = base.CreateParams;
+        //        // WS_MAXIMIZEBOX (0x10000) | WS_CAPTION (0xC00000)
+        //        // This tricks Windows into thinking the form has a caption bar
+        //        // which triggers the "zoom" animation when maximizing.
+        //        cp.Style |= 0x00010000 | 0x00C00000;
+        //        return cp;
+        //    }
+        //}
+
+        //Make the scroll more responsive
+        //Boiler plate from stacks overflow
         protected override void WndProc(ref Message m) {
             if (m.Msg == 0x115 || m.Msg == 0x114) {
                 if ((m.WParam.ToInt32() & 0xFFFF) == 5) {

@@ -26,6 +26,9 @@ namespace VehicleManagementSystem {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.activityLogsBtn = new FontAwesome.Sharp.IconButton();
             this.userManagementBtn = new FontAwesome.Sharp.IconButton();
@@ -49,6 +52,8 @@ namespace VehicleManagementSystem {
             this.userMenuStrip = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelUserDetails.SuspendLayout();
@@ -337,6 +342,7 @@ namespace VehicleManagementSystem {
             this.panelHeader.Controls.Add(this.maximizeBtn);
             this.panelHeader.Controls.Add(this.minimizeBtn);
             this.panelHeader.Controls.Add(this.closeBtn);
+            this.guna2Transition1.SetDecoration(this.panelHeader, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.ForeColor = System.Drawing.Color.White;
             this.panelHeader.Location = new System.Drawing.Point(317, 0);
@@ -465,6 +471,26 @@ namespace VehicleManagementSystem {
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation3;
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -474,6 +500,7 @@ namespace VehicleManagementSystem {
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
+            this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
@@ -517,5 +544,7 @@ namespace VehicleManagementSystem {
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Button menuBtn;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
     }
 }

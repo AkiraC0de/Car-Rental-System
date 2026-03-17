@@ -166,6 +166,16 @@ namespace VehicleManagementSystem.Forms {
             }
         }
 
+        protected override void WndProc(ref Message m) {
+            // Smooth Scroll Logic
+            if (m.Msg == 0x115 || m.Msg == 0x114) {
+                if ((m.WParam.ToInt32() & 0xFFFF) == 5) {
+                    m.WParam = (IntPtr)((m.WParam.ToInt32() & ~0xFFFF) | 4);
+                }
+            }
+            base.WndProc(ref m);
+        }
+
         private void clearImageInputError() {
             errorLabelInputImage.Visible = false;
             addImageBtn.BorderThickness = 0; 

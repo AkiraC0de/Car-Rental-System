@@ -1,9 +1,7 @@
 ﻿using Guna.UI2.WinForms;
-using System.Collections.Generic;
+using System;
 using System.Drawing;
-using System.Management.Instrumentation;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Forms;
@@ -108,6 +106,16 @@ namespace VehicleManagementSystem.View.Forms {
                 cp.ExStyle |= 0x02000000;
                 return cp;
             }
+        }
+
+        protected override void WndProc(ref Message m) {
+            // Smooth Scroll Logic
+            if (m.Msg == 0x115 || m.Msg == 0x114) {
+                if ((m.WParam.ToInt32() & 0xFFFF) == 5) {
+                    m.WParam = (IntPtr)((m.WParam.ToInt32() & ~0xFFFF) | 4);
+                }
+            }
+            base.WndProc(ref m);
         }
 
         private void backBtn_Click(object sender, System.EventArgs e) {
