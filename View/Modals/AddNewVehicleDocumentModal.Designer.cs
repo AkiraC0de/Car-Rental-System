@@ -48,7 +48,12 @@
             this.radioPermanent = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.panelPreview = new Guna.UI2.WinForms.Guna2Panel();
+            this.documentPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.panelTop.SuspendLayout();
+            this.panelPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -260,13 +265,14 @@
             this.closeImageBtn.IconColor = System.Drawing.Color.RosyBrown;
             this.closeImageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.closeImageBtn.IconSize = 28;
-            this.closeImageBtn.Location = new System.Drawing.Point(485, 414);
+            this.closeImageBtn.Location = new System.Drawing.Point(469, 13);
             this.closeImageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeImageBtn.Name = "closeImageBtn";
             this.closeImageBtn.Size = new System.Drawing.Size(37, 30);
             this.closeImageBtn.TabIndex = 115;
             this.closeImageBtn.UseVisualStyleBackColor = false;
             this.closeImageBtn.Visible = false;
+            this.closeImageBtn.Click += new System.EventHandler(this.closeImageBtn_Click);
             // 
             // addImageBtn
             // 
@@ -276,17 +282,19 @@
             this.addImageBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addImageBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.addImageBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addImageBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addImageBtn.FillColor = System.Drawing.Color.WhiteSmoke;
             this.addImageBtn.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addImageBtn.ForeColor = System.Drawing.Color.Gray;
             this.addImageBtn.HoverState.FillColor = System.Drawing.Color.Gainsboro;
             this.addImageBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.addImageBtn.Location = new System.Drawing.Point(30, 402);
+            this.addImageBtn.Location = new System.Drawing.Point(0, 0);
             this.addImageBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addImageBtn.Name = "addImageBtn";
-            this.addImageBtn.Size = new System.Drawing.Size(517, 201);
+            this.addImageBtn.Size = new System.Drawing.Size(520, 236);
             this.addImageBtn.TabIndex = 124;
             this.addImageBtn.Text = "Click here to add documents file.";
+            this.addImageBtn.Click += new System.EventHandler(this.addImageBtn_Click);
             // 
             // saveBtn
             // 
@@ -302,7 +310,7 @@
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
             this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(334, 616);
+            this.saveBtn.Location = new System.Drawing.Point(338, 651);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(212, 44);
@@ -323,7 +331,7 @@
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.DarkGray;
             this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancelBtn.Location = new System.Drawing.Point(208, 616);
+            this.cancelBtn.Location = new System.Drawing.Point(212, 651);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(105, 44);
@@ -417,7 +425,7 @@
             this.guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton1.CheckedState.InnerOffset = -4;
             this.guna2RadioButton1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton1.Location = new System.Drawing.Point(371, 120);
+            this.guna2RadioButton1.Location = new System.Drawing.Point(368, 120);
             this.guna2RadioButton1.Name = "guna2RadioButton1";
             this.guna2RadioButton1.Size = new System.Drawing.Size(179, 25);
             this.guna2RadioButton1.TabIndex = 122;
@@ -448,12 +456,49 @@
             this.guna2RadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.guna2RadioButton2.CheckedChanged += new System.EventHandler(this.Radio_CheckedChanged);
             // 
+            // panelPreview
+            // 
+            this.panelPreview.BorderRadius = 15;
+            this.panelPreview.Controls.Add(this.closeImageBtn);
+            this.panelPreview.Controls.Add(this.webBrowser);
+            this.panelPreview.Controls.Add(this.addImageBtn);
+            this.panelPreview.Controls.Add(this.documentPictureBox);
+            this.panelPreview.Location = new System.Drawing.Point(30, 394);
+            this.panelPreview.Name = "panelPreview";
+            this.panelPreview.Size = new System.Drawing.Size(520, 236);
+            this.panelPreview.TabIndex = 125;
+            // 
+            // documentPictureBox
+            // 
+            this.documentPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.documentPictureBox.BorderRadius = 15;
+            this.documentPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentPictureBox.ImageRotate = 0F;
+            this.documentPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.documentPictureBox.Name = "documentPictureBox";
+            this.documentPictureBox.Size = new System.Drawing.Size(520, 236);
+            this.documentPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.documentPictureBox.TabIndex = 0;
+            this.documentPictureBox.TabStop = false;
+            this.documentPictureBox.Visible = false;
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(520, 236);
+            this.webBrowser.TabIndex = 126;
+            this.webBrowser.Visible = false;
+            // 
             // AddNewVehicleDocumentModal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(577, 684);
+            this.ClientSize = new System.Drawing.Size(577, 717);
             this.ControlBox = false;
+            this.Controls.Add(this.panelPreview);
             this.Controls.Add(this.guna2RadioButton2);
             this.Controls.Add(this.guna2RadioButton1);
             this.Controls.Add(this.radioPermanent);
@@ -462,8 +507,6 @@
             this.Controls.Add(this.inputPlateNum);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.closeImageBtn);
-            this.Controls.Add(this.addImageBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -482,6 +525,8 @@
             this.Load += new System.EventHandler(this.AddNewVehicleDocumentModal_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.panelPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,5 +557,8 @@
         private Guna.UI2.WinForms.Guna2RadioButton radioPermanent;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
+        private Guna.UI2.WinForms.Guna2Panel panelPreview;
+        private Guna.UI2.WinForms.Guna2PictureBox documentPictureBox;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
