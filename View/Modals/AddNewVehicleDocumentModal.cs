@@ -14,10 +14,9 @@ using VehicleManagementSystem.Data.Enums;
 
 namespace VehicleManagementSystem.View.Modals {
     public partial class AddNewVehicleDocumentModal : Form {
-
         string documentType;
         string documentTitle => inputDocumentTitle.Text;
-        
+        string _tempSelectedImagePath;
 
         public AddNewVehicleDocumentModal(string PlateNumber) {
             InitializeComponent();
@@ -68,23 +67,22 @@ namespace VehicleManagementSystem.View.Modals {
                 if (documentPictureBox.Image != null) {
                     documentPictureBox.Image.Dispose();
                 }
-                //_userInputted = true;
-                //clearImageInputError();
 
                 string fullPath = openFileDialog.FileName;
                 string fileNameOnly = Path.GetFileName(fullPath);
                 string extension = Path.GetExtension(fullPath).ToLower();
 
                 switch (extension) {
+                    case ".docx":
+                    case ".doc":
                     case ".pdf":
-                        webBrowser.Visible = true;
-                        //try {
-                        //    // WebBrowser is picky about paths; using a Uri is safer
-                        //    Uri pdfUri = new Uri(fullPath);
-                        //    webBrowser.Navigate(pdfUri);
-                        //} catch (Exception ex) {
-                        //    MessageBox.Show("Error loading PDF: " + ex.Message);
-                        //}
+                        long bytes = new System.IO.FileInfo(fullPath).Length;
+                        double mb = (double)bytes / (1024 * 1024);
+                        labelFileName.Text = $"{fileNameOnly} ({mb:F2} MB)";
+
+                        panelFile.BringToFront();
+                        panelFile.Visible = true;
+
                         break;
                     case ".jpg":
                     case ".png":
@@ -93,13 +91,10 @@ namespace VehicleManagementSystem.View.Modals {
                         documentPictureBox.BringToFront();
                         documentPictureBox.Visible = true;
                         break;
-                    case ".docx":
-                    case ".doc":
-                        // Show a Word Icon and the file name
-                        break;
                 }
 
-                //_tempSelectedImagePath = fullPath
+                _tempSelectedImagePath = fullPath;
+                closeImageBtn.BringToFront();
                 closeImageBtn.Visible = true;
             }
         }
@@ -113,12 +108,18 @@ namespace VehicleManagementSystem.View.Modals {
             inputIssueDate.Value = DateTime.Today;
         }
 
+        private void btnViewAttached_Click(object sender, EventArgs e) {
+            if (!string.IsNullOrEmpty(_tempSelectedImagePath))
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(_tempSelectedImagePath) { UseShellExecute = true });
+            }
+        }
+
         private void closeImageBtn_Click(object sender, EventArgs e) {
             if (documentPictureBox.Image != null) {
                 documentPictureBox.Image.Dispose();
             }
-
-            webBrowser.Visible = false;
+            panelFile.Visible = false;
             documentPictureBox.Visible = false;
 
             //if (_tempSelectedImagePath != null) {
