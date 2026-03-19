@@ -215,6 +215,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "VehicleDetailsDocuments";
             this.Size = new System.Drawing.Size(1113, 1133);
+            this.Load += new System.EventHandler(this.VehicleDetailsDocuments_Load);
             this.tableHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

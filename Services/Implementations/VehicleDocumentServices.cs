@@ -8,7 +8,7 @@ using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
 
 namespace VehicleManagementSystem.Services.Implementations {
-    internal class VehicleDocumentServices {
+    public class VehicleDocumentServices {
         public void AddVehicleDocument(VehicleDocumentDto doc) {
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
                 conn.Open();
