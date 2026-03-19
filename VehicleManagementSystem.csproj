@@ -517,6 +517,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <None Include="Resources\lock_reset_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\document.png" />
     <None Include="Resources\chevron-left.png" />
     <None Include="Resources\chevron-right.png" />
     <None Include="Resources\arrow_drop_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
