@@ -257,6 +257,7 @@
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehicleDocumentPresenter.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
+    <Compile Include="Presenters\vehicleDetailsDocumentPresenter.cs" />
     <Compile Include="Presenters\vehicleManagementPresenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -411,6 +412,7 @@
     </Compile>
     <Compile Include="View\Interfaces\IAddNewVehicleDocumentView.cs" />
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
+    <Compile Include="View\Interfaces\IVehicleDetailsDocumentView.cs" />
     <Compile Include="View\Modals\AddNewVehicleMaintenanceModal.cs">
       <SubType>Form</SubType>
     </Compile>
