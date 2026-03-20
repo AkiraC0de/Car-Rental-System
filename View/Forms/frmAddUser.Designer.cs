@@ -187,7 +187,7 @@
             this.genderCmb.Name = "genderCmb";
             this.genderCmb.Size = new System.Drawing.Size(184, 36);
             this.genderCmb.StartIndex = 0;
-            this.genderCmb.TabIndex = 9;
+            this.genderCmb.TabIndex = 5;
             // 
             // label4
             // 
@@ -226,7 +226,7 @@
             this.roleCmb.Name = "roleCmb";
             this.roleCmb.Size = new System.Drawing.Size(232, 36);
             this.roleCmb.StartIndex = 0;
-            this.roleCmb.TabIndex = 6;
+            this.roleCmb.TabIndex = 7;
             this.roleCmb.SelectedIndexChanged += new System.EventHandler(this.roleCmb_SelectedIndexChanged);
             // 
             // statusLabel
@@ -262,7 +262,7 @@
             this.addBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(140, 46);
-            this.addBtn.TabIndex = 0;
+            this.addBtn.TabIndex = 10;
             this.addBtn.Text = "Add User";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -285,7 +285,7 @@
             this.clearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(117, 46);
-            this.clearBtn.TabIndex = 0;
+            this.clearBtn.TabIndex = 9;
             this.clearBtn.Text = "Clear";
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
@@ -338,7 +338,7 @@
             this.statusCmb.Name = "statusCmb";
             this.statusCmb.Size = new System.Drawing.Size(222, 36);
             this.statusCmb.StartIndex = 0;
-            this.statusCmb.TabIndex = 7;
+            this.statusCmb.TabIndex = 8;
             this.statusCmb.SelectedIndexChanged += new System.EventHandler(this.statusCmb_SelectedIndexChanged);
             // 
             // phoneTxt
@@ -360,6 +360,7 @@
             this.phoneTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneTxt.Location = new System.Drawing.Point(649, 128);
             this.phoneTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.phoneTxt.MaxLength = 13;
             this.phoneTxt.Name = "phoneTxt";
             this.phoneTxt.PlaceholderText = "";
             this.phoneTxt.SelectedText = "";
@@ -525,7 +526,7 @@
             this.addressTextBox.PlaceholderText = "";
             this.addressTextBox.SelectedText = "";
             this.addressTextBox.Size = new System.Drawing.Size(1010, 68);
-            this.addressTextBox.TabIndex = 5;
+            this.addressTextBox.TabIndex = 6;
             this.addressTextBox.TextChanged += new System.EventHandler(this.addressTextBox_TextChanged);
             // 
             // fullNameTxt

@@ -76,7 +76,7 @@ namespace PL_VehicleRental.Forms
             _validator.Required(emaiTextBox, "Email is required.", lblEmailError);
             _validator.IsEmail(emaiTextBox, "Invalid email format.", lblEmailError);
             _validator.Required(phoneTxt, "Phone number is required.", lblPhoneError);
-            //_validator.IsPhoneNumber(phoneTxt, "Phone number must be +639 followed by 9 digits.", lblPhoneError);
+            _validator.IsPhoneNumber(phoneTxt, "Phone number must be +639 followed by 9 digits.", lblPhoneError);
             _validator.Required(addressTextBox, "Address is required.", lblAddressError);
         }
 
@@ -121,7 +121,12 @@ namespace PL_VehicleRental.Forms
 
         private bool IsPhoneInputValid()
         {
-            return Regex.IsMatch(phoneTxt.Text.Trim(), @"^\+639\d{9}$");
+            string text = phoneTxt.Text.Trim();
+            if (text.StartsWith("+63"))
+            {
+                text = text.Substring(3);
+            }
+            return text.Length == 9 && Regex.IsMatch(text, @"^\d{9}$");
         }
 
         private void UpdateAddButtonState()
@@ -186,12 +191,6 @@ namespace PL_VehicleRental.Forms
                     SetAsyncError(userNameTextBox, lblUsernameError, "Username already taken.");
                     hasValidationErrors = true;
                 }
-
-                //if (!hasValidationErrors && !_isEmailAvailable)
-                //{
-                //    SetAsyncError(emaiTextBox, lblEmailError, "This email is already used by another user.");
-                //    hasValidationErrors = true;
-                //}
 
                 if (hasValidationErrors)
                 {
@@ -461,7 +460,7 @@ namespace PL_VehicleRental.Forms
                 phoneTxt.Text = "+63";
                 phoneTxt.SelectionStart = phoneTxt.Text.Length;
             }
-            //_validator.ValidateControl(phoneTxt);
+            _validator.ValidateControl(phoneTxt);
             UpdateAddButtonState();
         }
 

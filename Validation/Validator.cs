@@ -211,7 +211,7 @@ namespace PL_VehicleRental.Validation
             {
                 string input = control.Text.Trim();
 
-                if (string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(input) || input == "+63")
                 {
                     return true;
                 }
