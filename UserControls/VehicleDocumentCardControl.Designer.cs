@@ -24,21 +24,21 @@
         /// </summary>
         private void InitializeComponent() {
             this.tableMain = new System.Windows.Forms.TableLayoutPanel();
+            this.labelExtension = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelType = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelExpirationDate = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnRenew = new Guna.UI2.WinForms.Guna2Button();
             this.viewBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelExpirationDate = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelExtension = new System.Windows.Forms.Label();
             this.tableMain.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,19 @@
             this.tableMain.Size = new System.Drawing.Size(1152, 80);
             this.tableMain.TabIndex = 0;
             // 
+            // labelExtension
+            // 
+            this.labelExtension.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelExtension.AutoEllipsis = true;
+            this.labelExtension.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExtension.ForeColor = System.Drawing.Color.Gray;
+            this.labelExtension.Location = new System.Drawing.Point(533, 19);
+            this.labelExtension.Name = "labelExtension";
+            this.labelExtension.Size = new System.Drawing.Size(91, 41);
+            this.labelExtension.TabIndex = 5;
+            this.labelExtension.Text = ".PDF";
+            this.labelExtension.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // labelTitle
             // 
             this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -93,46 +106,6 @@
             this.labelType.TabIndex = 1;
             this.labelType.Text = "Requierd Renewal";
             this.labelType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.DarkOrange;
-            this.guna2Panel1.ForeColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(784, 17);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(131, 45);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Expires Soon";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelExpirationDate
-            // 
-            this.labelExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelExpirationDate.AutoEllipsis = true;
-            this.labelExpirationDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpirationDate.ForeColor = System.Drawing.Color.Gray;
-            this.labelExpirationDate.Location = new System.Drawing.Point(647, 19);
-            this.labelExpirationDate.Name = "labelExpirationDate";
-            this.labelExpirationDate.Size = new System.Drawing.Size(113, 41);
-            this.labelExpirationDate.TabIndex = 3;
-            this.labelExpirationDate.Text = "2/28/2026";
-            this.labelExpirationDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel2
             // 
@@ -189,6 +162,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(48, 42);
             this.btnEdit.TabIndex = 2;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRenew
             // 
@@ -233,6 +207,46 @@
             this.viewBtn.TabIndex = 0;
             this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.FillColor = System.Drawing.Color.DarkOrange;
+            this.guna2Panel1.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(784, 17);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(131, 45);
+            this.guna2Panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoEllipsis = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 45);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Expires Soon";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelExpirationDate
+            // 
+            this.labelExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelExpirationDate.AutoEllipsis = true;
+            this.labelExpirationDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExpirationDate.ForeColor = System.Drawing.Color.Gray;
+            this.labelExpirationDate.Location = new System.Drawing.Point(647, 19);
+            this.labelExpirationDate.Name = "labelExpirationDate";
+            this.labelExpirationDate.Size = new System.Drawing.Size(113, 41);
+            this.labelExpirationDate.TabIndex = 3;
+            this.labelExpirationDate.Text = "2/28/2026";
+            this.labelExpirationDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // guna2Panel3
             // 
             this.guna2Panel3.BorderRadius = 12;
@@ -246,19 +260,6 @@
             this.guna2Panel3.Size = new System.Drawing.Size(1152, 80);
             this.guna2Panel3.TabIndex = 1;
             // 
-            // labelExtension
-            // 
-            this.labelExtension.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelExtension.AutoEllipsis = true;
-            this.labelExtension.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExtension.ForeColor = System.Drawing.Color.Gray;
-            this.labelExtension.Location = new System.Drawing.Point(533, 19);
-            this.labelExtension.Name = "labelExtension";
-            this.labelExtension.Size = new System.Drawing.Size(91, 41);
-            this.labelExtension.TabIndex = 5;
-            this.labelExtension.Text = ".PDF";
-            this.labelExtension.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // VehicleDocumentCardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -269,8 +270,8 @@
             this.Name = "VehicleDocumentCardControl";
             this.Size = new System.Drawing.Size(1152, 80);
             this.tableMain.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

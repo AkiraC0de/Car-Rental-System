@@ -451,6 +451,12 @@
     <Compile Include="View\Modals\ImagePreviewModal.Designer.cs">
       <DependentUpon>ImagePreviewModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Modals\UpdateVehicleDocumentModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Modals\UpdateVehicleDocumentModal.Designer.cs">
+      <DependentUpon>UpdateVehicleDocumentModal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UserControls\MaintenanceCardControl.resx">
       <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -534,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Modals\ImagePreviewModal.resx">
       <DependentUpon>ImagePreviewModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Modals\UpdateVehicleDocumentModal.resx">
+      <DependentUpon>UpdateVehicleDocumentModal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

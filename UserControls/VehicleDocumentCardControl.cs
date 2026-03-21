@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sprache;
+using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -78,6 +79,14 @@ namespace VehicleManagementSystem.UserControls {
                 } catch (Exception ex) {
                     MessageBox.Show($"An error occurred while deleting: {ex.Message}");
                 }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            using (var UpdateVehicleDocumentModal = new UpdateVehicleDocumentModal(_document)) {
+                DialogResult result = UpdateVehicleDocumentModal.ShowDialog();
+
+                if (result != DialogResult.OK) return;
             }
         }
 
