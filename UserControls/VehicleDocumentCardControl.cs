@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.View.Modals;
 
 namespace VehicleManagementSystem.UserControls {
     public partial class VehicleDocumentCardControl : UserControl {
@@ -32,6 +35,24 @@ namespace VehicleManagementSystem.UserControls {
                 btnRenew.Visible = false;
             }
         }
+
+        private void viewBtn_Click(object sender, EventArgs e) {
+            switch (_document.Extension) {
+                case ".docx":
+                case ".doc":
+                case ".pdf":
+
+                    break;
+                case ".jpg":
+                case ".png":
+                case ".jpeg":
+                    string fullImagePath = Path.Combine(AppConfig.AppData.RootPath, _document.FilePath);
+                    var ImagePreviewModal = new ImagePreviewModal(_document.Title, fullImagePath);
+                    ImagePreviewModal.ShowDialog();
+                    break;
+            }
+        }
+
 
     }
 }
