@@ -23,6 +23,7 @@ namespace VehicleManagementSystem.View.Modals {
 
         public string DocumentType => this.Controls.OfType<System.Windows.Forms.RadioButton>()
                                         .FirstOrDefault(r => r.Checked)?.Text ?? "";
+
         public string DocumentTitle => inputDocumentTitle.Text;
         public string DocumentIssuingAuthority => inputIssuingAuthority.Text;
 
@@ -52,7 +53,7 @@ namespace VehicleManagementSystem.View.Modals {
                           .FirstOrDefault(r => r.Text == _currentDocument.Category);
 
             if (targetRadio != null) {
-                targetRadio.Checked = true;
+                targetRadio.Select();
             }
 
             inputDocumentTitle.Text = _currentDocument.Title;
@@ -170,14 +171,13 @@ namespace VehicleManagementSystem.View.Modals {
 
         // REQUIRE ITS OWN PRESENTER AND INTERFACE
         private void saveBtn_Click(object sender, EventArgs e) {
-            // 1. Basic Confirmation
             string message = $"Are you sure you want to update this {DocumentType} document?";
             if (System.Windows.Forms.MessageBox.Show(message, "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
-            try {
-                saveBtn.Text = "Updating...";
-                saveBtn.Enabled = false; // Prevent double clicks
+            saveBtn.Text = "Updating...";
+            saveBtn.Click -= saveBtn_Click;
 
+            try {
                 string finalPath = _currentDocument.FilePath;
                 string extension = _currentDocument.Extension;
 
@@ -226,7 +226,7 @@ namespace VehicleManagementSystem.View.Modals {
             } catch (Exception ex) {
                 System.Windows.Forms.MessageBox.Show($"Update failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 saveBtn.Text = "Update";
-                saveBtn.Enabled = true;
+                saveBtn.Click += saveBtn_Click;
             }
         }
 

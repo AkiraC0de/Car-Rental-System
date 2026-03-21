@@ -41,9 +41,7 @@ namespace VehicleManagementSystem.UserControls {
             DateTime expiration = _document.ExpirationDate.Value;
             DateTime today = DateTime.Today;
 
-            // 2. Compare Dates
-            if (expiration < today) {
-                // Already passed the date
+            if (expiration <= today) {
                 labelStatus.Text = "Expired";
                 panelStatus.FillColor = System.Drawing.Color.FromArgb(230, 57, 70);
             } else if ((expiration - today).TotalDays <= 30) {

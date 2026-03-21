@@ -275,7 +275,7 @@
             this.guna2RadioButton2.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.guna2RadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.Click += new System.EventHandler(this.Radio_CheckedChanged);
+            this.guna2RadioButton2.CheckedChanged += new System.EventHandler(this.Radio_CheckedChanged);
             // 
             // guna2RadioButton1
             // 
@@ -295,7 +295,7 @@
             this.guna2RadioButton1.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.guna2RadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton1.Click += new System.EventHandler(this.Radio_CheckedChanged);
+            this.guna2RadioButton1.CheckedChanged += new System.EventHandler(this.Radio_CheckedChanged);
             // 
             // radioPermanent
             // 
@@ -315,7 +315,7 @@
             this.radioPermanent.UncheckedState.BorderThickness = 2;
             this.radioPermanent.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radioPermanent.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radioPermanent.Click += new System.EventHandler(this.Radio_CheckedChanged);
+            this.radioPermanent.CheckedChanged += new System.EventHandler(this.Radio_CheckedChanged);
             // 
             // inputDocumentTitle
             // 
