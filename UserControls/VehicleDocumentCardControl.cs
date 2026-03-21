@@ -37,17 +37,20 @@ namespace VehicleManagementSystem.UserControls {
         }
 
         private void viewBtn_Click(object sender, EventArgs e) {
+            string fullFilePath = Path.Combine(AppConfig.AppData.RootPath, _document.FilePath);
+
             switch (_document.Extension) {
                 case ".docx":
                 case ".doc":
                 case ".pdf":
-
+                    if (!string.IsNullOrEmpty(fullFilePath)) {
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(fullFilePath) { UseShellExecute = true });
+                    }
                     break;
                 case ".jpg":
                 case ".png":
                 case ".jpeg":
-                    string fullImagePath = Path.Combine(AppConfig.AppData.RootPath, _document.FilePath);
-                    var ImagePreviewModal = new ImagePreviewModal(_document.Title, fullImagePath);
+                    var ImagePreviewModal = new ImagePreviewModal(_document.Title, fullFilePath);
                     ImagePreviewModal.ShowDialog();
                     break;
             }
