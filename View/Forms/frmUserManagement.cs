@@ -21,12 +21,15 @@ namespace PL_VehicleRental.Forms
 {
     public partial class UserManagementForm : Form
     {
-        private System.Windows.Forms.Timer _searchTimer;
+        private System.Timers.Timer _searchTimer;
 
         private int _currentPage = 1;
         private int _pageSize = 14;
         private int _totalPages = 1;
         private string currentSearch = "";
+        private bool _isUpdatingComboBox = false;
+        private int _loadRequestVersion = 0;
+        private bool _isLoading = false;
 
         private readonly userRepository _repository = new userRepository();
         private frmAddUser _addUserControl;
@@ -35,7 +38,7 @@ namespace PL_VehicleRental.Forms
         public UserManagementForm()
         {
             InitializeComponent();
-            InitializeSearchDebounce();
+            //InitializeSearchDebounce();
             InitializePageSelect();
             flowUsers.Resize += flowUsers_Resize;
 
@@ -44,9 +47,7 @@ namespace PL_VehicleRental.Forms
             pnlOverlay.Visible = false;
             progressBar.Anchor = AnchorStyles.None;
 
-            //progressBar.Style = ProgressBarStyle.Marquee;
             progressBar.Dock = DockStyle.None;
-            //progressBar.Size = new Size(150, 10);
             progressBar.Location = new Point((pnlOverlay.Width - progressBar.Width) / 2,
                                              (pnlOverlay.Height - progressBar.Height) / 2);
             pnlOverlay.Controls.Add(progressBar);
@@ -58,7 +59,7 @@ namespace PL_VehicleRental.Forms
             {
                 Size = new Size(70, 30),
                 BorderRadius = 2,
-                Font = new Font("Segoe UI", 9F),
+                Font = new Font("Segoe UI", 10F),
                 Cursor = Cursors.Hand,
                 DropDownHeight = 150,
                 BorderColor = Color.FromArgb(213, 218, 223),
@@ -73,6 +74,9 @@ namespace PL_VehicleRental.Forms
 
         private async void CboPageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_isUpdatingComboBox)
+                return;
+
             if (cboPageSelect.SelectedItem != null && int.TryParse(cboPageSelect.SelectedItem.ToString(), out int page))
             {
                 if (page != _currentPage)
@@ -83,40 +87,77 @@ namespace PL_VehicleRental.Forms
             }
         }
 
+        private async void SearchTimer_Tick(object sender, EventArgs e)
+        {
+            _searchTimer.Stop();
+            Console.WriteLine("SEARCH TRIGGERED");
+            currentSearch = txtSearch.Text.Trim();
+            _currentPage = 1;
+
+            _loadRequestVersion++;
+
+            await LoadPageAsync();
+        }
+
         private async Task LoadPageAsync()
         {
+            if (_isLoading) return;
+            _isLoading = true;
+
+            int requestVersion = ++_loadRequestVersion;
+            Console.WriteLine($"LOAD -> Page: {_currentPage}, Search: '{currentSearch}', Version: {requestVersion}");
             ToggleLoading(true);
 
-            var (users, totalCount) = await _repository.GetPagedUsersAsync(
-                currentSearch,
-                _currentPage,
-                _pageSize,
-                Session.User.Role.ToString());
-
-            flowUsers.Controls.Clear();
-
-            foreach (var user in users)
+            try
             {
-                var item = new ucItemControl(user);
+               var (users, totalCount) = await _repository.GetPagedUsersAsync(
+               currentSearch,
+               _currentPage,
+               _pageSize,
+               Session.User.Role.ToString());
 
-                flowUsers.Controls.Add(item);
-                item.Width = flowUsers.ClientSize.Width;
+                if (requestVersion != _loadRequestVersion)
+                {
+                    return;
+                }
 
-                item.InfoClicked += (_, __) => OpenInfo(user.Id);
-                item.EditClicked += (_, __) => OpenEditForm(user.Id);
-                item.DeleteClicked += (_, __) => DeleteUser(user.Id, user.UserName);
+                flowUsers.Controls.Clear();
+
+                foreach (var user in users)
+                {
+                    var item = new ucItemControl(user);
+
+                    flowUsers.Controls.Add(item);
+                    item.Width = flowUsers.ClientSize.Width;
+
+                    item.InfoClicked += (_, __) => OpenInfo(user.Id);
+                    item.EditClicked += (_, __) => OpenEditForm(user.Id);
+                    item.DeleteClicked += (_, __) => DeleteUser(user.Id, user.UserName);
+                }
+
+                _totalPages = Math.Max(1, (int)Math.Ceiling((double)totalCount / _pageSize));
+                if (_currentPage > _totalPages)
+                    _currentPage = 1;
+
+                UpdatePageButtons();
             }
+            finally
+            {
+                if (requestVersion == _loadRequestVersion)
+                {
+                    ToggleLoading(false);
+                }
 
-            _totalPages = (int)Math.Ceiling((double)totalCount / _pageSize);
-
-            UpdatePageButtons();
-
-            ToggleLoading(false);
+                _isLoading = false;
+            }
         }
 
         private void UpdatePageButtons()
         {
+            flowPageNumbers.SuspendLayout();
             flowPageNumbers.Controls.Clear();
+
+            if (_totalPages < 1) _totalPages = 1;
 
             int maxVisiblePages = 5;
             int startPage = Math.Max(1, _currentPage - maxVisiblePages / 2);
@@ -152,22 +193,19 @@ namespace PL_VehicleRental.Forms
                 btn.Click += PageButton_Click;
                 flowPageNumbers.Controls.Add(btn);
             }
+            flowPageNumbers.ResumeLayout(true);
 
             btnPrev.Enabled = _currentPage > 1;
             btnNext.Enabled = _currentPage < _totalPages;
 
+            _isUpdatingComboBox = true;
+
             cboPageSelect.SelectedIndexChanged -= CboPageSelect_SelectedIndexChanged;
 
-            if (cboPageSelect.Items.Count != _totalPages)
+               cboPageSelect.Items.Clear();
+            for (int i = 1; i <= _totalPages; i++)
             {
-                cboPageSelect.Items.Clear();
-                if (_totalPages > 0)
-                {
-                    for (int i = 1; i <= _totalPages; i++)
-                    {
-                        cboPageSelect.Items.Add(i.ToString());
-                    }
-                }
+                cboPageSelect.Items.Add(i.ToString());
             }
 
             if (_currentPage > 0 && _currentPage <= cboPageSelect.Items.Count)
@@ -176,7 +214,7 @@ namespace PL_VehicleRental.Forms
             }
 
             cboPageSelect.SelectedIndexChanged += CboPageSelect_SelectedIndexChanged;
-
+            _isUpdatingComboBox = false;
             AlignPagination();
         }
 
@@ -184,7 +222,7 @@ namespace PL_VehicleRental.Forms
         {
             int spacing = 10;
 
-            flowPageNumbers.PerformLayout();
+            int flowWidth = flowPageNumbers.GetPreferredSize(Size.Empty).Width;
             int totalWidth = btnPrev.Width + spacing + flowPageNumbers.Width + spacing + btnNext.Width + spacing + cboPageSelect.Width;
 
             pnlPagination.Width = totalWidth;
@@ -220,6 +258,7 @@ namespace PL_VehicleRental.Forms
 
         private async void UserManagementForm_Load(object sender, EventArgs e)
         {
+            InitializeSearchDebounce();
             TableHeader();
             FixHeaderScrollbarAlignment();
             ApplyPermission();
@@ -246,26 +285,37 @@ namespace PL_VehicleRental.Forms
         
         private void InitializeSearchDebounce()
         {
-            _searchTimer = new System.Windows.Forms.Timer();
-            _searchTimer.Interval = 400;
-            _searchTimer.Tick += SearchTimer_Tick;
+            _searchTimer = new System.Timers.Timer(400);
+            _searchTimer.AutoReset = false;
+
+            _searchTimer.Elapsed += async (s, e) =>
+            {
+                if (this.IsHandleCreated)
+                {
+                    this.Invoke(new Action(async () =>
+                    {
+                        Console.WriteLine("SEARCH TRIGGERED");
+
+                        currentSearch = txtSearch.Text.Trim();
+                        _currentPage = 1;
+
+                        _loadRequestVersion++;
+
+                        await LoadPageAsync();
+                    }));
+                }
+            };
+
+            txtSearch.TextChanged += txtSearch_TextChanged;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            Console.WriteLine("Typing...");
             _searchTimer.Stop();
             _searchTimer.Start();
         }
 
-        private async void SearchTimer_Tick(object sender, EventArgs e)
-        {
-            _searchTimer.Stop();
-
-            currentSearch = txtSearch.Text.Trim();
-            _currentPage = 1;
-
-            await LoadPageAsync();
-        }
 
         private void TableHeader()
         {
