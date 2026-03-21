@@ -577,6 +577,7 @@
             this.Name = "UpdateVehicleDocumentModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateVehicleDocumentModal";
+            this.Load += new System.EventHandler(this.UpdateVehicleDocumentModal_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelPreview.ResumeLayout(false);

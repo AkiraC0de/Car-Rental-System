@@ -263,6 +263,12 @@ namespace VehicleManagementSystem.View.Modals {
                    original.ExpirationDate != updated.ExpirationDate ||
                    original.FilePath != updated.FilePath;
         }
+
+        private void UpdateVehicleDocumentModal_Load(object sender, EventArgs e) {
+            inputDocumentTitle.Focus();
+            inputExpirationDate.MinDate = DateTime.Today;
+            inputIssueDate.MaxDate = DateTime.Today;
+        }
     }
 }
     
