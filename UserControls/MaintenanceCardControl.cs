@@ -15,19 +15,21 @@ namespace VehicleManagementSystem.UserControls {
             InitializeComponent();
         }
 
-        public void Bind(VehicleMaintenanceScheduleDto maintenanceSchedule) {
+        public void Bind(VehicleMaintenanceScheduleDto maintenanceSchedule, decimal currentMileage) {
             if (maintenanceSchedule == null) {
                 return;
             }
+            int mileageInt = (int)currentMileage;
+            string currentStatus = maintenanceSchedule.GetStatus(mileageInt);
 
             labelMaintenanceType.Text = maintenanceSchedule.MaintenanceType;
-            labelMaintenanceType.ForeColor = GetStatusColor(maintenanceSchedule.Status);
+            labelMaintenanceType.ForeColor = GetStatusColor(currentStatus);
             labelInterval.Text = GetInterval(maintenanceSchedule);
-            labelStatus.Text = maintenanceSchedule.Status;
-            labelStatus.ForeColor = GetStatusColor(maintenanceSchedule.Status);
+            labelStatus.Text = currentStatus;
+            labelStatus.ForeColor = GetStatusColor(currentStatus);
 
-            progressCIrcle.ProgressColor = GetStatusColor(maintenanceSchedule.Status);
-            progressCIrcle.ProgressColor2 = GetStatusColor(maintenanceSchedule.Status);
+            progressCIrcle.ProgressColor = GetStatusColor(currentStatus);
+            progressCIrcle.ProgressColor2 = GetStatusColor(currentStatus);
             
             labelDueDate.Text = maintenanceSchedule.NextDueDate?
                                 .ToString("MMM dd, yyyy")

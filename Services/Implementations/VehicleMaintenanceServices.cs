@@ -43,9 +43,17 @@ namespace VehicleManagementSystem.Services.Implementations {
                             tasks.Add(new VehicleMaintenanceTypeDto {
                                 TaskID = reader.GetInt32("TaskID"),
                                 TaskName = reader.GetString("TaskName"),
-                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? "" : reader.GetString("Description"),
-                                DefaultMileageInterval = reader.GetInt32("DefaultMileageInterval"),
-                                DefaultMonthInterval = reader.GetInt32("DefaultMonthInterval")
+                                Description = reader.IsDBNull(reader.GetOrdinal("Description"))
+                                              ? ""
+                                              : reader.GetString("Description"),
+
+                                DefaultMileageInterval = reader.IsDBNull(reader.GetOrdinal("DefaultMileageInterval"))
+                                                         ? (int?)null
+                                                         : reader.GetInt32("DefaultMileageInterval"),
+
+                                DefaultMonthInterval = reader.IsDBNull(reader.GetOrdinal("DefaultMonthInterval"))
+                                                       ? (int?)null
+                                                       : reader.GetInt32("DefaultMonthInterval")
                             });
                         }
                     }
@@ -53,5 +61,9 @@ namespace VehicleManagementSystem.Services.Implementations {
             }
             return tasks;
         }
+
+
+
+
     }
 }
