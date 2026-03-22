@@ -272,6 +272,7 @@
     <Compile Include="Models\CreateUserResult.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehicleDocumentPresenter.cs" />
+    <Compile Include="Presenters\AddNewVehicleMaintenancePresenter.cs" />
     <Compile Include="Presenters\addNewVehicleMaintenanceTypePresenter.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
     <Compile Include="Presenters\maintenanceManagementPresenter.cs" />
@@ -437,6 +438,7 @@
     </Compile>
     <Compile Include="View\Interfaces\IAddNewVehicleDocumentView.cs" />
     <Compile Include="View\Interfaces\IAddNewVehicleMaintenanceTypeView.cs" />
+    <Compile Include="View\Interfaces\IAddNewVehicleMaintenanceView.cs" />
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
     <Compile Include="View\Interfaces\IVehicleDetailsDocumentView.cs" />
     <Compile Include="View\Interfaces\IMaintenanceManagementView.cs" />
