@@ -30,7 +30,10 @@ namespace VehicleManagementSystem.UserControls {
 
             progressCIrcle.ProgressColor = GetStatusColor(currentStatus);
             progressCIrcle.ProgressColor2 = GetStatusColor(currentStatus);
-            
+
+            double progress = CalculateOverallProgress(maintenanceSchedule, mileageInt);
+            progressCIrcle.Value = (int)progress;
+
             labelDueDate.Text = maintenanceSchedule.NextDueDate?
                                 .ToString("MMM dd, yyyy")
                                 ?? "—";
@@ -83,5 +86,42 @@ namespace VehicleManagementSystem.UserControls {
             return "Every " + string.Join(" or ", parts);
         }
 
+
+        private double CalculateOverallProgress(VehicleMaintenanceScheduleDto schedule, int currentKm) {
+            // 1. Priority: Mileage
+            if (schedule.IntervalKm.HasValue && schedule.LastPerformedOdometer.HasValue) {
+                return GetOdometerIntervalPercentage(
+                    schedule.LastPerformedOdometer.Value,
+                    schedule.IntervalKm.Value,
+                    currentKm
+                );
+            }
+
+            // 2. Fallback: Date
+            if (schedule.IntervalMonths.HasValue && schedule.LastPerformedDate.HasValue) {
+                return GetDateIntervalPercentage(
+                    schedule.LastPerformedDate.Value,
+                    schedule.IntervalMonths.Value
+                );
+            }
+
+            return 0;
+        }
+
+        private double GetDateIntervalPercentage(DateTime startDate, int intervalMonths) {
+            DateTime dueDate = startDate.AddMonths(intervalMonths);
+            DateTime today = DateTime.Today;
+
+            if (today <= startDate) return 0;
+            if (today >= dueDate) return 100;
+
+            double totalDays = (dueDate - startDate).TotalDays;
+            double daysElapsed = (today - startDate).TotalDays;
+
+            if (totalDays <= 0) return 0;
+
+            double progress = (daysElapsed / totalDays) * 100;
+            return Math.Round(progress, 2);
+        }
     }
 }
