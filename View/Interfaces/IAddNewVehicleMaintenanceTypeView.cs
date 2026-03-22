@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehicleManagementSystem.View.Interfaces {
     public interface IAddNewVehicleMaintenanceTypeView {  
-        string TaskName { get; }
+        string MaintenanceName { get; }
         string Description { get; }
 
         int? SuggestedMileageInterval { get; } 

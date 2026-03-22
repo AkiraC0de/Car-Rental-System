@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
 using VehicleManagementSystem.Services.Implementations;
 using VehicleManagementSystem.View.Interfaces;
 
@@ -28,7 +22,7 @@ namespace VehicleManagementSystem.Presenters {
 
             try {
                 var newTask = new Dto.VehicleMaintenanceTypeDto {
-                    TaskName = _view.TaskName,
+                    MaintenanceName = _view.MaintenanceName,
                     Description = _view.Description,
                     SuggestedMileageInterval = _view.SuggestedMileageInterval,
                     SuggestedMonthInterval = _view.SuggestedMonthInterval    
@@ -47,7 +41,7 @@ namespace VehicleManagementSystem.Presenters {
         private bool IsAllInputsValid(IAddNewVehicleMaintenanceTypeView inputs) {
             bool hadNoError = true;
 
-            if (string.IsNullOrWhiteSpace(inputs.TaskName)) {
+            if (string.IsNullOrWhiteSpace(inputs.MaintenanceName)) {
                 //_view.SetFieldError(AddNewVehicleInputEnums.VehicleIdentificationNumber, "Required.");
                 hadNoError = false;
             }

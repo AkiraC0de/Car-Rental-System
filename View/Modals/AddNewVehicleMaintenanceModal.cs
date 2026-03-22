@@ -14,7 +14,7 @@ namespace VehicleManagementSystem.View.Modals {
         VehicleDto _vehicle;
 
         public string PlateNumber => _vehicle.LicensePlate;
-        public int TypeId => (inputType.SelectedItem as VehicleMaintenanceTypeDto)?.TaskID ?? 0;
+        public int TypeId => (inputType.SelectedItem as VehicleMaintenanceTypeDto)?.MaintenanceTypeID ?? 0;
         public string Description => (inputType.SelectedItem as VehicleMaintenanceTypeDto)?.Description.ToString() ?? " ";
 
         public int? IntervalKm { get {
@@ -109,8 +109,8 @@ namespace VehicleManagementSystem.View.Modals {
 
         private void cmbMaintenanceTask_SelectedIndexChanged(object sender, EventArgs e) {
             if (SelectedType != null) {
-                inputMilleageInterval.Text = SelectedType.DefaultMileageInterval?.ToString() ?? "";
-                inputMonthlyInterval.Text = SelectedType.DefaultMonthInterval?.ToString() ?? "";
+                inputMilleageInterval.Text = SelectedType.SuggestedMileageInterval?.ToString() ?? "";
+                inputMonthlyInterval.Text = SelectedType.SuggestedMonthInterval?.ToString() ?? "";
             }
 
             LoadPreviewCard();

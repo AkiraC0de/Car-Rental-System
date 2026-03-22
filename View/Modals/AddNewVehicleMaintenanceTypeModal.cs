@@ -14,7 +14,7 @@ namespace VehicleManagementSystem.View.Modals {
     public partial class AddNewVehicleMaintenanceTypeModal : Form, IAddNewVehicleMaintenanceTypeView {
         addNewVehicleMaintenanceTypePresenter _presenter;
 
-        public string TaskName => inputTaskName.Text.Trim();
+        public string MaintenanceName => inputTaskName.Text.Trim();
         public string Description => inputDescription.Text.Trim();
 
         public int? SuggestedMileageInterval { get {

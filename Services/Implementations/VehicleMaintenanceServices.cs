@@ -19,7 +19,7 @@ namespace VehicleManagementSystem.Services.Implementations {
                         (@Name, @Desc, @Mileage, @Months);";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
-                    cmd.Parameters.AddWithValue("@Name", task.TaskName.Trim());
+                    cmd.Parameters.AddWithValue("@Name", task.MaintenanceName.Trim());
                     cmd.Parameters.AddWithValue("@Desc", (object)task.Description ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@Mileage", task.SuggestedMileageInterval);
                     cmd.Parameters.AddWithValue("@Months", task.SuggestedMonthInterval);
@@ -34,26 +34,26 @@ namespace VehicleManagementSystem.Services.Implementations {
             var tasks = new List<VehicleMaintenanceTypeDto>();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                string sql = "SELECT * FROM MaintenanceTaskDefinitions ORDER BY TaskName ASC";
+                string sql = "SELECT * FROM VehicleMaintenanceType ORDER BY MaintenanceName ASC";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     conn.Open();
                     using (var reader = cmd.ExecuteReader()) {
                         while (reader.Read()) {
                             tasks.Add(new VehicleMaintenanceTypeDto {
-                                TaskID = reader.GetInt32("TaskID"),
-                                TaskName = reader.GetString("TaskName"),
+                                MaintenanceTypeID = reader.GetInt32("MaintenanceTypeID"),
+                                MaintenanceName = reader.GetString("MaintenanceName"),
                                 Description = reader.IsDBNull(reader.GetOrdinal("Description"))
                                               ? ""
                                               : reader.GetString("Description"),
 
-                                DefaultMileageInterval = reader.IsDBNull(reader.GetOrdinal("DefaultMileageInterval"))
+                                SuggestedMileageInterval = reader.IsDBNull(reader.GetOrdinal("SuggestedMileageInterval"))
                                                          ? (int?)null
-                                                         : reader.GetInt32("DefaultMileageInterval"),
+                                                         : reader.GetInt32("SuggestedMileageInterval"),
 
-                                DefaultMonthInterval = reader.IsDBNull(reader.GetOrdinal("DefaultMonthInterval"))
+                                SuggestedMonthInterval = reader.IsDBNull(reader.GetOrdinal("SuggestedMonthInterval"))
                                                        ? (int?)null
-                                                       : reader.GetInt32("DefaultMonthInterval")
+                                                       : reader.GetInt32("SuggestedMonthInterval")
                             });
                         }
                     }
