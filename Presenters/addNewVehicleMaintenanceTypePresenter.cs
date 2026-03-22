@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using VehicleManagementSystem.Services.Implementations;
 using VehicleManagementSystem.View.Interfaces;
 
@@ -20,7 +22,7 @@ namespace VehicleManagementSystem.Presenters {
             if (!IsAllInputsValid(_view)) return;
 
             if (_view.DefaultMileageInterval <= 0 && _view.DefaultMonthInterval <= 0) {
-                MessageBox.Show("Please enter a valid mileage or month interval.", "Input Error");
+                _view.ShowSuccess("Please enter a valid mileage or month interval.");
                 return;
             }
 
