@@ -300,6 +300,12 @@
     <Compile Include="UserControls\MaintenanceCardControl.Designer.cs">
       <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucEmptyState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucEmptyState.Designer.cs">
+      <DependentUpon>ucEmptyState.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucHeaderTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -479,6 +485,9 @@
     <EmbeddedResource Include="UserControls\MaintenanceCardControl.resx">
       <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucEmptyState.resx">
+      <DependentUpon>ucEmptyState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucHeaderTab.resx">
       <DependentUpon>ucHeaderTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,6 +597,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\edit_square_24dp_3333FF_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\delete_24dp_FF4433_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\resend %281%29.png" />
     <None Include="Resources\contract %281%29.png" />
     <None Include="Resources\person_add_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 %281%29.png" />

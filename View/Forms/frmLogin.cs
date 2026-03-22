@@ -102,14 +102,14 @@ namespace PL_VehicleRental.Forms
                     UserImagePath = user.ImagePath,
                 };
 
-                await AuditService.LogAsync(new AuditLog
-                {
-                    UserId = user.Id,
-                    ActionType = "LOGIN",
-                    Description = "User logged in",
-                    TableAffected = "users",
-                    RecordId = user.Id
-                });
+                //await AuditService.LogAsync(new AuditLog
+                //{
+                //    UserId = user.Id,
+                //    ActionType = "LOGIN",
+                //    Description = "User logged in",
+                //    TableAffected = "users",
+                //    RecordId = user.Id
+                //});
 
                 Console.WriteLine($"'{user.ImagePath}'");
                 Console.WriteLine($"Logged in user: '{user.Id}' - '{user.UserName}'");

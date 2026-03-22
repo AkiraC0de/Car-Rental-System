@@ -224,7 +224,7 @@ namespace PL_VehicleRental.DAL.Repositories
             }
         }
 
-        public async Task<(List<UserInfoDto> Users, int TotalCount)> GetPagedUsersAsync(string search, int pageNumber, int pageSize, string currentUserRole)
+        public async Task<(List<UserInfoDto> Users, int TotalCount)> GetPagedUsersAsync(string search, int pageNumber, int pageSize, string currentUserRole, string statusFilter = null)
         {
             var users = new List<UserInfoDto>();
             int totalCount = 0;
@@ -233,22 +233,37 @@ namespace PL_VehicleRental.DAL.Repositories
             {
                 await conn.OpenAsync();
 
-                string searchParam = $"%{search}%";
+                string searchParam = string.IsNullOrWhiteSpace(search) ? null : $"%{search}%";
+                bool hasSearch = !string.IsNullOrWhiteSpace(search);
 
-                string whereClause = @"
-                                        WHERE
+                string baseWhereClause = @"
                                         (
                                             (@CurrentUserRole = 'Superadmin' AND isDeleted = 0)
                                             OR
                                             (@CurrentUserRole != 'Superadmin' AND isDeleted = 0 AND status = 'Active')
-                                        )
-                                        AND (
+                                        )";
+
+                string searchClause = @"
+                                        (
+                                             @Search IS NULL OR
                                              userName LIKE @Search
                                              OR fullName LIKE @Search
                                              OR email LIKE @Search
                                              OR address LIKE @Search
-                                             )";
+                                        )";
 
+                string filterClause = string.Empty;
+                if (!string.IsNullOrEmpty(statusFilter))
+                {
+                    filterClause = " AND (status = @StatusFilter OR role = @StatusFilter)";
+                }
+
+                string whereClause = $"WHERE {baseWhereClause}";
+                if (hasSearch)
+                {
+                    whereClause += $" AND {searchClause}";
+                }
+                whereClause += filterClause;
 
                 string countQuery = $@"
                                     SELECT COUNT(*) 
@@ -257,9 +272,20 @@ namespace PL_VehicleRental.DAL.Repositories
 
                 using (var countCmd = new MySqlCommand(countQuery, conn))
                 {
-                    countCmd.Parameters.AddWithValue("@Search", searchParam);
                     countCmd.Parameters.AddWithValue("@CurrentUserRole", currentUserRole);
+
+                    if (hasSearch)
+                    {
+                        countCmd.Parameters.AddWithValue("@Search", searchParam ?? (object)DBNull.Value);
+                    }
+
+                    if (!string.IsNullOrEmpty(statusFilter))
+                    {
+                        countCmd.Parameters.AddWithValue("@StatusFilter", statusFilter);
+                    }
+
                     totalCount = Convert.ToInt32(await countCmd.ExecuteScalarAsync());
+                    Console.WriteLine($"Total count - Search: '{search}', Filter: '{statusFilter}', Count: {totalCount}");
                 }
 
                 string dataQuery = $@"
@@ -270,10 +296,19 @@ namespace PL_VehicleRental.DAL.Repositories
 
                 using (var cmd = new MySqlCommand(dataQuery, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Search", searchParam);
                     cmd.Parameters.AddWithValue("@CurrentUserRole", currentUserRole);
                     cmd.Parameters.AddWithValue("PageSize", pageSize);
                     cmd.Parameters.AddWithValue("Offset", (pageNumber - 1) * pageSize);
+
+                    if (hasSearch)
+                    {
+                        cmd.Parameters.AddWithValue("@Search", (object)searchParam ?? DBNull.Value);
+                    }
+
+                    if (!string.IsNullOrEmpty(statusFilter))
+                    {
+                        cmd.Parameters.AddWithValue("@StatusFilter", statusFilter ?? (object)DBNull.Value);
+                    }
 
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {

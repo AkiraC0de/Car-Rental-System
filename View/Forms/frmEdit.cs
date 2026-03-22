@@ -17,6 +17,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VehicleManagementSystem.Dto;
 using PL_VehicleRental.Services;
+using PL_VehicleRental.Validation;
+using System.Text.RegularExpressions;
+using Guna.UI2.WinForms;
 
 namespace PL_VehicleRental.Forms
 {
@@ -27,6 +30,9 @@ namespace PL_VehicleRental.Forms
         private readonly int _userId;
         private UserStatus _userStatus;
         private readonly userRepository _repository;
+        private readonly Validator _validator;
+        private bool _isSubmitting;
+        private readonly UserService _userService;
         private bool _isImageChanged;
         private bool _hasStartedInitialLoad;
         private const long MaxFileSize = 2 * 1024 * 1024;
@@ -39,10 +45,93 @@ namespace PL_VehicleRental.Forms
         public frmEdit(int userId)
         {
             InitializeComponent();
+            _validator = new Validator();
+            _userService = new UserService();
             _userId = userId;
             _repository = new userRepository();
             _isImageChanged = false;
             _hasStartedInitialLoad = false;
+
+            ConfigureValidation();
+            UpdateAddButtonState();
+        }
+
+        private void ConfigureValidation()
+        {
+            _validator.Required(txtUserName, "Username is required.", lblUsernameError);
+            _validator.Custom(txtUserName, () => txtUserName.Text.Trim().Length >= 5, "Username must be at least 5 characters.", lblUsernameError);
+            _validator.Custom(txtUserName, () => Regex.IsMatch(txtUserName.Text.Trim(), @"^[a-zA-Z0-9]+$"), "Username can only contain letters and numbers.", lblUsernameError);
+
+            _validator.Required(txtFullName, "Full name is required.", lblFullNameError);
+            _validator.Required(txtEmail, "Email is required.", lblEmailError);
+            _validator.IsEmail(txtEmail, "Invalid email format.", lblEmailError);
+            _validator.Required(txtPhone, "Phone number is required.", lblPhoneError);
+            _validator.IsPhoneNumber(txtPhone, "Phone number must be +639 followed by 9 digits.", lblPhoneError);
+            _validator.Required(txtAddress, "Address is required.", lblAddressError);
+        }
+
+        private bool IsUsernameInputValid()
+        {
+            string username = txtUserName.Text.Trim();
+            return !string.IsNullOrWhiteSpace(username) && username.Length >= 5 && Regex.IsMatch(username, @"^[a-zA-Z0-9]+$");
+        }
+
+        private bool IsEmailInputValid()
+        {
+            string email = txtEmail.Text.Trim();
+            return !string.IsNullOrWhiteSpace(email)
+                && Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
+        private bool IsPhoneInputValid()
+        {
+            string text = txtPhone.Text.Trim();
+            if (text.StartsWith("+63"))
+            {
+                text = text.Substring(3);
+            }
+            return text.Length == 10 && Regex.IsMatch(text, @"^\d{10}$");
+        }
+
+        private void UpdateAddButtonState()
+        {
+            bool basicValid =
+            IsUsernameInputValid() &&
+                !string.IsNullOrWhiteSpace(txtFullName.Text) &&
+                IsEmailInputValid() &&
+                IsPhoneInputValid() &&
+                !string.IsNullOrWhiteSpace(txtAddress.Text) &&
+                genderCmb.SelectedIndex != -1 &&
+                roleCmb.SelectedIndex != -1 &&
+                statusCmb.SelectedIndex != -1;
+
+            btnSave.Enabled = basicValid;
+        }
+
+        private void SetAsyncError(Control control, Label errorLabel, string message)
+        {
+            if (!(control is Guna2TextBox gunaTxt))
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                _validator.ValidateControl(control);
+                return;
+            }
+
+            gunaTxt.BorderColor = Color.Red;
+            gunaTxt.HoverState.BorderColor = Color.Red;
+            gunaTxt.FocusedState.BorderColor = Color.Red;
+
+            if (errorLabel != null)
+            {
+                errorLabel.Text = message;
+                errorLabel.Visible = true;
+            }
+
+
         }
 
         protected virtual void OnUserUpdated()
@@ -157,7 +246,10 @@ namespace PL_VehicleRental.Forms
                 "Superadmin",
                 "Admin",
                 "Staff",
-                "Mechanic"
+                "Mechanic",
+                "HR",
+                "IT",
+                "Finance"
             });
 
             statusCmb.Items.Clear();
@@ -218,8 +310,13 @@ namespace PL_VehicleRental.Forms
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            if (_isSubmitting) return;
+
+            btnSave.Enabled = false;
+
             try
             {
+                _isSubmitting = true;
                 ToggleLoading(true);
 
                 if (!AuthorizationService.HasPermission(Permission.EditUser))
@@ -279,6 +376,7 @@ namespace PL_VehicleRental.Forms
                     MessageBoxIcon.Error);
             } finally
             {
+                _isSubmitting = false;
                 ToggleLoading(false);
             }
         }
@@ -354,6 +452,8 @@ namespace PL_VehicleRental.Forms
                 txtPhone.Text = "+63";
                 txtPhone.SelectionStart = txtPhone.Text.Length;
             }
+            _validator.ValidateControl(txtPhone);
+            UpdateAddButtonState();
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -361,6 +461,14 @@ namespace PL_VehicleRental.Forms
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+        private void txtPhone_Enter(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                txtPhone.Text = "+63";
+                txtPhone.SelectionStart = txtPhone.Text.Length;
             }
         }
 
@@ -431,6 +539,36 @@ namespace PL_VehicleRental.Forms
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            if (!_validator.ValidateControl(txtUserName))
+            {
+                UpdateAddButtonState();
+                return;
+            }
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+            _validator.ValidateControl(txtFullName);
+            UpdateAddButtonState();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!_validator.ValidateControl(txtEmail))
+            {
+                UpdateAddButtonState();
+                return;
+            }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            _validator.ValidateControl(txtAddress);
+            UpdateAddButtonState();
+        }
+
+        private void roleCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

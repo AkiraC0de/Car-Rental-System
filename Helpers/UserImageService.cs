@@ -21,12 +21,12 @@ namespace VehicleManagementSystem.Helpers
 
         public string Save(Image image)
         {
-            string fileName = $"{Guid.NewGuid()}.jpg";
+            string fileName = $"{Guid.NewGuid()}.png";
             string fullPath = Path.Combine(_folder, fileName);
 
             using (Image resized = ImageHelper.Resize(image, 256, 256))
             {
-                resized.Save(fullPath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                resized.Save(fullPath, System.Drawing.Imaging.ImageFormat.Png);
             }
 
             return fileName;

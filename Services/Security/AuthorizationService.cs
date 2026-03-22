@@ -13,7 +13,12 @@ namespace PL_VehicleRental.Services.Security
             if (Session.User == null) return false;
             if (Session.User.Role == UserRole.Superadmin) return true;
 
-            return RolePermissionMap.Map[Session.User.Role].Contains(permission);
+            if (RolePermissionMap.Map.TryGetValue(Session.User.Role, out var permissions))
+            {
+                return permissions.Contains(permission);
+            }
+
+            return false;
         }
 
         public static bool CanModifyUser(string targetRole)

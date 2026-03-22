@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using VehicleManagementSystem.Dto;
 using PL_VehicleRental.Services;
+using VehicleManagementSystem.UserControls;
 
 namespace PL_VehicleRental.Forms
 {
@@ -31,11 +32,14 @@ namespace PL_VehicleRental.Forms
         private bool _isUpdatingComboBox = false;
         private int _loadRequestVersion = 0;
         private bool _isLoading = false;
+        private string currentFilter = "";
+        private bool _isUpdatingFilter = false;
 
         private readonly userRepository _repository = new userRepository();
         private frmAddUser _addUserControl;
         private frmEdit _editUserControl;
         private Guna.UI2.WinForms.Guna2ComboBox cboPageSelect;
+        private ucEmptyState emptyState;
         public UserManagementForm()
         {
             InitializeComponent();
@@ -52,6 +56,34 @@ namespace PL_VehicleRental.Forms
             progressBar.Location = new Point((pnlOverlay.Width - progressBar.Width) / 2,
                                              (pnlOverlay.Height - progressBar.Height) / 2);
             pnlOverlay.Controls.Add(progressBar);
+
+            emptyState = new ucEmptyState();
+            emptyState.SetMessage("No users found", "Try adjusting your search or filter.");
+            emptyState.ResetClicked += EmptyState_ResetClicked;
+
+            UserManagementPanel.Controls.Add(emptyState);
+            emptyState.BringToFront();
+            emptyState.Visible = false;
+        }
+
+        private void InitializeFilter()
+        {
+            if (cmbFilter != null)
+            {
+                cmbFilter.Items.Add("All");
+                cmbFilter.Items.Add("Active");
+                cmbFilter.Items.Add("Inactive");
+                cmbFilter.Items.Add("Suspended");
+                cmbFilter.Items.Add("Superadmin");
+                cmbFilter.Items.Add("Admin");
+                cmbFilter.Items.Add("Staff");
+                cmbFilter.Items.Add("HR");
+                cmbFilter.Items.Add("IT");
+                cmbFilter.Items.Add("Finance");
+                cmbFilter.SelectedIndex = 0;
+
+                cmbFilter.SelectedIndexChanged += CmbFilter_SelectedIndexChanged;
+            }
         }
 
         private void InitializePageSelect()
@@ -71,6 +103,21 @@ namespace PL_VehicleRental.Forms
             cboPageSelect.FocusedState.BorderColor = Color.FromArgb(42, 132, 191);
             cboPageSelect.SelectedIndexChanged += CboPageSelect_SelectedIndexChanged;
             pnlPagination.Controls.Add(cboPageSelect);
+        }
+
+        private async void EmptyState_ResetClicked(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+
+            _isUpdatingFilter = true;
+            cmbFilter.SelectedIndex = 0;
+            _isUpdatingFilter = false;
+
+            currentSearch = "";
+            currentFilter = "All";
+            _currentPage = 1;
+
+            await LoadPageAsync();
         }
 
         private async void CboPageSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,38 +149,47 @@ namespace PL_VehicleRental.Forms
 
         private async Task LoadPageAsync()
         {
-            if (_isLoading) return;
-            _isLoading = true;
-
             int requestVersion = ++_loadRequestVersion;
-            Console.WriteLine($"LOAD -> Page: {_currentPage}, Search: '{currentSearch}', Version: {requestVersion}");
+            Console.WriteLine($"LOAD -> Page: {_currentPage}, Search: '{currentSearch}', Filter: {currentFilter}, Version: {requestVersion}");
             ToggleLoading(true);
 
             try
             {
-               var (users, totalCount) = await _repository.GetPagedUsersAsync(
-               currentSearch,
+               var filterToPass = currentFilter != "All" ? currentFilter : null;
+               var searchToPass = string.IsNullOrWhiteSpace(currentSearch) ? null : currentSearch;
+                var (users, totalCount) = await _repository.GetPagedUsersAsync(
+               searchToPass,
                _currentPage,
                _pageSize,
-               Session.User.Role.ToString());
+               Session.User.Role.ToString(),
+               filterToPass);
 
                 if (requestVersion != _loadRequestVersion)
                 {
                     return;
                 }
 
-                flowUsers.Controls.Clear();
+                bool hasData = users.Count > 0;
+                flowUsers.Visible = hasData;
+                TableHeaderPanel.Visible = hasData;
+                rolesTablePanel.Visible = hasData;
 
-                foreach (var user in users)
+                emptyState.Visible = !hasData;
+
+                if (hasData)
                 {
-                    var item = new ucItemControl(user);
+                    flowUsers.Controls.Clear();
+                    foreach (var user in users)
+                    {
+                        var item = new ucItemControl(user);
 
-                    flowUsers.Controls.Add(item);
-                    item.Width = flowUsers.ClientSize.Width;
+                        flowUsers.Controls.Add(item);
+                        item.Width = flowUsers.ClientSize.Width;
 
-                    item.InfoClicked += (_, __) => OpenInfo(user.Id);
-                    item.EditClicked += (_, __) => OpenEditForm(user.Id);
-                    item.DeleteClicked += (_, __) => DeleteUser(user.Id, user.UserName);
+                        item.InfoClicked += (_, __) => OpenInfo(user.Id);
+                        item.EditClicked += (_, __) => OpenEditForm(user.Id);
+                        item.DeleteClicked += (_, __) => DeleteUser(user.Id, user.UserName);
+                    }
                 }
 
                 _totalPages = Math.Max(1, (int)Math.Ceiling((double)totalCount / _pageSize));
@@ -144,13 +200,16 @@ namespace PL_VehicleRental.Forms
             }
             finally
             {
-                if (requestVersion == _loadRequestVersion)
-                {
-                    ToggleLoading(false);
-                }
-
-                _isLoading = false;
+                ToggleLoading(false);
             }
+        }
+
+        private void CenterNoResultsLabel()
+        {
+            lblNoResults.Location = new Point(
+                (flowUsers.ClientSize.Width - lblNoResults.Width) / 2,
+                (flowUsers.ClientSize.Height - lblNoResults.Height) / 2
+            );
         }
 
         private void UpdatePageButtons()
@@ -260,6 +319,7 @@ namespace PL_VehicleRental.Forms
         private async void UserManagementForm_Load(object sender, EventArgs e)
         {
             InitializeSearchDebounce();
+            InitializeFilter();
             TableHeader();
             FixHeaderScrollbarAlignment();
             ApplyPermission();
@@ -284,12 +344,12 @@ namespace PL_VehicleRental.Forms
             
         }
         
-        private void InitializeSearchDebounce()
+         void InitializeSearchDebounce()
         {
             _searchTimer = new System.Timers.Timer(400);
             _searchTimer.AutoReset = false;
 
-            _searchTimer.Elapsed += async (s, e) =>
+            _searchTimer.Elapsed += (s, e) =>
             {
                 if (this.IsHandleCreated)
                 {
@@ -555,6 +615,7 @@ namespace PL_VehicleRental.Forms
             headerPanel.Visible = isVisible;
             TableHeaderPanel.Visible = isVisible;
             flowUsers.Visible = isVisible;
+            lblNoResults.Visible = false;
             rolesTablePanel.Visible = isVisible;
         }
 
@@ -594,6 +655,11 @@ namespace PL_VehicleRental.Forms
                 {
                     c.Width = flowUsers.ClientSize.Width;
                 }
+            }
+
+            if (lblNoResults.Visible)
+            {
+                CenterNoResultsLabel();
             }
         }
 
@@ -660,6 +726,19 @@ namespace PL_VehicleRental.Forms
         private void UserManagementForm_ResizeBegin(object sender, EventArgs e)
         {
             RecenterAddUserForm();
+        }
+
+        private async void CmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_isUpdatingFilter) return;
+
+            if (cmbFilter.SelectedItem == null) return;
+
+            currentFilter = cmbFilter.SelectedItem.ToString();
+            _currentPage = 1;
+            _loadRequestVersion++;
+
+            await LoadPageAsync();
         }
     }
 }
