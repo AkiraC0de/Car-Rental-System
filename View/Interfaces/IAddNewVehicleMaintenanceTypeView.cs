@@ -9,8 +9,8 @@ namespace VehicleManagementSystem.View.Interfaces {
         string TaskName { get; }
         string Description { get; }
 
-        int? DefaultMileageInterval { get; } 
-        int? DefaultMonthInterval { get; }
+        int? SuggestedMileageInterval { get; } 
+        int? SuggestedMonthInterval { get; }
 
         void ShowSuccess(string message);
         void ShowError(string message);

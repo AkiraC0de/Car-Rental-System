@@ -10,19 +10,19 @@ using VehicleManagementSystem.Dto;
 namespace VehicleManagementSystem.Services.Implementations {
     internal class VehicleMaintenanceServices {
 
-        public void AddMaintenanceTaskDefinition(VehicleMaintenanceTypeDto task) {
+        public void AddNewMaintenanceType(VehicleMaintenanceTypeDto task) {
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
                 string sql = @"
-                    INSERT INTO MaintenanceTaskDefinitions 
-                    (TaskName, Description, DefaultMileageInterval, DefaultMonthInterval) 
+                    INSERT INTO VehicleMaintenanceType 
+                        (MaintenanceName, Description, SuggestedMileageInterval, SuggestedMonthInterval) 
                     VALUES 
-                    (@Name, @Desc, @Mileage, @Months);";
+                        (@Name, @Desc, @Mileage, @Months);";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     cmd.Parameters.AddWithValue("@Name", task.TaskName.Trim());
                     cmd.Parameters.AddWithValue("@Desc", (object)task.Description ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Mileage", task.DefaultMileageInterval);
-                    cmd.Parameters.AddWithValue("@Months", task.DefaultMonthInterval);
+                    cmd.Parameters.AddWithValue("@Mileage", task.SuggestedMileageInterval);
+                    cmd.Parameters.AddWithValue("@Months", task.SuggestedMonthInterval);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

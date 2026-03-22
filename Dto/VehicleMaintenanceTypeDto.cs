@@ -10,8 +10,8 @@ namespace VehicleManagementSystem.Dto {
         public string TaskName { get; set; }
         public string Description { get; set; }
 
-        public int? DefaultMileageInterval { get; set; }
-        public int? DefaultMonthInterval { get; set; }
+        public int? SuggestedMileageInterval { get; set; }
+        public int? SuggestedMonthInterval { get; set; }
 
         public override string ToString() {
             return TaskName;

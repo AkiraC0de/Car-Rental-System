@@ -17,23 +17,19 @@ namespace VehicleManagementSystem.View.Modals {
         public string TaskName => inputTaskName.Text.Trim();
         public string Description => inputDescription.Text.Trim();
 
-        public int? DefaultMileageInterval {
-            get {
-                if (int.TryParse(inputSuggestedMilleage.Text.Trim(), out int result)) {
-                    return result;
-                }
-                return null;
+        public int? SuggestedMileageInterval { get {
+            if (int.TryParse(inputSuggestedMilleage.Text.Trim(), out int result)) {
+                return result;
             }
-        }
+            return null;
+        } }
 
-        public int? DefaultMonthInterval {
-            get {
-                if (int.TryParse(inputSuggestedMonthly.Text.Trim(), out int result)) {
-                    return result;
-                }
-                return null;
+        public int? SuggestedMonthInterval { get {
+            if (int.TryParse(inputSuggestedMonthly.Text.Trim(), out int result)) {
+                return result;
             }
-        }
+            return null;
+        }}
 
         public void ShowSuccess(string message) {
             MessageBox.Show(message, "Success!");

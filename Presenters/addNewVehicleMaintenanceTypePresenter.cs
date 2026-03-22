@@ -21,8 +21,8 @@ namespace VehicleManagementSystem.Presenters {
         public void SaveMaintenanceType() {
             if (!IsAllInputsValid(_view)) return;
 
-            if (_view.DefaultMileageInterval <= 0 && _view.DefaultMonthInterval <= 0) {
-                _view.ShowSuccess("Please enter a valid mileage or month interval.");
+            if (_view.SuggestedMileageInterval <= 0 && _view.SuggestedMonthInterval <= 0) {
+                _view.ShowError("Please enter a valid mileage or month interval.");
                 return;
             }
 
@@ -30,11 +30,11 @@ namespace VehicleManagementSystem.Presenters {
                 var newTask = new Dto.VehicleMaintenanceTypeDto {
                     TaskName = _view.TaskName,
                     Description = _view.Description,
-                    DefaultMileageInterval = _view.DefaultMileageInterval, // This is now int?
-                    DefaultMonthInterval = _view.DefaultMonthInterval     // This is now int?
+                    SuggestedMileageInterval = _view.SuggestedMileageInterval,
+                    SuggestedMonthInterval = _view.SuggestedMonthInterval    
                 };
 
-                _vehicleMaintenanceServices.AddMaintenanceTaskDefinition(newTask);
+                _vehicleMaintenanceServices.AddNewMaintenanceType(newTask);
 
                 _view.ShowSuccess("Maintenance type successfully created!");
 
