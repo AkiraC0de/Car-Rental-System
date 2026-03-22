@@ -35,17 +35,17 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelIssueDate = new System.Windows.Forms.Label();
-            this.labelIssuingAuthority = new System.Windows.Forms.Label();
             this.labelDocumentTitle = new System.Windows.Forms.Label();
+            this.labelIssuingAuthority = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelDocumentType = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelExtension = new System.Windows.Forms.Label();
+            this.labelIssueDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelExtension = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panelPreview.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -142,7 +142,7 @@
             this.panelPreview.BorderRadius = 15;
             this.panelPreview.Controls.Add(this.inputDocumentTitle);
             this.panelPreview.Controls.Add(this.guna2TextBox1);
-            this.panelPreview.Location = new System.Drawing.Point(25, 303);
+            this.panelPreview.Location = new System.Drawing.Point(25, 314);
             this.panelPreview.Name = "panelPreview";
             this.panelPreview.Size = new System.Drawing.Size(523, 217);
             this.panelPreview.TabIndex = 126;
@@ -151,6 +151,7 @@
             // 
             this.inputDocumentTitle.AcceptsReturn = true;
             this.inputDocumentTitle.AutoSize = true;
+            this.inputDocumentTitle.BackColor = System.Drawing.SystemColors.Control;
             this.inputDocumentTitle.BorderRadius = 10;
             this.inputDocumentTitle.BorderThickness = 2;
             this.inputDocumentTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -232,18 +233,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(520, 188);
             this.tableLayoutPanel1.TabIndex = 128;
             // 
-            // labelIssueDate
+            // labelDocumentTitle
             // 
-            this.labelIssueDate.AutoEllipsis = true;
-            this.labelIssueDate.AutoSize = true;
-            this.labelIssueDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelIssueDate.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIssueDate.Location = new System.Drawing.Point(174, 148);
-            this.labelIssueDate.Name = "labelIssueDate";
-            this.labelIssueDate.Size = new System.Drawing.Size(343, 40);
-            this.labelIssueDate.TabIndex = 135;
-            this.labelIssueDate.Text = "label8";
-            this.labelIssueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDocumentTitle.AutoEllipsis = true;
+            this.labelDocumentTitle.AutoSize = true;
+            this.labelDocumentTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDocumentTitle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDocumentTitle.Location = new System.Drawing.Point(174, 37);
+            this.labelDocumentTitle.Name = "labelDocumentTitle";
+            this.labelDocumentTitle.Size = new System.Drawing.Size(343, 37);
+            this.labelDocumentTitle.TabIndex = 133;
+            this.labelDocumentTitle.Text = "label6";
+            this.labelDocumentTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelIssuingAuthority
             // 
@@ -258,19 +259,6 @@
             this.labelIssuingAuthority.Text = "label7";
             this.labelIssuingAuthority.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelDocumentTitle
-            // 
-            this.labelDocumentTitle.AutoEllipsis = true;
-            this.labelDocumentTitle.AutoSize = true;
-            this.labelDocumentTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDocumentTitle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDocumentTitle.Location = new System.Drawing.Point(174, 37);
-            this.labelDocumentTitle.Name = "labelDocumentTitle";
-            this.labelDocumentTitle.Size = new System.Drawing.Size(343, 37);
-            this.labelDocumentTitle.TabIndex = 133;
-            this.labelDocumentTitle.Text = "label6";
-            this.labelDocumentTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -284,19 +272,6 @@
             this.label2.TabIndex = 129;
             this.label2.Text = "Issuing Authority :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(3, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 19);
-            this.label1.TabIndex = 131;
-            this.label1.Text = "Issue Date :";
             // 
             // label10
             // 
@@ -324,6 +299,58 @@
             this.labelDocumentType.Text = "label4";
             this.labelDocumentType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(3, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.TabIndex = 136;
+            this.label4.Text = "Extension :";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(3, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 19);
+            this.label1.TabIndex = 131;
+            this.label1.Text = "Issue Date :";
+            // 
+            // labelExtension
+            // 
+            this.labelExtension.AutoEllipsis = true;
+            this.labelExtension.AutoSize = true;
+            this.labelExtension.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelExtension.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExtension.Location = new System.Drawing.Point(174, 74);
+            this.labelExtension.Name = "labelExtension";
+            this.labelExtension.Size = new System.Drawing.Size(343, 37);
+            this.labelExtension.TabIndex = 137;
+            this.labelExtension.Text = "label8";
+            this.labelExtension.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelIssueDate
+            // 
+            this.labelIssueDate.AutoEllipsis = true;
+            this.labelIssueDate.AutoSize = true;
+            this.labelIssueDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelIssueDate.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIssueDate.Location = new System.Drawing.Point(174, 148);
+            this.labelIssueDate.Name = "labelIssueDate";
+            this.labelIssueDate.Size = new System.Drawing.Size(343, 40);
+            this.labelIssueDate.TabIndex = 135;
+            this.labelIssueDate.Text = "label8";
+            this.labelIssueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -333,9 +360,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.label3.Location = new System.Drawing.Point(24, 287);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.Size = new System.Drawing.Size(85, 23);
             this.label3.TabIndex = 132;
-            this.label3.Text = "Reason:";
+            this.label3.Text = "Reason*";
             // 
             // btnDelete
             // 
@@ -358,32 +385,6 @@
             this.btnDelete.TabIndex = 133;
             this.btnDelete.Text = "Delete Document";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(3, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
-            this.label4.TabIndex = 136;
-            this.label4.Text = "Extension :";
-            // 
-            // labelExtension
-            // 
-            this.labelExtension.AutoEllipsis = true;
-            this.labelExtension.AutoSize = true;
-            this.labelExtension.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelExtension.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExtension.Location = new System.Drawing.Point(174, 74);
-            this.labelExtension.Name = "labelExtension";
-            this.labelExtension.Size = new System.Drawing.Size(343, 37);
-            this.labelExtension.TabIndex = 137;
-            this.labelExtension.Text = "label8";
-            this.labelExtension.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DeleteVehcleDocumentModal
             // 

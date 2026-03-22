@@ -16,7 +16,7 @@ namespace VehicleManagementSystem.View.Modals {
 
         public string VehiclePlateNum => _tempPlateNum;
 
-        public string DocumentExpirationDate => inputExpirationDate.Text;
+        public string DocumentExpirationDate => DocumentType != "Permanent" ? inputExpirationDate.Text : null;
         public string DocumentIssueDate => inputIssueDate.Text;
         public string DocumentPath => _tempSelectedFilePath;
 
@@ -142,7 +142,10 @@ namespace VehicleManagementSystem.View.Modals {
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
+            saveBtn.Text = "Saving...";
+            saveBtn.Click -= saveBtn_Click;
             _presenter.SaveDocument();
+            saveBtn.Click += saveBtn_Click;
         }
     }
 }

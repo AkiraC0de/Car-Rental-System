@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Sprache;
+using System;
+using System.Drawing;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.Windows.Media;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Models;
@@ -24,6 +27,31 @@ namespace VehicleManagementSystem.UserControls {
             ReloadDocuments = PassedReloadDocuments;
             _vehicleDocumentServices = new VehicleDocumentServices();
             IntializeData();
+            SetStatus();
+        }
+
+        private void SetStatus() {
+            if (!_document.ExpirationDate.HasValue) {
+                labelStatus.Text = "Active";
+                panelStatus.FillColor = System.Drawing.Color.FromArgb(82, 183, 136);
+                return;
+            }
+
+            DateTime expiration = _document.ExpirationDate.Value;
+            DateTime today = DateTime.Today;
+
+            if (expiration <= today) {
+                labelStatus.Text = "Expired";
+                panelStatus.FillColor = System.Drawing.Color.FromArgb(230, 57, 70);
+            } else if ((expiration - today).TotalDays <= 30) {
+                // Within the 30-day warning window
+                labelStatus.Text = "Expiring Soon";
+                panelStatus.FillColor = System.Drawing.Color.FromArgb(255, 183, 3); ;
+            } else {
+                // More than 30 days remaining
+                labelStatus.Text = "Active";
+                panelStatus.FillColor = System.Drawing.Color.FromArgb(82, 183, 136);
+            }
         }
 
         private void IntializeData() {
@@ -34,6 +62,7 @@ namespace VehicleManagementSystem.UserControls {
 
             if(_document.Category != "Required Renewal") {
                 btnRenew.Visible = false;
+                btnDelete.Location = new Point(btnDelete.Location.X - btnDelete.Width - 5, btnDelete.Location.Y);
             }
         }
 
@@ -80,6 +109,26 @@ namespace VehicleManagementSystem.UserControls {
                 }
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            using (var UpdateVehicleDocumentModal = new UpdateVehicleDocumentModal(_document)) {
+                DialogResult result = UpdateVehicleDocumentModal.ShowDialog();
+
+                if (result != DialogResult.OK) return;
+                ReloadDocuments?.Invoke();
+            }
+        }
+
+        private void btnRenew_Click(object sender, EventArgs e) {
+            using (var RenewVehicleDocumentModal = new RenewVehicleDocumentModal(_document)) {
+                DialogResult result = RenewVehicleDocumentModal.ShowDialog();
+
+                if (result != DialogResult.OK) return;
+                ReloadDocuments?.Invoke();
+            }
+        }
+
+
 
     }
 }
