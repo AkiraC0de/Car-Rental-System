@@ -19,9 +19,9 @@ namespace VehicleManagementSystem.Presenters {
             _services = services;
         }
 
-        public void LoadAllDocuments() {
+        public async void LoadAllDocuments() {
             try {
-                var documents = _services.GetDocumentsByPlateNumber(_view.VehiclePlateNum);
+                var documents = await _services.GetDocumentsByPlateNumber(_view.VehiclePlateNum);
                 if (documents.Count > 0) {
                     _view.ToggleNoDocumentDisplay(true);
                     _view.DisplayDocuments(documents);
@@ -34,7 +34,7 @@ namespace VehicleManagementSystem.Presenters {
         }
 
 
-        public void LoadSearchDocument() {
+        public async void LoadSearchDocument() {
             if (string.IsNullOrWhiteSpace(_view.SearchInput)) {
                 _view.ToggleNoDocumentDisplay(true);
                 LoadAllDocuments();
@@ -42,7 +42,7 @@ namespace VehicleManagementSystem.Presenters {
             }
 
             try {
-                var documents = _services.GetSearchedVehicleDocument(_view.SearchInput, _view.VehiclePlateNum);
+                var documents = await _services.GetSearchedVehicleDocument(_view.SearchInput, _view.VehiclePlateNum);
                 if (documents.Count > 0) {
                     _view.ToggleNoDocumentDisplay(true);
                     _view.DisplayDocuments(documents);

@@ -9,9 +9,9 @@ using VehicleManagementSystem.Dto;
 
 namespace VehicleManagementSystem.Services.Implementations {
     public class VehicleDocumentServices {
-        public void AddVehicleDocument(VehicleDocumentDto doc) {
+        public async Task AddVehicleDocument(VehicleDocumentDto doc) {
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
 
                 string sql = @"
             INSERT INTO VehicleDocuments (
@@ -50,13 +50,15 @@ namespace VehicleManagementSystem.Services.Implementations {
                     cmd.Parameters.AddWithValue("@ext", doc.Extension);
                     cmd.Parameters.AddWithValue("@isActive", 1); 
 
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        public void UpdateVehicleDocument(VehicleDocumentDto document) {
+        public async Task UpdateVehicleDocument(VehicleDocumentDto document) {
             using (var connection = MySQLConnectionContext.Create()) {
+                await connection.OpenAsync();
+
                 string query = @"
                 UPDATE VehicleDocuments 
                 SET 
@@ -82,20 +84,19 @@ namespace VehicleManagementSystem.Services.Implementations {
                     cmd.Parameters.AddWithValue("@Extension", document.Extension);
                     cmd.Parameters.AddWithValue("@DocumentID", document.DocumentID);
 
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        public List<VehicleDocumentDto> GetSearchedVehicleDocument(string searchQuery, string vehiclePlateNum) {
+        public async Task<List<VehicleDocumentDto>> GetSearchedVehicleDocument(string searchQuery, string vehiclePlateNum) {
             var documents = new List<VehicleDocumentDto>();
 
             string search = string.IsNullOrWhiteSpace(searchQuery) ? null : $"%{searchQuery.Trim().ToLower()}%";
             string plate = vehiclePlateNum.Trim().ToLower();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
 
                 string sql = @"
                     SELECT * FROM VehicleDocuments
@@ -113,7 +114,7 @@ namespace VehicleManagementSystem.Services.Implementations {
                     cmd.Parameters.AddWithValue("@Search", (object)search ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@Plate", plate);
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                    using (MySqlDataReader reader = await cmd.ExecuteReaderAsync()) {
                         while (reader.Read()) {
                             documents.Add(new VehicleDocumentDto {
                                 DocumentID = reader.GetInt32("DocumentID"),
@@ -136,9 +137,9 @@ namespace VehicleManagementSystem.Services.Implementations {
             return documents;
         }
 
-        public void DeleteVehicleDocument(int documentId) {
+        public async Task DeleteVehicleDocument(int documentId) {
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
 
                 string sql = @"UPDATE VehicleDocuments 
                        SET IsActive = 0 
@@ -146,16 +147,16 @@ namespace VehicleManagementSystem.Services.Implementations {
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     cmd.Parameters.AddWithValue("@id", documentId);
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        public List<VehicleDocumentDto> GetDocumentsByPlateNumber(string plateNumber) {
+        public async Task<List<VehicleDocumentDto>> GetDocumentsByPlateNumber(string plateNumber) {
             List<VehicleDocumentDto> documents = new List<VehicleDocumentDto>();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
                 string sql = @"
                         SELECT 
                             DocumentID, VehiclePlateNum, DocumentTitle, Category, IssuingAuthority, 
@@ -167,7 +168,7 @@ namespace VehicleManagementSystem.Services.Implementations {
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     cmd.Parameters.AddWithValue("@plate", plateNumber);
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                    using (MySqlDataReader reader = await cmd.ExecuteReaderAsync()) {
                         while (reader.Read()) {
                             documents.Add(new VehicleDocumentDto {
                                 DocumentID = (int)reader["DocumentID"],

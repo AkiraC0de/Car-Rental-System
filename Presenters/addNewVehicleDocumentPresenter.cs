@@ -20,7 +20,7 @@ namespace VehicleManagementSystem.Presenters {
             _vehicleDocumentServices = vehicleDocumentServices;
         }
 
-        public void SaveDocument() {
+        public async void SaveDocument() {
             if (!IsAllInputsValid(_view)) return;
 
             try {
@@ -47,7 +47,7 @@ namespace VehicleManagementSystem.Presenters {
                     Extension = extension 
                 };
 
-                _vehicleDocumentServices.AddVehicleDocument(newDocument);
+                await _vehicleDocumentServices.AddVehicleDocument(newDocument);
                 //_view.ShowSuccess(newDocument.FilePath);
                 _view.CloseModal();
             } catch (Exception ex) {
