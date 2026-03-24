@@ -397,6 +397,11 @@
     <Compile Include="View\Forms\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\frmDashboard1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmDashboard.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\frmEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -564,6 +569,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmDashboard1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmEdit.resx">
       <DependentUpon>frmEdit.cs</DependentUpon>

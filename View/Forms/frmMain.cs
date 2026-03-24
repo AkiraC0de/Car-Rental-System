@@ -1,13 +1,10 @@
 ﻿using ActivityLogs;
-using Dshboard;
 using PL_VehicleRental.Forms;
 using PL_VehicleRental.Services;
 using PL_VehicleRental.Services.Security;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Web.Configuration;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
@@ -29,7 +26,7 @@ namespace VehicleManagementSystem {
 
         private void LoadDefaultView() {
             //WindowActions.ToggleMaximize(maximizeBtn);
-            NavigationHelper.OpenForm(new frmVehicleManagement());
+            NavigationHelper.OpenForm(new frmDashboard());
             MenuHandler.ActivateButton(vehManagementBtn);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
@@ -90,7 +87,7 @@ namespace VehicleManagementSystem {
             RemoveHeaderLabel();
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.Dashboard;
-            NavigationHelper.OpenForm(new DashBoardForm());
+            NavigationHelper.OpenForm(new frmDashboard());
         }
 
         private void userManagementBtn_Click(object sender, EventArgs e) {

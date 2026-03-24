@@ -12,11 +12,6 @@ public class WindowControls {
 
     public WindowControls(Form formInput) {
         _form = formInput;
-
-        // Add this function when the inputed form is shown
-        _form.Shown += (s, e) => {
-            _originalBounds = _form.Bounds;
-        };
     }
 
     // DRAG FUNCTION BOILER PLATE

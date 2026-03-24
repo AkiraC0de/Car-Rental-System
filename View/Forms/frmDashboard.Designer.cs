@@ -1,6 +1,5 @@
-﻿    namespace Dshboard
-{
-    partial class DashBoardForm
+﻿namespace VehicleManagementSystem {
+    partial class frmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.headerLabel = new System.Windows.Forms.Label();
             this.availablePnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();

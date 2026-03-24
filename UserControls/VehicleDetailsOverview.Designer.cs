@@ -60,28 +60,6 @@
             this.progressTillChangeOil = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tableBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.viewMaintenanceBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label34 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.editBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -143,13 +121,6 @@
             this.guna2CircleProgressBar2.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
             this.progressTillChangeOil.SuspendLayout();
-            this.tableBottom.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.guna2Panel15.SuspendLayout();
-            this.guna2Panel13.SuspendLayout();
-            this.guna2Panel11.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
             this.tableMiddle.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.tableVehicleInformation.SuspendLayout();
@@ -160,7 +131,6 @@
             // panelMain
             // 
             this.panelMain.Controls.Add(this.tableLayoutPanel2);
-            this.panelMain.Controls.Add(this.tableBottom);
             this.panelMain.Controls.Add(this.cancelBtn);
             this.panelMain.Controls.Add(this.saveBtn);
             this.panelMain.Controls.Add(this.editBtn);
@@ -174,9 +144,9 @@
             this.panelMain.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
             this.panelMain.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1113, 1134);
+            this.panelMain.Size = new System.Drawing.Size(890, 907);
             this.panelMain.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -188,12 +158,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.30441F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.347798F));
             this.tableLayoutPanel2.Controls.Add(this.tableTop, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 68);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 54);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1081, 482);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(865, 386);
             this.tableLayoutPanel2.TabIndex = 31;
             // 
             // tableTop
@@ -201,16 +171,16 @@
             this.tableTop.BackColor = System.Drawing.Color.Transparent;
             this.tableTop.ColumnCount = 2;
             this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
+            this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableTop.Controls.Add(this.panelTopLeft, 0, 0);
             this.tableTop.Controls.Add(this.panelTopRight, 1, 0);
             this.tableTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableTop.Location = new System.Drawing.Point(49, 2);
-            this.tableTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableTop.Location = new System.Drawing.Point(39, 2);
+            this.tableTop.Margin = new System.Windows.Forms.Padding(2);
             this.tableTop.Name = "tableTop";
             this.tableTop.RowCount = 1;
             this.tableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableTop.Size = new System.Drawing.Size(981, 478);
+            this.tableTop.Size = new System.Drawing.Size(785, 382);
             this.tableTop.TabIndex = 22;
             // 
             // panelTopLeft
@@ -225,7 +195,7 @@
             this.panelTopLeft.Location = new System.Drawing.Point(0, 0);
             this.panelTopLeft.Margin = new System.Windows.Forms.Padding(0);
             this.panelTopLeft.Name = "panelTopLeft";
-            this.panelTopLeft.Size = new System.Drawing.Size(786, 478);
+            this.panelTopLeft.Size = new System.Drawing.Size(629, 382);
             this.panelTopLeft.TabIndex = 0;
             // 
             // panel2
@@ -236,10 +206,10 @@
             this.panel2.Controls.Add(this.guna2GradientPanel3);
             this.panel2.Controls.Add(this.guna2GradientPanel1);
             this.panel2.Controls.Add(this.guna2GradientPanel2);
-            this.panel2.Location = new System.Drawing.Point(-63, 330);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(-50, 264);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 145);
+            this.panel2.Size = new System.Drawing.Size(726, 116);
             this.panel2.TabIndex = 6;
             // 
             // guna2GradientPanel5
@@ -252,10 +222,10 @@
             this.guna2GradientPanel5.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel5.Location = new System.Drawing.Point(12, 10);
-            this.guna2GradientPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(10, 8);
+            this.guna2GradientPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(171, 126);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(137, 101);
             this.guna2GradientPanel5.TabIndex = 41;
             // 
             // labelStatus
@@ -273,13 +243,13 @@
             this.labelStatus.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelStatus.Location = new System.Drawing.Point(0, 68);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.labelStatus.Location = new System.Drawing.Point(0, 54);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.PlaceholderText = "";
             this.labelStatus.ReadOnly = true;
             this.labelStatus.SelectedText = "";
-            this.labelStatus.Size = new System.Drawing.Size(173, 25);
+            this.labelStatus.Size = new System.Drawing.Size(138, 20);
             this.labelStatus.TabIndex = 39;
             this.labelStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -288,10 +258,10 @@
             this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox5.Image = global::VehicleManagementSystem.Properties.Resources.loading;
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(52, 2);
-            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(42, 2);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(61, 46);
+            this.guna2PictureBox5.Size = new System.Drawing.Size(49, 37);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox5.TabIndex = 19;
             this.guna2PictureBox5.TabStop = false;
@@ -302,9 +272,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(4, 103);
+            this.label4.Location = new System.Drawing.Point(3, 82);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 23);
+            this.label4.Size = new System.Drawing.Size(131, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "Status";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,10 +290,10 @@
             this.guna2GradientPanel4.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel4.Location = new System.Drawing.Point(188, 7);
-            this.guna2GradientPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(150, 6);
+            this.guna2GradientPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(171, 126);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(137, 101);
             this.guna2GradientPanel4.TabIndex = 40;
             // 
             // labelLastInspect
@@ -340,13 +311,13 @@
             this.labelLastInspect.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLastInspect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelLastInspect.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.labelLastInspect.Location = new System.Drawing.Point(0, 68);
-            this.labelLastInspect.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.labelLastInspect.Location = new System.Drawing.Point(0, 54);
+            this.labelLastInspect.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.labelLastInspect.Name = "labelLastInspect";
             this.labelLastInspect.PlaceholderText = "";
             this.labelLastInspect.ReadOnly = true;
             this.labelLastInspect.SelectedText = "";
-            this.labelLastInspect.Size = new System.Drawing.Size(173, 25);
+            this.labelLastInspect.Size = new System.Drawing.Size(138, 20);
             this.labelLastInspect.TabIndex = 39;
             this.labelLastInspect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -355,10 +326,10 @@
             this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox4.Image = global::VehicleManagementSystem.Properties.Resources.inspection;
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(52, 2);
-            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(42, 2);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(61, 46);
+            this.guna2PictureBox4.Size = new System.Drawing.Size(49, 37);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 19;
             this.guna2PictureBox4.TabStop = false;
@@ -369,9 +340,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(4, 103);
+            this.label2.Location = new System.Drawing.Point(3, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 23);
+            this.label2.Size = new System.Drawing.Size(131, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Last Inspection";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,10 +358,10 @@
             this.guna2GradientPanel3.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(724, 7);
-            this.guna2GradientPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(579, 6);
+            this.guna2GradientPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(171, 126);
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(137, 101);
             this.guna2GradientPanel3.TabIndex = 4;
             // 
             // guna2PictureBox3
@@ -397,10 +369,10 @@
             this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = global::VehicleManagementSystem.Properties.Resources.gas_station;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(52, 2);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(42, 2);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(61, 39);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(49, 31);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 19;
             this.guna2PictureBox3.TabStop = false;
@@ -421,10 +393,10 @@
             this.inputFuelType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputFuelType.IntegralHeight = false;
             this.inputFuelType.ItemHeight = 30;
-            this.inputFuelType.Location = new System.Drawing.Point(3, 44);
-            this.inputFuelType.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.inputFuelType.Location = new System.Drawing.Point(2, 35);
+            this.inputFuelType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.inputFuelType.Name = "inputFuelType";
-            this.inputFuelType.Size = new System.Drawing.Size(167, 36);
+            this.inputFuelType.Size = new System.Drawing.Size(134, 36);
             this.inputFuelType.TabIndex = 20;
             this.inputFuelType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -434,9 +406,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkGray;
-            this.label9.Location = new System.Drawing.Point(4, 103);
+            this.label9.Location = new System.Drawing.Point(3, 82);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 23);
+            this.label9.Size = new System.Drawing.Size(131, 18);
             this.label9.TabIndex = 18;
             this.label9.Text = "Fuel Type";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -451,10 +424,10 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(364, 7);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(291, 6);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(171, 126);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(137, 101);
             this.guna2GradientPanel1.TabIndex = 2;
             // 
             // inputOdomter
@@ -472,13 +445,13 @@
             this.inputOdomter.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputOdomter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputOdomter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputOdomter.Location = new System.Drawing.Point(0, 68);
-            this.inputOdomter.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.inputOdomter.Location = new System.Drawing.Point(0, 54);
+            this.inputOdomter.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.inputOdomter.Name = "inputOdomter";
             this.inputOdomter.PlaceholderText = "";
             this.inputOdomter.ReadOnly = true;
             this.inputOdomter.SelectedText = "";
-            this.inputOdomter.Size = new System.Drawing.Size(173, 25);
+            this.inputOdomter.Size = new System.Drawing.Size(138, 20);
             this.inputOdomter.TabIndex = 39;
             this.inputOdomter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -487,10 +460,10 @@
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.car_engine;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(52, 2);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(42, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(61, 46);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(49, 37);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 19;
             this.guna2PictureBox1.TabStop = false;
@@ -501,9 +474,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
-            this.label7.Location = new System.Drawing.Point(4, 103);
+            this.label7.Location = new System.Drawing.Point(3, 82);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 23);
+            this.label7.Size = new System.Drawing.Size(131, 18);
             this.label7.TabIndex = 18;
             this.label7.Text = "Odometer";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,10 +492,10 @@
             this.guna2GradientPanel2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(543, 7);
-            this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(434, 6);
+            this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(171, 126);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(137, 101);
             this.guna2GradientPanel2.TabIndex = 3;
             // 
             // inputTransmissionType
@@ -540,10 +514,10 @@
             this.inputTransmissionType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputTransmissionType.IntegralHeight = false;
             this.inputTransmissionType.ItemHeight = 30;
-            this.inputTransmissionType.Location = new System.Drawing.Point(3, 46);
-            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.inputTransmissionType.Location = new System.Drawing.Point(2, 37);
+            this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.inputTransmissionType.Name = "inputTransmissionType";
-            this.inputTransmissionType.Size = new System.Drawing.Size(167, 36);
+            this.inputTransmissionType.Size = new System.Drawing.Size(134, 36);
             this.inputTransmissionType.TabIndex = 21;
             this.inputTransmissionType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -552,10 +526,10 @@
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::VehicleManagementSystem.Properties.Resources.gear_box;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(52, 2);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(42, 2);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(61, 46);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(49, 37);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 19;
             this.guna2PictureBox2.TabStop = false;
@@ -566,9 +540,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(4, 103);
+            this.label1.Location = new System.Drawing.Point(3, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 23);
+            this.label1.Size = new System.Drawing.Size(131, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Transmission";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -583,10 +558,10 @@
             this.pictureVehicle.FillColor = System.Drawing.Color.Transparent;
             this.pictureVehicle.Image = ((System.Drawing.Image)(resources.GetObject("pictureVehicle.Image")));
             this.pictureVehicle.ImageRotate = 0F;
-            this.pictureVehicle.Location = new System.Drawing.Point(84, 31);
-            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureVehicle.Location = new System.Drawing.Point(67, 25);
+            this.pictureVehicle.Margin = new System.Windows.Forms.Padding(2);
             this.pictureVehicle.Name = "pictureVehicle";
-            this.pictureVehicle.Size = new System.Drawing.Size(635, 303);
+            this.pictureVehicle.Size = new System.Drawing.Size(508, 242);
             this.pictureVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureVehicle.TabIndex = 2;
             this.pictureVehicle.TabStop = false;
@@ -601,10 +576,10 @@
             this.panelTopRight.CustomizableEdges.TopLeft = false;
             this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTopRight.FillColor = System.Drawing.Color.Transparent;
-            this.panelTopRight.Location = new System.Drawing.Point(786, 0);
+            this.panelTopRight.Location = new System.Drawing.Point(629, 0);
             this.panelTopRight.Margin = new System.Windows.Forms.Padding(0);
             this.panelTopRight.Name = "panelTopRight";
-            this.panelTopRight.Size = new System.Drawing.Size(195, 478);
+            this.panelTopRight.Size = new System.Drawing.Size(156, 382);
             this.panelTopRight.TabIndex = 1;
             // 
             // guna2CircleProgressBar2
@@ -615,15 +590,15 @@
             this.guna2CircleProgressBar2.FillThickness = 6;
             this.guna2CircleProgressBar2.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleProgressBar2.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2CircleProgressBar2.Location = new System.Drawing.Point(21, 318);
-            this.guna2CircleProgressBar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CircleProgressBar2.Location = new System.Drawing.Point(17, 254);
+            this.guna2CircleProgressBar2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CircleProgressBar2.Minimum = 0;
             this.guna2CircleProgressBar2.Name = "guna2CircleProgressBar2";
             this.guna2CircleProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.guna2CircleProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2CircleProgressBar2.ProgressThickness = 10;
             this.guna2CircleProgressBar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar2.Size = new System.Drawing.Size(134, 134);
+            this.guna2CircleProgressBar2.Size = new System.Drawing.Size(107, 107);
             this.guna2CircleProgressBar2.TabIndex = 3;
             this.guna2CircleProgressBar2.Text = "guna2CircleProgressBar2";
             this.guna2CircleProgressBar2.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
@@ -634,9 +609,10 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(12, 42);
+            this.label12.Location = new System.Drawing.Point(10, 34);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(117, 23);
+            this.label12.Size = new System.Drawing.Size(94, 18);
             this.label12.TabIndex = 17;
             this.label12.Text = "237 days";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -646,9 +622,10 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(20, 68);
+            this.label13.Location = new System.Drawing.Point(16, 54);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 34);
+            this.label13.Size = new System.Drawing.Size(87, 27);
             this.label13.TabIndex = 16;
             this.label13.Text = "Until Registration";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -661,15 +638,15 @@
             this.guna2CircleProgressBar1.FillThickness = 6;
             this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(21, 166);
-            this.guna2CircleProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(17, 133);
+            this.guna2CircleProgressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CircleProgressBar1.Minimum = 0;
             this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
             this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.Red;
             this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2CircleProgressBar1.ProgressThickness = 10;
             this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(134, 134);
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(107, 107);
             this.guna2CircleProgressBar1.TabIndex = 2;
             this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar2";
             this.guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
@@ -680,9 +657,10 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(12, 42);
+            this.label6.Location = new System.Drawing.Point(10, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 23);
+            this.label6.Size = new System.Drawing.Size(94, 18);
             this.label6.TabIndex = 17;
             this.label6.Text = "249 km";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -692,9 +670,10 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(20, 68);
+            this.label8.Location = new System.Drawing.Point(16, 54);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 34);
+            this.label8.Size = new System.Drawing.Size(87, 27);
             this.label8.TabIndex = 16;
             this.label8.Text = "Until TIre Rotation";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -707,15 +686,15 @@
             this.progressTillChangeOil.FillThickness = 6;
             this.progressTillChangeOil.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progressTillChangeOil.ForeColor = System.Drawing.Color.DimGray;
-            this.progressTillChangeOil.Location = new System.Drawing.Point(21, 14);
-            this.progressTillChangeOil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.progressTillChangeOil.Location = new System.Drawing.Point(17, 11);
+            this.progressTillChangeOil.Margin = new System.Windows.Forms.Padding(2);
             this.progressTillChangeOil.Minimum = 0;
             this.progressTillChangeOil.Name = "progressTillChangeOil";
             this.progressTillChangeOil.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.progressTillChangeOil.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.progressTillChangeOil.ProgressThickness = 10;
             this.progressTillChangeOil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.progressTillChangeOil.Size = new System.Drawing.Size(134, 134);
+            this.progressTillChangeOil.Size = new System.Drawing.Size(107, 107);
             this.progressTillChangeOil.TabIndex = 1;
             this.progressTillChangeOil.Text = "guna2CircleProgressBar2";
             this.progressTillChangeOil.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
@@ -726,9 +705,10 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(12, 42);
+            this.label10.Location = new System.Drawing.Point(10, 34);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 23);
+            this.label10.Size = new System.Drawing.Size(94, 18);
             this.label10.TabIndex = 17;
             this.label10.Text = "2249 km";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -738,292 +718,13 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(20, 68);
+            this.label5.Location = new System.Drawing.Point(16, 54);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 34);
+            this.label5.Size = new System.Drawing.Size(87, 27);
             this.label5.TabIndex = 16;
             this.label5.Text = "Until change \r\noil";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableBottom
-            // 
-            this.tableBottom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableBottom.BackColor = System.Drawing.Color.Transparent;
-            this.tableBottom.ColumnCount = 2;
-            this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.20564F));
-            this.tableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.79436F));
-            this.tableBottom.Controls.Add(this.guna2Panel5, 1, 0);
-            this.tableBottom.Location = new System.Drawing.Point(5, 862);
-            this.tableBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableBottom.Name = "tableBottom";
-            this.tableBottom.RowCount = 1;
-            this.tableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableBottom.Size = new System.Drawing.Size(1108, 258);
-            this.tableBottom.TabIndex = 30;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BorderRadius = 12;
-            this.guna2Panel5.Controls.Add(this.viewMaintenanceBtn);
-            this.guna2Panel5.Controls.Add(this.tableLayoutPanel1);
-            this.guna2Panel5.Controls.Add(this.guna2Panel6);
-            this.guna2Panel5.Controls.Add(this.label34);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel5.FillColor = System.Drawing.Color.White;
-            this.guna2Panel5.Location = new System.Drawing.Point(476, 7);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(623, 244);
-            this.guna2Panel5.TabIndex = 2;
-            // 
-            // viewMaintenanceBtn
-            // 
-            this.viewMaintenanceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.viewMaintenanceBtn.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewMaintenanceBtn.BorderRadius = 8;
-            this.viewMaintenanceBtn.BorderThickness = 2;
-            this.viewMaintenanceBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewMaintenanceBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.viewMaintenanceBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.viewMaintenanceBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.viewMaintenanceBtn.FillColor = System.Drawing.Color.Transparent;
-            this.viewMaintenanceBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewMaintenanceBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.viewMaintenanceBtn.Location = new System.Drawing.Point(396, 190);
-            this.viewMaintenanceBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewMaintenanceBtn.Name = "viewMaintenanceBtn";
-            this.viewMaintenanceBtn.Size = new System.Drawing.Size(195, 37);
-            this.viewMaintenanceBtn.TabIndex = 41;
-            this.viewMaintenanceBtn.Text = "View maintenance...";
-            this.viewMaintenanceBtn.Click += new System.EventHandler(this.viewMaintenanceBtn_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel15, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel13, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel11, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel7, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 62);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(555, 127);
-            this.tableLayoutPanel1.TabIndex = 40;
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel15.Controls.Add(this.label32);
-            this.guna2Panel15.Controls.Add(this.label33);
-            this.guna2Panel15.Controls.Add(this.guna2Panel16);
-            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel15.Location = new System.Drawing.Point(286, 70);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(9, 7, 0, 7);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(269, 50);
-            this.guna2Panel15.TabIndex = 34;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label32.Location = new System.Drawing.Point(13, 26);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(99, 19);
-            this.label32.TabIndex = 42;
-            this.label32.Text = "At 4500 km ";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label33.Location = new System.Drawing.Point(13, 7);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(143, 19);
-            this.label33.TabIndex = 41;
-            this.label33.Text = "Tire Replacement";
-            // 
-            // guna2Panel16
-            // 
-            this.guna2Panel16.BorderRadius = 5;
-            this.guna2Panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel16.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel16.Name = "guna2Panel16";
-            this.guna2Panel16.Size = new System.Drawing.Size(7, 50);
-            this.guna2Panel16.TabIndex = 32;
-            // 
-            // guna2Panel13
-            // 
-            this.guna2Panel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel13.Controls.Add(this.label30);
-            this.guna2Panel13.Controls.Add(this.label31);
-            this.guna2Panel13.Controls.Add(this.guna2Panel14);
-            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel13.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(0, 7, 9, 7);
-            this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(268, 50);
-            this.guna2Panel13.TabIndex = 33;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label30.Location = new System.Drawing.Point(13, 26);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(99, 19);
-            this.label30.TabIndex = 42;
-            this.label30.Text = "At 4500 km ";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label31.Location = new System.Drawing.Point(13, 7);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(139, 19);
-            this.label31.TabIndex = 41;
-            this.label31.Text = "Break Inspection";
-            // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.BorderRadius = 5;
-            this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel14.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(7, 50);
-            this.guna2Panel14.TabIndex = 32;
-            // 
-            // guna2Panel11
-            // 
-            this.guna2Panel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel11.Controls.Add(this.label28);
-            this.guna2Panel11.Controls.Add(this.label29);
-            this.guna2Panel11.Controls.Add(this.guna2Panel12);
-            this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel11.Location = new System.Drawing.Point(286, 7);
-            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(9, 7, 0, 7);
-            this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(269, 49);
-            this.guna2Panel11.TabIndex = 32;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.Location = new System.Drawing.Point(13, 26);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(99, 19);
-            this.label28.TabIndex = 42;
-            this.label28.Text = "At 4500 km ";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label29.Location = new System.Drawing.Point(13, 7);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(111, 19);
-            this.label29.TabIndex = 41;
-            this.label29.Text = "Tire Rotation";
-            // 
-            // guna2Panel12
-            // 
-            this.guna2Panel12.BorderRadius = 5;
-            this.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel12.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Size = new System.Drawing.Size(7, 49);
-            this.guna2Panel12.TabIndex = 32;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel7.Controls.Add(this.label25);
-            this.guna2Panel7.Controls.Add(this.label11);
-            this.guna2Panel7.Controls.Add(this.guna2Panel8);
-            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel7.Location = new System.Drawing.Point(0, 7);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(0, 7, 9, 7);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(268, 49);
-            this.guna2Panel7.TabIndex = 31;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(13, 26);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(99, 19);
-            this.label25.TabIndex = 42;
-            this.label25.Text = "At 4500 km ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label11.Location = new System.Drawing.Point(13, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 19);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Change Engine Oil";
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderRadius = 5;
-            this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel8.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(7, 49);
-            this.guna2Panel8.TabIndex = 32;
-            // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel6.BorderRadius = 8;
-            this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel6.Location = new System.Drawing.Point(29, 52);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(555, 4);
-            this.guna2Panel6.TabIndex = 38;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label34.Location = new System.Drawing.Point(29, 17);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(237, 24);
-            this.label34.TabIndex = 17;
-            this.label34.Text = "Maintenance Reminders";
             // 
             // cancelBtn
             // 
@@ -1039,10 +740,10 @@
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.cancelBtn.ForeColor = System.Drawing.Color.DarkGray;
             this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancelBtn.Location = new System.Drawing.Point(781, 15);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelBtn.Location = new System.Drawing.Point(625, 12);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(105, 48);
+            this.cancelBtn.Size = new System.Drawing.Size(84, 38);
             this.cancelBtn.TabIndex = 29;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.Visible = false;
@@ -1062,10 +763,10 @@
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
             this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(527, 15);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveBtn.Location = new System.Drawing.Point(422, 12);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(204, 48);
+            this.saveBtn.Size = new System.Drawing.Size(163, 38);
             this.saveBtn.TabIndex = 27;
             this.saveBtn.Text = "Save Details";
             this.saveBtn.Visible = false;
@@ -1084,10 +785,10 @@
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = global::VehicleManagementSystem.Properties.Resources.pen_icon;
             this.editBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.editBtn.Location = new System.Drawing.Point(931, 15);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editBtn.Location = new System.Drawing.Point(745, 12);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(183, 48);
+            this.editBtn.Size = new System.Drawing.Size(146, 38);
             this.editBtn.TabIndex = 26;
             this.editBtn.Text = "Edit Details";
             this.editBtn.Visible = false;
@@ -1099,17 +800,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableMiddle.BackColor = System.Drawing.Color.Transparent;
             this.tableMiddle.ColumnCount = 3;
-            this.tableMiddle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 396F));
+            this.tableMiddle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
             this.tableMiddle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.17519F));
             this.tableMiddle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.82481F));
             this.tableMiddle.Controls.Add(this.guna2Panel3, 1, 0);
             this.tableMiddle.Controls.Add(this.guna2Panel2, 0, 0);
-            this.tableMiddle.Location = new System.Drawing.Point(3, 554);
-            this.tableMiddle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableMiddle.Location = new System.Drawing.Point(2, 443);
+            this.tableMiddle.Margin = new System.Windows.Forms.Padding(2);
             this.tableMiddle.Name = "tableMiddle";
             this.tableMiddle.RowCount = 1;
             this.tableMiddle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableMiddle.Size = new System.Drawing.Size(1108, 303);
+            this.tableMiddle.Size = new System.Drawing.Size(886, 242);
             this.tableMiddle.TabIndex = 0;
             // 
             // guna2Panel3
@@ -1121,10 +822,10 @@
             this.guna2Panel3.Controls.Add(this.label15);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
-            this.guna2Panel3.Location = new System.Drawing.Point(405, 7);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.guna2Panel3.Location = new System.Drawing.Point(324, 6);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(694, 289);
+            this.guna2Panel3.Size = new System.Drawing.Size(555, 230);
             this.guna2Panel3.TabIndex = 1;
             // 
             // tableVehicleInformation
@@ -1132,9 +833,9 @@
             this.tableVehicleInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableVehicleInformation.ColumnCount = 4;
-            this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00001F));
-            this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableVehicleInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableVehicleInformation.Controls.Add(this.inputPurchasePrice, 3, 4);
             this.tableVehicleInformation.Controls.Add(this.inputYearModel, 1, 4);
@@ -1156,8 +857,8 @@
             this.tableVehicleInformation.Controls.Add(this.label36, 2, 0);
             this.tableVehicleInformation.Controls.Add(this.label16, 0, 0);
             this.tableVehicleInformation.Controls.Add(this.inputPurchaseDate, 3, 3);
-            this.tableVehicleInformation.Location = new System.Drawing.Point(33, 62);
-            this.tableVehicleInformation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableVehicleInformation.Location = new System.Drawing.Point(26, 50);
+            this.tableVehicleInformation.Margin = new System.Windows.Forms.Padding(2);
             this.tableVehicleInformation.Name = "tableVehicleInformation";
             this.tableVehicleInformation.RowCount = 5;
             this.tableVehicleInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -1165,7 +866,7 @@
             this.tableVehicleInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableVehicleInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableVehicleInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableVehicleInformation.Size = new System.Drawing.Size(628, 208);
+            this.tableVehicleInformation.Size = new System.Drawing.Size(502, 166);
             this.tableVehicleInformation.TabIndex = 39;
             // 
             // inputPurchasePrice
@@ -1182,13 +883,13 @@
             this.inputPurchasePrice.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPurchasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputPurchasePrice.Location = new System.Drawing.Point(477, 170);
-            this.inputPurchasePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputPurchasePrice.Location = new System.Drawing.Point(382, 136);
+            this.inputPurchasePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputPurchasePrice.Name = "inputPurchasePrice";
             this.inputPurchasePrice.PlaceholderText = "";
             this.inputPurchasePrice.ReadOnly = true;
             this.inputPurchasePrice.SelectedText = "";
-            this.inputPurchasePrice.Size = new System.Drawing.Size(147, 32);
+            this.inputPurchasePrice.Size = new System.Drawing.Size(117, 26);
             this.inputPurchasePrice.TabIndex = 47;
             // 
             // inputYearModel
@@ -1205,13 +906,13 @@
             this.inputYearModel.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputYearModel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputYearModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputYearModel.Location = new System.Drawing.Point(156, 170);
-            this.inputYearModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputYearModel.Location = new System.Drawing.Point(125, 136);
+            this.inputYearModel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputYearModel.Name = "inputYearModel";
             this.inputYearModel.PlaceholderText = "";
             this.inputYearModel.ReadOnly = true;
             this.inputYearModel.SelectedText = "";
-            this.inputYearModel.Size = new System.Drawing.Size(146, 32);
+            this.inputYearModel.Size = new System.Drawing.Size(117, 26);
             this.inputYearModel.TabIndex = 46;
             // 
             // inputModel
@@ -1228,13 +929,13 @@
             this.inputModel.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputModel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputModel.Location = new System.Drawing.Point(156, 128);
-            this.inputModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputModel.Location = new System.Drawing.Point(125, 103);
+            this.inputModel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputModel.Name = "inputModel";
             this.inputModel.PlaceholderText = "";
             this.inputModel.ReadOnly = true;
             this.inputModel.SelectedText = "";
-            this.inputModel.Size = new System.Drawing.Size(146, 31);
+            this.inputModel.Size = new System.Drawing.Size(117, 25);
             this.inputModel.TabIndex = 44;
             // 
             // inputSeatingCap
@@ -1251,13 +952,13 @@
             this.inputSeatingCap.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSeatingCap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputSeatingCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputSeatingCap.Location = new System.Drawing.Point(477, 87);
-            this.inputSeatingCap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputSeatingCap.Location = new System.Drawing.Point(382, 70);
+            this.inputSeatingCap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputSeatingCap.Name = "inputSeatingCap";
             this.inputSeatingCap.PlaceholderText = "";
             this.inputSeatingCap.ReadOnly = true;
             this.inputSeatingCap.SelectedText = "";
-            this.inputSeatingCap.Size = new System.Drawing.Size(147, 31);
+            this.inputSeatingCap.Size = new System.Drawing.Size(117, 25);
             this.inputSeatingCap.TabIndex = 43;
             // 
             // inputManufacturer
@@ -1274,13 +975,13 @@
             this.inputManufacturer.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputManufacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputManufacturer.Location = new System.Drawing.Point(156, 87);
-            this.inputManufacturer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputManufacturer.Location = new System.Drawing.Point(125, 70);
+            this.inputManufacturer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputManufacturer.Name = "inputManufacturer";
             this.inputManufacturer.PlaceholderText = "";
             this.inputManufacturer.ReadOnly = true;
             this.inputManufacturer.SelectedText = "";
-            this.inputManufacturer.Size = new System.Drawing.Size(146, 31);
+            this.inputManufacturer.Size = new System.Drawing.Size(117, 25);
             this.inputManufacturer.TabIndex = 42;
             // 
             // inputColor
@@ -1297,13 +998,13 @@
             this.inputColor.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputColor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputColor.Location = new System.Drawing.Point(477, 46);
-            this.inputColor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputColor.Location = new System.Drawing.Point(382, 37);
+            this.inputColor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputColor.Name = "inputColor";
             this.inputColor.PlaceholderText = "";
             this.inputColor.ReadOnly = true;
             this.inputColor.SelectedText = "";
-            this.inputColor.Size = new System.Drawing.Size(147, 31);
+            this.inputColor.Size = new System.Drawing.Size(117, 25);
             this.inputColor.TabIndex = 41;
             // 
             // inputPlateNum
@@ -1320,13 +1021,13 @@
             this.inputPlateNum.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPlateNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputPlateNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputPlateNum.Location = new System.Drawing.Point(156, 46);
-            this.inputPlateNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputPlateNum.Location = new System.Drawing.Point(125, 37);
+            this.inputPlateNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputPlateNum.Name = "inputPlateNum";
             this.inputPlateNum.PlaceholderText = "";
             this.inputPlateNum.ReadOnly = true;
             this.inputPlateNum.SelectedText = "";
-            this.inputPlateNum.Size = new System.Drawing.Size(146, 31);
+            this.inputPlateNum.Size = new System.Drawing.Size(117, 25);
             this.inputPlateNum.TabIndex = 40;
             // 
             // inputCategory
@@ -1343,13 +1044,13 @@
             this.inputCategory.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputCategory.Location = new System.Drawing.Point(477, 5);
-            this.inputCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputCategory.Location = new System.Drawing.Point(382, 4);
+            this.inputCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputCategory.Name = "inputCategory";
             this.inputCategory.PlaceholderText = "";
             this.inputCategory.ReadOnly = true;
             this.inputCategory.SelectedText = "";
-            this.inputCategory.Size = new System.Drawing.Size(147, 31);
+            this.inputCategory.Size = new System.Drawing.Size(117, 25);
             this.inputCategory.TabIndex = 39;
             // 
             // inputVehicleIdentification
@@ -1366,13 +1067,13 @@
             this.inputVehicleIdentification.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputVehicleIdentification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputVehicleIdentification.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputVehicleIdentification.Location = new System.Drawing.Point(159, 6);
-            this.inputVehicleIdentification.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.inputVehicleIdentification.Location = new System.Drawing.Point(128, 5);
+            this.inputVehicleIdentification.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.inputVehicleIdentification.Name = "inputVehicleIdentification";
             this.inputVehicleIdentification.PlaceholderText = "";
             this.inputVehicleIdentification.ReadOnly = true;
             this.inputVehicleIdentification.SelectedText = "";
-            this.inputVehicleIdentification.Size = new System.Drawing.Size(140, 28);
+            this.inputVehicleIdentification.Size = new System.Drawing.Size(111, 22);
             this.inputVehicleIdentification.TabIndex = 38;
             // 
             // label52
@@ -1381,9 +1082,10 @@
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label52.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.ForeColor = System.Drawing.Color.DarkGray;
-            this.label52.Location = new System.Drawing.Point(309, 164);
+            this.label52.Location = new System.Drawing.Point(247, 132);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(161, 44);
+            this.label52.Size = new System.Drawing.Size(130, 34);
             this.label52.TabIndex = 36;
             this.label52.Text = "Purchase Price";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1394,9 +1096,10 @@
             this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label50.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.ForeColor = System.Drawing.Color.DarkGray;
-            this.label50.Location = new System.Drawing.Point(3, 164);
+            this.label50.Location = new System.Drawing.Point(2, 132);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(146, 44);
+            this.label50.Size = new System.Drawing.Size(118, 34);
             this.label50.TabIndex = 34;
             this.label50.Text = "Year Model";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1407,9 +1110,10 @@
             this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label48.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.DarkGray;
-            this.label48.Location = new System.Drawing.Point(309, 123);
+            this.label48.Location = new System.Drawing.Point(247, 99);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(161, 41);
+            this.label48.Size = new System.Drawing.Size(130, 33);
             this.label48.TabIndex = 32;
             this.label48.Text = "Purchase Date";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1420,9 +1124,10 @@
             this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label46.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.DarkGray;
-            this.label46.Location = new System.Drawing.Point(3, 123);
+            this.label46.Location = new System.Drawing.Point(2, 99);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(146, 41);
+            this.label46.Size = new System.Drawing.Size(118, 33);
             this.label46.TabIndex = 30;
             this.label46.Text = "Model";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1433,9 +1138,10 @@
             this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label44.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.DarkGray;
-            this.label44.Location = new System.Drawing.Point(309, 82);
+            this.label44.Location = new System.Drawing.Point(247, 66);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(161, 41);
+            this.label44.Size = new System.Drawing.Size(130, 33);
             this.label44.TabIndex = 28;
             this.label44.Text = "Seating Cap,";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1446,9 +1152,10 @@
             this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label42.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.DarkGray;
-            this.label42.Location = new System.Drawing.Point(3, 82);
+            this.label42.Location = new System.Drawing.Point(2, 66);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(146, 41);
+            this.label42.Size = new System.Drawing.Size(118, 33);
             this.label42.TabIndex = 26;
             this.label42.Text = "Manufacturer";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1459,9 +1166,10 @@
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label40.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.DarkGray;
-            this.label40.Location = new System.Drawing.Point(309, 41);
+            this.label40.Location = new System.Drawing.Point(247, 33);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(161, 41);
+            this.label40.Size = new System.Drawing.Size(130, 33);
             this.label40.TabIndex = 24;
             this.label40.Text = "Color";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1472,9 +1180,10 @@
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label38.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.DarkGray;
-            this.label38.Location = new System.Drawing.Point(3, 41);
+            this.label38.Location = new System.Drawing.Point(2, 33);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(146, 41);
+            this.label38.Size = new System.Drawing.Size(118, 33);
             this.label38.TabIndex = 22;
             this.label38.Text = "Plate Number";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1485,9 +1194,10 @@
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.DarkGray;
-            this.label36.Location = new System.Drawing.Point(309, 0);
+            this.label36.Location = new System.Drawing.Point(247, 0);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(161, 41);
+            this.label36.Size = new System.Drawing.Size(130, 33);
             this.label36.TabIndex = 20;
             this.label36.Text = "Category";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1498,9 +1208,10 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkGray;
-            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Location = new System.Drawing.Point(2, 0);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 41);
+            this.label16.Size = new System.Drawing.Size(118, 33);
             this.label16.TabIndex = 18;
             this.label16.Text = "VIN";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1512,10 +1223,10 @@
             this.inputPurchaseDate.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.inputPurchaseDate.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inputPurchaseDate.Location = new System.Drawing.Point(476, 125);
-            this.inputPurchaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inputPurchaseDate.Location = new System.Drawing.Point(381, 101);
+            this.inputPurchaseDate.Margin = new System.Windows.Forms.Padding(2);
             this.inputPurchaseDate.Name = "inputPurchaseDate";
-            this.inputPurchaseDate.Size = new System.Drawing.Size(149, 38);
+            this.inputPurchaseDate.Size = new System.Drawing.Size(119, 32);
             this.inputPurchaseDate.TabIndex = 48;
             // 
             // guna2Panel1
@@ -1524,10 +1235,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(29, 52);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(23, 42);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(626, 4);
+            this.guna2Panel1.Size = new System.Drawing.Size(501, 3);
             this.guna2Panel1.TabIndex = 38;
             // 
             // label15
@@ -1535,9 +1246,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label15.Location = new System.Drawing.Point(29, 17);
+            this.label15.Location = new System.Drawing.Point(23, 14);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(191, 24);
+            this.label15.Size = new System.Drawing.Size(155, 19);
             this.label15.TabIndex = 17;
             this.label15.Text = "Vehicle Information";
             // 
@@ -1558,10 +1270,10 @@
             this.guna2Panel2.Controls.Add(this.label14);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(9, 7);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.guna2Panel2.Location = new System.Drawing.Point(7, 6);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(378, 289);
+            this.guna2Panel2.Size = new System.Drawing.Size(303, 230);
             this.guna2Panel2.TabIndex = 0;
             // 
             // guna2Panel4
@@ -1570,10 +1282,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel4.BorderRadius = 8;
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(33, 53);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel4.Location = new System.Drawing.Point(26, 42);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(310, 4);
+            this.guna2Panel4.Size = new System.Drawing.Size(249, 3);
             this.guna2Panel4.TabIndex = 39;
             // 
             // viewRenterBtn
@@ -1589,10 +1301,10 @@
             this.viewRenterBtn.FillColor = System.Drawing.Color.Transparent;
             this.viewRenterBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewRenterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.viewRenterBtn.Location = new System.Drawing.Point(198, 231);
-            this.viewRenterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewRenterBtn.Location = new System.Drawing.Point(159, 185);
+            this.viewRenterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.viewRenterBtn.Name = "viewRenterBtn";
-            this.viewRenterBtn.Size = new System.Drawing.Size(145, 37);
+            this.viewRenterBtn.Size = new System.Drawing.Size(116, 30);
             this.viewRenterBtn.TabIndex = 30;
             this.viewRenterBtn.Text = "View details...";
             // 
@@ -1601,9 +1313,10 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Green;
-            this.label23.Location = new System.Drawing.Point(253, 197);
+            this.label23.Location = new System.Drawing.Point(202, 158);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 19);
+            this.label23.Size = new System.Drawing.Size(67, 16);
             this.label23.TabIndex = 29;
             this.label23.Text = "+3213km";
             // 
@@ -1612,9 +1325,10 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.DarkGray;
-            this.label24.Location = new System.Drawing.Point(132, 197);
+            this.label24.Location = new System.Drawing.Point(106, 158);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(111, 19);
+            this.label24.Size = new System.Drawing.Size(101, 16);
             this.label24.TabIndex = 28;
             this.label24.Text = "Millage used:";
             // 
@@ -1623,9 +1337,10 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(219, 156);
+            this.label21.Location = new System.Drawing.Point(175, 125);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(112, 19);
+            this.label21.Size = new System.Drawing.Size(98, 16);
             this.label21.TabIndex = 27;
             this.label21.Text = "Feb. 24, 2026";
             // 
@@ -1634,9 +1349,10 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DarkGray;
-            this.label22.Location = new System.Drawing.Point(132, 155);
+            this.label22.Location = new System.Drawing.Point(106, 124);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 19);
+            this.label22.Size = new System.Drawing.Size(73, 16);
             this.label22.TabIndex = 26;
             this.label22.Text = "End date:";
             // 
@@ -1645,9 +1361,10 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(229, 114);
+            this.label19.Location = new System.Drawing.Point(183, 91);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(113, 19);
+            this.label19.Size = new System.Drawing.Size(98, 16);
             this.label19.TabIndex = 20;
             this.label19.Text = "Dec. 25, 2025";
             // 
@@ -1656,9 +1373,10 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkGray;
-            this.label18.Location = new System.Drawing.Point(132, 114);
+            this.label18.Location = new System.Drawing.Point(106, 91);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 19);
+            this.label18.Size = new System.Drawing.Size(79, 16);
             this.label18.TabIndex = 18;
             this.label18.Text = "Start date:";
             // 
@@ -1667,9 +1385,10 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(132, 71);
+            this.label17.Location = new System.Drawing.Point(106, 57);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(168, 19);
+            this.label17.Size = new System.Drawing.Size(148, 16);
             this.label17.TabIndex = 19;
             this.label17.Text = "FIrstname Lastname";
             // 
@@ -1680,11 +1399,11 @@
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.IndianRed;
             this.guna2CirclePictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.account_circle;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(33, 71);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(26, 57);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(87, 79);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(70, 63);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 18;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -1694,30 +1413,31 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.label14.Location = new System.Drawing.Point(28, 17);
+            this.label14.Location = new System.Drawing.Point(22, 14);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 24);
+            this.label14.Size = new System.Drawing.Size(111, 19);
             this.label14.TabIndex = 17;
             this.label14.Text = "Latest Renter";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(20, 1262);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(16, 1010);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 103);
+            this.panel1.Size = new System.Drawing.Size(842, 82);
             this.panel1.TabIndex = 23;
             // 
             // VehicleDetailsOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelMain);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VehicleDetailsOverview";
-            this.Size = new System.Drawing.Size(1113, 1134);
+            this.Size = new System.Drawing.Size(890, 907);
             this.panelMain.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableTop.ResumeLayout(false);
@@ -1738,18 +1458,6 @@
             this.guna2CircleProgressBar2.ResumeLayout(false);
             this.guna2CircleProgressBar1.ResumeLayout(false);
             this.progressTillChangeOil.ResumeLayout(false);
-            this.tableBottom.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.guna2Panel15.ResumeLayout(false);
-            this.guna2Panel15.PerformLayout();
-            this.guna2Panel13.ResumeLayout(false);
-            this.guna2Panel13.PerformLayout();
-            this.guna2Panel11.ResumeLayout(false);
-            this.guna2Panel11.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
             this.tableMiddle.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
@@ -1765,28 +1473,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel panelMain;
-        private System.Windows.Forms.TableLayoutPanel tableBottom;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Button viewMaintenanceBtn;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private System.Windows.Forms.Label label34;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
         private Guna.UI2.WinForms.Guna2Button saveBtn;
         private System.Windows.Forms.TableLayoutPanel tableMiddle;
