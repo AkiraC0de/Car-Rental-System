@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Models;
@@ -8,11 +9,11 @@ using VehicleManagementSystem.Services.Interfaces;
 namespace VehicleManagementSystem.Services.Implementations {
     public class VehicleServices : IVehicleService {
 
-        public List<VehicleDto> GetSearchedVehicle(string searchQuery) {
+        public async Task<List<VehicleDto>> GetSearchedVehicle(string searchQuery) {
             var vehicles = new List<VehicleDto>();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
 
                 string sql = @"
                     SELECT * 
@@ -29,7 +30,7 @@ namespace VehicleManagementSystem.Services.Implementations {
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     cmd.Parameters.AddWithValue("@search", $"%{searchQuery.Trim().ToLower()}%");
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                    using (MySqlDataReader reader = await cmd.ExecuteReaderAsync()) {
                         while (reader.Read()) {
                             vehicles.Add(new VehicleDto {
                                 VIN = reader.GetString("VIN"),
@@ -66,44 +67,41 @@ namespace VehicleManagementSystem.Services.Implementations {
             return vehicles;
         }
 
-        public List<VehicleDto> GetAllVehicles() {
+        public async Task<List<VehicleDto>> GetAllVehicles() {
             var vehicles = new List<VehicleDto>();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
-                conn.Open();
+                await conn.OpenAsync();
 
                 string sql = "SELECT * FROM Vehicles ORDER BY CreatedDate DESC";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                using (MySqlDataReader reader = cmd.ExecuteReader()) {
-                    while (reader.Read()) {
+                using (var reader = await cmd.ExecuteReaderAsync()) {
+
+                    // 4. Await the reading process
+                    while (await reader.ReadAsync()) {
                         vehicles.Add(new VehicleDto {
                             VIN = reader.GetString("VIN"),
                             LicensePlate = reader.GetString("LicensePlate"),
-
                             Manufacturer = reader.GetString("Manufacturer"),
                             Model = reader.GetString("Model"),
                             YearModel = reader.GetInt32("YearModel"),
                             Color = reader.GetString("Color"),
-
                             Category = reader.GetString("Category"),
                             FuelType = reader.GetString("FuelType"),
                             Transmission = reader.GetString("Transmission"),
                             SeatingCapacity = reader.GetInt32("SeatingCapacity"),
-
                             PurchaseDate = reader.GetDateTime("PurchaseDate"),
                             PurchasePrice = reader.GetDecimal("PurchasePrice"),
-
                             CurrentOdometerReading = reader.GetDecimal("CurrentOdometerReading"),
                             CurrentStatus = reader.GetString("CurrentStatus"),
                             DailyRate = reader.GetDecimal("DailyRate"),
-
-                            ImagePath = reader.GetString("ImagePath"),
-
+                            // Use IsDBNull check if ImagePath can be null in DB
+                            ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString("ImagePath"),
                             IsActive = reader.GetBoolean("IsActive"),
                             CreatedDate = reader.GetDateTime("CreatedDate"),
                             LastModifiedDate = reader.GetDateTime("LastModifiedDate")
-                        }); ;
+                        });
                     }
                 }
             }

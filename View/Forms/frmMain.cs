@@ -27,7 +27,7 @@ namespace VehicleManagementSystem {
         private void LoadDefaultView() {
             //WindowActions.ToggleMaximize(maximizeBtn);
             NavigationHelper.OpenForm(new frmDashboard());
-            MenuHandler.ActivateButton(vehManagementBtn);
+            MenuHandler.ActivateButton(dashboardBtn);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
@@ -128,8 +128,7 @@ namespace VehicleManagementSystem {
 
             userMenuStrip.Show(control, new Point(0, control.Height));
         }
-        private void menuBtn_Click(object sender, EventArgs e)
-        {
+        private void menuBtn_Click(object sender, EventArgs e) {
             ShowUserMenu(panelUserDetails);
         }
 
