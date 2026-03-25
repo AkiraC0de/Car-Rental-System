@@ -391,6 +391,12 @@
     <Compile Include="View\Forms\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\frmBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmBookings.Designer.cs">
+      <DependentUpon>frmBookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +426,12 @@
     <Compile Include="View\Forms\frmEditUser.Designer.cs">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\frmInbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmInbound.Designer.cs">
+      <DependentUpon>frmInbound.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\frmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,6 +443,12 @@
     </Compile>
     <Compile Include="View\Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\frmOutbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmOutbound.Designer.cs">
+      <DependentUpon>frmOutbound.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\frmProfile.cs">
       <SubType>Form</SubType>
@@ -573,6 +591,9 @@
     <EmbeddedResource Include="View\Forms\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmBookings.resx">
+      <DependentUpon>frmBookings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,11 +608,17 @@
     <EmbeddedResource Include="View\Forms\frmEditUser.resx">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmInbound.resx">
+      <DependentUpon>frmInbound.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmInfo.resx">
       <DependentUpon>frmInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmOutbound.resx">
+      <DependentUpon>frmOutbound.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmProfile.resx">
       <DependentUpon>frmProfile.cs</DependentUpon>

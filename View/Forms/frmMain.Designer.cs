@@ -27,11 +27,14 @@ namespace VehicleManagementSystem {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.activityLogsBtn = new FontAwesome.Sharp.IconButton();
             this.userManagementBtn = new FontAwesome.Sharp.IconButton();
+            this.inboundBtn = new FontAwesome.Sharp.IconButton();
+            this.outboundBtn = new FontAwesome.Sharp.IconButton();
+            this.bookingsBtn = new FontAwesome.Sharp.IconButton();
             this.vehManagementBtn = new FontAwesome.Sharp.IconButton();
             this.dashboardBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -65,6 +68,9 @@ namespace VehicleManagementSystem {
             this.panelMenu.BackColor = System.Drawing.Color.White;
             this.panelMenu.Controls.Add(this.activityLogsBtn);
             this.panelMenu.Controls.Add(this.userManagementBtn);
+            this.panelMenu.Controls.Add(this.inboundBtn);
+            this.panelMenu.Controls.Add(this.outboundBtn);
+            this.panelMenu.Controls.Add(this.bookingsBtn);
             this.panelMenu.Controls.Add(this.vehManagementBtn);
             this.panelMenu.Controls.Add(this.dashboardBtn);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -73,7 +79,7 @@ namespace VehicleManagementSystem {
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(317, 706);
+            this.panelMenu.Size = new System.Drawing.Size(317, 755);
             this.panelMenu.TabIndex = 0;
             // 
             // activityLogsBtn
@@ -92,7 +98,7 @@ namespace VehicleManagementSystem {
             this.activityLogsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.activityLogsBtn.IconSize = 50;
             this.activityLogsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.activityLogsBtn.Location = new System.Drawing.Point(0, 428);
+            this.activityLogsBtn.Location = new System.Drawing.Point(0, 674);
             this.activityLogsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.activityLogsBtn.Name = "activityLogsBtn";
             this.activityLogsBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -120,7 +126,7 @@ namespace VehicleManagementSystem {
             this.userManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.userManagementBtn.IconSize = 50;
             this.userManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.userManagementBtn.Location = new System.Drawing.Point(0, 348);
+            this.userManagementBtn.Location = new System.Drawing.Point(0, 594);
             this.userManagementBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userManagementBtn.Name = "userManagementBtn";
             this.userManagementBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
@@ -131,6 +137,90 @@ namespace VehicleManagementSystem {
             this.userManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.userManagementBtn.UseVisualStyleBackColor = false;
             this.userManagementBtn.Click += new System.EventHandler(this.userManagementBtn_Click);
+            // 
+            // inboundBtn
+            // 
+            this.inboundBtn.BackColor = System.Drawing.Color.Transparent;
+            this.inboundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.inboundBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.inboundBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.inboundBtn.FlatAppearance.BorderSize = 0;
+            this.inboundBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.inboundBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inboundBtn.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inboundBtn.ForeColor = System.Drawing.Color.Gray;
+            this.inboundBtn.IconChar = FontAwesome.Sharp.IconChar.SignIn;
+            this.inboundBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.inboundBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.inboundBtn.IconSize = 50;
+            this.inboundBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inboundBtn.Location = new System.Drawing.Point(0, 512);
+            this.inboundBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inboundBtn.Name = "inboundBtn";
+            this.inboundBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.inboundBtn.Size = new System.Drawing.Size(317, 82);
+            this.inboundBtn.TabIndex = 8;
+            this.inboundBtn.Text = "Inbound";
+            this.inboundBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inboundBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.inboundBtn.UseVisualStyleBackColor = false;
+            this.inboundBtn.Click += new System.EventHandler(this.inboundBtn_Click);
+            // 
+            // outboundBtn
+            // 
+            this.outboundBtn.BackColor = System.Drawing.Color.Transparent;
+            this.outboundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.outboundBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.outboundBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.outboundBtn.FlatAppearance.BorderSize = 0;
+            this.outboundBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.outboundBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.outboundBtn.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outboundBtn.ForeColor = System.Drawing.Color.Gray;
+            this.outboundBtn.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.outboundBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.outboundBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.outboundBtn.IconSize = 50;
+            this.outboundBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.outboundBtn.Location = new System.Drawing.Point(0, 430);
+            this.outboundBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.outboundBtn.Name = "outboundBtn";
+            this.outboundBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.outboundBtn.Size = new System.Drawing.Size(317, 82);
+            this.outboundBtn.TabIndex = 9;
+            this.outboundBtn.Text = "Outbound";
+            this.outboundBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.outboundBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.outboundBtn.UseVisualStyleBackColor = false;
+            this.outboundBtn.Click += new System.EventHandler(this.outboundBtn_Click);
+            // 
+            // bookingsBtn
+            // 
+            this.bookingsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.bookingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.bookingsBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.bookingsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bookingsBtn.FlatAppearance.BorderSize = 0;
+            this.bookingsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.bookingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bookingsBtn.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookingsBtn.ForeColor = System.Drawing.Color.Gray;
+            this.bookingsBtn.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.bookingsBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.bookingsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bookingsBtn.IconSize = 50;
+            this.bookingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookingsBtn.Location = new System.Drawing.Point(0, 348);
+            this.bookingsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookingsBtn.Name = "bookingsBtn";
+            this.bookingsBtn.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.bookingsBtn.Size = new System.Drawing.Size(317, 82);
+            this.bookingsBtn.TabIndex = 10;
+            this.bookingsBtn.Text = "Bookings";
+            this.bookingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookingsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bookingsBtn.UseVisualStyleBackColor = false;
+            this.bookingsBtn.Click += new System.EventHandler(this.bookingsBtn_Click);
             // 
             // vehManagementBtn
             // 
@@ -397,7 +487,7 @@ namespace VehicleManagementSystem {
             this.panelDesktop.Location = new System.Drawing.Point(317, 73);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1095, 633);
+            this.panelDesktop.Size = new System.Drawing.Size(1095, 682);
             this.panelDesktop.TabIndex = 2;
             // 
             // userMenuStrip
@@ -438,28 +528,28 @@ namespace VehicleManagementSystem {
             // guna2Transition1
             // 
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation5;
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1412, 706);
+            this.ClientSize = new System.Drawing.Size(1412, 755);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHeader);
@@ -508,5 +598,8 @@ namespace VehicleManagementSystem {
         private Guna.UI2.WinForms.Guna2Button menuBtn;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
+        private IconButton outboundBtn;
+        private IconButton inboundBtn;
+        private IconButton bookingsBtn;
     }
 }

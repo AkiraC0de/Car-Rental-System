@@ -59,8 +59,8 @@ namespace VehicleManagementSystem {
 
             panelHeader.Controls.Add(labelComponent);
 
-            labelComponent.Visible = true;
-            labelComponent.BringToFront();
+            //labelComponent.Visible = true;
+            //labelComponent.BringToFront();
         }
 
         public void RemoveHeaderLabel() {
@@ -109,6 +109,27 @@ namespace VehicleManagementSystem {
             MenuHandler.ActivateButton(sender);
             labelPage.Text = AppConfig.Titles.MaintenanceManagement;
             NavigationHelper.OpenForm(new frmMaintenanceManagement());
+        }
+
+        private void bookingsBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.Bookings;
+            NavigationHelper.OpenForm(new frmBookings());
+        }
+
+        private void outboundBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.OutBound;
+            NavigationHelper.OpenForm(new frmOutbound());
+        }
+
+        private void inboundBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.InBound;
+            NavigationHelper.OpenForm(new frmInbound());
         }
 
         private void ShowUserMenu(Control control)
@@ -254,5 +275,7 @@ namespace VehicleManagementSystem {
         {
             LoadCurrentUser();
         }
+
+        
     }
 }
