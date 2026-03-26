@@ -145,7 +145,7 @@ namespace VehicleManagementSystem.Services {
                             FROM Bookings b
                             JOIN Vehicles v ON b.VehicleVIN = v.VIN
                             WHERE b.VehicleVIN = @vin 
-                            AND b.Status IN ('Pending', 'Reserved', 'Out')
+                            AND b.Status IN ('Pending', 'Approved', 'Out')
                             AND @RequestedStart < DATE_ADD(b.DateDue, INTERVAL @Buffer HOUR)
                             AND @RequestedEnd > b.DateSchedOut
                             AND b.BookingID != @CurrentBookingID 
@@ -179,11 +179,11 @@ namespace VehicleManagementSystem.Services {
                         var bookingsToReject = conflicts.Where(c => c.Status == "Pending").ToList();
 
                         bool hasHardDirectConflict = conflicts.Any(c =>
-                            (c.Status == "Reserved" || c.Status == "Out") &&
+                            (c.Status == "Approved" || c.Status == "Out") &&
                             info.DateSchedOut < c.DateDue);
 
                         if (hasHardDirectConflict) {
-                            return (false, "CANNOT APPROVE: Direct overlap with an active/reserved booking.");
+                            return (false, "CANNOT APPROVE: Direct overlap with an active/approved booking.");
                         }
 
                         if (bookingsToReject.Count > 0) {
@@ -198,7 +198,7 @@ namespace VehicleManagementSystem.Services {
                         string updateBooking = @"UPDATE Bookings SET 
                                         FirstName=@fn, LastName=@ln, LicenseNum=@lic, Email=@em, PhoneNumber=@ph, 
                                         DateSchedOut=@start, DateDue=@due, 
-                                        ProjectedPrice=@price, Status='Reserved' 
+                                        ProjectedPrice=@price, Status='Approved' 
                                         WHERE BookingID=@bid";
 
                         using (var cmd = new MySqlCommand(updateBooking, connection, transaction)) {
