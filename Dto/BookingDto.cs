@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using VehicleManagementSystem.Classes;
 
-namespace VehicleManagementSystem.Dto {
-    public class BookingDto {
+namespace VehicleManagementSystem.Dto
+{
+    public class BookingDto
+    {
         // Customer Info
         public string BookingID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string LicenseNumber { get; set; }
-        public DateTime DateOfBirth { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         // Vehicle Info
@@ -19,7 +17,7 @@ namespace VehicleManagementSystem.Dto {
         public string VehicleName { get; set; }
         public string LicensePlate { get; set; }
         public string ImagePath { get; set; }
-        public string FullImagePath => System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CarRentalApp", ImagePath);
+        public string FullImagePath => System.IO.Path.Combine(AppConfig.AppData.RootPath, ImagePath);
         public string Status { get; set; }
         // Dates
         public DateTime DateSubmitted { get; set; }
@@ -43,14 +41,10 @@ namespace VehicleManagementSystem.Dto {
 
         public string FullName => $"{FirstName} {LastName}";
 
-        public int Age { get; set; }
-
-        public string DisplayDates => Status == "Out"
-            ? $"Due: {DateDue:MMM dd, yyyy}"
-            : $"Scheduled: {DateSchedOut:MMM dd, yyyy}";
-
-        public string TotalDistance {
-            get {
+        public string TotalDistance
+        {
+            get
+            {
                 if (MileageIn.HasValue && MileageOut.HasValue)
                     return (MileageIn.Value - MileageOut.Value).ToString() + " km";
                 return "N/A";

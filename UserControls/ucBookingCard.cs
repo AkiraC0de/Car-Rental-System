@@ -24,10 +24,18 @@ namespace VehicleManagementSystem.UserControls {
 
             lblBookingID.Text = $"ID: {booking.BookingID}";
             lblCustomerName.Text = $"{booking.FirstName} {booking.LastName}";
+            lblVehicle.Text = booking.VehicleName;
             //lblVehicleInfo.Text = $"Vehicle VIN: {booking.VehicleVIN}";
-            lblPrice.Text = $"Total: {booking.TotalPrice:C2}";
 
-            lblDates.Text = $"{booking.DateSchedOut:MMM dd} - {booking.DateDue:MMM dd, yyyy}";
+            if (booking.Status != "Completed"){
+                lblPrice.Text = $"Total: {booking.ProjectedPrice:C2}";
+            } else if (booking.Status == "Completed"){
+                lblPrice.Text = $"Total: {booking.ProjectedPrice:C2}";
+            } else { 
+                lblPrice.Text = "Something went wrong";
+            }
+
+            lblDates.Text = $"{booking.DateSchedOut:MMM dd hh:mm tt} - {booking.DateDue:MMM dd, yyyy hh:mm tt}";
 
             UpdateStatusUI(booking.Status);
         }
@@ -43,17 +51,30 @@ namespace VehicleManagementSystem.UserControls {
                     break;
                 case "pending":
                     sideStatusPanel.FillColor = Color.FromArgb(241, 196, 15); // Sun Flower Yellow
-                    lblStatus.ForeColor = Color.FromArgb(180, 140, 0); // Darker text for readability
+                    lblStatus.ForeColor = Color.FromArgb(180, 140, 0); 
                     break;
-                case "cancelled":
+                case "rejected":
                     sideStatusPanel.FillColor = Color.FromArgb(231, 76, 60); // Alizarin Red
                     lblStatus.ForeColor = Color.FromArgb(231, 76, 60);
+                    break;
+                case "approved":
+                    sideStatusPanel.FillColor = Color.FromArgb(52, 152, 219); // Peter River Blue
+                    lblStatus.ForeColor = Color.FromArgb(52, 152, 219);
+                    break;
+                case "out":
+                    sideStatusPanel.FillColor = Color.FromArgb(155, 89, 182); // Amethyst Purple
+                    lblStatus.ForeColor = Color.FromArgb(155, 89, 182);
                     break;
                 default:
                     sideStatusPanel.FillColor = Color.Gainsboro;
                     lblStatus.ForeColor = Color.Gray;
                     break;
             }
+        }
+
+        public void ChangeBtnViewText(string newText)
+        {
+            btnView.Text = newText;
         }
 
         private void btnViewDetails_Click(object sender, EventArgs e) {

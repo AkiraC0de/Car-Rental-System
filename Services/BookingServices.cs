@@ -1,14 +1,16 @@
 ﻿using MySqlConnector;
+using Org.BouncyCastle.OpenSsl;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using VehicleManagementSystem;
 using VehicleManagementSystem.Data;
 using VehicleManagementSystem.Dto;
 
-namespace VehicleManagementSystem.classes {
-    internal class BookingHandler {
+namespace VehicleManagementSystem.Services {
+    internal class BookingServices {
 
         internal static BookingDto MapReaderToBooking(MySqlDataReader reader) {
             var booking = new BookingDto {
@@ -16,7 +18,6 @@ namespace VehicleManagementSystem.classes {
                 FirstName = reader.GetString("FirstName"),
                 LastName = reader.GetString("LastName"),
                 LicenseNumber = reader.GetString("LicenseNum"),
-                DateOfBirth = reader.GetDateTime("DateOfBirth"),
                 Email = reader.GetString("Email"),
                 PhoneNumber = reader.GetString("PhoneNumber"),
                 VehicleVIN = reader.GetString("VehicleVIN"),
@@ -144,7 +145,7 @@ namespace VehicleManagementSystem.classes {
                             FROM Bookings b
                             JOIN Vehicles v ON b.VehicleVIN = v.VIN
                             WHERE b.VehicleVIN = @vin 
-                            AND b.Status IN ('Pending', 'Reserved', 'Out')
+                            AND b.Status IN ('Pending', 'Approved', 'Out')
                             AND @RequestedStart < DATE_ADD(b.DateDue, INTERVAL @Buffer HOUR)
                             AND @RequestedEnd > b.DateSchedOut
                             AND b.BookingID != @CurrentBookingID 
@@ -178,11 +179,11 @@ namespace VehicleManagementSystem.classes {
                         var bookingsToReject = conflicts.Where(c => c.Status == "Pending").ToList();
 
                         bool hasHardDirectConflict = conflicts.Any(c =>
-                            (c.Status == "Reserved" || c.Status == "Out") &&
+                            (c.Status == "Approved" || c.Status == "Out") &&
                             info.DateSchedOut < c.DateDue);
 
                         if (hasHardDirectConflict) {
-                            return (false, "CANNOT APPROVE: Direct overlap with an active/reserved booking.");
+                            return (false, "CANNOT APPROVE: Direct overlap with an active/approved booking.");
                         }
 
                         if (bookingsToReject.Count > 0) {
@@ -196,8 +197,8 @@ namespace VehicleManagementSystem.classes {
 
                         string updateBooking = @"UPDATE Bookings SET 
                                         FirstName=@fn, LastName=@ln, LicenseNum=@lic, Email=@em, PhoneNumber=@ph, 
-                                        DateOfBirth=@dob, DateSchedOut=@start, DateDue=@due, 
-                                        ProjectedPrice=@price, Status='Reserved' 
+                                        DateSchedOut=@start, DateDue=@due, 
+                                        ProjectedPrice=@price, Status='Approved' 
                                         WHERE BookingID=@bid";
 
                         using (var cmd = new MySqlCommand(updateBooking, connection, transaction)) {
@@ -206,7 +207,6 @@ namespace VehicleManagementSystem.classes {
                             cmd.Parameters.AddWithValue("@lic", info.LicenseNumber);
                             cmd.Parameters.AddWithValue("@em", info.Email);
                             cmd.Parameters.AddWithValue("@ph", info.PhoneNumber);
-                            cmd.Parameters.AddWithValue("@dob", info.DateOfBirth);
                             cmd.Parameters.AddWithValue("@start", info.DateSchedOut);
                             cmd.Parameters.AddWithValue("@due", info.DateDue);
                             cmd.Parameters.AddWithValue("@price", info.ProjectedPrice);
