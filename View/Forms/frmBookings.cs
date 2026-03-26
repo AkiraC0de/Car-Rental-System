@@ -9,9 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
-using VehicleManagementSystem.classes;
-using VehicleManagementSystem.Classes;
+using VehicleManagementSystem.Services;
 using VehicleManagementSystem.Dto;
+using VehicleManagementSystem.Classes;
+
 using VehicleManagementSystem.UserControls;
 
 namespace VehicleManagementSystem.View.Forms {
@@ -20,7 +21,7 @@ namespace VehicleManagementSystem.View.Forms {
         private UserControl ActiveUserControl;
         private ucLoadingOverlay _loader;
         private Guna2Panel LowerPanel;
-        private BookingHandler _db;
+        private BookingServices _db;
 
         public frmBookings() {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace VehicleManagementSystem.View.Forms {
         private async void InitializeFirstLoad() {
             hr.FillColor = AppConfig.Theme.Primary;
             this.Resize += (s, e) => LayoutFlowLayoutPanel();
-            _db = new BookingHandler();
+            _db = new BookingServices();
             _loader = new ucLoadingOverlay();
 
             ActiveButton = pendingBtn;

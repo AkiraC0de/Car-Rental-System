@@ -284,7 +284,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BookingHandler.cs" />
+    <Compile Include="Services\BookingServices.cs" />
     <Compile Include="Classes\DataGridViewStyle.cs" />
     <Compile Include="Data\Enums\VehicleDocumentEnums.cs" />
     <Compile Include="Data\Enums\VehicleMaintenanceEnums.cs" />
