@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Forms;
+using VehicleManagementSystem.Services.Security;
 using VehicleManagementSystem.View.Forms;
 
 namespace VehicleManagementSystem {
@@ -249,6 +250,13 @@ namespace VehicleManagementSystem {
             }
         }
 
+        public void ApplyRoleBasedUI()
+        {
+            userManagementBtn.Visible = PermissionService.HasPermission(Permission.ManageUsers);
+            vehManagementBtn.Visible = PermissionService.HasPermission(Permission.ManageVehicles);
+            activityLogsBtn.Visible = PermissionService.HasPermission(Permission.ViewReports);
+        }
+
         //protected override CreateParams CreateParams {
         //    get {
         //        CreateParams cp = base.CreateParams;
@@ -274,6 +282,7 @@ namespace VehicleManagementSystem {
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadCurrentUser();
+            ApplyRoleBasedUI();
         }
 
         

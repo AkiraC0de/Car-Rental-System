@@ -329,6 +329,7 @@
     <Compile Include="Services\Interfaces\IVehicleService.cs" />
     <Compile Include="Services\Security\AuthorizationService.cs" />
     <Compile Include="Services\Security\Permission.cs" />
+    <Compile Include="Services\Security\PermissionService.cs" />
     <Compile Include="Services\Security\Role.cs" />
     <Compile Include="Services\Security\RolePermissionMap.cs" />
     <Compile Include="Services\Security\Session.cs" />

@@ -11,9 +11,5 @@ namespace PL_VehicleRental.Services.Security
         Superadmin,
         Admin,
         Staff,
-        Mechanic,
-        HR,
-        IT,
-        Finance
     }
 }
