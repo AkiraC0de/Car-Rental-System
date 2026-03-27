@@ -18,7 +18,6 @@ using VehicleManagementSystem.UserControls;
 namespace VehicleManagementSystem.View.Forms {
     public partial class frmBookings : Form {
         private Guna2Button ActiveButton;
-        private UserControl ActiveUserControl;
         private ucLoadingOverlay _loader;
         private Guna2Panel LowerPanel;
         private BookingServices _db;
@@ -87,7 +86,7 @@ namespace VehicleManagementSystem.View.Forms {
                 Width = ActiveButton.Width,
                 Height = 10,
                 FillColor = AppConfig.Theme.Primary,
-                Location = new Point(ActiveButton.Location.X, ActiveButton.Location.Y + ActiveButton.Height - 10),
+                Location = new Point(ActiveButton.Location.X, ActiveButton.Location.Y + ActiveButton.Height - 8),
                 BorderRadius = 10,
                 Margin = new Padding(0)
             };

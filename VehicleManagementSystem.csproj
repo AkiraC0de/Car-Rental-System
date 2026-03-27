@@ -353,6 +353,12 @@
     <Compile Include="UserControls\MaintenanceCardControl.Designer.cs">
       <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MaintenanceTab\MaintenanceDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaintenanceTab\MaintenanceDashboard.Designer.cs">
+      <DependentUpon>MaintenanceDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBookingCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -383,22 +389,22 @@
     <Compile Include="UserControls\ucLoadingOverlay.Designer.cs">
       <DependentUpon>ucLoadingOverlay.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsDocuments.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsDocuments.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsDocuments.Designer.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsDocuments.Designer.cs">
       <DependentUpon>VehicleDetailsDocuments.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsMaintenance.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsMaintenance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsMaintenance.Designer.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsMaintenance.Designer.cs">
       <DependentUpon>VehicleDetailsMaintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsOverview.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsOverview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\VehicleDetailsOverview.Designer.cs">
+    <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsOverview.Designer.cs">
       <DependentUpon>VehicleDetailsOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\VehicleDocumentCardControl.cs">
@@ -599,6 +605,9 @@
     <EmbeddedResource Include="UserControls\MaintenanceCardControl.resx">
       <DependentUpon>MaintenanceCardControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MaintenanceTab\MaintenanceDashboard.resx">
+      <DependentUpon>MaintenanceDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBookingCard.resx">
       <DependentUpon>ucBookingCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -614,13 +623,13 @@
     <EmbeddedResource Include="UserControls\ucLoadingOverlay.resx">
       <DependentUpon>ucLoadingOverlay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\VehicleDetailsDocuments.resx">
+    <EmbeddedResource Include="UserControls\VehicleDetailsTab\VehicleDetailsDocuments.resx">
       <DependentUpon>VehicleDetailsDocuments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\VehicleDetailsMaintenance.resx">
+    <EmbeddedResource Include="UserControls\VehicleDetailsTab\VehicleDetailsMaintenance.resx">
       <DependentUpon>VehicleDetailsMaintenance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\VehicleDetailsOverview.resx">
+    <EmbeddedResource Include="UserControls\VehicleDetailsTab\VehicleDetailsOverview.resx">
       <DependentUpon>VehicleDetailsOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VehicleDocumentCardControl.resx">
