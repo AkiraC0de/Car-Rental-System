@@ -133,6 +133,13 @@ namespace VehicleManagementSystem {
             NavigationHelper.OpenForm(new frmInbound());
         }
 
+        private void maintenanceBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.MaintenanceManagement;
+            NavigationHelper.OpenForm(new frmMaintenanceManagement());
+        }
+
         private void ShowUserMenu(Control control) {
             userMenuStrip.AutoSize = false;
             userMenuStrip.Width = control.Width;

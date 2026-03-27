@@ -16,6 +16,7 @@ namespace VehicleManagementSystem.UserControls {
 
         public MaintenanceCardControl() {
             InitializeComponent();
+            this.Cursor = Cursors.Hand;
         }
 
         private Action _reloadDisplay;
