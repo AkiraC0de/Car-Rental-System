@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.bookingsConflictsMainPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblBookingConflicts = new System.Windows.Forms.Label();
-            this.conflictFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelLoading = new Guna.UI2.WinForms.Guna2Panel();
             this.bookingDetailsPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.rejectBtn = new FontAwesome.Sharp.IconButton();
+            this.approveBtn = new FontAwesome.Sharp.IconButton();
             this.lblPriceValue = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.rentalDateEndDTP = new System.Windows.Forms.DateTimePicker();
@@ -62,13 +58,19 @@
             this.lblVehicleName = new System.Windows.Forms.Label();
             this.firstNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblBookingIDValue = new System.Windows.Forms.Label();
             this.backBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lblBookingIDValue = new System.Windows.Forms.Label();
+            this.bookingsConflictsMainPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.lblNoBookingConflicts = new System.Windows.Forms.Label();
+            this.lblBookingConflicts = new System.Windows.Forms.Label();
+            this.conflictFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelLoading = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMain.SuspendLayout();
-            this.bookingsConflictsMainPanel.SuspendLayout();
             this.bookingDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).BeginInit();
+            this.bookingsConflictsMainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -94,71 +96,10 @@
             this.panelMain.Size = new System.Drawing.Size(1132, 546);
             this.panelMain.TabIndex = 42;
             // 
-            // bookingsConflictsMainPanel
-            // 
-            this.bookingsConflictsMainPanel.Controls.Add(this.lblNoBookingConflicts);
-            this.bookingsConflictsMainPanel.Controls.Add(this.lblBookingConflicts);
-            this.bookingsConflictsMainPanel.Controls.Add(this.conflictFlowPanel);
-            this.bookingsConflictsMainPanel.Location = new System.Drawing.Point(874, 89);
-            this.bookingsConflictsMainPanel.Name = "bookingsConflictsMainPanel";
-            this.bookingsConflictsMainPanel.Size = new System.Drawing.Size(230, 457);
-            this.bookingsConflictsMainPanel.TabIndex = 42;
-            // 
-            // lblBookingConflicts
-            // 
-            this.lblBookingConflicts.AutoSize = true;
-            this.lblBookingConflicts.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookingConflicts.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingConflicts.Location = new System.Drawing.Point(26, 7);
-            this.lblBookingConflicts.Name = "lblBookingConflicts";
-            this.lblBookingConflicts.Size = new System.Drawing.Size(175, 22);
-            this.lblBookingConflicts.TabIndex = 44;
-            this.lblBookingConflicts.Text = "Booking Conflicts";
-            // 
-            // conflictFlowPanel
-            // 
-            this.conflictFlowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.conflictFlowPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.conflictFlowPanel.BackColor = System.Drawing.Color.Transparent;
-            this.conflictFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.conflictFlowPanel.Location = new System.Drawing.Point(0, 42);
-            this.conflictFlowPanel.Name = "conflictFlowPanel";
-            this.conflictFlowPanel.Size = new System.Drawing.Size(230, 415);
-            this.conflictFlowPanel.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(73, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 17);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Review pending bookings";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label3.Location = new System.Drawing.Point(69, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 29);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Booking ID:";
-            // 
-            // panelLoading
-            // 
-            this.panelLoading.Location = new System.Drawing.Point(0, 89);
-            this.panelLoading.Name = "panelLoading";
-            this.panelLoading.Size = new System.Drawing.Size(1130, 394);
-            this.panelLoading.TabIndex = 41;
-            // 
             // bookingDetailsPanel
             // 
+            this.bookingDetailsPanel.Controls.Add(this.rejectBtn);
+            this.bookingDetailsPanel.Controls.Add(this.approveBtn);
             this.bookingDetailsPanel.Controls.Add(this.lblPriceValue);
             this.bookingDetailsPanel.Controls.Add(this.lblPrice);
             this.bookingDetailsPanel.Controls.Add(this.rentalDateEndDTP);
@@ -189,6 +130,45 @@
             this.bookingDetailsPanel.Name = "bookingDetailsPanel";
             this.bookingDetailsPanel.Size = new System.Drawing.Size(834, 457);
             this.bookingDetailsPanel.TabIndex = 42;
+            // 
+            // rejectBtn
+            // 
+            this.rejectBtn.BackColor = System.Drawing.Color.Tomato;
+            this.rejectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rejectBtn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rejectBtn.ForeColor = System.Drawing.Color.Black;
+            this.rejectBtn.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.rejectBtn.IconColor = System.Drawing.Color.Black;
+            this.rejectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.rejectBtn.IconSize = 40;
+            this.rejectBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rejectBtn.Location = new System.Drawing.Point(629, 365);
+            this.rejectBtn.Name = "rejectBtn";
+            this.rejectBtn.Size = new System.Drawing.Size(177, 56);
+            this.rejectBtn.TabIndex = 59;
+            this.rejectBtn.Text = " Reject";
+            this.rejectBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rejectBtn.UseVisualStyleBackColor = false;
+            this.rejectBtn.Click += new System.EventHandler(this.rejectBtn_Click);
+            // 
+            // approveBtn
+            // 
+            this.approveBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.approveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.approveBtn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approveBtn.ForeColor = System.Drawing.Color.Black;
+            this.approveBtn.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.approveBtn.IconColor = System.Drawing.Color.Black;
+            this.approveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.approveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.approveBtn.Location = new System.Drawing.Point(427, 365);
+            this.approveBtn.Name = "approveBtn";
+            this.approveBtn.Size = new System.Drawing.Size(177, 56);
+            this.approveBtn.TabIndex = 58;
+            this.approveBtn.Text = "Approve";
+            this.approveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.approveBtn.UseVisualStyleBackColor = false;
+            this.approveBtn.Click += new System.EventHandler(this.approveBtn_Click);
             // 
             // lblPriceValue
             // 
@@ -541,18 +521,6 @@
             this.lblFirstName.TabIndex = 32;
             this.lblFirstName.Text = "First Name";
             // 
-            // lblBookingIDValue
-            // 
-            this.lblBookingIDValue.AutoSize = true;
-            this.lblBookingIDValue.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookingIDValue.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingIDValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblBookingIDValue.Location = new System.Drawing.Point(212, 21);
-            this.lblBookingIDValue.Name = "lblBookingIDValue";
-            this.lblBookingIDValue.Size = new System.Drawing.Size(117, 29);
-            this.lblBookingIDValue.TabIndex = 43;
-            this.lblBookingIDValue.Text = "67676767";
-            // 
             // backBtn
             // 
             this.backBtn.BackColor = System.Drawing.Color.Transparent;
@@ -575,6 +543,28 @@
             this.backBtn.TabIndex = 44;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // lblBookingIDValue
+            // 
+            this.lblBookingIDValue.AutoSize = true;
+            this.lblBookingIDValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblBookingIDValue.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingIDValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.lblBookingIDValue.Location = new System.Drawing.Point(212, 21);
+            this.lblBookingIDValue.Name = "lblBookingIDValue";
+            this.lblBookingIDValue.Size = new System.Drawing.Size(117, 29);
+            this.lblBookingIDValue.TabIndex = 43;
+            this.lblBookingIDValue.Text = "67676767";
+            // 
+            // bookingsConflictsMainPanel
+            // 
+            this.bookingsConflictsMainPanel.Controls.Add(this.lblNoBookingConflicts);
+            this.bookingsConflictsMainPanel.Controls.Add(this.lblBookingConflicts);
+            this.bookingsConflictsMainPanel.Controls.Add(this.conflictFlowPanel);
+            this.bookingsConflictsMainPanel.Location = new System.Drawing.Point(874, 89);
+            this.bookingsConflictsMainPanel.Name = "bookingsConflictsMainPanel";
+            this.bookingsConflictsMainPanel.Size = new System.Drawing.Size(230, 457);
+            this.bookingsConflictsMainPanel.TabIndex = 42;
+            // 
             // lblNoBookingConflicts
             // 
             this.lblNoBookingConflicts.AutoSize = true;
@@ -587,6 +577,57 @@
             this.lblNoBookingConflicts.TabIndex = 45;
             this.lblNoBookingConflicts.Text = "No Booking Conflicts.";
             // 
+            // lblBookingConflicts
+            // 
+            this.lblBookingConflicts.AutoSize = true;
+            this.lblBookingConflicts.BackColor = System.Drawing.Color.Transparent;
+            this.lblBookingConflicts.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingConflicts.Location = new System.Drawing.Point(26, 7);
+            this.lblBookingConflicts.Name = "lblBookingConflicts";
+            this.lblBookingConflicts.Size = new System.Drawing.Size(175, 22);
+            this.lblBookingConflicts.TabIndex = 44;
+            this.lblBookingConflicts.Text = "Booking Conflicts";
+            // 
+            // conflictFlowPanel
+            // 
+            this.conflictFlowPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.conflictFlowPanel.BackColor = System.Drawing.Color.Transparent;
+            this.conflictFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.conflictFlowPanel.Location = new System.Drawing.Point(0, 42);
+            this.conflictFlowPanel.Name = "conflictFlowPanel";
+            this.conflictFlowPanel.Size = new System.Drawing.Size(230, 415);
+            this.conflictFlowPanel.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(73, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 17);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Review pending bookings";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label3.Location = new System.Drawing.Point(69, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 29);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Booking ID:";
+            // 
+            // panelLoading
+            // 
+            this.panelLoading.Location = new System.Drawing.Point(0, 89);
+            this.panelLoading.Name = "panelLoading";
+            this.panelLoading.Size = new System.Drawing.Size(1130, 394);
+            this.panelLoading.TabIndex = 41;
+            // 
             // frmPendingBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,11 +638,11 @@
             this.Text = "frmPendingBooking";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            this.bookingsConflictsMainPanel.ResumeLayout(false);
-            this.bookingsConflictsMainPanel.PerformLayout();
             this.bookingDetailsPanel.ResumeLayout(false);
             this.bookingDetailsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).EndInit();
+            this.bookingsConflictsMainPanel.ResumeLayout(false);
+            this.bookingsConflictsMainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -645,5 +686,7 @@
         private System.Windows.Forms.Label lblBookingIDValue;
         private Guna.UI2.WinForms.Guna2CircleButton backBtn;
         private System.Windows.Forms.Label lblNoBookingConflicts;
+        private FontAwesome.Sharp.IconButton rejectBtn;
+        private FontAwesome.Sharp.IconButton approveBtn;
     }
 }

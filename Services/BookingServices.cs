@@ -140,7 +140,6 @@ namespace VehicleManagementSystem.Services {
             List<BookingDto> conflicts = new List<BookingDto>();
             int bufferHours = 3;
 
-            // Standardized: Alias is FullVehicleName
             string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate 
                             FROM Bookings b
                             JOIN Vehicles v ON b.VehicleVIN = v.VIN
@@ -226,6 +225,35 @@ namespace VehicleManagementSystem.Services {
                         transaction.Rollback();
                         return (false, $"Database Error: {ex.Message}");
                     }
+                }
+            }
+        }
+
+        public (bool success, string message) ProcessRejection(string bookingID)
+        {
+            using (var connection = MySQLConnectionContext.Create())
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"UPDATE Bookings SET Status = 'Rejected' WHERE BookingID = @bid; 
+                             UPDATE Vehicles SET CurrentStatus = 'Available' 
+                             WHERE VIN = (SELECT VehicleVIN FROM Bookings WHERE BookingID = @bid);";
+
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@bid", bookingID);
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                            return (true, "Booking has been rejected.");
+                        else
+                            return (false, "Booking not found or already updated.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return (false, $"Database Error: {ex.Message}");
                 }
             }
         }
