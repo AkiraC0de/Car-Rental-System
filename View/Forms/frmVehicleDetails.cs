@@ -23,11 +23,14 @@ namespace VehicleManagementSystem.View.Forms {
             LoadUI();
 
             ActiveButton = overviewBtn;
-            OpenSubPanel(new VehicleDetailsOverview(_vehicle));
+            OpenSubPanel(new VehicleDetailsOverview(_vehicle), overviewBtn);
         }
 
-        public void OpenSubPanel(UserControl control) {
+        public void OpenSubPanel(UserControl control, Guna2Button button) {
             if (ActiveUserControl?.GetType() == control.GetType())  return;
+
+            RemoveActiveButtonStyle();
+            ActiveButton = button;
 
             ActiveUserControl = control;
 
@@ -44,21 +47,15 @@ namespace VehicleManagementSystem.View.Forms {
         }
 
         private void maintenanceBtn_Click(object sender, System.EventArgs e) {
-            RemoveActiveButtonStyle();
-            ActiveButton = maintenanceBtn;
-            OpenSubPanel(new VehicleDetailsMaintenance(_vehicle));
+            OpenSubPanel(new VehicleDetailsMaintenance(_vehicle), maintenanceBtn);
         }
 
         private void overviewBtn_Click(object sender, System.EventArgs e) {
-            RemoveActiveButtonStyle();
-            ActiveButton = overviewBtn;
-            OpenSubPanel(new VehicleDetailsOverview(_vehicle));
+            OpenSubPanel(new VehicleDetailsOverview(_vehicle), overviewBtn);
         }
 
         private void documentsBtn_Click(object sender, System.EventArgs e) {
-            RemoveActiveButtonStyle();
-            ActiveButton = documentsBtn;
-            OpenSubPanel(new VehicleDetailsDocuments(_vehicle));
+            OpenSubPanel(new VehicleDetailsDocuments(_vehicle), documentsBtn);
         }
 
         private void RenderActiveButton() {

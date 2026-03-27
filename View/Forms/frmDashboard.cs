@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
+using MySql.Data.MySqlClient;
+using PL_VehicleRental.Services.Security;
+using VehicleManagementSystem.Dto;
 using MySqlConnector;
 
 namespace VehicleManagementSystem {
@@ -30,11 +29,27 @@ namespace VehicleManagementSystem {
             this.SizeChanged += DashBoardForm_SizeChanged;
         }
 
+        private bool HasRevenueAccess()
+        {
+            var role = Session.User?.Role;
+            return role == UserRole.Superadmin || role == UserRole.Admin;
+        }
+
         private async void DashBoardForm_Load(object sender, EventArgs e)
         {
+            bool hasAccess = HasRevenueAccess();
+
+            // Show cards and panels (always visible, just content changes)
+            revenuePnl.Visible = true;
+            guna2CustomGradientPanel4.Visible = true;
+
             await LoadKPIsAsync();
-            await LoadGraphAsync(currentPeriod);
             await LoadPieChartAsync();
+
+            if (hasAccess)
+                await LoadGraphAsync(currentPeriod);
+            else
+                await LoadBookingGraphAsync(currentPeriod);
 
             lastBookingId = await GetLatestBookingIdAsync();
             lastVehicleCount = await GetVehicleCountAsync();
@@ -50,17 +65,10 @@ namespace VehicleManagementSystem {
         private void SafeInvoke(Action action)
         {
             if (this.IsHandleCreated && !this.IsDisposed)
-            {
                 this.Invoke((MethodInvoker)delegate { action(); });
-            }
         }
 
-        //  RESPONSIVE
-
-        private void DashBoardForm_SizeChanged(object sender, EventArgs e)
-        {
-            ResizeControls();
-        }
+        private void DashBoardForm_SizeChanged(object sender, EventArgs e) => ResizeControls();
 
         private void ResizeControls()
         {
@@ -71,7 +79,6 @@ namespace VehicleManagementSystem {
             int cardHeight = 103;
             int gap = 10;
 
-            //  CARD WIDTH: 4 
             int totalCardWidth = w - (margin * 2) - (gap * 3);
             int cardW = totalCardWidth / 4;
 
@@ -83,11 +90,10 @@ namespace VehicleManagementSystem {
 
             if (chartH < 150) chartH = 150;
 
-            // ── HEADER ──
+            // Position cards
             headerPanel.Location = new Point(margin, headerY);
             headerPanel.Size = new Size(w - (margin * 2), 60);
 
-            // TOP CARDS
             revenuePnl.Location = new Point(margin, topCardY);
             revenuePnl.Size = new Size(cardW, cardHeight);
 
@@ -100,27 +106,21 @@ namespace VehicleManagementSystem {
             reservedPnl.Location = new Point(margin + (cardW + gap) * 3, topCardY);
             reservedPnl.Size = new Size(cardW, cardHeight);
 
-            // CHART PANELS
             int chartPanelW = (int)(w * 0.56) - margin;
             int piePanelW = w - margin - chartPanelW - gap - margin;
 
-            // Revenue chart Panel
             guna2CustomGradientPanel4.Location = new Point(margin, chartY);
             guna2CustomGradientPanel4.Size = new Size(chartPanelW, chartH);
 
-            // Revenue chart 
             revenueChart.Location = new Point(15, 55);
             revenueChart.Size = new Size(chartPanelW - 25, chartH - 65);
 
-            // Pie chart Panel
             distributionPnl.Location = new Point(margin + chartPanelW + gap, chartY);
             distributionPnl.Size = new Size(piePanelW, chartH);
 
-            // Pie chart 
             pieChart1.Location = new Point(0, 0);
             pieChart1.Size = new Size(piePanelW, chartH);
 
-            // BOTTOM CARDS
             maintenancePnl.Location = new Point(margin, bottomCardY);
             maintenancePnl.Size = new Size(cardW, cardHeight);
 
@@ -133,7 +133,6 @@ namespace VehicleManagementSystem {
             completedPnl.Location = new Point(margin + (cardW + gap) * 3, bottomCardY);
             completedPnl.Size = new Size(cardW, cardHeight);
 
-            // REPOSITION ICONS INSIDE CARDS
             RepositionCardIcons(revenuePnl, guna2PictureBox2, totalRevenuelbl);
             RepositionCardIcons(activerentPnl, guna2PictureBox1, activeRentalslbl);
             RepositionCardIcons(availablePnl, guna2PictureBox5, AvailableCarslbl);
@@ -143,7 +142,6 @@ namespace VehicleManagementSystem {
             RepositionCardIcons(mostrentedPnl, guna2PictureBox7, MostRentedCarlbl);
             RepositionCardIcons(completedPnl, guna2PictureBox8, CompletedRentalslbl);
 
-            // REPOSITION BUTTONS
             int btnY = 12;
             int btnStart = (int)(chartPanelW * 0.22);
             int btnSpacing = 120;
@@ -155,22 +153,23 @@ namespace VehicleManagementSystem {
         private void RepositionCardIcons(Control card, Control icon, Control valueLabel)
         {
             icon.Location = new Point(card.Width - icon.Width - 15,
-                                            (card.Height - icon.Height) / 2);
+                                      (card.Height - icon.Height) / 2);
             valueLabel.Location = new Point(valueLabel.Location.X,
                                             (card.Height - valueLabel.Height) / 2 + 5);
         }
 
-  
         private async Task<int> GetLatestBookingIdAsync()
         {
             return await Task.Run(() =>
             {
-                using (var conn = new MySqlConnection(connStr))
+                using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
                     new MySqlCommand("SET SESSION sql_mode = ''", conn).ExecuteNonQuery();
-                    return Convert.ToInt32(new MySqlCommand(
-                        "SELECT IFNULL(MAX(BookingID), 0) FROM Bookings", conn).ExecuteScalar());
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT IFNULL(MAX(BookingID), 0) FROM Bookings", conn))
+                    {
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
                 }
             });
         }
@@ -179,12 +178,14 @@ namespace VehicleManagementSystem {
         {
             return await Task.Run(() =>
             {
-                using (var conn = new MySqlConnection(connStr))
+                using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
                     new MySqlCommand("SET SESSION sql_mode = ''", conn).ExecuteNonQuery();
-                    return Convert.ToInt32(new MySqlCommand(
-                        "SELECT COUNT(*) FROM Vehicles", conn).ExecuteScalar());
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Vehicles", conn))
+                    {
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
                 }
             });
         }
@@ -205,7 +206,10 @@ namespace VehicleManagementSystem {
                 try
                 {
                     await LoadKPIsAsync();
-                    await LoadGraphAsync(currentPeriod);
+                    if (HasRevenueAccess())
+                        await LoadGraphAsync(currentPeriod);
+                    else
+                        await LoadBookingGraphAsync(currentPeriod);
                     await LoadPieChartAsync();
                 }
                 finally
@@ -231,12 +235,13 @@ namespace VehicleManagementSystem {
                     conn.Open();
                     new MySqlCommand("SET SESSION sql_mode = ''", conn).ExecuteNonQuery();
 
-                    double totalRevenue = Convert.ToDouble(new MySqlCommand(@"
-                        SELECT IFNULL(SUM(TotalPrice), 0)
-                        FROM Bookings
-                        WHERE Status = 'Completed'
-                          AND Deleted = 0
-                    ", conn).ExecuteScalar());
+                    double totalRevenue = Convert.ToDouble(new MySqlCommand(
+                        @"SELECT IFNULL(SUM(TotalPrice), 0)
+                          FROM Bookings
+                          WHERE Status = 'Completed' AND Deleted = 0", conn).ExecuteScalar());
+
+                    int totalBookings = Convert.ToInt32(new MySqlCommand(
+                        "SELECT COUNT(*) FROM Bookings WHERE Deleted = 0", conn).ExecuteScalar());
 
                     int activeRentals = Convert.ToInt32(new MySqlCommand(
                         "SELECT COUNT(*) FROM Vehicles WHERE CurrentStatus='Rented'", conn).ExecuteScalar());
@@ -258,45 +263,120 @@ namespace VehicleManagementSystem {
 
                     string mostRentedCar = "N/A";
                     string mostRentedQuery = @"
-                        SELECT CarName, COUNT(*) AS RentalCount
-                        FROM (
-                            SELECT CONCAT(v.Manufacturer, ' ', v.Model) AS CarName
+                        SELECT CarName FROM (
+                            SELECT CONCAT(v.Manufacturer,' ',v.Model) AS CarName,
+                                   COUNT(*) AS RentalCount,
+                                   MAX(b.DateDue) AS LatestBooking
                             FROM Bookings b
-                            JOIN Vehicles v ON b.VehicleVIN = v.VIN
-                            WHERE b.Status IN ('Out', 'Completed')
-                              AND b.Deleted = 0
+                            JOIN Vehicles v ON b.VehicleVIN=v.VIN
+                            WHERE b.Status IN ('Out','Completed') AND b.Deleted=0
+                            GROUP BY CarName
+                            ORDER BY RentalCount DESC, LatestBooking DESC
+                            LIMIT 1
+                        ) AS sub";
 
-                            UNION ALL
-
-                            SELECT vehicle AS CarName
-                            FROM KioskBookings
-                        ) AS CombinedBookings
-                        GROUP BY CarName
-                        ORDER BY RentalCount DESC
-                        LIMIT 1";
-
-                    using (var cmd = new MySqlCommand(mostRentedQuery, conn))
+                    using (MySqlCommand cmd = new MySqlCommand(mostRentedQuery, conn))
                     {
                         var result = cmd.ExecuteScalar();
                         mostRentedCar = result?.ToString() ?? "N/A";
                     }
 
-                    SafeInvoke(() =>
-                    {
-                        totalRevenuelbl.Text = "₱" + totalRevenue.ToString("N2");
-                        activeRentalslbl.Text = activeRentals.ToString();
-                        ReservedCarslbl.Text = reservedCars.ToString();
-                        InMaintenancelbl.Text = inMaintenance.ToString();
-                        AvailableCarslbl.Text = availableCars.ToString();
-                        OutOfServicelbl.Text = outOfService.ToString();
-                        CompletedRentalslbl.Text = completedRentals.ToString();
-                        MostRentedCarlbl.Text = mostRentedCar;
-                    });
+                   SafeInvoke(() =>
+{
+    // Eto ang logic para sa unang card (Revenue vs Bookings)
+    if (HasRevenueAccess())
+    {
+        // Admin View: Ipakita ang Revenue
+        lblRevenueHeader.Text = "Total Revenue"; 
+        totalRevenuelbl.Text = "₱" + totalRevenue.ToString("N2");
+    }
+    else
+    {
+        // Staff View: Ipakita ang Booking Count
+        lblRevenueHeader.Text = "Total Bookings"; 
+        totalRevenuelbl.Text = totalBookings.ToString();
+    }
+
+    // Ang mga sumusunod ay parehas lang para sa lahat ng roles
+    activeRentalslbl.Text = activeRentals.ToString();
+    ReservedCarslbl.Text = reservedCars.ToString();
+    InMaintenancelbl.Text = inMaintenance.ToString();
+    AvailableCarslbl.Text = availableCars.ToString();
+    OutOfServicelbl.Text = outOfService.ToString();
+    CompletedRentalslbl.Text = completedRentals.ToString();
+    MostRentedCarlbl.Text = mostRentedCar;
+});
                 }
             });
         }
 
-        //  PIE CHART
+        // Staff graph: booking count
+        private async Task LoadBookingGraphAsync(string period)
+        {
+            List<string> labels = new List<string>();
+            List<double> values = new List<double>();
+
+            await Task.Run(() =>
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+                    new MySqlCommand("SET SESSION sql_mode = ''", conn).ExecuteNonQuery();
+
+                    string query = "";
+                    if (period == "Daily")
+                    {
+                        query = @"SELECT DATE_FORMAT(DateDue,'%b %d') AS dateLabel, COUNT(*) AS bookingCount 
+                          FROM Bookings WHERE Deleted=0 GROUP BY DATE(DateDue) ORDER BY DATE(DateDue)";
+                    }
+                    else if (period == "Weekly")
+                    {
+                        query = @"SELECT CONCAT(DATE_FORMAT(DATE_SUB(DateDue, INTERVAL WEEKDAY(DateDue) DAY), '%b %d'), ' - ', 
+                          DATE_FORMAT(DATE_ADD(DateDue, INTERVAL (6 - WEEKDAY(DateDue)) DAY), '%b %d')) AS dateLabel, 
+                          COUNT(*) AS bookingCount FROM Bookings WHERE Deleted=0 
+                          GROUP BY YEAR(DateDue), WEEK(DateDue, 1) ORDER BY YEAR(DateDue), WEEK(DateDue, 1)";
+                    }
+                    else // Monthly
+                    {
+                        query = @"SELECT DATE_FORMAT(DateDue,'%b %Y') AS dateLabel, COUNT(*) AS bookingCount 
+                          FROM Bookings WHERE Deleted=0 GROUP BY YEAR(DateDue), MONTH(DateDue) 
+                          ORDER BY YEAR(DateDue), MONTH(DateDue)";
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            labels.Add(reader["dateLabel"].ToString());
+                            values.Add(Convert.ToDouble(reader["bookingCount"]));
+                        }
+                    }
+                }
+            });
+
+            SafeInvoke(() =>
+            {
+                SeriesCollection series = new SeriesCollection();
+                var chartSeries = (period == "Monthly") ? (Series)new ColumnSeries() : new LineSeries();
+
+                chartSeries.Title = "Bookings";
+                chartSeries.Values = new ChartValues<double>(values);
+                chartSeries.DataLabels = true;
+
+                series.Add(chartSeries);
+
+                revenueChart.Series = series;
+                revenueChart.AxisX.Clear();
+                revenueChart.AxisX.Add(new Axis { Labels = labels });
+                revenueChart.AxisY.Clear();
+                revenueChart.AxisY.Add(new Axis
+                {
+                    Title = "Total Bookings",
+                    LabelFormatter = val => val.ToString("N0") // No decimals for count
+                });
+            });
+        }
 
         private async Task<PieSeries> CreateSeriesAsync(string title, string query,
             System.Windows.Media.Brush color)
@@ -308,7 +388,10 @@ namespace VehicleManagementSystem {
                 {
                     conn.Open();
                     new MySqlCommand("SET SESSION sql_mode = ''", conn).ExecuteNonQuery();
-                    value = Convert.ToInt32(new MySqlCommand(query, conn).ExecuteScalar());
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        value = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
                 }
             });
 
@@ -360,10 +443,14 @@ namespace VehicleManagementSystem {
             });
         }
 
-        //  REVENUE CHART
-
         private async Task LoadGraphAsync(string period)
         {
+            if (!HasRevenueAccess())
+            {
+                await LoadBookingGraphAsync(period);
+                return;
+            }
+
             List<string> labels = new List<string>();
             List<double> values = new List<double>();
 
@@ -379,49 +466,38 @@ namespace VehicleManagementSystem {
                     if (period == "Daily")
                     {
                         query = @"
-                            SELECT
-                                DATE_FORMAT(DATE(DateDue), '%b %d') AS dateLabel,
-                                SUM(TotalPrice) AS revenue
+                            SELECT DATE_FORMAT(DATE(DateDue),'%b %d') AS dateLabel,
+                                   SUM(TotalPrice) AS revenue
                             FROM Bookings
-                            WHERE Status = 'Completed'
-                              AND Deleted = 0
-                              AND DateDue IS NOT NULL
+                            WHERE Status='Completed' AND Deleted=0 AND DateDue IS NOT NULL
                             GROUP BY DATE(DateDue)
-                            ORDER BY DATE(DateDue)
-                        ";
+                            ORDER BY DATE(DateDue)";
                     }
                     else if (period == "Weekly")
                     {
                         query = @"
-                            SELECT
-                                CONCAT(
-                                    DATE_FORMAT(DATE_SUB(MIN(DateDue), INTERVAL WEEKDAY(MIN(DateDue)) DAY), '%b %d'),
-                                    ' - ',
-                                    DATE_FORMAT(DATE_ADD(DATE_SUB(MIN(DateDue), INTERVAL WEEKDAY(MIN(DateDue)) DAY), INTERVAL 6 DAY), '%b %d')
-                                ) AS dateLabel,
-                                SUM(TotalPrice) AS revenue
+                            SELECT CONCAT(
+                                DATE_FORMAT(DATE_SUB(MIN(DateDue),INTERVAL WEEKDAY(MIN(DateDue)) DAY),'%b %d'),
+                                ' - ',
+                                DATE_FORMAT(DATE_ADD(DATE_SUB(MIN(DateDue),INTERVAL WEEKDAY(MIN(DateDue)) DAY),INTERVAL 6 DAY),'%b %d')
+                            ) AS dateLabel,
+                            SUM(TotalPrice) AS revenue
                             FROM Bookings
-                            WHERE Status = 'Completed'
-                              AND Deleted = 0
-                              AND DateDue IS NOT NULL
-                            GROUP BY YEAR(DateDue), WEEK(DateDue, 1)
-                            ORDER BY YEAR(DateDue), WEEK(DateDue, 1)
-                        ";
+                            WHERE Status='Completed' AND Deleted=0 AND DateDue IS NOT NULL
+                            GROUP BY YEAR(DateDue), WEEK(DateDue,1)
+                            ORDER BY YEAR(DateDue), WEEK(DateDue,1)";
                     }
                     else
                     {
                         query = @"
-                            SELECT
-                                DATE_FORMAT(MIN(DateDue), '%b %Y') AS dateLabel,
-                                SUM(TotalPrice) AS revenue
+                            SELECT DATE_FORMAT(MIN(DateDue),'%b %Y') AS dateLabel,
+                                   SUM(TotalPrice) AS revenue
                             FROM Bookings
-                            WHERE Status = 'Completed'
-                              AND Deleted = 0
-                              AND DateDue IS NOT NULL
+                            WHERE Status='Completed' AND Deleted=0 AND DateDue IS NOT NULL
                             GROUP BY YEAR(DateDue), MONTH(DateDue)
-                            ORDER BY YEAR(DateDue), MONTH(DateDue)
-                        ";
+                            ORDER BY YEAR(DateDue), MONTH(DateDue)";
                     }
+
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -438,34 +514,26 @@ namespace VehicleManagementSystem {
             SafeInvoke(() =>
             {
                 SeriesCollection series = new SeriesCollection();
-
-                if (period == "Daily")
+                if (period == "Monthly")
                 {
-                    series.Add(new LineSeries
+                    series.Add(new ColumnSeries
                     {
-                        Title = "Daily Revenue",
+                        Title = "Revenue",
                         Values = new ChartValues<double>(values),
                         DataLabels = true,
-                        PointGeometrySize = 8
-                    });
-                }
-                else if (period == "Weekly")
-                {
-                    series.Add(new LineSeries
-                    {
-                        Title = "Weekly Revenue",
-                        Values = new ChartValues<double>(values),
-                        DataLabels = true,
-                        PointGeometrySize = 8
+                        Fill = System.Windows.Media.Brushes.DodgerBlue
                     });
                 }
                 else
                 {
-                    series.Add(new ColumnSeries
+                    series.Add(new LineSeries
                     {
-                        Title = "Monthly Revenue",
+                        Title = "Revenue",
                         Values = new ChartValues<double>(values),
-                        DataLabels = true
+                        DataLabels = true,
+                        PointGeometrySize = 8,
+                        Stroke = System.Windows.Media.Brushes.DodgerBlue,
+                        Fill = System.Windows.Media.Brushes.Transparent
                     });
                 }
 
@@ -475,31 +543,39 @@ namespace VehicleManagementSystem {
                 revenueChart.AxisY.Clear();
                 revenueChart.AxisY.Add(new Axis
                 {
-                    LabelFormatter = val => "₱" + val.ToString("N0"),
+                    LabelFormatter = val => "₱" + val.ToString("N2"),
                     MinValue = 0
                 });
             });
         }
 
-        //  BUTTONS
-
-        private async void btnDaily_Click(object sender, EventArgs e)
+        private void btnDaily_Click(object sender, EventArgs e)
         {
             currentPeriod = "Daily";
-            await LoadGraphAsync(currentPeriod);
+            if (HasRevenueAccess())
+                LoadGraphAsync(currentPeriod);
+            else
+                LoadBookingGraphAsync(currentPeriod);
         }
 
-        private async void btnWeekly_Click(object sender, EventArgs e)
+        private void btnWeekly_Click(object sender, EventArgs e)
         {
             currentPeriod = "Weekly";
-            await LoadGraphAsync(currentPeriod);
+            if (HasRevenueAccess())
+                LoadGraphAsync(currentPeriod);
+            else
+                LoadBookingGraphAsync(currentPeriod);
         }
 
-        private async void btnMonthly_Click(object sender, EventArgs e)
+        private void btnMonthly_Click(object sender, EventArgs e)
         {
             currentPeriod = "Monthly";
-            await LoadGraphAsync(currentPeriod);
+            if (HasRevenueAccess())
+                LoadGraphAsync(currentPeriod);
+            else
+                LoadBookingGraphAsync(currentPeriod);
         }
+
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void guna2Panel1_Paint(object sender, PaintEventArgs e) { }
@@ -515,5 +591,8 @@ namespace VehicleManagementSystem {
         private void distributionPnl_Paint(object sender, PaintEventArgs e) { }
         private void revenuePnl_Paint(object sender, PaintEventArgs e) { }
         private void revenueChart_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e) { }
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e) { }
+        private void InMaintenancelbl_Click(object sender, EventArgs e) { }
+        private void btnExport_Click(object sender, EventArgs e) { }
     }
 }

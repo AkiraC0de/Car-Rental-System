@@ -264,12 +264,8 @@ namespace PL_VehicleRental.Forms
 
             roleCmb.Items.AddRange(new object[]
             {
-                "Superadmin",
                 "Admin",
                 "Staff",
-                "Mechanic",
-                "HR",
-                "Finance"
             });
 
             statusCmb.Items.Clear();

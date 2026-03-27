@@ -33,7 +33,7 @@ namespace PL_VehicleRental.Services.Security
                     UserRole.Staff,
                     new List<Permission>
                     {
-                        Permission.ManageVehicles
+                        //Permission.ManageVehicles
                     }
                 }
             };

@@ -19,15 +19,11 @@ namespace VehicleManagementSystem.UserControls {
         public BookingDto bookingData { get; private set; } 
         public ucBookingCard() {
             InitializeComponent();
+            this.Cursor = Cursors.Hand;
         }
 
-        // Pass the DTO to populate the card
         public void BindData(BookingDto booking) {
-
-            bookingData = new BookingDto();
-            bookingData = booking;
-
-            BookingID = booking.BookingID; // This is now your custom string ID
+            BookingID = booking.BookingID; 
 
             lblBookingID.Text = $"ID: {booking.BookingID}";
             lblCustomerName.Text = $"{booking.FirstName} {booking.LastName}";

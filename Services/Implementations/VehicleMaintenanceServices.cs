@@ -29,7 +29,7 @@ namespace VehicleManagementSystem.Services.Implementations {
             }
         }
 
-        public async Task<List<VehicleMaintenanceTypeDto>> GetAllTaskDefinitions() {
+        public async Task<List<VehicleMaintenanceTypeDto>> GetAllMaintenanceTypes() {
             var tasks = new List<VehicleMaintenanceTypeDto>();
 
             using (MySqlConnection conn = MySQLConnectionContext.Create()) {
@@ -107,6 +107,96 @@ namespace VehicleManagementSystem.Services.Implementations {
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     cmd.Parameters.AddWithValue("@VehiclePlateNum", vehiclePlateNum);
 
+                    using (var reader = await cmd.ExecuteReaderAsync()) {
+                        while (reader.Read()) {
+                            schedules.Add(new VehicleMaintenanceScheduleDto {
+                                ScheduleID = reader.GetInt32("ScheduleID"),
+                                VehiclePlateNum = reader.GetString("VehiclePlateNum"),
+                                MaintenanceTypeID = reader.GetInt32("MaintenanceTypeID"),
+                                MaintenanceName = reader.GetString("MaintenanceName"),
+
+                                ScheduleType = reader.GetString("ScheduleType"),
+                                Status = reader.GetString("Status"),
+
+                                // One-time schedule fields
+                                DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate"))
+                                         ? (DateTime?)null
+                                         : reader.GetDateTime("DueDate"),
+                                DueMileage = reader.IsDBNull(reader.GetOrdinal("DueMileage"))
+                                            ? (decimal?)null
+                                            : reader.GetDecimal("DueMileage"),
+
+                                // Recurring schedule fields
+                                MileageInterval = reader.IsDBNull(reader.GetOrdinal("MileageInterval"))
+                                                 ? (int?)null
+                                                 : reader.GetInt32("MileageInterval"),
+                                MonthInterval = reader.IsDBNull(reader.GetOrdinal("MonthInterval"))
+                                               ? (int?)null
+                                               : reader.GetInt32("MonthInterval"),
+                                LastServiceMileage = reader.IsDBNull(reader.GetOrdinal("LastServiceMileage"))
+                                                    ? (decimal?)null
+                                                    : reader.GetDecimal("LastServiceMileage"),
+                                LastServiceDate = reader.IsDBNull(reader.GetOrdinal("LastServiceDate"))
+                                                 ? (DateTime?)null
+                                                 : reader.GetDateTime("LastServiceDate"),
+
+                                CompletedDate = reader.IsDBNull(reader.GetOrdinal("CompletedDate"))
+                                               ? (DateTime?)null
+                                               : reader.GetDateTime("CompletedDate"),
+
+
+                                CurrentVehicleMileage = reader.GetDecimal("CurrentOdometerReading")
+                            });
+                        }
+                    }
+                }
+            }
+
+            return schedules;
+        }
+
+        public async Task<List<VehicleMaintenanceScheduleDto>> GetAllMaintenanceSchedules() {
+            var schedules = new List<VehicleMaintenanceScheduleDto>();
+
+            using (MySqlConnection conn = MySQLConnectionContext.Create()) {
+                await conn.OpenAsync();
+                string sql = @"
+            SELECT 
+                ms.ScheduleID,
+                ms.VehiclePlateNum,
+                ms.MaintenanceTypeID,
+                ms.ScheduleType,
+                ms.Status,
+                ms.DueDate,
+                ms.DueMileage,
+                ms.MileageInterval,
+                ms.MonthInterval,
+                ms.LastServiceMileage,
+                ms.LastServiceDate,
+                ms.CompletedDate,
+                ms.IsActive,
+                ms.CreatedDate,
+                ms.LastModifiedDate,
+                mt.MaintenanceName,
+                mt.Description AS MaintenanceDescription,
+                v.CurrentOdometerReading
+            FROM VehicleMaintenanceSchedules ms
+            INNER JOIN VehicleMaintenanceTypes mt 
+                ON ms.MaintenanceTypeID = mt.MaintenanceTypeID
+            INNER JOIN Vehicles v 
+                ON ms.VehiclePlateNum = v.LicensePlate
+            WHERE ms.IsActive = 1
+            ORDER BY 
+                CASE ms.Status
+                    WHEN 'Scheduled' THEN 1
+                    WHEN 'Completed' THEN 2
+                    WHEN 'Cancelled' THEN 3
+                    ELSE 4
+                END,
+                ms.DueDate ASC,
+                ms.DueMileage ASC";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
                     using (var reader = await cmd.ExecuteReaderAsync()) {
                         while (reader.Read()) {
                             schedules.Add(new VehicleMaintenanceScheduleDto {

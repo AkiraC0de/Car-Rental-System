@@ -43,7 +43,7 @@
             this.activeRentalslbl = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.revenuePnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblRevenueHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.totalRevenuelbl = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -70,6 +70,7 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.InMaintenancelbl = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
             this.headerPanel.SuspendLayout();
             this.availablePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
@@ -280,7 +281,7 @@
             // revenuePnl
             // 
             this.revenuePnl.BorderRadius = 15;
-            this.revenuePnl.Controls.Add(this.guna2HtmlLabel1);
+            this.revenuePnl.Controls.Add(this.lblRevenueHeader);
             this.revenuePnl.Controls.Add(this.totalRevenuelbl);
             this.revenuePnl.Controls.Add(this.guna2PictureBox2);
             this.revenuePnl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -293,16 +294,16 @@
             this.revenuePnl.TabIndex = 15;
             this.revenuePnl.Paint += new System.Windows.Forms.PaintEventHandler(this.revenuePnl_Paint);
             // 
-            // guna2HtmlLabel1
+            // lblRevenueHeader
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(15, 14);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(129, 27);
-            this.guna2HtmlLabel1.TabIndex = 10;
-            this.guna2HtmlLabel1.Text = "Total Revenue";
+            this.lblRevenueHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblRevenueHeader.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevenueHeader.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRevenueHeader.Location = new System.Drawing.Point(15, 14);
+            this.lblRevenueHeader.Name = "lblRevenueHeader";
+            this.lblRevenueHeader.Size = new System.Drawing.Size(129, 27);
+            this.lblRevenueHeader.TabIndex = 10;
+            this.lblRevenueHeader.Text = "Total Revenue";
             // 
             // totalRevenuelbl
             // 
@@ -644,6 +645,7 @@
             this.InMaintenancelbl.TabIndex = 9;
             this.InMaintenancelbl.Text = "0";
             this.InMaintenancelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.InMaintenancelbl.Click += new System.EventHandler(this.InMaintenancelbl_Click);
             // 
             // guna2PictureBox4
             // 
@@ -656,6 +658,15 @@
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 10;
             this.guna2PictureBox4.TabStop = false;
+            // 
+            // iconDropDownButton1
+            // 
+            this.iconDropDownButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconDropDownButton1.IconColor = System.Drawing.Color.Black;
+            this.iconDropDownButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconDropDownButton1.Name = "iconDropDownButton1";
+            this.iconDropDownButton1.Size = new System.Drawing.Size(23, 23);
+            this.iconDropDownButton1.Text = "iconDropDownButton1";
             // 
             // DashBoardForm
             // 
@@ -715,7 +726,7 @@
         private System.Windows.Forms.Label activeRentalslbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel revenuePnl;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblRevenueHeader;
         private System.Windows.Forms.Label totalRevenuelbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -742,6 +753,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.Label InMaintenancelbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private FontAwesome.Sharp.IconDropDownButton iconDropDownButton1;
     }
 }
 

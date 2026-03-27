@@ -77,8 +77,6 @@ namespace PL_VehicleRental.Forms
                 cmbFilter.Items.Add("Superadmin");
                 cmbFilter.Items.Add("Admin");
                 cmbFilter.Items.Add("Staff");
-                cmbFilter.Items.Add("HR");
-                cmbFilter.Items.Add("Finance");
                 cmbFilter.SelectedIndex = 0;
 
                 cmbFilter.SelectedIndexChanged += CmbFilter_SelectedIndexChanged;

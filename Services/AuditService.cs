@@ -14,9 +14,9 @@ namespace PL_VehicleRental.Services
         public static async Task LogAsync(AuditLog log)
         {
             string query = @"INSERT INTO AuditLogs
-                            (userId, actionType, description, tableAffected, recordId, oldValues, newValues)
+                            (userId, actionType, description, tableAffected, recordId)
                             VALUES
-                            (@userId, @actionType, @description, @tableAffected, @recordId, @oldValues, @newValues)";
+                            (@userId, @actionType, @description, @tableAffected, @recordId)";
 
             using (var conn = MySQLConnectionContext.Create())
             using (var cmd = new MySqlCommand(query, conn))
@@ -26,9 +26,6 @@ namespace PL_VehicleRental.Services
                 cmd.Parameters.AddWithValue("@description", log.Description);
                 cmd.Parameters.AddWithValue("@tableAffected", log.TableAffected);
                 cmd.Parameters.AddWithValue("@recordId", log.RecordId);
-                
-                cmd.Parameters.AddWithValue("@oldValues", (object)log.OldValues ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@newValues", (object)log.NewValues ?? DBNull.Value);
 
                 await conn.OpenAsync();
                 await cmd.ExecuteNonQueryAsync();
@@ -54,6 +51,9 @@ namespace PL_VehicleRental.Services
                 {
                     while(await reader.ReadAsync())
                     {
+                        var dbTime = reader.GetDateTime("createdAt");
+                        var phTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time");
+
                         logs.Add(new AuditLog
                         {
                             UserId = reader.GetInt32("id"), 
@@ -72,8 +72,11 @@ namespace PL_VehicleRental.Services
                             TableAffected = reader.IsDBNull(reader.GetOrdinal("tableAffected")) 
                                         ? string.Empty 
                                         : reader.GetString("tableAffected"),
-                            
-                            CreatedAt = reader.GetDateTime("createdAt")
+
+                            CreatedAt = TimeZoneInfo.ConvertTimeFromUtc(
+                            DateTime.SpecifyKind(dbTime, DateTimeKind.Utc),
+                            phTimeZone
+                        )
                         });
                     }
                 }

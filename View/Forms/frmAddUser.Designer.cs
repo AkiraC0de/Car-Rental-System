@@ -224,12 +224,8 @@
             this.roleCmb.ForeColor = System.Drawing.Color.Black;
             this.roleCmb.ItemHeight = 30;
             this.roleCmb.Items.AddRange(new object[] {
-            "Superadmin",
             "Admin",
-            "Staff",
-            "Mechanic",
-            "HR",
-            "Finance"});
+            "Staff"});
             this.roleCmb.Location = new System.Drawing.Point(125, 310);
             this.roleCmb.Margin = new System.Windows.Forms.Padding(2);
             this.roleCmb.Name = "roleCmb";

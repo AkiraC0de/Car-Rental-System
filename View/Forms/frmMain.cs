@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
 using VehicleManagementSystem.Dto;
 using VehicleManagementSystem.Forms;
+using VehicleManagementSystem.Services.Security;
 using VehicleManagementSystem.View.Forms;
 
 namespace VehicleManagementSystem {
@@ -132,8 +133,14 @@ namespace VehicleManagementSystem {
             NavigationHelper.OpenForm(new frmInbound());
         }
 
-        private void ShowUserMenu(Control control)
-        {
+        private void maintenanceBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.MaintenanceManagement;
+            NavigationHelper.OpenForm(new frmMaintenanceManagement());
+        }
+
+        private void ShowUserMenu(Control control) {
             userMenuStrip.AutoSize = false;
             userMenuStrip.Width = control.Width;
             userMenuStrip.Height = 85;
@@ -149,6 +156,7 @@ namespace VehicleManagementSystem {
 
             userMenuStrip.Show(control, new Point(0, control.Height));
         }
+
         private void menuBtn_Click(object sender, EventArgs e) {
             ShowUserMenu(panelUserDetails);
         }
@@ -160,8 +168,7 @@ namespace VehicleManagementSystem {
             profileForm.ShowDialog();
         }
 
-        private void ProfileForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        private void ProfileForm_FormClosed(object sender, FormClosedEventArgs e) {
             RefreshUserDisplay();
         }
 
@@ -249,6 +256,13 @@ namespace VehicleManagementSystem {
             }
         }
 
+        public void ApplyRoleBasedUI()
+        {
+            userManagementBtn.Visible = PermissionService.HasPermission(Permission.ManageUsers);
+            //vehManagementBtn.Visible = PermissionService.HasPermission(Permission.ManageVehicles);
+            activityLogsBtn.Visible = PermissionService.HasPermission(Permission.ViewReports);
+        }
+
         //protected override CreateParams CreateParams {
         //    get {
         //        CreateParams cp = base.CreateParams;
@@ -274,6 +288,7 @@ namespace VehicleManagementSystem {
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadCurrentUser();
+            ApplyRoleBasedUI();
         }
 
         
