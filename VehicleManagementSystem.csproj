@@ -784,6 +784,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\file %281%29.png" />
+    <None Include="Resources\file.png" />
     <None Include="Resources\pngtree-modern-silver-toyota-fortuner-suv-studio-shot-png-image_16472540.png" />
     <None Include="Resources\logo-test.png" />
     <None Include="Resources\close.png" />

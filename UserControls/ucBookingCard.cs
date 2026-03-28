@@ -23,25 +23,30 @@ namespace VehicleManagementSystem.UserControls {
         }
 
         public void BindData(BookingDto booking) {
+            if (booking == null) return;
+
             BookingID = booking.BookingID;
             bookingData = booking;
 
             lblBookingID.Text = $"ID: {booking.BookingID}";
             lblCustomerName.Text = $"{booking.FirstName} {booking.LastName}";
-            lblVehicle.Text = booking.VehicleName;
+            lblVehicle.Text = booking.VehicleName ?? "Unknown Vehicle";
             lblDateSubmitted.Text = booking.DateSubmitted.GetTimeAgo();
 
-            if (booking.Status != "Completed"){
-                lblPrice.Text = $"Total: {booking.ProjectedPrice:C2}";
-            } else if (booking.Status == "Completed"){
-                lblPrice.Text = $"Total: {booking.TotalPrice:C2}";
-            } else { 
-                lblPrice.Text = "Something went wrong";
+            // Determine which price to show based on status
+            // Use Trim() and ToUpper() to avoid casing/spacing bugs
+            string currentStatus = booking.Status?.Trim() ?? "";
+
+            if (currentStatus.Equals("Completed", StringComparison.OrdinalIgnoreCase)) {
+                lblPrice.Text = $"Total: ₱ {booking.TotalPrice:N2}";
+            } else {
+                // For 'Reserved', 'Out', etc., show Projected Price
+                lblPrice.Text = $"Total: ₱ {booking.ProjectedPrice:N2}";
             }
 
             lblDates.Text = $"{booking.DateSchedOut:MMM dd hh:mm tt} - {booking.DateDue:MMM dd, yyyy hh:mm tt}";
 
-            UpdateStatusUI(booking.Status); 
+            UpdateStatusUI(booking.Status);
         }
 
         private void UpdateStatusUI(string status) {
