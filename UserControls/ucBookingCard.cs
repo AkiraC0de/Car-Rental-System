@@ -92,6 +92,10 @@ namespace VehicleManagementSystem.UserControls {
             if(lblStatus.Text == "PENDING")
             {
                 NavigationHelper.OpenForm(new frmPendingBooking(bookingData));
+            } else if (lblStatus.Text == "APPROVED") {
+                NavigationHelper.OpenForm(new frmApprovedBooking(bookingData));
+            } else if (lblStatus.Text == "ONGOING") {
+                NavigationHelper.OpenForm(new frmOngoingBooking(bookingData));
             }
 
         }

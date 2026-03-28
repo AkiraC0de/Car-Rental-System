@@ -24,7 +24,7 @@ namespace VehicleManagementSystem.Services {
 
                 // We standardized our SQL queries to always use 'FullVehicleName'
                 VehicleName = reader.GetString("FullVehicleName"),
-
+                CurrentOdometerReading = reader.GetDecimal("CurrentOdometerReading"),
                 LicensePlate = reader.GetString("LicensePlate"),
                 ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString("ImagePath"),
                 Status = reader.GetString("Status"),
@@ -63,8 +63,7 @@ namespace VehicleManagementSystem.Services {
 
         public async Task<List<BookingDto>> GetAllBookings() {
             List<BookingDto> bookings = new List<BookingDto>();
-            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate 
-                             FROM Bookings b 
+            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate, v.CurrentOdometerReading FROM Bookings b 
                              JOIN Vehicles v ON b.VehicleVIN = v.VIN";
 
             using (var conn = MySQLConnectionContext.Create()) {
@@ -82,7 +81,7 @@ namespace VehicleManagementSystem.Services {
 
         public async Task<List<BookingDto>> GetBookingsByStatus(string status) {
             List<BookingDto> list = new List<BookingDto>();
-            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate";
+            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate, v.CurrentOdometerReading";
 
             if (status == "Completed") {
                 query += @", (SELECT COUNT(*) FROM VehicleDamages vd 
@@ -114,7 +113,7 @@ namespace VehicleManagementSystem.Services {
             using (var connection = MySQLConnectionContext.Create()) {
                 try {
                     connection.Open();
-                    string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate 
+                    string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate, v.CurrentOdometerReading 
                                      FROM Bookings b
                                      JOIN Vehicles v ON b.VehicleVIN = v.VIN
                                      WHERE b.Status = @status AND b.Deleted = 0
@@ -140,7 +139,7 @@ namespace VehicleManagementSystem.Services {
             List<BookingDto> conflicts = new List<BookingDto>();
             int bufferHours = 3;
 
-            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate 
+            string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate, v.CurrentOdometerReading 
                             FROM Bookings b
                             JOIN Vehicles v ON b.VehicleVIN = v.VIN
                             WHERE b.VehicleVIN = @vin 
@@ -377,27 +376,6 @@ namespace VehicleManagementSystem.Services {
                     }
                 }
             }
-        }
-
-        public async Task<int> GetVehicleMileage(string vin)
-        {
-            int currentMileage = 0;
-            string query = "SELECT CurrentOdometerReading FROM Vehicles WHERE VIN = @vin";
-
-            using (var conn = MySQLConnectionContext.Create())
-            {
-                await conn.OpenAsync();
-                using (var cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@vin", vin);
-                    var result = await cmd.ExecuteScalarAsync();
-                    if (result != null && result != DBNull.Value)
-                    {
-                        currentMileage = Convert.ToInt32(result);
-                    }
-                }
-            }
-            return currentMileage;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace VehicleManagementSystem.Dto
         // Vehicle Info
         public string VehicleVIN { get; set; }
         public string VehicleName { get; set; }
+        public decimal CurrentOdometerReading { get; set; }
         public string LicensePlate { get; set; }
         public string ImagePath { get; set; }
         public string FullImagePath => System.IO.Path.Combine(AppConfig.AppData.RootPath, ImagePath);

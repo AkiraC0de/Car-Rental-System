@@ -31,7 +31,7 @@
             this.sideStatusPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideStatusPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.sideStatusPanel.Location = new System.Drawing.Point(0, 0);
-            this.sideStatusPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sideStatusPanel.Margin = new System.Windows.Forms.Padding(4);
             this.sideStatusPanel.Name = "sideStatusPanel";
             this.sideStatusPanel.Size = new System.Drawing.Size(8, 197);
             this.sideStatusPanel.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.lblBookingID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBookingID.ForeColor = System.Drawing.Color.Silver;
-            this.lblBookingID.Location = new System.Drawing.Point(240, 18);
+            this.lblBookingID.Location = new System.Drawing.Point(264, 21);
             this.lblBookingID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookingID.Name = "lblBookingID";
             this.lblBookingID.Size = new System.Drawing.Size(200, 25);
@@ -107,7 +107,7 @@
             this.btnView.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnView.Location = new System.Drawing.Point(32, 142);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(107, 37);
             this.btnView.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.shadowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shadowPanel.FillColor = System.Drawing.Color.White;
             this.shadowPanel.Location = new System.Drawing.Point(0, 0);
-            this.shadowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.shadowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.shadowPanel.Name = "shadowPanel";
             this.shadowPanel.Size = new System.Drawing.Size(467, 197);
             this.shadowPanel.TabIndex = 0;
@@ -164,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.shadowPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucBookingCard";
             this.Size = new System.Drawing.Size(467, 197);
             this.shadowPanel.ResumeLayout(false);

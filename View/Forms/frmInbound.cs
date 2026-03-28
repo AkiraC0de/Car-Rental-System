@@ -38,7 +38,7 @@ namespace VehicleManagementSystem.View.Forms
             panelLoading.BringToFront();
             try
             {
-                var bookings = await _db.GetBookingsByStatus("Out");
+                var bookings = await _db.GetBookingsByStatus("Ongoing");
                 LoadBookingCards(bookings);
             }
             catch (Exception ex)

@@ -1,6 +1,6 @@
 ﻿namespace VehicleManagementSystem.View.Forms
 {
-    partial class frmPendingBooking
+    partial class frmOngoingBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,30 @@
         private void InitializeComponent()
         {
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bookingDetailsPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalPriceValue = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.additionalFeesTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblAdditionalFees = new System.Windows.Forms.Label();
+            this.btnUploadImages = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lblImageUploads = new System.Windows.Forms.Label();
+            this.flpThumbnails = new System.Windows.Forms.FlowLayoutPanel();
+            this.damageReportTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDamageReport = new System.Windows.Forms.Label();
+            this.inspectionNotesTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblInspectionNotes = new System.Windows.Forms.Label();
+            this.odometerOnReturnTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.fuelLevelOnReturnTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.currentOdometerTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.currentFuelLevelTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.finalizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.lblPriceValue = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.rentalDateEndDTP = new System.Windows.Forms.DateTimePicker();
@@ -51,31 +74,25 @@
             this.lblCustomerLicense = new System.Windows.Forms.Label();
             this.vehicleLicenseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblLicenseNum = new System.Windows.Forms.Label();
+            this.vehiclePictureBox = new System.Windows.Forms.PictureBox();
             this.vehicleNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblVehicleName = new System.Windows.Forms.Label();
             this.firstNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.backBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblBookingIDValue = new System.Windows.Forms.Label();
-            this.bookingsConflictsMainPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblNoBookingConflicts = new System.Windows.Forms.Label();
-            this.lblBookingConflicts = new System.Windows.Forms.Label();
-            this.conflictFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.vehiclePictureBox = new System.Windows.Forms.PictureBox();
-            this.backBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panelMain.SuspendLayout();
-            this.bookingDetailsPanel.SuspendLayout();
-            this.bookingsConflictsMainPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.bookingDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
             this.panelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
@@ -88,7 +105,6 @@
             this.panelMain.CustomizableEdges.BottomLeft = false;
             this.panelMain.CustomizableEdges.BottomRight = false;
             this.panelMain.CustomizableEdges.TopRight = false;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -96,10 +112,47 @@
             this.panelMain.Size = new System.Drawing.Size(1698, 890);
             this.panelMain.TabIndex = 42;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
+            this.tableLayoutPanel1.Controls.Add(this.bookingDetailsPanel, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 99);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1668, 791);
+            this.tableLayoutPanel1.TabIndex = 45;
+            // 
             // bookingDetailsPanel
             // 
-            this.bookingDetailsPanel.Controls.Add(this.saveBtn);
-            this.bookingDetailsPanel.Controls.Add(this.cancelBtn);
+            this.bookingDetailsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookingDetailsPanel.Controls.Add(this.lblTotalPriceValue);
+            this.bookingDetailsPanel.Controls.Add(this.lblTotalPrice);
+            this.bookingDetailsPanel.Controls.Add(this.lblPeso);
+            this.bookingDetailsPanel.Controls.Add(this.additionalFeesTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.lblAdditionalFees);
+            this.bookingDetailsPanel.Controls.Add(this.btnUploadImages);
+            this.bookingDetailsPanel.Controls.Add(this.lblImageUploads);
+            this.bookingDetailsPanel.Controls.Add(this.flpThumbnails);
+            this.bookingDetailsPanel.Controls.Add(this.damageReportTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.lblDamageReport);
+            this.bookingDetailsPanel.Controls.Add(this.inspectionNotesTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.lblInspectionNotes);
+            this.bookingDetailsPanel.Controls.Add(this.odometerOnReturnTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.label6);
+            this.bookingDetailsPanel.Controls.Add(this.fuelLevelOnReturnTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.label7);
+            this.bookingDetailsPanel.Controls.Add(this.label5);
+            this.bookingDetailsPanel.Controls.Add(this.currentOdometerTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.label1);
+            this.bookingDetailsPanel.Controls.Add(this.currentFuelLevelTextBox);
+            this.bookingDetailsPanel.Controls.Add(this.label4);
+            this.bookingDetailsPanel.Controls.Add(this.finalizeBtn);
             this.bookingDetailsPanel.Controls.Add(this.lblPriceValue);
             this.bookingDetailsPanel.Controls.Add(this.lblPrice);
             this.bookingDetailsPanel.Controls.Add(this.rentalDateEndDTP);
@@ -126,12 +179,367 @@
             this.bookingDetailsPanel.Controls.Add(this.lblVehicleName);
             this.bookingDetailsPanel.Controls.Add(this.firstNameTextBox);
             this.bookingDetailsPanel.Controls.Add(this.lblFirstName);
-            this.bookingDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bookingDetailsPanel.Location = new System.Drawing.Point(4, 5);
             this.bookingDetailsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bookingDetailsPanel.Name = "bookingDetailsPanel";
-            this.bookingDetailsPanel.Size = new System.Drawing.Size(1254, 781);
+            this.bookingDetailsPanel.Size = new System.Drawing.Size(1660, 781);
             this.bookingDetailsPanel.TabIndex = 42;
+            // 
+            // lblTotalPriceValue
+            // 
+            this.lblTotalPriceValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalPriceValue.AutoSize = true;
+            this.lblTotalPriceValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPriceValue.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceValue.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblTotalPriceValue.Location = new System.Drawing.Point(1350, 553);
+            this.lblTotalPriceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalPriceValue.Name = "lblTotalPriceValue";
+            this.lblTotalPriceValue.Size = new System.Drawing.Size(128, 35);
+            this.lblTotalPriceValue.TabIndex = 98;
+            this.lblTotalPriceValue.Text = "₱ 23000";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(1343, 500);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(135, 29);
+            this.lblTotalPrice.TabIndex = 97;
+            this.lblTotalPrice.Text = "Final Price";
+            // 
+            // lblPeso
+            // 
+            this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.BackColor = System.Drawing.Color.Transparent;
+            this.lblPeso.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeso.Location = new System.Drawing.Point(1099, 553);
+            this.lblPeso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(34, 33);
+            this.lblPeso.TabIndex = 96;
+            this.lblPeso.Text = "₱";
+            // 
+            // additionalFeesTextBox
+            // 
+            this.additionalFeesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.additionalFeesTextBox.BorderRadius = 10;
+            this.additionalFeesTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.additionalFeesTextBox.DefaultText = "";
+            this.additionalFeesTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.additionalFeesTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.additionalFeesTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.additionalFeesTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.additionalFeesTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.additionalFeesTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.additionalFeesTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.additionalFeesTextBox.Location = new System.Drawing.Point(1138, 546);
+            this.additionalFeesTextBox.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.additionalFeesTextBox.Multiline = true;
+            this.additionalFeesTextBox.Name = "additionalFeesTextBox";
+            this.additionalFeesTextBox.PlaceholderText = "";
+            this.additionalFeesTextBox.SelectedText = "";
+            this.additionalFeesTextBox.Size = new System.Drawing.Size(120, 46);
+            this.additionalFeesTextBox.TabIndex = 95;
+            // 
+            // lblAdditionalFees
+            // 
+            this.lblAdditionalFees.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAdditionalFees.AutoSize = true;
+            this.lblAdditionalFees.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdditionalFees.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdditionalFees.Location = new System.Drawing.Point(1092, 500);
+            this.lblAdditionalFees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdditionalFees.Name = "lblAdditionalFees";
+            this.lblAdditionalFees.Size = new System.Drawing.Size(193, 29);
+            this.lblAdditionalFees.TabIndex = 94;
+            this.lblAdditionalFees.Text = "Additional Fees";
+            // 
+            // btnUploadImages
+            // 
+            this.btnUploadImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadImages.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnUploadImages.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnUploadImages.Image = global::VehicleManagementSystem.Properties.Resources.file_up__1_;
+            this.btnUploadImages.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnUploadImages.ImageRotate = 0F;
+            this.btnUploadImages.Location = new System.Drawing.Point(1555, 380);
+            this.btnUploadImages.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUploadImages.Name = "btnUploadImages";
+            this.btnUploadImages.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnUploadImages.Size = new System.Drawing.Size(81, 82);
+            this.btnUploadImages.TabIndex = 93;
+            // 
+            // lblImageUploads
+            // 
+            this.lblImageUploads.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblImageUploads.AutoSize = true;
+            this.lblImageUploads.BackColor = System.Drawing.Color.Transparent;
+            this.lblImageUploads.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImageUploads.Location = new System.Drawing.Point(1084, 332);
+            this.lblImageUploads.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImageUploads.Name = "lblImageUploads";
+            this.lblImageUploads.Size = new System.Drawing.Size(184, 29);
+            this.lblImageUploads.TabIndex = 92;
+            this.lblImageUploads.Text = "Image Uploads";
+            // 
+            // flpThumbnails
+            // 
+            this.flpThumbnails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpThumbnails.Location = new System.Drawing.Point(1089, 374);
+            this.flpThumbnails.Margin = new System.Windows.Forms.Padding(4);
+            this.flpThumbnails.Name = "flpThumbnails";
+            this.flpThumbnails.Size = new System.Drawing.Size(458, 98);
+            this.flpThumbnails.TabIndex = 91;
+            // 
+            // damageReportTextBox
+            // 
+            this.damageReportTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.damageReportTextBox.BorderRadius = 10;
+            this.damageReportTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.damageReportTextBox.DefaultText = "";
+            this.damageReportTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.damageReportTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.damageReportTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.damageReportTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.damageReportTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.damageReportTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.damageReportTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.damageReportTextBox.Location = new System.Drawing.Point(1089, 206);
+            this.damageReportTextBox.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.damageReportTextBox.Multiline = true;
+            this.damageReportTextBox.Name = "damageReportTextBox";
+            this.damageReportTextBox.PlaceholderText = "";
+            this.damageReportTextBox.SelectedText = "";
+            this.damageReportTextBox.Size = new System.Drawing.Size(547, 102);
+            this.damageReportTextBox.TabIndex = 90;
+            // 
+            // lblDamageReport
+            // 
+            this.lblDamageReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDamageReport.AutoSize = true;
+            this.lblDamageReport.BackColor = System.Drawing.Color.Transparent;
+            this.lblDamageReport.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDamageReport.Location = new System.Drawing.Point(1084, 167);
+            this.lblDamageReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDamageReport.Name = "lblDamageReport";
+            this.lblDamageReport.Size = new System.Drawing.Size(189, 29);
+            this.lblDamageReport.TabIndex = 89;
+            this.lblDamageReport.Text = "Damage Report";
+            // 
+            // inspectionNotesTextBox
+            // 
+            this.inspectionNotesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.inspectionNotesTextBox.BorderRadius = 10;
+            this.inspectionNotesTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inspectionNotesTextBox.DefaultText = "";
+            this.inspectionNotesTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inspectionNotesTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inspectionNotesTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inspectionNotesTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inspectionNotesTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inspectionNotesTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inspectionNotesTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inspectionNotesTextBox.Location = new System.Drawing.Point(1089, 53);
+            this.inspectionNotesTextBox.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.inspectionNotesTextBox.Multiline = true;
+            this.inspectionNotesTextBox.Name = "inspectionNotesTextBox";
+            this.inspectionNotesTextBox.PlaceholderText = "";
+            this.inspectionNotesTextBox.SelectedText = "";
+            this.inspectionNotesTextBox.Size = new System.Drawing.Size(547, 102);
+            this.inspectionNotesTextBox.TabIndex = 88;
+            // 
+            // lblInspectionNotes
+            // 
+            this.lblInspectionNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInspectionNotes.AutoSize = true;
+            this.lblInspectionNotes.BackColor = System.Drawing.Color.Transparent;
+            this.lblInspectionNotes.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInspectionNotes.Location = new System.Drawing.Point(1084, 14);
+            this.lblInspectionNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInspectionNotes.Name = "lblInspectionNotes";
+            this.lblInspectionNotes.Size = new System.Drawing.Size(207, 29);
+            this.lblInspectionNotes.TabIndex = 87;
+            this.lblInspectionNotes.Text = "Inspection Notes";
+            // 
+            // odometerOnReturnTextBox
+            // 
+            this.odometerOnReturnTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.odometerOnReturnTextBox.BorderRadius = 10;
+            this.odometerOnReturnTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.odometerOnReturnTextBox.DefaultText = "";
+            this.odometerOnReturnTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.odometerOnReturnTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.odometerOnReturnTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.odometerOnReturnTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.odometerOnReturnTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.odometerOnReturnTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.odometerOnReturnTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.odometerOnReturnTextBox.Location = new System.Drawing.Point(817, 687);
+            this.odometerOnReturnTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
+            this.odometerOnReturnTextBox.Multiline = true;
+            this.odometerOnReturnTextBox.Name = "odometerOnReturnTextBox";
+            this.odometerOnReturnTextBox.PlaceholderText = "";
+            this.odometerOnReturnTextBox.SelectedText = "";
+            this.odometerOnReturnTextBox.Size = new System.Drawing.Size(241, 45);
+            this.odometerOnReturnTextBox.TabIndex = 70;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(813, 648);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(204, 24);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Odometer on Return";
+            // 
+            // fuelLevelOnReturnTextBox
+            // 
+            this.fuelLevelOnReturnTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fuelLevelOnReturnTextBox.BorderRadius = 10;
+            this.fuelLevelOnReturnTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuelLevelOnReturnTextBox.DefaultText = "";
+            this.fuelLevelOnReturnTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.fuelLevelOnReturnTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fuelLevelOnReturnTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fuelLevelOnReturnTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fuelLevelOnReturnTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fuelLevelOnReturnTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fuelLevelOnReturnTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fuelLevelOnReturnTextBox.Location = new System.Drawing.Point(512, 687);
+            this.fuelLevelOnReturnTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
+            this.fuelLevelOnReturnTextBox.Multiline = true;
+            this.fuelLevelOnReturnTextBox.Name = "fuelLevelOnReturnTextBox";
+            this.fuelLevelOnReturnTextBox.PlaceholderText = "";
+            this.fuelLevelOnReturnTextBox.SelectedText = "";
+            this.fuelLevelOnReturnTextBox.Size = new System.Drawing.Size(246, 45);
+            this.fuelLevelOnReturnTextBox.TabIndex = 68;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(508, 648);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(206, 24);
+            this.label7.TabIndex = 67;
+            this.label7.Text = "Fuel Level on Return";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(507, 500);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 29);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "Usage Metrics";
+            // 
+            // currentOdometerTextBox
+            // 
+            this.currentOdometerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentOdometerTextBox.BorderRadius = 10;
+            this.currentOdometerTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.currentOdometerTextBox.DefaultText = "";
+            this.currentOdometerTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.currentOdometerTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.currentOdometerTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.currentOdometerTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.currentOdometerTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.currentOdometerTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentOdometerTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.currentOdometerTextBox.Location = new System.Drawing.Point(817, 585);
+            this.currentOdometerTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
+            this.currentOdometerTextBox.Multiline = true;
+            this.currentOdometerTextBox.Name = "currentOdometerTextBox";
+            this.currentOdometerTextBox.PlaceholderText = "";
+            this.currentOdometerTextBox.SelectedText = "";
+            this.currentOdometerTextBox.Size = new System.Drawing.Size(241, 45);
+            this.currentOdometerTextBox.TabIndex = 65;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(813, 546);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 24);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Odometer on Release";
+            // 
+            // currentFuelLevelTextBox
+            // 
+            this.currentFuelLevelTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentFuelLevelTextBox.BorderRadius = 10;
+            this.currentFuelLevelTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.currentFuelLevelTextBox.DefaultText = "";
+            this.currentFuelLevelTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.currentFuelLevelTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.currentFuelLevelTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.currentFuelLevelTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.currentFuelLevelTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.currentFuelLevelTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentFuelLevelTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.currentFuelLevelTextBox.Location = new System.Drawing.Point(512, 585);
+            this.currentFuelLevelTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
+            this.currentFuelLevelTextBox.Multiline = true;
+            this.currentFuelLevelTextBox.Name = "currentFuelLevelTextBox";
+            this.currentFuelLevelTextBox.PlaceholderText = "";
+            this.currentFuelLevelTextBox.SelectedText = "";
+            this.currentFuelLevelTextBox.Size = new System.Drawing.Size(246, 45);
+            this.currentFuelLevelTextBox.TabIndex = 63;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(508, 546);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 24);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Fuel Level on Release";
+            // 
+            // finalizeBtn
+            // 
+            this.finalizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.finalizeBtn.BorderRadius = 10;
+            this.finalizeBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.finalizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.finalizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.finalizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.finalizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.finalizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
+            this.finalizeBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalizeBtn.ForeColor = System.Drawing.Color.White;
+            this.finalizeBtn.Image = global::VehicleManagementSystem.Properties.Resources.file;
+            this.finalizeBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.finalizeBtn.Location = new System.Drawing.Point(1210, 664);
+            this.finalizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.finalizeBtn.Name = "finalizeBtn";
+            this.finalizeBtn.Size = new System.Drawing.Size(304, 60);
+            this.finalizeBtn.TabIndex = 61;
+            this.finalizeBtn.Text = "Finalize Transaction";
             // 
             // lblPriceValue
             // 
@@ -163,6 +571,7 @@
             this.rentalDateEndDTP.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rentalDateEndDTP.CalendarTitleForeColor = System.Drawing.Color.Azure;
             this.rentalDateEndDTP.CustomFormat = "MMMMdd, yyyy hh:mm tt";
+            this.rentalDateEndDTP.Enabled = false;
             this.rentalDateEndDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rentalDateEndDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.rentalDateEndDTP.Location = new System.Drawing.Point(34, 597);
@@ -176,6 +585,7 @@
             this.rentalDateStartDTP.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rentalDateStartDTP.CalendarTitleForeColor = System.Drawing.Color.Azure;
             this.rentalDateStartDTP.CustomFormat = "MMMMdd, yyyy hh:mm tt";
+            this.rentalDateStartDTP.Enabled = false;
             this.rentalDateStartDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rentalDateStartDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.rentalDateStartDTP.Location = new System.Drawing.Point(34, 532);
@@ -273,6 +683,7 @@
             this.customerContactNumTextBox.Multiline = true;
             this.customerContactNumTextBox.Name = "customerContactNumTextBox";
             this.customerContactNumTextBox.PlaceholderText = "";
+            this.customerContactNumTextBox.ReadOnly = true;
             this.customerContactNumTextBox.SelectedText = "";
             this.customerContactNumTextBox.Size = new System.Drawing.Size(176, 45);
             this.customerContactNumTextBox.TabIndex = 47;
@@ -306,6 +717,7 @@
             this.customerEmailTextBox.Multiline = true;
             this.customerEmailTextBox.Name = "customerEmailTextBox";
             this.customerEmailTextBox.PlaceholderText = "";
+            this.customerEmailTextBox.ReadOnly = true;
             this.customerEmailTextBox.SelectedText = "";
             this.customerEmailTextBox.Size = new System.Drawing.Size(401, 45);
             this.customerEmailTextBox.TabIndex = 45;
@@ -350,6 +762,7 @@
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.PlaceholderText = "";
+            this.lastNameTextBox.ReadOnly = true;
             this.lastNameTextBox.SelectedText = "";
             this.lastNameTextBox.Size = new System.Drawing.Size(176, 45);
             this.lastNameTextBox.TabIndex = 42;
@@ -383,6 +796,7 @@
             this.customerLicenseTextBox.Multiline = true;
             this.customerLicenseTextBox.Name = "customerLicenseTextBox";
             this.customerLicenseTextBox.PlaceholderText = "";
+            this.customerLicenseTextBox.ReadOnly = true;
             this.customerLicenseTextBox.SelectedText = "";
             this.customerLicenseTextBox.Size = new System.Drawing.Size(176, 45);
             this.customerLicenseTextBox.TabIndex = 40;
@@ -412,7 +826,7 @@
             this.vehicleLicenseTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.vehicleLicenseTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicleLicenseTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.vehicleLicenseTextBox.Location = new System.Drawing.Point(969, 436);
+            this.vehicleLicenseTextBox.Location = new System.Drawing.Point(815, 440);
             this.vehicleLicenseTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
             this.vehicleLicenseTextBox.Multiline = true;
             this.vehicleLicenseTextBox.Name = "vehicleLicenseTextBox";
@@ -428,12 +842,24 @@
             this.lblLicenseNum.AutoSize = true;
             this.lblLicenseNum.BackColor = System.Drawing.Color.Transparent;
             this.lblLicenseNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicenseNum.Location = new System.Drawing.Point(965, 397);
+            this.lblLicenseNum.Location = new System.Drawing.Point(811, 401);
             this.lblLicenseNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLicenseNum.Name = "lblLicenseNum";
             this.lblLicenseNum.Size = new System.Drawing.Size(136, 24);
             this.lblLicenseNum.TabIndex = 37;
             this.lblLicenseNum.Text = "License Plate";
+            // 
+            // vehiclePictureBox
+            // 
+            this.vehiclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vehiclePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.vehiclePictureBox.Location = new System.Drawing.Point(533, 14);
+            this.vehiclePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.vehiclePictureBox.Name = "vehiclePictureBox";
+            this.vehiclePictureBox.Size = new System.Drawing.Size(548, 365);
+            this.vehiclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vehiclePictureBox.TabIndex = 36;
+            this.vehiclePictureBox.TabStop = false;
             // 
             // vehicleNameTextBox
             // 
@@ -448,7 +874,7 @@
             this.vehicleNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.vehicleNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicleNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.vehicleNameTextBox.Location = new System.Drawing.Point(664, 436);
+            this.vehicleNameTextBox.Location = new System.Drawing.Point(510, 440);
             this.vehicleNameTextBox.Margin = new System.Windows.Forms.Padding(9, 15, 9, 15);
             this.vehicleNameTextBox.Multiline = true;
             this.vehicleNameTextBox.Name = "vehicleNameTextBox";
@@ -464,7 +890,7 @@
             this.lblVehicleName.AutoSize = true;
             this.lblVehicleName.BackColor = System.Drawing.Color.Transparent;
             this.lblVehicleName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleName.Location = new System.Drawing.Point(660, 397);
+            this.lblVehicleName.Location = new System.Drawing.Point(506, 401);
             this.lblVehicleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVehicleName.Name = "lblVehicleName";
             this.lblVehicleName.Size = new System.Drawing.Size(77, 24);
@@ -488,6 +914,7 @@
             this.firstNameTextBox.Multiline = true;
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.PlaceholderText = "";
+            this.firstNameTextBox.ReadOnly = true;
             this.firstNameTextBox.SelectedText = "";
             this.firstNameTextBox.Size = new System.Drawing.Size(176, 45);
             this.firstNameTextBox.TabIndex = 33;
@@ -503,171 +930,6 @@
             this.lblFirstName.Size = new System.Drawing.Size(112, 24);
             this.lblFirstName.TabIndex = 32;
             this.lblFirstName.Text = "First Name";
-            // 
-            // lblBookingIDValue
-            // 
-            this.lblBookingIDValue.AutoSize = true;
-            this.lblBookingIDValue.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookingIDValue.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingIDValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblBookingIDValue.Location = new System.Drawing.Point(282, 23);
-            this.lblBookingIDValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBookingIDValue.Name = "lblBookingIDValue";
-            this.lblBookingIDValue.Size = new System.Drawing.Size(151, 35);
-            this.lblBookingIDValue.TabIndex = 43;
-            this.lblBookingIDValue.Text = "67676767";
-            // 
-            // bookingsConflictsMainPanel
-            // 
-            this.bookingsConflictsMainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bookingsConflictsMainPanel.Controls.Add(this.lblNoBookingConflicts);
-            this.bookingsConflictsMainPanel.Controls.Add(this.lblBookingConflicts);
-            this.bookingsConflictsMainPanel.Controls.Add(this.conflictFlowPanel);
-            this.bookingsConflictsMainPanel.Location = new System.Drawing.Point(1266, 5);
-            this.bookingsConflictsMainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bookingsConflictsMainPanel.Name = "bookingsConflictsMainPanel";
-            this.bookingsConflictsMainPanel.Size = new System.Drawing.Size(398, 703);
-            this.bookingsConflictsMainPanel.TabIndex = 42;
-            // 
-            // lblNoBookingConflicts
-            // 
-            this.lblNoBookingConflicts.AutoSize = true;
-            this.lblNoBookingConflicts.BackColor = System.Drawing.Color.Transparent;
-            this.lblNoBookingConflicts.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoBookingConflicts.ForeColor = System.Drawing.Color.Green;
-            this.lblNoBookingConflicts.Location = new System.Drawing.Point(74, 14);
-            this.lblNoBookingConflicts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNoBookingConflicts.Name = "lblNoBookingConflicts";
-            this.lblNoBookingConflicts.Size = new System.Drawing.Size(266, 29);
-            this.lblNoBookingConflicts.TabIndex = 45;
-            this.lblNoBookingConflicts.Text = "No Booking Conflicts.";
-            this.lblNoBookingConflicts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblBookingConflicts
-            // 
-            this.lblBookingConflicts.AutoSize = true;
-            this.lblBookingConflicts.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookingConflicts.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingConflicts.Location = new System.Drawing.Point(74, 14);
-            this.lblBookingConflicts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBookingConflicts.Name = "lblBookingConflicts";
-            this.lblBookingConflicts.Size = new System.Drawing.Size(220, 29);
-            this.lblBookingConflicts.TabIndex = 44;
-            this.lblBookingConflicts.Text = "Booking Conflicts";
-            // 
-            // conflictFlowPanel
-            // 
-            this.conflictFlowPanel.AutoScroll = true;
-            this.conflictFlowPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.conflictFlowPanel.BackColor = System.Drawing.Color.Transparent;
-            this.conflictFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.conflictFlowPanel.Location = new System.Drawing.Point(0, 65);
-            this.conflictFlowPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.conflictFlowPanel.Name = "conflictFlowPanel";
-            this.conflictFlowPanel.Size = new System.Drawing.Size(400, 638);
-            this.conflictFlowPanel.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(101, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 26);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Review pending bookings";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label3.Location = new System.Drawing.Point(98, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 35);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Booking ID:";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
-            this.tableLayoutPanel1.Controls.Add(this.bookingDetailsPanel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.bookingsConflictsMainPanel, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 99);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1668, 791);
-            this.tableLayoutPanel1.TabIndex = 45;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.BorderRadius = 10;
-            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.saveBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
-            this.saveBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.file;
-            this.saveBtn.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(969, 640);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(243, 60);
-            this.saveBtn.TabIndex = 61;
-            this.saveBtn.Text = "Approve";
-            this.saveBtn.Click += new System.EventHandler(this.approveBtn_Click);
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.BorderColor = System.Drawing.Color.Silver;
-            this.cancelBtn.BorderRadius = 10;
-            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Image = global::VehicleManagementSystem.Properties.Resources.file__1_;
-            this.cancelBtn.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancelBtn.Location = new System.Drawing.Point(664, 640);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(246, 60);
-            this.cancelBtn.TabIndex = 60;
-            this.cancelBtn.Text = "Reject";
-            this.cancelBtn.Click += new System.EventHandler(this.rejectBtn_Click);
-            // 
-            // vehiclePictureBox
-            // 
-            this.vehiclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vehiclePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.vehiclePictureBox.Location = new System.Drawing.Point(664, 0);
-            this.vehiclePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.vehiclePictureBox.Name = "vehiclePictureBox";
-            this.vehiclePictureBox.Size = new System.Drawing.Size(548, 365);
-            this.vehiclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vehiclePictureBox.TabIndex = 36;
-            this.vehiclePictureBox.TabStop = false;
             // 
             // backBtn
             // 
@@ -690,21 +952,57 @@
             this.backBtn.TabIndex = 44;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // frmPendingBooking
+            // lblBookingIDValue
+            // 
+            this.lblBookingIDValue.AutoSize = true;
+            this.lblBookingIDValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblBookingIDValue.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingIDValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.lblBookingIDValue.Location = new System.Drawing.Point(282, 23);
+            this.lblBookingIDValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBookingIDValue.Name = "lblBookingIDValue";
+            this.lblBookingIDValue.Size = new System.Drawing.Size(151, 35);
+            this.lblBookingIDValue.TabIndex = 43;
+            this.lblBookingIDValue.Text = "67676767";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(101, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 26);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Review pending bookings";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.label3.Location = new System.Drawing.Point(98, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 35);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Booking ID:";
+            // 
+            // frmOngoingBooking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1698, 890);
             this.Controls.Add(this.panelMain);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmPendingBooking";
+            this.Name = "frmOngoingBooking";
             this.Text = "frmPendingBooking";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.bookingDetailsPanel.ResumeLayout(false);
             this.bookingDetailsPanel.PerformLayout();
-            this.bookingsConflictsMainPanel.ResumeLayout(false);
-            this.bookingsConflictsMainPanel.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -714,7 +1012,6 @@
 
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel conflictFlowPanel;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel bookingDetailsPanel;
         private System.Windows.Forms.Label lblDateofRequestValue;
@@ -743,13 +1040,30 @@
         private System.Windows.Forms.Label lblRentalTime;
         private System.Windows.Forms.Label lblRentalPeriod;
         private System.Windows.Forms.Label lblto;
-        private Guna.UI2.WinForms.Guna2Panel bookingsConflictsMainPanel;
-        private System.Windows.Forms.Label lblBookingConflicts;
         private System.Windows.Forms.Label lblBookingIDValue;
         private Guna.UI2.WinForms.Guna2CircleButton backBtn;
-        private System.Windows.Forms.Label lblNoBookingConflicts;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Button saveBtn;
-        private Guna.UI2.WinForms.Guna2Button cancelBtn;
+        private Guna.UI2.WinForms.Guna2Button finalizeBtn;
+        private Guna.UI2.WinForms.Guna2TextBox currentOdometerTextBox;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox currentFuelLevelTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox odometerOnReturnTextBox;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2TextBox fuelLevelOnReturnTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblPeso;
+        private Guna.UI2.WinForms.Guna2TextBox additionalFeesTextBox;
+        private System.Windows.Forms.Label lblAdditionalFees;
+        private Guna.UI2.WinForms.Guna2ImageButton btnUploadImages;
+        private System.Windows.Forms.Label lblImageUploads;
+        private System.Windows.Forms.FlowLayoutPanel flpThumbnails;
+        private Guna.UI2.WinForms.Guna2TextBox damageReportTextBox;
+        private System.Windows.Forms.Label lblDamageReport;
+        private Guna.UI2.WinForms.Guna2TextBox inspectionNotesTextBox;
+        private System.Windows.Forms.Label lblInspectionNotes;
+        private System.Windows.Forms.Label lblTotalPriceValue;
     }
 }

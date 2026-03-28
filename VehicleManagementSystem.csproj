@@ -439,6 +439,18 @@
     <Compile Include="View\Forms\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\frmOngoingBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmOngoingBooking.Designer.cs">
+      <DependentUpon>frmOngoingBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\frmApprovedBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmApprovedBooking.Designer.cs">
+      <DependentUpon>frmApprovedBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\frmPendingBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -673,6 +685,12 @@
     <EmbeddedResource Include="View\Forms\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmOngoingBooking.resx">
+      <DependentUpon>frmOngoingBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmApprovedBooking.resx">
+      <DependentUpon>frmApprovedBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmPendingBooking.resx">
       <DependentUpon>frmPendingBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -784,6 +802,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\file-up %281%29.png" />
     <None Include="Resources\file %281%29.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\pngtree-modern-silver-toyota-fortuner-suv-studio-shot-png-image_16472540.png" />

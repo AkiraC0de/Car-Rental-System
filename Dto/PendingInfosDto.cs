@@ -24,6 +24,7 @@ namespace VehicleManagementSystem.Dto
         // Vehicle Details 
         public string VehicleVIN { get; set; }
         public string VehicleName { get; set; }
+        public decimal CurrentOdometerReading { get; set; }
         public string LicensePlate { get; set; }
         public string ImagePath { get; set; }
         public string FullImagePath => System.IO.Path.Combine(AppConfig.AppData.RootPath, ImagePath);
@@ -34,5 +35,11 @@ namespace VehicleManagementSystem.Dto
         // Schedule Details
         public DateTime DateSchedOut { get; set; }
         public DateTime DateDue { get; set; }
+
+        // Usage Metrics
+        public int? MileageOut { get; set; }
+        public int? MileageIn { get; set; }
+        public string FuelLevelOut { get; set; }
+        public string FuelLevelIn { get; set; }
     }
 }
