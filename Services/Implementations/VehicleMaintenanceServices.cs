@@ -29,6 +29,35 @@ namespace VehicleManagementSystem.Services.Implementations {
             }
         }
 
+        public async Task<(bool success, string message)> RemoveMaintenanceType(int maintenanceTypeID) {
+            try {
+                using (MySqlConnection conn = MySQLConnectionContext.Create()) {
+                    
+                    string sql = "DELETE FROM VehicleMaintenanceTypes WHERE MaintenanceTypeID = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn)) {
+                        cmd.Parameters.AddWithValue("@id", maintenanceTypeID);
+
+                        await conn.OpenAsync();
+                        int rowsAffected = await cmd.ExecuteNonQueryAsync();
+
+                        if (rowsAffected > 0) {
+                            return (true, "Maintenance type successfully removed.");
+                        } else {
+                            return (false, "Maintenance type not found or already deleted.");
+                        }
+                    }
+                }
+            } catch (MySqlException ex) {
+                if (ex.Number == 1451) {
+                    return (false, "Cannot delete: This type is currently used in an active maintenance schedule.");
+                }
+                return (false, $"Database Error: {ex.Message}");
+            } catch (Exception ex) {
+                return (false, $"An unexpected error occurred: {ex.Message}");
+            }
+        }
+
         public async Task<List<VehicleMaintenanceTypeDto>> GetAllMaintenanceTypes() {
             var tasks = new List<VehicleMaintenanceTypeDto>();
 

@@ -97,5 +97,9 @@ namespace VehicleManagementSystem.Forms {
         private void dashboardBtn_Click(object sender, EventArgs e) {
             OpenSubPanel(new MaintenanceDashboard(), dashboardBtn);
         }
+
+        private void approvedBtn_Click(object sender, EventArgs e) {
+            OpenSubPanel(new ucMaintenanceType(), maintenanceTypeBtn);
+        }
     }
 }

@@ -37,6 +37,12 @@ namespace VehicleManagementSystem.UserControls.MaintenanceTab {
             }
         }
 
+        public void ReloadAll() {
+            _presenter.LoadDashbord();
+            _presenter.LoadUrgents();
+            _presenter.LoadUpcoming();
+        }
+
         public void DisplayUrgents(List<VehicleMaintenanceScheduleDto> schedules) {
             tableLayoutUrgent.SuspendLayout();
             const int DocumentCardHeight = 73;
@@ -53,7 +59,7 @@ namespace VehicleManagementSystem.UserControls.MaintenanceTab {
 
             foreach (var schedule in schedules) {
                 var card = new ucMaintenanceDashboard();
-                card.Bind(schedule);
+                card.Bind(schedule, ReloadAll);
                 card.Dock = DockStyle.Fill;
 
                 tableLayoutUrgent.Controls.Add(card, col, row);
@@ -80,7 +86,7 @@ namespace VehicleManagementSystem.UserControls.MaintenanceTab {
 
             foreach (var schedule in schedules) {
                 var card = new ucMaintenanceDashboard();
-                card.Bind(schedule);
+                card.Bind(schedule, ReloadAll);
                 card.Dock = DockStyle.Fill;
 
                 tableLayoutUpcoming.Controls.Add(card, col, row);

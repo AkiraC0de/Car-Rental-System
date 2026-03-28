@@ -123,5 +123,6 @@ namespace VehicleManagementSystem.UserControls {
                 _reloadDisplay();
             }
         }
+
     }
 }

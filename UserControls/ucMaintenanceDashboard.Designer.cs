@@ -25,12 +25,12 @@
         private void InitializeComponent() {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelOver = new System.Windows.Forms.Label();
-            this.labelDue = new System.Windows.Forms.Label();
+            this.labelScheduleType = new System.Windows.Forms.Label();
             this.labelMaintenanceType = new System.Windows.Forms.Label();
             this.labelPlateNum = new System.Windows.Forms.Label();
             this.viewBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.labelScheduleType = new System.Windows.Forms.Label();
+            this.labelOver = new System.Windows.Forms.Label();
+            this.labelDue = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,27 +70,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 68);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // labelOver
+            // labelScheduleType
             // 
-            this.labelOver.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOver.Location = new System.Drawing.Point(812, 0);
-            this.labelOver.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
-            this.labelOver.Name = "labelOver";
-            this.labelOver.Size = new System.Drawing.Size(98, 68);
-            this.labelOver.TabIndex = 4;
-            this.labelOver.Text = "label1";
-            this.labelOver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelDue
-            // 
-            this.labelDue.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDue.Location = new System.Drawing.Point(690, 0);
-            this.labelDue.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
-            this.labelDue.Name = "labelDue";
-            this.labelDue.Size = new System.Drawing.Size(100, 68);
-            this.labelDue.TabIndex = 3;
-            this.labelDue.Text = "label1";
-            this.labelDue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelScheduleType.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScheduleType.Location = new System.Drawing.Point(546, 0);
+            this.labelScheduleType.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
+            this.labelScheduleType.Name = "labelScheduleType";
+            this.labelScheduleType.Size = new System.Drawing.Size(100, 68);
+            this.labelScheduleType.TabIndex = 5;
+            this.labelScheduleType.Text = "label1";
+            this.labelScheduleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMaintenanceType
             // 
@@ -123,6 +112,7 @@
             this.viewBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.viewBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.viewBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.viewBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(132)))), ((int)(((byte)(191)))));
             this.viewBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.viewBtn.ForeColor = System.Drawing.Color.White;
             this.viewBtn.Location = new System.Drawing.Point(923, 11);
@@ -131,17 +121,29 @@
             this.viewBtn.Size = new System.Drawing.Size(83, 45);
             this.viewBtn.TabIndex = 1;
             this.viewBtn.Text = "View";
+            this.viewBtn.Click += new System.EventHandler(this.Card_Click);
             // 
-            // labelScheduleType
+            // labelOver
             // 
-            this.labelScheduleType.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScheduleType.Location = new System.Drawing.Point(546, 0);
-            this.labelScheduleType.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
-            this.labelScheduleType.Name = "labelScheduleType";
-            this.labelScheduleType.Size = new System.Drawing.Size(100, 68);
-            this.labelScheduleType.TabIndex = 5;
-            this.labelScheduleType.Text = "label1";
-            this.labelScheduleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelOver.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOver.Location = new System.Drawing.Point(812, 0);
+            this.labelOver.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
+            this.labelOver.Name = "labelOver";
+            this.labelOver.Size = new System.Drawing.Size(98, 68);
+            this.labelOver.TabIndex = 4;
+            this.labelOver.Text = "label1";
+            this.labelOver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelDue
+            // 
+            this.labelDue.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDue.Location = new System.Drawing.Point(690, 0);
+            this.labelDue.Margin = new System.Windows.Forms.Padding(14, 0, 3, 0);
+            this.labelDue.Name = "labelDue";
+            this.labelDue.Size = new System.Drawing.Size(100, 68);
+            this.labelDue.TabIndex = 3;
+            this.labelDue.Text = "label1";
+            this.labelDue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ucMaintenanceDashboard
             // 

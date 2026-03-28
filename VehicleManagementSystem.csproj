@@ -360,6 +360,12 @@
     <Compile Include="UserControls\MaintenanceTab\MaintenanceDashboard.Designer.cs">
       <DependentUpon>MaintenanceDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MaintenanceTab\ucMaintenanceType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaintenanceTab\ucMaintenanceType.Designer.cs">
+      <DependentUpon>ucMaintenanceType.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBookingCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +401,12 @@
     </Compile>
     <Compile Include="UserControls\ucMaintenanceDashboard.Designer.cs">
       <DependentUpon>ucMaintenanceDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMaintenanceTypeCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMaintenanceTypeCard.Designer.cs">
+      <DependentUpon>ucMaintenanceTypeCard.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\VehicleDetailsTab\VehicleDetailsDocuments.cs">
       <SubType>UserControl</SubType>
@@ -622,6 +634,9 @@
     <EmbeddedResource Include="UserControls\MaintenanceTab\MaintenanceDashboard.resx">
       <DependentUpon>MaintenanceDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MaintenanceTab\ucMaintenanceType.resx">
+      <DependentUpon>ucMaintenanceType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBookingCard.resx">
       <DependentUpon>ucBookingCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -639,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucMaintenanceDashboard.resx">
       <DependentUpon>ucMaintenanceDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMaintenanceTypeCard.resx">
+      <DependentUpon>ucMaintenanceTypeCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VehicleDetailsTab\VehicleDetailsDocuments.resx">
       <DependentUpon>VehicleDetailsDocuments.cs</DependentUpon>
