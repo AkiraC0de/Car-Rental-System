@@ -158,7 +158,13 @@ namespace VehicleManagementSystem.View.Forms {
                         relativePathsForDb.Add(dbPath);
                     }
 
-                    // --- 5. Save to Database ---
+                    if (!decimal.TryParse(additionalFeesTextBox.Text, out decimal extraFees)) {
+                        extraFees = 0; 
+                    }
+
+                    extraFees += currentPendingInfo.ProjectedPrice;
+
+                    // 2. Call the method with the parsed values
                     bool success = await db.SaveFullInspection(
                         currentPendingInfo.BookingID,
                         currentPendingInfo.VehicleVIN,
@@ -166,12 +172,13 @@ namespace VehicleManagementSystem.View.Forms {
                         damageReportTextBox.Text.Trim(),
                         relativePathsForDb,
                         mileageIn,
-                        fuelIn
+                        fuelIn,
+                        extraFees
                     );
 
                     if (success) {
                         MessageBox.Show("Inspection data, images, and vehicle status updated successfully!", "Success");
-                        NavigationHelper.OpenForm(new frmOutbound());
+                        NavigationHelper.OpenForm(new frmInbound());
                     }
                 } catch (Exception ex) {
                     MessageBox.Show($"File or Database error: {ex.Message}", "Process Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -108,29 +108,39 @@ namespace VehicleManagementSystem.Services {
             return list;
         }
 
-        public List<BookingDto> SearchBookings(string searchTerm, string status = "Pending") {
+        public async Task<List<BookingDto>> SearchBookingsAsync(string searchTerm, string status = "Pending") {
             List<BookingDto> results = new List<BookingDto>();
             using (var connection = MySQLConnectionContext.Create()) {
                 try {
-                    connection.Open();
+                    await connection.OpenAsync();
+                    // Base query without status filtering
                     string query = @"SELECT b.*, CONCAT(v.Manufacturer, ' ', v.Model) AS FullVehicleName, v.LicensePlate, v.ImagePath, v.DailyRate, v.CurrentOdometerReading 
-                                     FROM Bookings b
-                                     JOIN Vehicles v ON b.VehicleVIN = v.VIN
-                                     WHERE b.Status = @status AND b.Deleted = 0
-                                     AND (b.BookingID LIKE @search OR b.FirstName LIKE @search OR b.LastName LIKE @search 
-                                          OR b.LicenseNum LIKE @search OR b.Email LIKE @search OR b.PhoneNumber LIKE @search)";
+                             FROM Bookings b
+                             JOIN Vehicles v ON b.VehicleVIN = v.VIN
+                             WHERE b.Deleted = 0
+                             AND (b.BookingID LIKE @search OR b.FirstName LIKE @search OR b.LastName LIKE @search 
+                                  OR b.LicenseNum LIKE @search OR b.Email LIKE @search OR b.PhoneNumber LIKE @search)";
+
+                    // Append status filter only if it's not "All"
+                    if (status != "All") {
+                        query += " AND b.Status = @status";
+                    }
 
                     using (var cmd = new MySqlCommand(query, connection)) {
-                        cmd.Parameters.AddWithValue("@status", status);
                         cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%");
+                        if (status != "All") {
+                            cmd.Parameters.AddWithValue("@status", status);
+                        }
 
-                        using (var reader = cmd.ExecuteReader()) {
-                            while (reader.Read()) {
+                        using (var reader = await cmd.ExecuteReaderAsync()) {
+                            while (await reader.ReadAsync()) {
                                 results.Add(MapReaderToBooking(reader));
                             }
                         }
                     }
-                } catch (Exception ex) { Console.WriteLine(ex.Message); }
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
+                }
             }
             return results;
         }
@@ -306,7 +316,7 @@ namespace VehicleManagementSystem.Services {
 
         // Added parameters: mileageIn and fuelIn
         public async Task<bool> SaveFullInspection(string bookingID, string vin, string notes, string damages,
-                                                  List<string> imagePaths, int mileageIn, string fuelIn)
+                                                  List<string> imagePaths, int mileageIn, string fuelIn, decimal totalPrice)
         {
             using (var conn = MySQLConnectionContext.Create())
             {
@@ -330,8 +340,25 @@ namespace VehicleManagementSystem.Services {
                             inspectionID = Convert.ToInt32(await cmd.ExecuteScalarAsync());
                         }
 
-                        // 2. Insert Damages and 3. Insert Images (Logic remains same as previous migration)
-                        // ... [Omitted for brevity, keep your existing logic here] ...
+                        if (!string.IsNullOrWhiteSpace(damages)) {
+                            string insertDamage = "INSERT INTO VehicleDamages (InspectionID, Description) VALUES (@iid, @desc)";
+                            using (var cmd = new MySqlCommand(insertDamage, conn, trans)) {
+                                cmd.Parameters.AddWithValue("@iid", inspectionID);
+                                cmd.Parameters.AddWithValue("@desc", damages);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        if (imagePaths != null && imagePaths.Count > 0) {
+                            string insertImg = "INSERT INTO InspectionImages (InspectionID, ImageFileName) VALUES (@iid, @file)";
+                            foreach (string path in imagePaths) {
+                                using (var cmd = new MySqlCommand(insertImg, conn, trans)) {
+                                    cmd.Parameters.AddWithValue("@iid", inspectionID);
+                                    cmd.Parameters.AddWithValue("@file", path);
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        }
 
                         // 4. Update Booking Status AND Usage Metrics
                         // Fixed: Now includes MileageIn and FuelLevelIn
@@ -339,7 +366,8 @@ namespace VehicleManagementSystem.Services {
                                         Status = 'Completed', 
                                         DateIn = @now,
                                         MileageIn = @mIn,
-                                        FuelLevelIn = @fIn
+                                        FuelLevelIn = @fIn,
+                                        TotalPrice = @TotalPrice
                                         WHERE BookingID = @bid";
 
                         using (var cmd = new MySqlCommand(updateBooking, conn, trans))
@@ -348,6 +376,7 @@ namespace VehicleManagementSystem.Services {
                             cmd.Parameters.AddWithValue("@mIn", mileageIn);
                             cmd.Parameters.AddWithValue("@fIn", fuelIn);
                             cmd.Parameters.AddWithValue("@bid", bookingID);
+                            cmd.Parameters.AddWithValue("@TotalPrice", totalPrice);
                             await cmd.ExecuteNonQueryAsync();
                         }
 
@@ -376,6 +405,46 @@ namespace VehicleManagementSystem.Services {
                     }
                 }
             }
+        }
+
+        public async Task<FullInspectionDetailsDto> GetFullInspectionDetails(string bookingID) {
+            var details = new FullInspectionDetailsDto();
+
+            // Query to get Inspection Notes, Damages (joined), and Images (joined)
+            // GROUP_CONCAT is used to turn multiple damage rows into one readable string
+            string query = @"
+        SELECT 
+            vi.GeneralNotes,
+            (SELECT GROUP_CONCAT(Description SEPARATOR '\r\n') 
+             FROM VehicleDamages WHERE InspectionID = vi.InspectionID) as AllDamages,
+            ii.ImageFileName
+        FROM VehicleInspections vi
+        LEFT JOIN InspectionImages ii ON vi.InspectionID = ii.InspectionID
+        WHERE vi.BookingID = @bid";
+
+            using (var conn = MySQLConnectionContext.Create()) {
+                await conn.OpenAsync();
+                using (var cmd = new MySqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@bid", bookingID);
+                    using (var reader = await cmd.ExecuteReaderAsync()) {
+                        bool baseInfoSet = false;
+                        while (await reader.ReadAsync()) {
+                            if (!baseInfoSet) {
+                                details.GeneralNotes = reader.IsDBNull(0) ? "No notes provided." : reader.GetString(0);
+                                details.DamageDescriptions = reader.IsDBNull(1) ? "No damages reported." : reader.GetString(1);
+                                baseInfoSet = true;
+                            }
+
+                            // Collect all image paths associated with this inspection
+                            if (!reader.IsDBNull(2)) {
+                                details.ImagePaths.Add(reader.GetString(2));
+                            }
+                        }
+                    }
+                }
+            }
+
+            return details;
         }
     }
 }

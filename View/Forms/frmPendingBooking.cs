@@ -211,6 +211,10 @@ namespace VehicleManagementSystem.View.Forms
         {
             if (currentPendingInfo == null) return;
 
+            conflictFlowPanel.FlowDirection = FlowDirection.TopDown;
+            conflictFlowPanel.WrapContents = false; // Prevents the panel from creating a new column to the right
+            conflictFlowPanel.AutoScroll = true;
+
             // 1. Validation Check
             if (!IsDatePeriodValid(out _))
             {
@@ -247,6 +251,8 @@ namespace VehicleManagementSystem.View.Forms
                 {
                     ucBookingCard miniCard = new ucBookingCard();
                     miniCard.BindData(conflict);
+
+                    miniCard.Width = conflictFlowPanel.ClientSize.Width - miniCard.Margin.Horizontal;
                     // Ensure the card itself doesn't have huge margins that push things out of view
                     conflictFlowPanel.Controls.Add(miniCard);
                 }

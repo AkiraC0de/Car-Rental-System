@@ -28,6 +28,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bookingListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelLoading = new Guna.UI2.WinForms.Guna2Panel();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             this.panelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 20;
+            this.panelMain.Controls.Add(this.searchBox);
             this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.bookingListPanel);
@@ -72,7 +74,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.label3.Location = new System.Drawing.Point(25, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 29);
+            this.label3.Size = new System.Drawing.Size(239, 35);
             this.label3.TabIndex = 39;
             this.label3.Text = "Outbound Units";
             // 
@@ -97,6 +99,32 @@
             this.panelLoading.Size = new System.Drawing.Size(1120, 388);
             this.panelLoading.TabIndex = 41;
             // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.BorderRadius = 10;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.DimGray;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconRight = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
+            this.searchBox.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.searchBox.IconRightSize = new System.Drawing.Size(25, 25);
+            this.searchBox.Location = new System.Drawing.Point(743, 21);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(354, 48);
+            this.searchBox.TabIndex = 43;
+            this.searchBox.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // frmOutbound
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -117,5 +145,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel bookingListPanel;
         private Guna.UI2.WinForms.Guna2Panel panelLoading;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

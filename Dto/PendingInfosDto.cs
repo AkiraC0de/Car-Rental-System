@@ -30,6 +30,7 @@ namespace VehicleManagementSystem.Dto
         public string FullImagePath => System.IO.Path.Combine(AppConfig.AppData.RootPath, ImagePath);
 
         public decimal ProjectedPrice { get; set; }
+        public decimal TotalPrice { get; set; }
         public decimal DailyRate { get; set; }
 
         // Schedule Details

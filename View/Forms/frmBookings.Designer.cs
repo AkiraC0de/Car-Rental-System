@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.panelLoading = new Guna.UI2.WinForms.Guna2Panel();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelNav.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +49,7 @@
             this.panelNav.Controls.Add(this.rejectedBtn);
             this.panelNav.Controls.Add(this.completedBtn);
             this.panelNav.Controls.Add(this.allBtn);
-            this.panelNav.Location = new System.Drawing.Point(287, 22);
+            this.panelNav.Location = new System.Drawing.Point(266, 22);
             this.panelNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelNav.Name = "panelNav";
             this.panelNav.Size = new System.Drawing.Size(810, 61);
@@ -152,7 +153,7 @@
             this.hr.Location = new System.Drawing.Point(29, 81);
             this.hr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hr.Name = "hr";
-            this.hr.Size = new System.Drawing.Size(1068, 4);
+            this.hr.Size = new System.Drawing.Size(1047, 4);
             this.hr.TabIndex = 36;
             // 
             // flowLayoutPanel1
@@ -161,9 +162,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 100);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 161);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1065, 446);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1044, 446);
             this.flowLayoutPanel1.TabIndex = 38;
             // 
             // label2
@@ -185,7 +186,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.label3.Location = new System.Drawing.Point(25, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 29);
+            this.label3.Size = new System.Drawing.Size(211, 35);
             this.label3.TabIndex = 39;
             this.label3.Text = "Bookings List";
             // 
@@ -198,6 +199,7 @@
             this.panelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 20;
+            this.panelMain.Controls.Add(this.searchBox);
             this.panelMain.Controls.Add(this.hr);
             this.panelMain.Controls.Add(this.panelNav);
             this.panelMain.Controls.Add(this.label2);
@@ -218,10 +220,36 @@
             this.panelLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelLoading.Location = new System.Drawing.Point(10, 104);
+            this.panelLoading.Location = new System.Drawing.Point(10, 165);
             this.panelLoading.Name = "panelLoading";
-            this.panelLoading.Size = new System.Drawing.Size(1120, 388);
+            this.panelLoading.Size = new System.Drawing.Size(1099, 449);
             this.panelLoading.TabIndex = 41;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.BorderRadius = 10;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.DimGray;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconRight = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
+            this.searchBox.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.searchBox.IconRightSize = new System.Drawing.Size(25, 25);
+            this.searchBox.Location = new System.Drawing.Point(722, 99);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(0);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(354, 48);
+            this.searchBox.TabIndex = 42;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBarTextBox_TextChanged);
             // 
             // frmBookings
             // 
@@ -253,5 +281,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private Guna.UI2.WinForms.Guna2Panel panelLoading;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

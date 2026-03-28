@@ -7,7 +7,7 @@ using VehicleManagementSystem.Dto;
 
 namespace VehicleManagementSystem.Helpers
 {
-    public static class BookingHelpers
+    public static class BookingHelpers 
     {
         public static string GenerateCustomBookingID()
         {
@@ -35,7 +35,8 @@ namespace VehicleManagementSystem.Helpers
                 DateDue = b.DateDue,
                 DateSubmitted = b.DateSubmitted,
                 DailyRate = b.DailyRate,
-                ProjectedPrice = b.ProjectedPrice
+                ProjectedPrice = b.ProjectedPrice,
+                TotalPrice = b.TotalPrice ?? 0,
             };
         }
 

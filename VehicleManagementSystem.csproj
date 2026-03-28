@@ -284,6 +284,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\FullInspectionDetails.cs" />
     <Compile Include="Presenters\MaintenanceDashboardPresenter.cs" />
     <Compile Include="Services\BookingServices.cs" />
     <Compile Include="Classes\DataGridViewStyle.cs" />
@@ -438,6 +439,12 @@
     </Compile>
     <Compile Include="View\Forms\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\frmCompletedBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\frmCompletedBooking.Designer.cs">
+      <DependentUpon>frmCompletedBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\frmOngoingBooking.cs">
       <SubType>Form</SubType>
@@ -684,6 +691,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\frmCompletedBooking.resx">
+      <DependentUpon>frmCompletedBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmOngoingBooking.resx">
       <DependentUpon>frmOngoingBooking.cs</DependentUpon>
